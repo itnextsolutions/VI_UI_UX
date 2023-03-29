@@ -7,6 +7,7 @@ import { PaginationService } from 'src/app/Services/Api/Admin/pagination.service
   templateUrl: './show-customer-review.component.html',
   styleUrls: ['./show-customer-review.component.css']
 })
+
 export class ShowCustomerReviewComponent implements OnInit {
 
   CustomerReviewList:any = [];

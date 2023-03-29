@@ -9,7 +9,8 @@ import { AuthenticatedResponse } from 'src/app/app.module';
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
-})
+}) 
+
 export class LoginComponent implements OnInit {
   form = new UntypedFormGroup({
   });
@@ -62,6 +63,7 @@ export class LoginComponent implements OnInit {
   invalidLogin:boolean=true;
 
   CheckLogin(){
+    debugger
     this.submitted = true;
     if (this.loginForm.valid){
     var val = {

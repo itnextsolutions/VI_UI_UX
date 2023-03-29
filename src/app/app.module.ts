@@ -58,9 +58,7 @@ import { AddEditFaqComponent } from './Admin/faq-master/add-edit-faq/add-edit-fa
 import { SidebarComponent } from './SharePage/sidebar/sidebar.component';
 import { CustmizeDesignComponent } from './Pages/custmize-design/custmize-design.component';
 import { AuthGuard } from './Auth.guard';
-
-
-
+import { JwtModule } from '@auth0/angular-jwt';
 
 
 @NgModule({
@@ -118,13 +116,25 @@ import { AuthGuard } from './Auth.guard';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    JwtModule.forRoot({
+      config: {
+        tokenGetter: tokenGetter,
+        allowedDomains: ["localhost:7181"],
+        disallowedRoutes: []
+      }
+    }),
     ReactiveFormsModule
   ],
   providers: [SharedService, DataService,AuthGuard],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }
 
 export interface AuthenticatedResponse { 
   token:string;
+}
+
+export function tokenGetter() { 
+  return localStorage.getItem("jwt"); 
 }

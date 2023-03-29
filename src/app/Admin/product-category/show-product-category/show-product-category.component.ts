@@ -110,6 +110,7 @@ totalNoOfPages() {
     }
   }
 
+ 
   closeClick(){
     this.activateAddEditProCatCom=false;
     this.refreshproductcategoryList();

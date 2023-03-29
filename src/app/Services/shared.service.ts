@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from "@angular/common/http";
+import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Observable } from "rxjs";
 import { AuthenticatedResponse } from '../app.module';
 
@@ -21,9 +21,12 @@ getMenuList(): Observable < any[] > {
 // }
 
 Login(val: any) {
-  // let headers = new HttpHeaders().set("Authorization",'bearer AIzaSyCoYF2yFX5zWVrNGw-7AUGSRbBGTXZTjao ')
-   return this.http.post<AuthenticatedResponse>(this.APIUrl + 'Login/login', val);
-   }
+  debugger
+
+   return this.http.post<AuthenticatedResponse>(this.APIUrl + 'Login/login', val,{
+    headers: new HttpHeaders({ "Content-Type": "application/json"})
+  });
+}
 
 //Product Category  Start
 getproductcategoryList(): Observable < any[] > {
