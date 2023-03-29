@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { SharedService } from "src/app/Services/shared.service";
-import {AbstractControl,FormBuilder,FormGroup,Validators,FormControl} from '@angular/forms';
+import {AbstractControl,UntypedFormBuilder,UntypedFormGroup,Validators,FormControl} from '@angular/forms';
 
 @Component({
   selector: 'add-edit-product-category',
@@ -8,7 +8,7 @@ import {AbstractControl,FormBuilder,FormGroup,Validators,FormControl} from '@ang
   styleUrls: ['./add-edit-product-category.component.css']
 })
 export class AddEditProductCategoryComponent implements OnInit {
-  public Pro_CatForm = new FormGroup({
+  public Pro_CatForm = new UntypedFormGroup({
   });
   public submitted = false;
 
@@ -23,7 +23,7 @@ export class AddEditProductCategoryComponent implements OnInit {
   url: any; 
 	msg = "";
 
-  constructor(private service: SharedService, private formBuilder: FormBuilder ) { }
+  constructor(private service: SharedService, private formBuilder: UntypedFormBuilder ) { }
 
   ngOnInit(): void {
     this.Pro_CatForm = this.formBuilder.group({

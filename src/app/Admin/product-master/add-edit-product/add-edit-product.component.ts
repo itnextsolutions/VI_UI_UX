@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { SharedService } from "src/app/Services/shared.service";
 // import { FormGroup, FormControl, Validators} from '@angular/forms';
-import { FormBuilder, FormGroup, FormArray, FormControl, Validators } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, FormArray, UntypedFormControl, Validators } from '@angular/forms';
 import { resolve } from 'dns';
 import { timeStamp } from 'console';
 import { GetColorName } from 'hex-color-to-color-name';
@@ -14,11 +14,11 @@ import { GetColorName } from 'hex-color-to-color-name';
 })
 export class AddEditProductComponent implements OnInit {
 
-  form = new FormGroup({
-    ColorData: new FormControl('', Validators.required),
+  form = new UntypedFormGroup({
+    ColorData: new UntypedFormControl('', Validators.required),
   });
 
-  public ProductForm = new FormGroup({
+  public ProductForm = new UntypedFormGroup({
   });
 
   public submitted = false;
@@ -79,7 +79,7 @@ export class AddEditProductComponent implements OnInit {
   womensizecharturl: any;
   msg = "";
 
-  constructor(private service: SharedService, private formBuilder: FormBuilder) {
+  constructor(private service: SharedService, private formBuilder: UntypedFormBuilder) {
     this.form = this.formBuilder.group({
       checkArray: this.formBuilder.array([])
     })

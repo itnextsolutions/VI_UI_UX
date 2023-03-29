@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { SharedService } from "src/app/Services/shared.service";
-import {AbstractControl,FormBuilder,FormGroup,Validators,FormControl} from '@angular/forms';
+import {AbstractControl,UntypedFormBuilder,UntypedFormGroup,Validators,FormControl} from '@angular/forms';
 
 @Component({
   selector: 'add-edit-subcategory',
@@ -9,10 +9,10 @@ import {AbstractControl,FormBuilder,FormGroup,Validators,FormControl} from '@ang
 })
 export class AddEditSubcategoryComponent implements OnInit {
 
-  form = new FormGroup({
+  form = new UntypedFormGroup({
   });
 
-  public Pro_SubCatForm = new FormGroup({
+  public Pro_SubCatForm = new UntypedFormGroup({
   });
   public submitted = false;
 
@@ -27,7 +27,7 @@ export class AddEditSubcategoryComponent implements OnInit {
   url: any; 
 	msg = "";
 
-  constructor(private service: SharedService,private formBuilder: FormBuilder) { }
+  constructor(private service: SharedService,private formBuilder: UntypedFormBuilder) { }
 
   ngOnInit(): void {
 

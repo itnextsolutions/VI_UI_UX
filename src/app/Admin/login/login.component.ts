@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { SharedService } from "src/app/Services/shared.service";
 import { Router } from '@angular/router'; 
-import {AbstractControl,FormBuilder,FormGroup,Validators,FormControl} from '@angular/forms';
+import {AbstractControl,UntypedFormBuilder,UntypedFormGroup,Validators,FormControl} from '@angular/forms';
 import { HttpErrorResponse } from '@angular/common/http';
 import { AuthenticatedResponse } from 'src/app/app.module';
 
@@ -11,10 +11,10 @@ import { AuthenticatedResponse } from 'src/app/app.module';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  form = new FormGroup({
+  form = new UntypedFormGroup({
   });
 
-  public loginForm = new FormGroup({
+  public loginForm = new UntypedFormGroup({
   });
   public submitted = false;
 
@@ -25,7 +25,7 @@ export class LoginComponent implements OnInit {
 	msg = "";
 
    constructor(private service: SharedService ,private router: Router,
-               private formBuilder: FormBuilder) { }
+               private formBuilder: UntypedFormBuilder) { }
 
   ngOnInit(): void {
     this.loginForm = this.formBuilder.group({

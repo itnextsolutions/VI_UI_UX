@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { SharedService } from "src/app/Services/shared.service";
-import {AbstractControl,FormBuilder,FormGroup,Validators,FormControl} from '@angular/forms';
+import {AbstractControl,UntypedFormBuilder,UntypedFormGroup,Validators,FormControl} from '@angular/forms';
 
 @Component({
   selector: 'add-edit-customer-review',
@@ -9,7 +9,7 @@ import {AbstractControl,FormBuilder,FormGroup,Validators,FormControl} from '@ang
 })
 export class AddEditCustomerReviewComponent implements OnInit {
 
-  public reviewForm = new FormGroup({
+  public reviewForm = new UntypedFormGroup({
   });
   public submitted = false;
 
@@ -25,7 +25,7 @@ export class AddEditCustomerReviewComponent implements OnInit {
   url: any; 
 	msg = "";
 
-  constructor(private service: SharedService,private formBuilder: FormBuilder) { }
+  constructor(private service: SharedService,private formBuilder: UntypedFormBuilder) { }
 
   ngOnInit(): void {
 

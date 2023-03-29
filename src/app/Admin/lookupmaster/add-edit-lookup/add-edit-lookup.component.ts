@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { SharedService } from "src/app/Services/shared.service";
-import {AbstractControl,FormBuilder,FormGroup,Validators,FormControl} from '@angular/forms';
+import {AbstractControl,UntypedFormBuilder,UntypedFormGroup,Validators,FormControl} from '@angular/forms';
 
 @Component({
   selector: 'add-edit-lookup',
@@ -8,7 +8,7 @@ import {AbstractControl,FormBuilder,FormGroup,Validators,FormControl} from '@ang
   styleUrls: ['./add-edit-lookup.component.css']
 })
 export class AddEditLookupComponent implements OnInit {
-  public lookupForm = new FormGroup({
+  public lookupForm = new UntypedFormGroup({
   });
   public submitted = false;
 
@@ -17,7 +17,7 @@ export class AddEditLookupComponent implements OnInit {
   Lookup_Name: string ="";
 
 	msg = "";
-  constructor(private service: SharedService,private formBuilder: FormBuilder) { }
+  constructor(private service: SharedService,private formBuilder: UntypedFormBuilder) { }
 
   ngOnInit(): void {
     this.lookupForm = this.formBuilder.group({

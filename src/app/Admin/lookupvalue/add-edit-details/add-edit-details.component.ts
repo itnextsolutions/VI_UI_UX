@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, forwardRef } from '@angular/core';
 import { SharedService } from "src/app/Services/shared.service";
-import { FormGroup, FormControl, Validators} from '@angular/forms';
-import { FormBuilder } from '@angular/forms';
+import { UntypedFormGroup, FormControl, Validators} from '@angular/forms';
+import { UntypedFormBuilder } from '@angular/forms';
 import { GetColorName } from 'hex-color-to-color-name';
 
 
@@ -18,7 +18,7 @@ export class AddEditDetailsComponent implements OnInit {
   //form: FormGroup;
   LookupName: any =[];
 
-  public LookupValueForm = new FormGroup({
+  public LookupValueForm = new UntypedFormGroup({
   });
   public submitted = false;
 
@@ -31,7 +31,7 @@ export class AddEditDetailsComponent implements OnInit {
 
   url: any; 
 	msg = "";
-  constructor(private service: SharedService, private formBuilder: FormBuilder) { 
+  constructor(private service: SharedService, private formBuilder: UntypedFormBuilder) { 
   
   }
 

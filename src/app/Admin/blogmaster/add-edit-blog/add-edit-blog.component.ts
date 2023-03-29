@@ -1,6 +1,6 @@
 import { Component, OnInit,Input } from '@angular/core';
 import { SharedService } from "src/app/Services/shared.service";
-import {AbstractControl,FormBuilder,FormGroup,Validators,FormControl} from '@angular/forms';
+import {AbstractControl,UntypedFormBuilder,UntypedFormGroup,Validators,FormControl} from '@angular/forms';
 
 @Component({
   selector: 'add-edit-blog',
@@ -8,10 +8,10 @@ import {AbstractControl,FormBuilder,FormGroup,Validators,FormControl} from '@ang
   styleUrls: ['./add-edit-blog.component.css']
 })
 export class AddEditBlogComponent implements OnInit {
-  form = new FormGroup({
+  form = new UntypedFormGroup({
   });
 
-  public blogForm = new FormGroup({
+  public blogForm = new UntypedFormGroup({
   });
   public submitted = false;
 
@@ -26,7 +26,7 @@ export class AddEditBlogComponent implements OnInit {
 	msg = "";
 
   
-  constructor(private service: SharedService, private formBuilder: FormBuilder) { }
+  constructor(private service: SharedService, private formBuilder: UntypedFormBuilder) { }
 
   ngOnInit(): void {
     
