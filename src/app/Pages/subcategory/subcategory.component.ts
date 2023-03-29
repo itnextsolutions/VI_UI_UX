@@ -13,13 +13,14 @@ export class SubcategoryComponent implements OnInit {
   category_id: any;
   subcategory_id: any;
   subcategorydetails: any = [];
+  productcategory: any = [];
   productsubcategory: any;
   productList: any = [];
 
   constructor(private userService: UserService, private param: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
-    debugger;
+    
     this.category_id = this.param.snapshot.paramMap.get('category_id');
     this.subcategory_id = this.param.snapshot.paramMap.get('subcategory_id');
     this.getProduct(this.category_id, this.subcategory_id);
@@ -28,6 +29,7 @@ export class SubcategoryComponent implements OnInit {
   
 
   getProduct(category_id:any, subcategory_id: any){
+    
     this.userService.getProductBySubCategoryId(category_id,subcategory_id).subscribe(data =>{
       this.productList = data;
     });
@@ -40,6 +42,7 @@ export class SubcategoryComponent implements OnInit {
         if (this.subcategorydetails != null) {
           this.subcategorydetails.forEach((element:any) => {
             this.productsubcategory = element.SubCategory;
+            this.productcategory = element.Category_Name;
           })
         }
 
@@ -47,8 +50,9 @@ export class SubcategoryComponent implements OnInit {
     }
 
     onClick(product: any){
-      debugger;
-      this.router.navigate(['product-details/', product.Product_Id]);
+      this.productcategory = this.productcategory.replace(/\s+/g, '-').toLowerCase();
+      this.productsubcategory =  this.productsubcategory.replace(/\s+/g, '-').toLowerCase();
+      this.router.navigate(['product-details/', this.productcategory, this.productsubcategory, product.Product_Id]);
     }
   
 }

@@ -17,6 +17,7 @@ export class AddEditProductCategoryComponent implements OnInit {
   Category_Name: string ="";
   Category_Description: string ="";
   Category_Photo: string ="";
+  selectedFile:any;
 
  
   url: any; 
@@ -39,16 +40,20 @@ export class AddEditProductCategoryComponent implements OnInit {
   get formControl() {
     return this.Pro_CatForm.controls;
   }
-  addProductCategory(){
-    debugger;
+  addProductCategory(){debugger
+    
     this.submitted = true;
     if (this.Pro_CatForm.valid){
-    var val = {Category_Id:this.Category_Id,
-      Category_Name:this.Category_Name,
-      Category_Description:this.Category_Description,
-      Category_Photo:this.Category_Photo.replace(/.*[\/\\]/, '')
-    };
-      this.service.addProductcategory(val).subscribe(res =>{
+    // var val = {Category_Id:this.Category_Id,
+    //   Category_Name:this.Category_Name,
+    //   Category_Description:this.Category_Description,
+    //   Category_Photo:this.Category_Photo.replace(/.*[\/\\]/, '')
+    // };
+    let formData = new FormData()
+    formData.append('Category_Name', this.Category_Name);
+    formData.append('Category_Description', this.Category_Description);
+    formData.append('formFile', this.selectedFile);
+      this.service.addProductcategory(formData).subscribe(res =>{
         alert(res.toString());
       })
     }
@@ -57,19 +62,24 @@ export class AddEditProductCategoryComponent implements OnInit {
   updateProductCategory(){
     this.submitted = true;
     if (this.Pro_CatForm.valid){
-    var val = {Category_Id:this.Category_Id,
-      Category_Name:this.Category_Name,
-      Category_Description:this.Category_Description,
-      Category_Photo:this.Category_Photo,
-    };
-      this.service.updateProductcategory(val).subscribe(res =>{
+      let formData = new FormData()
+      formData.append('Category_Id', this.Category_Id);
+      formData.append('Category_Name', this.Category_Name);
+      formData.append('Category_Description', this.Category_Description);
+      formData.append('formFile', this.selectedFile);
+    // var val = {Category_Id:this.Category_Id,
+    //   Category_Name:this.Category_Name,
+    //   Category_Description:this.Category_Description,
+    //   Category_Photo:this.Category_Photo,
+    // };
+      this.service.updateProductcategory(formData).subscribe(res =>{
         alert(res.toString());
     })
   }
   }
 	
 	//selectFile(event) { //Angular 8
-	selectFile(event: any) { //Angular 11, for stricter type
+	onselectFile(event: any) { //Angular 11, for stricter type
 		if(!event.target.files[0] || event.target.files[0].length == 0) {
 			this.msg = 'You must select an image';
 			return;
@@ -89,5 +99,7 @@ export class AddEditProductCategoryComponent implements OnInit {
 			this.msg = "";
 			this.url = reader.result; 
 		}
+
+    this.selectedFile=<File>event.target.files[0];
   }
 }

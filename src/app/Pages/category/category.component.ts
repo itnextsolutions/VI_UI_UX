@@ -25,7 +25,7 @@ export class CategoryComponent implements OnInit {
   }
 
   onCategoryClick(data: any){
-    debugger;
+    
     this.router.navigate(['products/',data.Category_Id,data.Category_Name]);
   }
 

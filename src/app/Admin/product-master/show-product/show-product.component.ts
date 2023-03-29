@@ -93,7 +93,7 @@ totalNoOfPages() {
       Product_Title:"",
       Image_Name:"",
       Category_Name:"",
-      Sub_Cat_Name:"",
+      SubCategory:"",
       SubCategory_Id:"",
       Product_Description:"",
     }
@@ -104,7 +104,7 @@ totalNoOfPages() {
 
   EditProduct(item: any){
     this.product = item;
-    this.ColorIdList=this.Color_CodeList;
+    //this.ColorIdList=this.Color_CodeList;
     this.activateAddEditProCom = true;
     this.modalTitle = "Update Product";
     this.getAllProduct();

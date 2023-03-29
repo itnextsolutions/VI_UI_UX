@@ -46,7 +46,7 @@ export class ShowBlogComponent implements OnInit {
     })  
   } 
   getAllBlogCount() {
-    debugger;
+    
         this.sharedService.getBlogCount().subscribe((data: any)=> { 
           this.totalblogCount=data;
     

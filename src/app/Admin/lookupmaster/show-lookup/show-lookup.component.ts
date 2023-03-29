@@ -44,7 +44,7 @@ export class ShowLookupComponent implements OnInit {
     })  
   }
   getAllLookupCount() {
-    debugger;
+    
         this.sharedService.GetLookupMasterCount().subscribe((data: any)=> { 
           this.totalLookupmasterCount=data;
     

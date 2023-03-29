@@ -15,20 +15,21 @@ export class BlogContentComponent implements OnInit {
   constructor(private param :ActivatedRoute, private userService: UserService, private router: Router) { }
 
   ngOnInit(): void {
+    
     this.getBlogId = this.param.snapshot.paramMap.get('blog_Id');
-    this.refreshblogList();
     this.getBlogContent();
+    this.refreshblogList();
   }
 
   refreshblogList() {
-    debugger
+    
     this.userService.getallbloglist(this.getBlogId).subscribe(data =>{
       this.blogList = data;
     });
   }
 
   getBlogContent(){
-    debugger;
+    
     this.userService.getblogbyid(this.getBlogId).subscribe(data =>{
       this.blogContent = data;
       
@@ -36,12 +37,8 @@ export class BlogContentComponent implements OnInit {
    }
   
    onClick(blog: any){
-    debugger
-    this.router.navigate(['blog/', blog.Blog_Id]);
-    this.ngOnInit();
-    setTimeout(() =>
-      {},500
-    );
-   }
+    this.router.navigate(['blog/', blog.Blog_Id]).then(() => {
+      window.location.reload();
+    });
+  }
 }
-

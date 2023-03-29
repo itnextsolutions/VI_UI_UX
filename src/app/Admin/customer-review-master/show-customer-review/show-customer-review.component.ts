@@ -72,7 +72,7 @@ this.getAllReview();
 }  
 
 getAllCustReviewCount() {
-debugger;
+
     this.sharedService.getCustReviewCount().subscribe((data: any)=> { 
       this.totalcustreviewCount=data;
 
@@ -106,8 +106,16 @@ debugger;
 
   closeClick(){
     this.activateAddEditCustReviewCom=false;
-    this.refreshCust_ReviewList();
+    this.getAllReview();
   }
 
 
+  deleteClick(item: any){
+    if(confirm('Are you sure??')){
+      this.sharedService.deleteCustReview(item).subscribe(data =>{
+        alert(data.toString());
+        this.getAllReview();
+      })
+    }
+  }
 }

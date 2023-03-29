@@ -14,22 +14,33 @@ export class ProductDetailsComponent implements OnInit {
 
   constructor(private param: ActivatedRoute, private userService: UserService) { }
 
-  getCategory: any ;
+  categoryfolder: any ;
   product: any;
+  category_id: any;
   sizes: any = [];
   colors: any = [];
   simillarProducts: any = [];
+  hidden:any;
  
   ngOnInit(): void {
     this.productId =this.param.snapshot.paramMap.get('id');
+    this.categoryName =this.param.snapshot.paramMap.get('categoryName');
+    this.categoryName = this.categoryName.replace(/-/g, ' ').toUpperCase();
+    
+    this.subcategoryName =this.param.snapshot.paramMap.get('subcategoryName');
+    this.subcategoryName = this.subcategoryName.replace(/-/g, ' ').toUpperCase();
+
     this.getProduct();
     this.getSimillarProduct();
+    this.imageSource();
   }
 
   getSimillarProduct()
   {
+    
     this.userService.getSimillarProduct(this.productId).subscribe(data =>{
-      this.simillarProducts = data;
+    this.simillarProducts = data;
+     this.categoryfolder = this.categoryName.replace(/\s+/g, '-').toLowerCase();
     });
   }
 
@@ -37,6 +48,12 @@ export class ProductDetailsComponent implements OnInit {
   {
       this.userService.getProductById(this.productId).subscribe(data =>{
       this.product = data;
+
+      if (this.product != null) {
+        this.product.forEach((element:any) => {
+          this.category_id = element.Category_Id;
+        })
+      }
      });
 
      this.userService.getColorListById(this.productId).subscribe(data =>{
@@ -51,11 +68,14 @@ export class ProductDetailsComponent implements OnInit {
   }
 
   onClick(product: any){
-    debugger
-    this.router.navigate(['product-details/', product.Product_Id]);
+    this.router.navigate(['product-details/', product.Category_Name, product.SubCategory, product.Product_Id]);
+
+    // this.router.navigate(['blog/', data.Blog_Id]).then(() => {
+    //   window.location.reload();
     this.ngOnInit();
   }
-
+ 
+ 
 }
 
 

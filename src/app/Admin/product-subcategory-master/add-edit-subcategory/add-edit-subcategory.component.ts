@@ -22,7 +22,7 @@ export class AddEditSubcategoryComponent implements OnInit {
   Id : string ="";
   Category_Id:string = "";
   Sub_Cat_Name: string ="";
-  Sub_Cat_Photo: string ="";
+
 
   url: any; 
 	msg = "";
@@ -30,18 +30,18 @@ export class AddEditSubcategoryComponent implements OnInit {
   constructor(private service: SharedService,private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
-debugger
+
     this.Pro_SubCatForm = this.formBuilder.group({
        Category_Id: ["", [Validators.required]],
       Sub_Cat_Name: ["",[ Validators.required]],
       // Sub_Cat_Photo: ["",[ Validators.required]],
     });
-    this.Id = this.subcategory.Id;
+    this.Id = this.subcategory.SubCategory_Id;
     this.Category_Id =this.subcategory.Category_Id;
     this.Sub_Cat_Name = this.subcategory.SubCategory;
     this.CategoryNameList();
   }
-
+  
 
   CategoryNameList() {
     this.service.GetProductCatDropDown().subscribe(data =>
@@ -53,6 +53,7 @@ debugger
   }
 
   addSubProductCategory(){
+    
     this.submitted = true;
     if (this.Pro_SubCatForm.valid){
     var val = {
@@ -67,6 +68,7 @@ debugger
   }
 
   updateSubProductCategory(){
+    
     this.submitted = true;
     if (this.Pro_SubCatForm.valid){
     var val = {

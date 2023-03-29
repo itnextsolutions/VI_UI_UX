@@ -21,7 +21,7 @@ export class AddEditBlogComponent implements OnInit {
   Blog_Content: string ="";
   Blog_Topic: string ="";
   Image_Name: string="";
-
+  selectedFile :any ="";
   url: any; 
 	msg = "";
 
@@ -52,14 +52,20 @@ export class AddEditBlogComponent implements OnInit {
   addBlog(){
     this.submitted = true;
     if (this.blogForm.valid){
-    var val = {
-      Blog_Id:this.Blog_Id,
-      Blog_Title:this.Blog_Title,
-      Blog_Topic:this.Blog_Topic,
-      Blog_Content:this.Blog_Content,
-      Image_Name:this.Image_Name.replace(/.*[\/\\]/, '')
-    };
-      this.service.addblog(val).subscribe(res =>{
+      let formData = new FormData()
+      formData.append('Blog_Title', this.Blog_Title);
+      formData.append('Blog_Topic', this.Blog_Topic);
+      formData.append('Blog_Content', this.Blog_Content);
+      formData.append('formFile', this.selectedFile);
+      
+    // var val = {
+    //   Blog_Id:this.Blog_Id,
+    //   Blog_Title:this.Blog_Title,
+    //   Blog_Topic:this.Blog_Topic,
+    //   Blog_Content:this.Blog_Content,
+    //   Image_Name:this.Image_Name.replace(/.*[\/\\]/, '')
+    // };
+      this.service.addblog(formData).subscribe(res =>{
         alert(res.toString());
       })
     }
@@ -68,20 +74,27 @@ export class AddEditBlogComponent implements OnInit {
   updateBlog(){
     this.submitted = true;
     if (this.blogForm.valid){
-    var val = {
-      Blog_Id:this.Blog_Id,
-      Blog_Title:this.Blog_Title,
-      Blog_Topic:this.Blog_Topic,
-      Blog_Content:this.Blog_Content,
-      Image_Name:this.Image_Name.replace(/.*[\/\\]/, '')
-    };
-      this.service.updateBlog(val).subscribe(res =>{
+    // var val = {
+    //   Blog_Id:this.Blog_Id,
+    //   Blog_Title:this.Blog_Title,
+    //   Blog_Topic:this.Blog_Topic,
+    //   Blog_Content:this.Blog_Content,
+    //   Image_Name:this.Image_Name.replace(/.*[\/\\]/, '')
+    // };
+    let formData = new FormData()
+    formData.append('Blog_Id', this.Blog_Id);
+    formData.append('Blog_Title', this.Blog_Title);
+    formData.append('Blog_Topic', this.Blog_Topic);
+    formData.append('Blog_Content', this.Blog_Content);
+    formData.append('formFile', this.selectedFile);
+      this.service.updateBlog(formData).subscribe(res =>{
         alert(res.toString());
     })
   }
   }
 
-  selectFile(event: any) { //Angular 11, for stricter type
+	//selectFile(event) { //Angular 8
+	onselectFile(event: any) { //Angular 11, for stricter type
 		if(!event.target.files[0] || event.target.files[0].length == 0) {
 			this.msg = 'You must select an image';
 			return;
@@ -101,7 +114,7 @@ export class AddEditBlogComponent implements OnInit {
 			this.msg = "";
 			this.url = reader.result; 
 		}
-  }
-	
 
+    this.selectedFile=<File>event.target.files[0];
+  }
 }

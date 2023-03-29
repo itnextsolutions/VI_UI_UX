@@ -40,20 +40,23 @@ export class NavbarComponent implements OnInit {
             Category_Id:    element.Category_Id,
             Category_Name:  element.Category_Name,
               subCat: [{
+                Category_Name:  element.Category_Name,
+                SubCategory:    element.SubCategory,
                 SubCategory_Id: element.SubCategory_Id,
-                SubCategory:    element.SubCategory
+                Product_Id: element.Product_Id
               }]
           })
         }
         else {
             ct.subCat.push({
-            SubCategory_Id: element.SubCategory_Id,
-            SubCategory: element.SubCategory
+              Category_Name:  element.Category_Name,
+              SubCategory:    element.SubCategory,
+              SubCategory_Id: element.SubCategory_Id,
+              Product_Id: element.Product_Id
           });
         }
       });
     }
-    console.log(this.categorySubcategory);
     });
   }
 
@@ -64,14 +67,17 @@ export class NavbarComponent implements OnInit {
   }
 
   onSearch(){
-    debugger;
     this.router.navigate(['search-result/', this.search]);
   }
 
   onSubCategoryClick(data: any, item: any){
-    debugger;
-    this.router.navigate(['subcategory/', data.Category_Id, item.SubCategory_Id]);
+    this.router.navigate(['/product-details/', item.Category_Name, item.SubCategory, item.Product_Id]).then(() => {
+      window.location.reload();
+    });
+
   }
   
 
 }
+
+// this.router.navigate(['product-details/', this.productcategory, this.productsubcategory, product.Product_Id]);

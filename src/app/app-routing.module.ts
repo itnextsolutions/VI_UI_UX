@@ -4,7 +4,6 @@ import { AppComponent } from './app.component';
 
 import { AboutComponent } from './Pages/about/about.component';
 import { ContactComponent } from './Pages/contact/contact.component';
-import { FeaturesComponent } from './Pages/features/features.component';
 import { HomeComponent } from './Pages/home/home.component';
 import { ProductDetailsComponent } from './Pages/product-details/product-details.component';
 import { ProductsComponent } from './Pages/products/products.component';
@@ -15,7 +14,7 @@ import { BlogContentComponent } from './Pages/blog/blog-content/blog-content.com
 import { SearchresultComponent } from './Pages/searchresult/searchresult.component';
 import { FaqComponent } from './Pages/faq/faq.component';
 import { SubcategoryComponent } from './Pages/subcategory/subcategory.component';
-
+import { CustmizeDesignComponent } from './Pages/custmize-design/custmize-design.component';
 
 import { LoginComponent } from './Admin/login/login.component';
 import { ProductCategoryComponent } from './Admin/product-category/product-category.component';
@@ -27,6 +26,8 @@ import { CustomerReviewMasterComponent } from './Admin/customer-review-master/cu
 import { ProductSubcategoryMasterComponent } from './Admin/product-subcategory-master/product-subcategory-master.component';
 import { NotificationMasterComponent } from './Admin/notification-master/notification-master.component';
 import { FaqMasterComponent } from './Admin/faq-master/faq-master.component';
+import { AuthGuard } from './Auth.guard';
+
 
 const routes: Routes = [
   {path:'',component:HomeComponent},
@@ -34,11 +35,10 @@ const routes: Routes = [
   {path:'products',component:ProductsComponent},
   {path:'contact',component:ContactComponent},
   {path:'testimonial',component:TestimonialComponent},
-  {path:'features',component:FeaturesComponent},
   {path:'category', component: CategoryComponent }, 
   {path:'subcategory/:category_id/:subcategory_id', component: SubcategoryComponent },
   {path:'product-details',component:ProductDetailsComponent},
-  {path:'product-details/:id',component:ProductDetailsComponent},
+  {path:'product-details/:categoryName/:subcategoryName/:id',component:ProductDetailsComponent},
   {path:'products/:category_id/:categoryName',component:ProductsComponent},
   {path:'blog',component:BlogComponent},
   {path:'blog/:blog_Id',component:BlogContentComponent},
@@ -46,15 +46,16 @@ const routes: Routes = [
   {path:'faq',component:FaqComponent},
 
   {path:'admin/login',component:LoginComponent},
-  {path:'admin/product-category',component:ProductCategoryComponent},
-  {path:'admin/lookup-master',component:LookupmasterComponent},
-  {path:'admin/lookup-value',component:LookupvalueComponent},
-  {path:'admin/product-master',component:ProductMasterComponent},
-  {path:'admin/blog-master',component:BlogmasterComponent},
-  {path:'admin/customer-review',component:CustomerReviewMasterComponent}, 
-  {path:'admin/subcategory',component:ProductSubcategoryMasterComponent},
-  {path:'admin/notification-master',component:NotificationMasterComponent},
-  {path:'admin/faq-master',component:FaqMasterComponent},
+  {path:'admin/product-category',component:ProductCategoryComponent,canActivate:[AuthGuard]},
+  {path:'admin/lookup-master',component:LookupmasterComponent,canActivate:[AuthGuard]},
+  {path:'admin/lookup-value',component:LookupvalueComponent,canActivate:[AuthGuard]},
+  {path:'admin/product-master',component:ProductMasterComponent,canActivate:[AuthGuard]},
+  {path:'admin/blog-master',component:BlogmasterComponent,canActivate:[AuthGuard]},
+  {path:'admin/customer-review',component:CustomerReviewMasterComponent,canActivate:[AuthGuard]}, 
+  {path:'admin/subcategory',component:ProductSubcategoryMasterComponent,canActivate:[AuthGuard]},
+  {path:'admin/notification-master',component:NotificationMasterComponent,canActivate:[AuthGuard]},
+  {path:'admin/faq-master',component:FaqMasterComponent,canActivate:[AuthGuard]},
+  {path:'CustmizeDesign',component:CustmizeDesignComponent,canActivate:[AuthGuard]}
   
 ];
 

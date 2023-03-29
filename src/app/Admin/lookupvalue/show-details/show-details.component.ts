@@ -50,7 +50,7 @@ export class ShowDetailsComponent implements OnInit {
    })  
   } 
   getAlltotalLookupDetailsCount() {
-    debugger;
+    
         this.sharedService.GetLookupDetailsCount().subscribe((data: any)=> { 
           this.totalLookupDetailsCount=data;
           if (this.totalLookupDetailsCount != null) {

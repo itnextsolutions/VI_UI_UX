@@ -10,6 +10,8 @@ import { UserService } from "src/app/Services/Api/User/user.service";
 export class HomeComponent implements OnInit {
 
   productcategoryList:any = [];
+  categoryList:any = [];
+  brandList:any = [];
   blogList:any = [];
   customerReview:any = [];
   modalTitle:any;
@@ -27,6 +29,26 @@ export class HomeComponent implements OnInit {
   refreshproductcategoryList() {
     this.userService.getproductcategoryList().subscribe(data =>{
       this.productcategoryList = data;
+
+      if (this.productcategoryList != null) {
+        this.productcategoryList.forEach((element:any) => {
+          if (element.IsBrand ==0) {
+              this.categoryList.push({
+              Category_Id:    element.Category_Id,
+              Category_Name:  element.Category_Name,
+              Category_Photo:  element.Category_Photo
+            })
+          }
+          else {
+             this.brandList.push({
+              Category_Id:    element.Category_Id,
+              Category_Name:  element.Category_Name,
+              Category_Photo:  element.Category_Photo
+            });
+          }
+        });
+      }
+
     });
   }
 
@@ -46,12 +68,10 @@ export class HomeComponent implements OnInit {
   }
 
   onCategoryClick(data: any){
-    debugger;
     this.router.navigate(['products/',data.Category_Id,data.Category_Name]);
   }
 
   onClick(data: any){
-    debugger;
     this.router.navigate(['blog/', data.Blog_Id]);
   }
 

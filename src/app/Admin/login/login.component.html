@@ -26,17 +26,17 @@
                 </div>
               </div>
               <div class="card-body">
-                <form role="form" class="text-start">
+                <form role="form" class="text-start" [formGroup]="loginForm">
                   <div class="input-group input-group-outline my-3">
                     <label class="form-label">User Name</label>
-                    <input type="text" class="form-control" [(ngModel)]="username"  ngModel required>
+                    <input type="text" class="form-control" [(ngModel)]="username"  formControlName="username">
                     <div *ngIf="submitted && formControl.username.errors" class="text-danger">
                       <div *ngIf="formControl.username.errors.required">UserName is required.</div>
                     </div>
                   </div>
                   <div class="input-group input-group-outline mb-3">
                     <label class="form-label">Password</label>
-                    <input type="password" class="form-control" [(ngModel)]="password"  ngModel required>
+                    <input type="password" class="form-control" [(ngModel)]="password"   formControlName="password">
                     <div *ngIf="submitted && formControl.password.errors" class="text-danger">
                       <div *ngIf="formControl.password.errors.required">Password is required.</div>
                     </div>

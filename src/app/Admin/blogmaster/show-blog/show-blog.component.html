@@ -18,23 +18,9 @@
       </div>
     </div>
   </div>
-  
-    <aside class="sidenav navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-3   bg-gradient-dark" id="sidenav-main">
-      <div class="sidenav-header">
-        <i class="fas fa-times p-3 cursor-pointer text-white opacity-5 position-absolute end-0 top-0 d-none d-xl-none" aria-hidden="true" id="iconSidenav"></i>
-        <a class="navbar-brand m-0" href="#" target="_blank">
-          <img src="../assets/img/vastralogo.png" class="navbar-brand-img h-100" alt="main_logo">
-          <span class="ms-1 font-weight-bold text-white"></span>
-        </a>
-      </div>
-      <hr class="horizontal light mt-0 mb-2">
-      <app-sidebar></app-sidebar>
-      <div class="sidenav-footer position-absolute w-100 bottom-0 ">
-        <div class="mx-3">
-          <a class="btn bg-gradient-primary mt-4 w-100" href="" type="button">Logout</a>
-        </div>
-      </div>
-    </aside>
+  <aside class="sidenav navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-3   bg-gradient-dark" id="sidenav-main">
+    <app-sidebar></app-sidebar>
+  </aside>
     <main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg ">
       <!-- Navbar -->
       <nav class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl" id="navbarBlur" data-scroll="true">
@@ -91,7 +77,6 @@
                       <tr>
                         <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2"></th>
                         <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">No.</th>
-                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Photo</th>
                         <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Blog Title</th>
                         <!-- <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Blog Content</th> -->
                         <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Action</th>
@@ -105,11 +90,7 @@
                             {{i+1}}
                           </div>
                         </td>
-                        <td>
-                          <div>
-                            <img src="../assets/img/blog/{{dataItem.Image_Name}}" class="avatar avatar-lg me-3 border-radius-lg" alt="user1">
-                          </div>
-                        </td>
+                      
                         <td>
                           <div class="d-flex px-2 py-1">
                             <div class="d-flex flex-column justify-content-center">

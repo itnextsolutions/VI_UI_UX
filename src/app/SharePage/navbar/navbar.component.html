@@ -20,7 +20,7 @@
         </div>
         
         <div _ngcontent-lgr-c65="" class="col-lg-4 col-md-6 col-12 d-xl-block text-center">
-            <small _ngcontent-lgr-c65="" class="menu"><a _ngcontent-lgr-c65="" href="home">Home</a></small> 
+            <small _ngcontent-lgr-c65="" class="menu"><a _ngcontent-lgr-c65="" href="">Home</a></small> 
             <small _ngcontent-lgr-c65="" class="ms-4 menu"><a _ngcontent-lgr-c65="" href="about">About Us</a></small>
             <small _ngcontent-lgr-c65="" class="ms-4 menu"><a _ngcontent-lgr-c65="" href="contact">Contact Us</a></small>
             <small _ngcontent-lgr-c65="" class="ms-4 menu"><a _ngcontent-lgr-c65="" href="blog">Blog</a></small>
@@ -49,12 +49,13 @@
         <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-expanded="true">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="container-xxl" id="navbarCollapse">
+        <div class="container-fluid" id="navbarCollapse">
             <div class="navbar-nav px-lg-4">
                 <div class="nav-item dropdown px-2" *ngFor="let data of categorySubcategory">
                     <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown" >{{data.Category_Name}}</a>
                     <div class="dropdown-menu m-0" >
                         <a  (click)="onSubCategoryClick(data,item)" class="dropdown-item" *ngFor="let item of data.subCat;">{{item.SubCategory}}</a>
+                        <!-- <a  href= "http://localhost:4200/product-details/Collared%20T-Shirt/Combination%20Collared%20T-shirt%20/1" class="dropdown-item" *ngFor="let item of data.subCat;">{{item.SubCategory}}</a> -->
                     </div>
                 </div>
             </div>
@@ -64,8 +65,3 @@
      
 </div>
 <!-- Navbar End -->
-
-
-<script>
-
-</script>

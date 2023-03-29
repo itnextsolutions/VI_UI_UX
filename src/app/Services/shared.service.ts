@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 import { Observable } from "rxjs";
+import { AuthenticatedResponse } from '../app.module';
 
 @Injectable({
   providedIn: 'root'
@@ -15,6 +16,15 @@ getMenuList(): Observable < any[] > {
   return this.http.get < any > (this.APIUrl + 'Home/GetMenuList');
 }
 
+// Login(val: any) {
+// return this.http.post(this.APIUrl + 'Login/login', val);
+// }
+
+Login(val: any) {
+  // let headers = new HttpHeaders().set("Authorization",'bearer AIzaSyCoYF2yFX5zWVrNGw-7AUGSRbBGTXZTjao ')
+   return this.http.post<AuthenticatedResponse>(this.APIUrl + 'Login/login', val);
+   }
+
 //Product Category  Start
 getproductcategoryList(): Observable < any[] > {
     return this.http.get < any > (this.APIUrl + 'Product/GetCategory');
@@ -23,7 +33,7 @@ getproductcategoryList(): Observable < any[] > {
 getSubcategoryByCategoryId(): Observable < any[] > {
   return this.http.get < any > (this.APIUrl + 'Product/GetSubCategoryByCategoryId');
 }
-addProductcategory(val: any) {
+addProductcategory(val: any) {debugger
     return this.http.post(this.APIUrl + 'Product/InsertCategory', val);
 }
 updateProductcategory(val: any) {
@@ -80,7 +90,7 @@ addProductDetails(val: any) {
 return this.http.post(this.APIUrl + 'Product/InsertProduct', val);
 }
 
-updateProductDetails(val: any) {
+updateProductDetails(val: any) {debugger
 return this.http.put(this.APIUrl + 'Product/UpdateProduct', val);
 }
 
@@ -102,9 +112,7 @@ return this.http.get < any > (this.APIUrl + 'Lookup/GetColor');
 
 // Login API's End
 
-Login(val: any) {
-return this.http.post(this.APIUrl + 'Login/login', val);
-}
+
 
 //Blog Start
 getblog(): Observable < any[] > {

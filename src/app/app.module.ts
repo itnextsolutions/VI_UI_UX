@@ -14,7 +14,6 @@ import { CategoryComponent } from './Pages/category/category.component';
 import { BlogComponent } from './Pages/blog/blog.component';
 import { BlogContentComponent } from './Pages/blog/blog-content/blog-content.component';
 import { TestimonialComponent } from './Pages/testimonial/testimonial.component';
-import { FeaturesComponent } from './Pages/features/features.component';
 import { ProductDetailsComponent } from './Pages/product-details/product-details.component';
 import { SearchresultComponent } from './Pages/searchresult/searchresult.component';
 import { FaqComponent } from './Pages/faq/faq.component';
@@ -57,6 +56,8 @@ import { FaqMasterComponent } from './Admin/faq-master/faq-master.component';
 import { ShowFaqComponent } from './Admin/faq-master/show-faq/show-faq.component';
 import { AddEditFaqComponent } from './Admin/faq-master/add-edit-faq/add-edit-faq.component';
 import { SidebarComponent } from './SharePage/sidebar/sidebar.component';
+import { CustmizeDesignComponent } from './Pages/custmize-design/custmize-design.component';
+import { AuthGuard } from './Auth.guard';
 
 
 
@@ -71,7 +72,6 @@ import { SidebarComponent } from './SharePage/sidebar/sidebar.component';
     NavbarComponent,
     FooterComponent,
     TestimonialComponent,
-    FeaturesComponent,
     ProductDetailsComponent,
     LoginComponent,
     ProductCategoryComponent,
@@ -109,7 +109,8 @@ import { SidebarComponent } from './SharePage/sidebar/sidebar.component';
     FaqMasterComponent,
     ShowFaqComponent,
     AddEditFaqComponent,
-    SidebarComponent
+    SidebarComponent,
+    CustmizeDesignComponent
   ],
   
   imports: [
@@ -119,7 +120,11 @@ import { SidebarComponent } from './SharePage/sidebar/sidebar.component';
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [SharedService, DataService],
+  providers: [SharedService, DataService,AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+export interface AuthenticatedResponse { 
+  token:string;
+}

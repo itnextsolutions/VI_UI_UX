@@ -18,7 +18,7 @@ export class FaqComponent implements OnInit {
   }
 
   getFAQ(){
-    debugger
+    
     this.userService.getFAQ().subscribe(data =>{
       this.faqList = data;
     });

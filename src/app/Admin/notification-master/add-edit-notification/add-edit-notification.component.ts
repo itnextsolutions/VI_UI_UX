@@ -56,7 +56,7 @@ export class AddEditNotificationComponent implements OnInit {
   addNotification(){
     this.submitted = true;
     if (this.NotificationForm.valid){
-      debugger;
+      
     var val = {
     
       NotificationId:this.NotificationId,

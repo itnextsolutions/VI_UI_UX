@@ -1,3 +1,6 @@
+<!-- Page Header start-->
+<app-navbar></app-navbar>
+<!-- Page Header End -->
 
  <!-- Product Search Start -->
  <div class="container-xxl py-13">
@@ -7,10 +10,10 @@
                     <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s" *ngFor ="let product of SearchResult"  >
                         <div class="product-item"  id ="tab-1" (click)="onClick(product)" >
                             <div class="position-relative bg-light overflow-hidden" >
-                                <img class="img-fluid w-100" src="../assets/img/t_shirts/{{product.Product_Photo}}" alt="">
+                                <img class="img-fluid w-100" src="../assets/img/{{product.Category_Name}}/{{product.Product_Photo}}" alt="">
                                 <!-- <div class="bg-secondary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">Sale</div> -->
                             </div>
-                            <div class="text-center p-4">
+                            <div class="text-center p-4">{{product.SubCategory}}
                                 <!-- <a class="d-block h5 mb-2" routerLink="/product-details/{{product.Product_Id}}">{{product.Product_Title}}</a> -->
                                 <a class="d-block h5 mb-2"  >{{product.Product_Title}}</a>
                                 
@@ -25,6 +28,8 @@
                 </div>
     </div>
 </div> 
+<!-- Product Search End --> 
 
-
-    
+<!-- Page Footer start-->
+<app-footer></app-footer>
+<!-- Page Footer End -->

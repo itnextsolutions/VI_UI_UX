@@ -15,6 +15,10 @@ export class SidebarComponent implements OnInit {
     this.getMenuList();
   }
   
+  logOut= () => {
+    localStorage.removeItem("jwt");
+  }
+
   getMenuList()
   {
     this.sharedService.getMenuList().subscribe((data: any[]) => { 

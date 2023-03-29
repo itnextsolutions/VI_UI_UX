@@ -2,6 +2,8 @@ import { Component, OnInit, Input } from '@angular/core';
 import { SharedService } from "src/app/Services/shared.service";
 import { Router } from '@angular/router'; 
 import {AbstractControl,FormBuilder,FormGroup,Validators,FormControl} from '@angular/forms';
+import { HttpErrorResponse } from '@angular/common/http';
+import { AuthenticatedResponse } from 'src/app/app.module';
 
 @Component({
   selector: 'app-login',
@@ -57,7 +59,8 @@ export class LoginComponent implements OnInit {
     return this.loginForm.controls;
   }
 
-   
+  invalidLogin:boolean=true;
+
   CheckLogin(){
     this.submitted = true;
     if (this.loginForm.valid){
@@ -66,21 +69,42 @@ export class LoginComponent implements OnInit {
       password:this.password,
     
     };
-      this.service.Login(val).subscribe(res =>{
-        if(res == "Success"){
-          this.router.navigate(['admin/product-category']);    
-        }
-        else
-        {
-          debugger;
-          this.router.navigate(['admin/Login']);  
-          this.invalid_msg=res.toString();
-          //alert(res.toString());
-        }
-      })
-    }
-
+    this.service.Login(val).subscribe({
+      next: (response: AuthenticatedResponse) => {
+        const token = response.token;
+        localStorage.setItem("jwt", token); 
+        this.invalidLogin = false; 
+        this.router.navigate(["admin/product-category"]);
+      },
+      error: (err: HttpErrorResponse) => this.invalidLogin = true
+      
+    })
   }
+
+   
+  // CheckLogin(){
+  //   this.submitted = true;
+  //   if (this.loginForm.valid){
+  //   var val = {
+  //     username:this.username,
+  //     password:this.password,
+    
+  //   };
+  //     this.service.Login(val).subscribe(res =>{
+  //       if(res == "Success"){
+  //         this.router.navigate(['admin/product-category']);    
+  //       }
+  //       else
+  //       {
+          
+  //         this.router.navigate(['admin/Login']);  
+  //         this.invalid_msg=res.toString();
+  //         //alert(res.toString());
+  //       }
+  //     })
+  //   }
+
+  // }
 
   // onLogin(): void {
   //   // console.log(this.loginForm.value);
@@ -93,4 +117,5 @@ export class LoginComponent implements OnInit {
   // }
 
   
+}
 }

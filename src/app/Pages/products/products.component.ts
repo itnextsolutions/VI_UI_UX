@@ -14,9 +14,10 @@ export class ProductsComponent implements OnInit {
   getCategoryId: any=[];
   productList :any=[];
   category:any
+  categoryFolderName:any;
   productSubCategoryList:any=[];
   getSubCategoryId:any=[];
-  getCategoryName :any;
+  CategoryName :any;
 
   constructor(private param :ActivatedRoute,
               private userService: UserService,
@@ -36,25 +37,24 @@ export class ProductsComponent implements OnInit {
   }
 
   getProductByCategory(){
-    debugger
     this.getCategoryId = this.param.snapshot.paramMap.get('category_id');
-    this.getCategoryName = this.param.snapshot.paramMap.get('categoryName');
-    console.log(this.getCategoryId );
+    this.CategoryName = this.param.snapshot.paramMap.get('categoryName');
+    this.categoryFolderName = this.CategoryName.replace(/\s+/g, '-').toLowerCase();
+   
     this.userService.getProductByCategoryId(this.getCategoryId).subscribe(data =>{
       this.productList = data;
     });
   }
 
   getProduct(categoryId:any, subCatId: any){
-    debugger;
+    
     this.userService.getProductBySubCategoryId(categoryId,subCatId).subscribe(data =>{
       this.productList = data;
     });
   }
 
   onClick(product: any){
-    this.router.navigate(['product-details/', product.Product_Id]);
-
+    this.router.navigate(['product-details/', product.Category_Name, product.SubCategory, product.Product_Id]);
   }
   
 }

@@ -63,11 +63,15 @@
         <div class="col-md-12 roundedTextBox mb-3">
             <label>Blog Photo :</label>
             <div class="col-sm-10">
+               
                 <div [innerHtml]='msg' *ngIf="msg" style="color: red;"></div>
-                <div><img [src]="url" *ngIf="url"></div>
+                <div><img [src]="url" *ngIf="url; else elseBlock"></div>
                 <p class="color">
-                    <input type="file"  [(ngModel)]="Image_Name"  id="inputImage_Name" formControlName="Image_Name">
+                    <input type="file"  [(ngModel)]="Image_Name"  (change)="onselectFile($event)"  id="inputImage_Name" formControlName="Image_Name">
                 </p>
+                <ng-template #elseBlock>
+                    <img src="../assets/img/blog/{{Image_Name}}">
+                </ng-template>
             </div>
             <div *ngIf="submitted && formControl.Image_Name.errors" class="text-danger">
               <div *ngIf="formControl.Image_Name.errors.required">Photo is required.</div>

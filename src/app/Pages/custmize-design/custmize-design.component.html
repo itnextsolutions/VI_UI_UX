@@ -1,0 +1,40 @@
+<!-- <div class="container"> -->
+    <!-- <div class="row mb-3 mt-3"> -->
+    <div class="col-lg-7 ">
+        <div id="tshirt-div">
+            <!-- 
+                Initially, the image will have the background tshirt that has transparency
+                So we can simply update the color with CSS or JavaScript dinamically
+            -->
+            <!-- <img id="tshirt-backgroundpicture"  src="/assets/img/category/product-1.jpg"/> -->
+
+            <label for="tshirt-custompicture">Upload your own design:  <input type="file" id="tshirt-custompicture" /></label>
+        <button style="margin: 3px;" *ngFor="let imageButton of imageButtons; let i = index" (click)="onClick(imageButton)" class="button">{{imageButton.name}}</button>
+   
+
+            <img id="tshirt-backgroundpicture" src="{{imageSrc}}" style="width: 100%; margin: 40px;" fill>
+            
+            <div id="drawingArea" class="drawing-area">					
+                <div class="canvas-container">
+                    <canvas id="tshirt-canvas" width="300" height="400"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- <div class="col-lg-5 mb-3"> -->
+        <!-- Create the container of the tool -->
+        <!-- <label for="tshirt-custompicture">Upload your own design:  <input type="file" id="tshirt-custompicture" /></label>
+        <button *ngFor="let imageButton of imageButtons; let i = index" (click)="onClick(imageButton)" class="button">{{imageButton.name}}</button>
+   </div>   -->
+    <!-- </div>
+</div> -->
+       
+      
+
+      
+       
+        
+     
+
+        
+  

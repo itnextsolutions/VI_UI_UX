@@ -195,8 +195,8 @@
 .carousel-control-next-icon {
     width: 3rem;
     height: 3rem;
-    background-color: var(--primary);
-    border: 10px solid var(--primary);
+    /* background-color: var(--primary);
+    border: 10px solid var(--primary); */
     border-radius: 3rem;
 }
 
@@ -378,7 +378,6 @@
 .product-item {
     border: 1px solid #e9e6e6;
     border-top: 3px solid #df0a0a;
-    font-family: "Clicker Script",cursive;
 }
 
 .product-item img {
@@ -585,3 +584,4 @@
     grid-template-columns: 1fr 1fr;
 
 } */
+

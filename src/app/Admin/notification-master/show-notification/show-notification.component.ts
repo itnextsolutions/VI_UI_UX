@@ -46,7 +46,7 @@ export class ShowNotificationComponent implements OnInit {
   } 
 
   getAllNotificationCount() {
-    debugger;
+    
         this.sharedService.GetNotificationCount().subscribe((data: any)=> { 
           this.totalnotificationCount=data;
     
@@ -99,7 +99,7 @@ totalNoOfPages() {
   }
 
   Editnotification(item: any){
-    debugger;
+    
     this.notification = item;
     this.activateAddEditnotificationCom = true;
     this.modalTitle = "Update notification";

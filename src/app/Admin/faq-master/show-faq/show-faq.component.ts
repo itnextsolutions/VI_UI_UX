@@ -48,7 +48,7 @@ export class ShowFaqComponent implements OnInit {
   } 
 
   getAllFaqCount() {
-    debugger;
+    
         this.sharedService.GetFaqCount().subscribe((data: any)=> { 
           this.totalfaqCount=data;
     

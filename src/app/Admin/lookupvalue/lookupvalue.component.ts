@@ -4,6 +4,8 @@ import { Component, OnInit } from '@angular/core';
   selector: 'app-lookupvalue',
   templateUrl: './lookupvalue.component.html',
   styleUrls: ['./lookupvalue.component.css']
+  
+
 })
 export class LookupvalueComponent implements OnInit {
 

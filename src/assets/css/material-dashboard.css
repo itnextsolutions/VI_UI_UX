@@ -123,7 +123,7 @@
     margin-bottom: 0;
     font-weight: 400;
     line-height: 1.2;
-    /* color: #344767; */
+    color: #160381;
   }
   
   h1,
@@ -1720,7 +1720,7 @@
   
     .col-lg-7 {
       flex: 0 0 auto;
-      width: 66.333333%
+      width: 56.333333%
     }
   
     .col-lg-8 {
@@ -3887,14 +3887,14 @@
   
   .btn-outline-primary {
     --bs-btn-color: #3CB815;
-    --bs-btn-border-color: #3CB815;
+    --bs-btn-border-color: #041b59;
     --bs-btn-hover-color: #000;
-    --bs-btn-hover-bg: #3CB815;
-    --bs-btn-hover-border-color: #3CB815;
+    --bs-btn-hover-bg: #041b59;
+    --bs-btn-hover-border-color: #041b59;
     --bs-btn-focus-shadow-rgb: 233, 30, 99;
     --bs-btn-active-color: #000;
-    --bs-btn-active-bg: #3CB815;
-    --bs-btn-active-border-color: #3CB815;
+    --bs-btn-active-bg: #041b59;
+    --bs-btn-active-border-color: #041b59;
     --bs-btn-active-shadow: none;
     --bs-btn-disabled-color: #3CB815;
     --bs-btn-disabled-bg: transparent;
@@ -6489,7 +6489,7 @@
   
   .modal {
     --bs-modal-zindex: 1050;
-    --bs-modal-width: 500px;
+    --bs-modal-width: 750px;
     --bs-modal-padding: 1rem;
     --bs-modal-margin: 0.5rem;
     --bs-modal-color: ;
@@ -6519,7 +6519,48 @@
     overflow-x: hidden;
     overflow-y: auto;
     outline: 0;
+/* alpesh Custmize Design*/
+
+
   }
+  .modal {
+    --bs-modal-margin: 1.75rem;
+    --bs-modal-box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+.custmize-modal {
+    --bs-modal-zindex: 1130;
+    --bs-modal-width: 1000px;
+    --bs-modal-padding: 1rem;
+    --bs-modal-margin: 0.5rem;
+    --bs-modal-color: ;
+    --bs-modal-bg: #fff;
+    --bs-modal-border-color: rgba(0, 0, 0, 0.2);
+    --bs-modal-border-width: 1px;
+    --bs-modal-border-radius: 0.5rem;
+    --bs-modal-box-shadow: 0 0.3125rem 0.625rem 0 rgba(0, 0, 0, 0.12);
+    --bs-modal-inner-border-radius: calc(0.5rem - 1px);
+    --bs-modal-header-padding-x: 1rem;
+    --bs-modal-header-padding-y: 1rem;
+    --bs-modal-header-padding: 1rem 1rem;
+    --bs-modal-header-border-color: #dee2e6;
+    --bs-modal-header-border-width: 1px;
+    --bs-modal-title-line-height: 1.5;
+    --bs-modal-footer-gap: 0.5rem;
+    --bs-modal-footer-bg: ;
+    --bs-modal-footer-border-color: #dee2e6;
+    --bs-modal-footer-border-width: 1px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: var(--bs-modal-zindex);
+    display: none;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    outline: 0;
+    top: -163px;
+}
   
   .modal-dialog {
     position: relative;
@@ -6578,6 +6619,7 @@
     border: var(--bs-modal-border-width) solid var(--bs-modal-border-color);
     border-radius: var(--bs-modal-border-radius);
     outline: 0;
+
   }
   
   .modal-backdrop {
@@ -7155,7 +7197,7 @@
   }
   
   .carousel-item {
-    margin-top: 13.5rem;
+    margin-top: 15.5rem;
     position: relative;
     display: none;
     float: left;
@@ -7220,7 +7262,7 @@
   .carousel-control-prev,
   .carousel-control-next {
     position: absolute;
-    top: 0;
+    top: 240px;
     bottom: 0;
     z-index: 1;
     display: flex;
@@ -7265,8 +7307,8 @@
   .carousel-control-prev-icon,
   .carousel-control-next-icon {
     display: inline-block;
-    width: 4rem;
-    height: 4rem;
+    width: 2rem;
+    height: 2rem;
     background-repeat: no-repeat;
     background-position: 50%;
     background-size: 100% 100%;
@@ -8933,6 +8975,9 @@
   .w-10 {
     width: 10% !important;
   }
+  .w-17 {
+    width: 17% !important;
+  }
   
   .w-15 {
     width: 15% !important;
@@ -10503,6 +10548,9 @@
     gap: 16rem !important;
   }
   
+  .w-auto {
+    width: auto;
+  }
   .font-monospace {
     font-family: var(--bs-font-monospace) !important;
   }
@@ -10707,7 +10755,8 @@
   }
   
   .bg-secondary {
-    background-color: #7b809a !important;
+    background-color: #303137  !important;
+    opacity: 0.6;
   }
   
   .bg-success {
@@ -20462,7 +20511,6 @@
   .btn {
     margin-bottom: 1rem;
     letter-spacing: 0;
-    text-transform: uppercase;
     background-size: 150%;
     background-position-x: 25%;
     position: relative;
@@ -25896,7 +25944,6 @@
   .h4 {
     font-size: 1.5rem;
     line-height: 1.375;
-    font-family: "Roboto Slab", sans-serif;
   }
   
   @media (max-width: 575.98px) {
@@ -25920,7 +25967,7 @@
     h5,
     .h5,
     .h5 {
-      font-size: 1.25rem;
+      font-size: 0.75rem;
     }
   }
   
@@ -25955,7 +26002,6 @@
   .h3,
   .h3 {
     font-weight: 600;
-    font-family: "Roboto Slab", sans-serif;
   }
   
   h4,
@@ -27871,5 +27917,15 @@
   
   .product-category {
     background-color: #3cb815;
+  }
+
+  .read-more{
+    float: right;
+    border-left: 1px solid #dee2e6;
+    padding-left: 10px;
+    color: #df0a0a;
+    font-weight: 400;
+    cursor: pointer;
+
   }
   /*# sourceMappingURL=dashboard-free.css.map */
