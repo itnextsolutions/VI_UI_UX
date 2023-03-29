@@ -241,7 +241,7 @@ $rfs-mq-property-height: if($rfs-mode == max-media-query, max-height, min-height
   @return unquote(str-slice($val, 2));
 }
 
-// RFS mixin
+/* RFS mixin*/
 @mixin rfs($values, $property: font-size) {
   @if $values != null {
     $val: rfs-value($values);
@@ -266,7 +266,7 @@ $rfs-mq-property-height: if($rfs-mode == max-media-query, max-height, min-height
   }
 }
 
-// Shorthand helper mixins
+/* Shorthand helper mixins*/
 @mixin font-size($value) {
   @include rfs($value);
 }
