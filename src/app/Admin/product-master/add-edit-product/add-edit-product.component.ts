@@ -169,15 +169,8 @@ export class AddEditProductComponent implements OnInit {
 
   SubCatList: any = [];
 
-  SubCatLists() {
-    this.service.GetSubCatByCatid(this.product.Category_Id).subscribe(data => {
-      this.SubCatList = data;
-    });
-  }
-
-
   onOptionsSelected(id: any) {
-    console.log("the selected value is " + id);
+    //console.log("the selected value is " + id);
 
     this.service.GetSubCatByCatid(id).subscribe(data => {
       this.SubCatList = data;

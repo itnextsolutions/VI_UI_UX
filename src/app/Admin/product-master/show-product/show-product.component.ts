@@ -60,7 +60,7 @@ export class ShowProductComponent implements OnInit {
             })
           }
           this.totalNoOfPages();  
-        })  
+        }) 
     }
         
 //Method For Pagination  
