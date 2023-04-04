@@ -58,13 +58,11 @@
                 </div>
             </div>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#header-carousel"
-            data-bs-slide="prev">
+        <button class="carousel-control-prev" type="button" data-bs-target="#header-carousel" data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Previous</span>
         </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#header-carousel"
-            data-bs-slide="next">
+        <button class="carousel-control-next" type="button" data-bs-target="#header-carousel" data-bs-slide="next">
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Next</span>
         </button>
@@ -72,7 +70,7 @@
 </div>
 <!-- Carousel End -->
 
- <!-- <nav class="" data-wow-delay="0.1s">
+<!-- <nav class="" data-wow-delay="0.1s">
         <div class="announcement-bar">
             <div class="page-width">
               <div id="AnnouncementSlider" class="announcement-slider slick-initialized slick-slider" data-compact-style="false" data-block-count="3">
@@ -157,7 +155,7 @@
 
 <!-- Product Start -->
 <div class="container-xxl py-5">
-    <div class="container" >
+    <div class="container">
         <div class="row g-0 gx-5 align-items-end">
             <div class="col-lg-7">
                 <div class="section-header text-start mb-5 wow fadeInUp" data-wow-delay="0.1s">
@@ -166,31 +164,33 @@
                     </p> -->
                 </div>
             </div>
-            
+
         </div>
         <div class="tab-content">
             <div id="tab-1" class="tab-pane fade show p-0 active">
                 <div class="row g-4">
                     <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s" style="width: 33%;"
                         *ngFor="let data of categoryList.slice(0,6)">
-                        <div class="product-item pointer" id="tab-1"  (click) ="onCategoryClick(data)">
+                        <div class="product-item pointer" id="tab-1" (click)="onCategoryClick(data)">
                             <div class="text-center p-4  ">
                                 <!-- <a class="d-block h5 mb-2" [routerLink] ="['products/','data.Category_Id']" >{{data.Category_Name}}</a> -->
-                                <a class="d-block h5 mb-2"  >{{data.Category_Name}}</a>
+                                <a class="d-block h5 mb-2">{{data.Category_Name}}</a>
                                 <!-- <span class="text-primary me-1">{{data.productPrice|currency:"INR"}}</span>
                                 <span class="text-body text-decoration-line-through">$29.00</span> -->
                             </div>
                             <div class="position-relative overflow-hidden">
-                                <img class="img-fluid" src="../assets/img/category/{{data.Category_Photo}}" alt="" style="height: 525px;">
+                                <img class="img-fluid" src="../assets/img/category/{{data.Category_Photo}}" alt=""
+                                    style="height: 525px;">
                                 <!-- <div
                                     class="bg-secondary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">
                                     New</div> -->
                             </div>
                         </div>
                     </div>
-                    <div class="col-12 text-center wow fadeInUp" data-wow-delay="0.1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
+                    <div class="col-12 text-center wow fadeInUp" data-wow-delay="0.1s"
+                        style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
                         <a class="btn btn-primary rounded-pill py-3 px-5" href="/category">View More Products</a>
-                    </div>  
+                    </div>
                 </div>
             </div>
         </div>
@@ -200,7 +200,7 @@
 
 <!-- Brand Start -->
 <div class="container-xxl py-5">
-    <div class="container" >
+    <div class="container">
         <div class="row g-0 gx-5 align-items-end">
             <div class="col-lg-7">
                 <div class="section-header text-start mb-5 wow fadeInUp" data-wow-delay="0.1s">
@@ -209,19 +209,21 @@
                     </p> -->
                 </div>
             </div>
-            
+
         </div>
         <div class="tab-content">
             <div id="tab-1" class="tab-pane fade show p-0 active">
                 <div class="row g-4">
                     <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s" style="width: 33%;"
-                    *ngFor="let data of brandList.slice(0,6)">
-                        <div class="product-item pointer" id="tab-1" (click) ="onCategoryClick(data)">
-                           
+                        *ngFor="let data of brandList.slice(0,6)">
+                        <div class="product-item pointer" id="tab-1" (click)="onCategoryClick(data)">
+
                             <div class="position-relative overflow-hidden">
-                                <img class="img-fluid" src="../assets/img/brand/{{data.Category_Photo}}" alt="" style="height: 450px; ">
-                                <div class="bg-secondary text-white position-absolute start-0 top-0 py-2 px-4"> {{data.Category_Name}}</div>
-                          </div>
+                                <img class="img-fluid" src="../assets/img/brand/{{data.Category_Photo}}" alt=""
+                                    style="height: 450px; ">
+                                <div class="bg-secondary text-white position-absolute start-0 top-0 py-2 px-4">
+                                    {{data.Category_Name}}</div>
+                            </div>
                         </div>
                     </div>
                     <!-- <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s" style="width: 33%;">
@@ -277,25 +279,52 @@
 <!-- Brand End -->
 
 <!-- Testimonial Start -->
-<div class="container-fluid bg-light bg-icon py-6 mb-5">
-  <div class="container">
-      <div class="section-header text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
+<!-- <div class="container-fluid bg-light bg-icon py-6 mb-5">
+    <div class="container">
+        <div class="section-header text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
           <h1 class="display-5 mb-3">Customer Review</h1>
-      </div>
-      <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.1s">
-        <div class="testimonial-item position-relative bg-white p-5 mt-4" *ngFor="let data of customerReview">
-          <i class="fa fa-quote-left fa-3x text-primary position-absolute top-0 start-0 mt-n4 ms-5"></i>
-          <!-- <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et eos. Clita erat ipsum et lorem et sit.</p>S -->
-          <div class="d-flex align-items-center" >
-              <img class="flex-shrink-0 rounded-circle" src="assets/img/client_reviews/{{data.Client_Photo}}" alt="{{data.Client_Name}}">
-              <div class="ms-3">
-                  <h5 class="mb-1">{{data.Client_Name}}</h5>
-                  <span>{{data.Profession}}</span>
-              </div>
-          </div>
-      </div>
+        </div>
+        <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.1s"> 
+            <div class="testimonial-item position-relative bg-white p-5 mt-4" *ngFor="let data of customerReview">
+            <i class="fa fa-quote-left fa-3x text-primary position-absolute top-0 start-0 mt-n4 ms-5"></i> 
+             -->
+<!-- <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et eos. Clita erat ipsum et lorem et sit.</p>S -->
+<!-- 
+<div class="d-flex align-items-center" >
+                <img class="flex-shrink-0 rounded-circle" src="assets/img/client_reviews/{{data.Client_Photo}}" alt="{{data.Client_Name}}">
+                <div class="ms-3">
+                    <h5 class="mb-1">{{data.Client_Name}}</h5>
+                    <span>{{data.Profession}}</span>
+                </div>
+            </div>
+        </div>
       </div>
   </div>
+</div> -->
+
+<div class="container-fluid bg-light bg-icon py-6 mb-5" *ngIf="customerReview.length > 0">
+    <div class="container" >
+        <div class="section-header text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s"
+            style="max-width: 500px;">
+            <h1 class="display-5 mb-3">Customer Review</h1>
+        </div>
+        <owl-carousel-o [options]="customOptions">
+            <ng-container  *ngFor="let data of customerReview">
+                <ng-template carouselSlide [width]="444">
+                    <div class="testimonial-item position-relative bg-white p-5 mt-4">
+                        <div class="d-flex align-items-center" >
+                            <img class="flex-shrink-0 rounded-circle" src="assets/img/client_reviews/{{data.Client_Photo}}" alt="{{data.Client_Name}}">
+                            <div class="ms-3">
+                                <h5 class="mb-1">{{data.Client_Name}}</h5>
+                                <span>{{data.Profession}}</span>
+                                <div>{{data.Review}}</div>
+                            </div>
+                        </div>
+                    </div>
+                </ng-template>  
+            </ng-container>
+         </owl-carousel-o>
+    </div>
 </div>
 <!-- Testimonial End -->
 
@@ -303,19 +332,22 @@
 <!-- Blog Start -->
 <div class="container-xxl py-5">
     <div class="container">
-        <div class="section-header text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
+        <div class="section-header text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s"
+            style="max-width: 500px;">
             <h1 class="display-5 mb-3">Latest Blog</h1>
-            <p style="color: #000; font-weight: 500;">Find best fashion blogs on latest trends, styles, tips, ideas...</p>
+            <p style="color: #000; font-weight: 500;">Find best fashion blogs on latest trends, styles, tips, ideas...
+            </p>
         </div>
-        <div class="row g-4" >
-            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s" *ngFor="let data of blogList">    
-       
+        <div class="row g-4">
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s" *ngFor="let data of blogList">
+
                 <img class="img-fluid" src="../assets/img/blog/{{data.Image_Name}}">
                 <div class="bg-light p-4">
-                    <a class="d-block h5 lh-base mb-2 me-3" (click) ="onClick(data)">{{data.Blog_Title}}</a>
+                    <a class="d-block h5 lh-base mb-2 me-3" (click)="onClick(data)">{{data.Blog_Title}}</a>
                     <div class="text-muted border-top pt-2">
-                        <small class="me-3"><i class="fa fa-clock text-primary me-2"></i>{{data.Updated_Date | date}}</small>
-                        <small class="me-3 read-more" (click) ="onClick(data)">Read More...</small>
+                        <small class="me-3"><i class="fa fa-clock text-primary me-2"></i>{{data.Updated_Date |
+                            date}}</small>
+                        <small class="me-3 read-more" (click)="onClick(data)">Read More...</small>
                     </div>
                 </div>
             </div>

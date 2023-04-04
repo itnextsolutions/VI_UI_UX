@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserService } from "src/app/Services/Api/User/user.service";
+import { OwlOptions } from 'ngx-owl-carousel-o';
+
 
 @Component({
   selector: 'app-home',
@@ -24,6 +26,34 @@ export class HomeComponent implements OnInit {
     this.refreshproductcategoryList();
     this.refreshblogList();
     this.getCustomerReviews();
+  }
+
+  customOptions: OwlOptions = {
+    autoplay:true,
+    loop: true,
+    mouseDrag: false,
+    touchDrag: false,
+    pullDrag: false,
+    dots: true,
+    margin:20,
+    autoWidth:true,
+    autoplaySpeed :300,
+    navText: ['', ''],
+    responsive: {
+      0: {
+        items: 1
+      },
+      400: {
+        items: 2
+      },
+      600: {
+        items: 3
+      },
+      1000: {
+        items: 3
+      }
+    },
+    nav: true
   }
 
   refreshproductcategoryList() {
@@ -62,9 +92,13 @@ export class HomeComponent implements OnInit {
 
   getCustomerReviews()
   {
+    
     this.userService.getCustomerReviews().subscribe(data =>{
-      this.customerReview = data;
-    });
+
+      if(data != undefined && data!=null){
+         this.customerReview = data;
+        }
+     });
   }
 
   onCategoryClick(data: any){
