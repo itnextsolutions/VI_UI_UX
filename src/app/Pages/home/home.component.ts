@@ -37,7 +37,6 @@ export class HomeComponent implements OnInit {
     dots: true,
     margin:20,
     autoWidth:true,
-    autoplaySpeed :300,
     navText: ['', ''],
     responsive: {
       0: {
@@ -52,8 +51,7 @@ export class HomeComponent implements OnInit {
       1000: {
         items: 3
       }
-    },
-    nav: true
+    }
   }
 
   refreshproductcategoryList() {

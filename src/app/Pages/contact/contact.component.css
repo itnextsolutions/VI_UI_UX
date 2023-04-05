@@ -1,0 +1,14 @@
+.map_iframe
+{
+    width: 500px;
+    height: 500px;
+}
+
+@media (min-width: 320px) and (max-width: 425px) 
+{
+    .map_iframe{
+        width: 270px;
+        height: 270px;
+    }
+
+}

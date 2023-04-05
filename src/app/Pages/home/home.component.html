@@ -164,12 +164,11 @@
                     </p> -->
                 </div>
             </div>
-
         </div>
         <div class="tab-content">
             <div id="tab-1" class="tab-pane fade show p-0 active">
                 <div class="row g-4">
-                    <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s" style="width: 33%;"
+                    <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp Product_Category_item" data-wow-delay="0.1s"
                         *ngFor="let data of categoryList.slice(0,6)">
                         <div class="product-item pointer" id="tab-1" (click)="onCategoryClick(data)">
                             <div class="text-center p-4  ">
@@ -178,9 +177,9 @@
                                 <!-- <span class="text-primary me-1">{{data.productPrice|currency:"INR"}}</span>
                                 <span class="text-body text-decoration-line-through">$29.00</span> -->
                             </div>
-                            <div class="position-relative overflow-hidden">
+                            <div class="position-relative overflow-hidden" style="height: 428px;">
                                 <img class="img-fluid" src="../assets/img/category/{{data.Category_Photo}}" alt=""
-                                    style="height: 525px;">
+                                    >
                                 <!-- <div
                                     class="bg-secondary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">
                                     New</div> -->
@@ -214,13 +213,13 @@
         <div class="tab-content">
             <div id="tab-1" class="tab-pane fade show p-0 active">
                 <div class="row g-4">
-                    <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s" style="width: 33%;"
+                    <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp Brand-item" data-wow-delay="0.1s" 
                         *ngFor="let data of brandList.slice(0,6)">
                         <div class="product-item pointer" id="tab-1" (click)="onCategoryClick(data)">
 
-                            <div class="position-relative overflow-hidden">
+                            <div class="position-relative overflow-hidden" style="height: 428px;">
                                 <img class="img-fluid" src="../assets/img/brand/{{data.Category_Photo}}" alt=""
-                                    style="height: 450px; ">
+                                    >
                                 <div class="bg-secondary text-white position-absolute start-0 top-0 py-2 px-4">
                                     {{data.Category_Name}}</div>
                             </div>
@@ -302,11 +301,11 @@
   </div>
 </div> -->
 
-<div class="container-fluid bg-light bg-icon py-6 mb-5" *ngIf="customerReview.length > 0">
+<div class="container-fluid bg-light bg-icon py-5 mb-2" *ngIf="customerReview.length > 0">
     <div class="container" >
-        <div class="section-header text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s"
+        <div class="section-header text-center mx-auto mb-3 wow fadeInUp" data-wow-delay="0.1s"
             style="max-width: 500px;">
-            <h1 class="display-5 mb-3">Customer Review</h1>
+            <h1 class="display-5 mb-2">Customer Review</h1>
         </div>
         <owl-carousel-o [options]="customOptions">
             <ng-container  *ngFor="let data of customerReview">
