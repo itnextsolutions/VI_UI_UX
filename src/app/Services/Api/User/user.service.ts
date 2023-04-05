@@ -7,7 +7,7 @@ import { Observable } from "rxjs";
 })
 
 export class UserService {
-  readonly APIUrl = "https://localhost:7181/api/";
+  readonly APIUrl = "https://testapi.vastraindia.com/api/";
   constructor(private http: HttpClient) {}
 
     getFAQ(): Observable < any[] > {

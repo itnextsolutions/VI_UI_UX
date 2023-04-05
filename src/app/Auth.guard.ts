@@ -23,36 +23,36 @@ export class AuthGuard implements CanActivate {
           return this.checkLogin(url);
       }
       
-      checkLogin(url: string): true | UrlTree {
-            debugger
-            console.log("Url: " + url)
-            let token = localStorage.getItem('jwt');
-   
-            if(token && !this.jwtHelper.isTokenExpired(token)){
-               if(url == "admin/Login")
-                  this.router.parseUrl('/admin/product-category');
-               
-                  return true;
-            } 
-               return this.router.parseUrl('/admin/login');
-            
-         }
-
-
       // checkLogin(url: string): true | UrlTree {
-      //    debugger
-      //    console.log("Url: " + url)
-      //    let val = localStorage.getItem('jwt');
+      //       debugger
+      //       console.log("Url: " + url)
+      //       let token = localStorage.getItem('jwt');
+   
+      //       if(token && !this.jwtHelper.isTokenExpired(token)){
+      //          if(url == "admin/Login")
+      //             this.router.parseUrl('/admin/product-category');
+               
+      //             return true;
+      //       } 
+      //          return this.router.parseUrl('/admin/login');
+            
+      //    }
 
-      //    if(val != null ){
-      //       if(url == "admin/Login")
-      //          this.router.parseUrl('/admin/product-category');
-      //       else 
-      //          return true;
-      //    } 
-      //       return this.router.parseUrl('/admin/login');
+
+      checkLogin(url: string): true | UrlTree {
+         debugger
+         console.log("Url: " + url)
+         let val = localStorage.getItem('jwt');
+
+         if(val != null && val == 'true' ){
+            if(url == "admin/Login")
+               this.router.parseUrl('/admin/product-category');
+            else 
+               return true;
+         } 
+            return this.router.parseUrl('/admin/login');
          
-      // }
+      }
    // canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
    //    const token = localStorage.getItem("jwt");
    //    if (token && !this.jwtHelper.isTokenExpired(token)){

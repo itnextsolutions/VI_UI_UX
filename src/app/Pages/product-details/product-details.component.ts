@@ -79,7 +79,7 @@
 // }
 
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { UserService } from 'src/app/Services/Api/User/user.service';
 import { __values } from 'tslib';
 
@@ -92,7 +92,7 @@ export class ProductDetailsComponent implements OnInit {
   [x: string]: any;
   route: any;
 
-  constructor(private param: ActivatedRoute, private userService: UserService) { }
+  constructor(private param: ActivatedRoute, private userService: UserService,private router: Router) { }
 
   // isMenDivHidden = false;
   isWoMenDivHidden = true;
@@ -153,11 +153,13 @@ export class ProductDetailsComponent implements OnInit {
   }
 
   onClick(product: any) {
-    this.router.navigate(['product-details/', product.Category_Name, product.SubCategory, product.Product_Id]);
+    this.router.navigate(['product-details/', product.Category_Name, product.SubCategory, product.Product_Id]).then(() => {
+      window.location.reload();
+    });
 
     // this.router.navigate(['blog/', data.Blog_Id]).then(() => {
     //   window.location.reload();
-    this.ngOnInit();
+    // this.ngOnInit();
   }
 
 

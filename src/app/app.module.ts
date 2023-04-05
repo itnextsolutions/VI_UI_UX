@@ -59,6 +59,7 @@ import { SidebarComponent } from './SharePage/sidebar/sidebar.component';
 import { CustmizeDesignComponent } from './Pages/custmize-design/custmize-design.component';
 import { AuthGuard } from './Auth.guard';
 import { JwtModule } from '@auth0/angular-jwt';
+import { CarouselModule } from 'ngx-owl-carousel-o';
 
 
 @NgModule({
@@ -116,6 +117,7 @@ import { JwtModule } from '@auth0/angular-jwt';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    CarouselModule,
     JwtModule.forRoot({
       config: {
         tokenGetter: tokenGetter,

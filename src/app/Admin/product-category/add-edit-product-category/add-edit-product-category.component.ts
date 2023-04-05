@@ -43,12 +43,12 @@ export class AddEditProductCategoryComponent implements OnInit {
   addProductCategory(){debugger
     
     this.submitted = true;
-    if (this.Pro_CatForm.valid){
-    // var val = {Category_Id:this.Category_Id,
-    //   Category_Name:this.Category_Name,
-    //   Category_Description:this.Category_Description,
-    //   Category_Photo:this.Category_Photo.replace(/.*[\/\\]/, '')
-    // };
+    //if (this.Pro_CatForm.valid){
+    var val = {Category_Id:this.Category_Id,
+      Category_Name:this.Category_Name,
+      Category_Description:this.Category_Description,
+      formFile:this.selectedFile
+    };
     let formData = new FormData()
     formData.append('Category_Name', this.Category_Name);
     formData.append('Category_Description', this.Category_Description);
@@ -56,7 +56,7 @@ export class AddEditProductCategoryComponent implements OnInit {
       this.service.addProductcategory(formData).subscribe(res =>{
         alert(res.toString());
       })
-    }
+    //}
   }
 
   updateProductCategory(){

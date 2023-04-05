@@ -62,6 +62,28 @@ export class LoginComponent implements OnInit {
 
   invalidLogin:boolean=true;
 
+  // CheckLogin(){
+  //   debugger
+  //   this.submitted = true;
+  //   if (this.loginForm.valid){
+  //   var val = {
+  //     username:this.username,
+  //     password:this.password,
+    
+  //   };
+  //   this.service.Login(val).subscribe({
+  //     next: (response: AuthenticatedResponse) => {
+  //       const token = response.token;
+  //       localStorage.setItem("jwt", token); 
+  //       this.invalidLogin = false; 
+  //       this.router.navigate(["admin/product-category"]);
+  //     },
+  //     error: (err: HttpErrorResponse) => this.invalidLogin = true
+      
+  //   })
+  // }
+
+   
   CheckLogin(){
     debugger
     this.submitted = true;
@@ -71,42 +93,22 @@ export class LoginComponent implements OnInit {
       password:this.password,
     
     };
-    this.service.Login(val).subscribe({
-      next: (response: AuthenticatedResponse) => {
-        const token = response.token;
-        localStorage.setItem("jwt", token); 
-        this.invalidLogin = false; 
-        this.router.navigate(["admin/product-category"]);
-      },
-      error: (err: HttpErrorResponse) => this.invalidLogin = true
-      
-    })
-  }
-
-   
-  // CheckLogin(){
-  //   this.submitted = true;
-  //   if (this.loginForm.valid){
-  //   var val = {
-  //     username:this.username,
-  //     password:this.password,
-    
-  //   };
-  //     this.service.Login(val).subscribe(res =>{
-  //       if(res == "Success"){
-  //         this.router.navigate(['admin/product-category']);    
-  //       }
-  //       else
-  //       {
+      this.service.Login(val).subscribe(res =>{
+        if(res == "Success"){
+          localStorage.setItem('jwt','true');
+          this.router.navigate(['admin/product-category']);    
+        }
+        else
+        {
           
-  //         this.router.navigate(['admin/Login']);  
-  //         this.invalid_msg=res.toString();
-  //         //alert(res.toString());
-  //       }
-  //     })
-  //   }
+          this.router.navigate(['admin/Login']);  
+          this.invalid_msg=res.toString();
+          //alert(res.toString());
+        }
+      })
+    }
 
-  // }
+  }
 
   // onLogin(): void {
   //   // console.log(this.loginForm.value);
@@ -119,5 +121,4 @@ export class LoginComponent implements OnInit {
   // }
 
   
-}
 }

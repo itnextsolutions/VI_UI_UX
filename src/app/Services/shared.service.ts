@@ -1,14 +1,15 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Observable } from "rxjs";
-import { AuthenticatedResponse } from '../app.module';
+//import { AuthenticatedResponse } from '../app.module';
 
 @Injectable({
   providedIn: 'root'
 })
 
 export class SharedService {
-  readonly APIUrl = "https://localhost:7181/api/";
+ // readonly APIUrl = "http://TestAPI.VastraIndia.com/api/";
+ readonly APIUrl = "https://testapi.vastraindia.com/api/";
   constructor(private http: HttpClient) {}
 
 //Menu Binding
@@ -22,10 +23,7 @@ getMenuList(): Observable < any[] > {
 
 Login(val: any) {
   debugger
-
-   return this.http.post<AuthenticatedResponse>(this.APIUrl + 'Login/login', val,{
-    headers: new HttpHeaders({ "Content-Type": "application/json"})
-  });
+   return this.http.post(this.APIUrl + 'Login/login', val);
 }
 
 //Product Category  Start

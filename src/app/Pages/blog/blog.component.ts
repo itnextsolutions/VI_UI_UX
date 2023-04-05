@@ -10,6 +10,7 @@ import { UserService } from "src/app/Services/Api/User/user.service";
 export class BlogComponent implements OnInit {
 
   blogList:any = [];
+  blogno:any=0;
 
   constructor(private userService: UserService, private router: Router) { }
 
@@ -18,7 +19,8 @@ export class BlogComponent implements OnInit {
   }
 
   refreshblogList() {
-    this.userService.getallbloglist(null).subscribe(data =>{
+    this.blogno=3;
+    this.userService.getallbloglist(this.blogno).subscribe(data =>{
       this.blogList = data;
     });
   }
