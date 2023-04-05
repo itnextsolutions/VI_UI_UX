@@ -1,6 +1,6 @@
 {
     "/api": {
-    "target": "https://localhost:7181",
+    "target": "https://testapi.vastraindia.com",
     "secure": false,
     "changeOrigin": true,
     "loglevel": "debug",

@@ -52,8 +52,8 @@ export class HomeComponent implements OnInit {
       1000: {
         items: 3
       }
-    },
-    nav: true
+    }
+    
   }
 
   refreshproductcategoryList() {

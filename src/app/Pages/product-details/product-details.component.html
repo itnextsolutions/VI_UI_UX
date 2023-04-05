@@ -104,22 +104,22 @@
        
         <div *ngFor="let data of product">
             <ul>
-                <li><img src="../assets/img/{{data.Category_Name}}/{{data.Product_Photo}}" class="small_img"></li>
-                <li><img src="../assets/img/{{data.Category_Name}}/{{data.Product_SidePhoto}}" class="small_img"></li>
-                <li><img src="../assets/img/{{data.Category_Name}}/{{data.Product_BackPhoto}}" class="small_img"></li>
+                <li><img src="assets/img/{{data.Category_Name}}/{{data.Product_Photo}}" class="small_img"></li>
+                <li><img src="assets/img/{{data.Category_Name}}/{{data.Product_SidePhoto}}" class="small_img"></li>
+                <li><img src="assets/img/{{data.Category_Name}}/{{data.Product_BackPhoto}}" class="small_img"></li>
             </ul>
-            <img class="big_img" src="../assets/img/{{data.Category_Name}}/{{data.Product_Photo}}" style="width: 470px;">
+            <img class="big_img" src="assets/img/{{data.Category_Name}}/{{data.Product_Photo}}" style="width: 470px;">
         </div>
     </div>
 
     <div [hidden]="isWoMenDivHidden">
         <div *ngFor="let data of product">
             <ul>
-                <li><img src="../assets/img/{{data.Category_Name}}/{{data.WomenProduct_Photo}}" class="small_img"></li>
-                <li><img src="../assets/img/{{data.Category_Name}}/{{data.WomenProduct_SidePhoto}}" class="small_img"></li>
-                <li><img src="../assets/img/{{data.Category_Name}}/{{data.WomenProduct_BackPhoto}}" class="small_img"></li>
+                <li><img src="assets/img/{{data.Category_Name}}/{{data.WomenProduct_Photo}}" class="small_img"></li>
+                <li><img src="assets/img/{{data.Category_Name}}/{{data.WomenProduct_SidePhoto}}" class="small_img"></li>
+                <li><img src="assets/img/{{data.Category_Name}}/{{data.WomenProduct_BackPhoto}}" class="small_img"></li>
             </ul>
-            <img class="big_img" src="../assets/img/{{data.Category_Name}}/{{data.WomenProduct_Photo}}"  style="width: 470px;">
+            <img class="big_img" src="assets/img/{{data.Category_Name}}/{{data.WomenProduct_Photo}}"  style="width: 470px;">
         </div>
     </div>
     <div class="container-xxl py-5">
@@ -228,9 +228,9 @@
                 <div class="product-item pointer" id="tab-1" (click) ="onClick(simillarproduct)">
                     <div class="position-relative bg-light overflow-hidden">
                         <!-- <img class="img-fluid w-100"
-                            src="../assets/img/{{categoryfolder}}/{{simillarproduct.Product_Photo}}" alt=""> -->
+                            src="assets/img/{{categoryfolder}}/{{simillarproduct.Product_Photo}}" alt=""> -->
                         <img class="img-fluid w-100"
-                            src="../assets/img/{{simillarproduct.Category_Name}}/{{simillarproduct.Product_Photo}}" alt="">   
+                            src="assets/img/{{simillarproduct.Category_Name}}/{{simillarproduct.Product_Photo}}" alt="">   
                         <!-- <div class="bg-secondary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">Sale</div> -->
                     </div>
                     <div class="text-center p-4">

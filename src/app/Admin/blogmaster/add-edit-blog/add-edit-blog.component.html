@@ -70,7 +70,7 @@
                     <input type="file"  [(ngModel)]="Image_Name"  (change)="onselectFile($event)"  id="inputImage_Name" formControlName="Image_Name">
                 </p>
                 <ng-template #elseBlock>
-                    <img src="../assets/img/blog/{{Image_Name}}">
+                    <img src="assets/img/blog/{{Image_Name}}">
                 </ng-template>
             </div>
             <div *ngIf="submitted && formControl.Image_Name.errors" class="text-danger">
