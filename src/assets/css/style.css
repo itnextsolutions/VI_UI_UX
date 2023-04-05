@@ -136,6 +136,11 @@
     text-transform: uppercase;
 }
 
+.header_bs_mo {
+    padding-top: 18rem !important;
+    padding-bottom: 5rem !important;
+}
+
 @media (min-width: 320px) and (max-width: 425px) {
     .navbar .navbar-nav .nav-item .nav-link{
         font-size: 12px ;
@@ -143,6 +148,11 @@
     
     .navbar .navbar-nav .nav-link {
         padding: 3px 0;
+    }
+
+    .header_bs_mo {
+        padding-top: 14rem !important;
+        padding-bottom: 0rem !important;
     }
 }
 
