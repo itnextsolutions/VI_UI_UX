@@ -1,3 +1,14 @@
+
+@media (min-width: 1024px) and (max-width: 2560px) 
+{
+    .Product_Category_item
+    {
+        width: 33%;
+    }
+    .Brand-item{
+        width: 33%;
+    }
+}
 .announcement-bar {
     font-size: 14.45px;
     position: relative;

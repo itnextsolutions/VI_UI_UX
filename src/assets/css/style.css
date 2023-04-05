@@ -26,7 +26,7 @@
 
 
 .mar-0{
-    margin: 1rem 0 1rem 0rem;
+    margin: 0.5rem 0 0.5rem 0rem;
     }
 
 .bg-icon {
@@ -136,6 +136,26 @@
     text-transform: uppercase;
 }
 
+.header_bs_mo {
+    padding-top: 18rem !important;
+    padding-bottom: 5rem !important;
+}
+
+@media (min-width: 320px) and (max-width: 425px) {
+    .navbar .navbar-nav .nav-item .nav-link{
+        font-size: 12px ;
+    }
+    
+    .navbar .navbar-nav .nav-link {
+        padding: 3px 0;
+    }
+
+    .header_bs_mo {
+        padding-top: 14rem !important;
+        padding-bottom: 0rem !important;
+    }
+}
+
 @media (max-width: 991.98px) {
     .navbar .navbar-nav {
         margin-top: 10px;
@@ -144,9 +164,11 @@
     }
 
     .navbar .navbar-nav .nav-link {
-        padding: 10px 0;
+        padding: 3px 0;
     }
 }
+
+
 
 @media (min-width: 992px) {
     .navbar .nav-item .dropdown-menu {
