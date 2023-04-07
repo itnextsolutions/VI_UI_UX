@@ -237,8 +237,7 @@
 <!-- Brand End -->
 
 
-<!-- Customer Review Start -->
-<div class="container-fluid bg-light bg-icon py-6 mb-2" *ngIf="customerReview.length > 0">
+<div class="container-fluid bg-light bg-icon py-5 mb-2" *ngIf="customerReview.length > 0">
     <div class="container" >
         <div class="section-header text-center mx-auto mb-3 wow fadeInUp" data-wow-delay="0.1s"
             style="max-width: 500px;">
@@ -246,25 +245,114 @@
         </div>
         <owl-carousel-o [options]="customOptions">
             <ng-container  *ngFor="let data of customerReview">
-                <ng-template carouselSlide >
-                    <div class="testimonial-item position-relative bg-white p-3 mt-4">
+                <ng-template carouselSlide [width]="444">
+                    <div class="testimonial-item position-relative bg-white p-5 mt-4">
                         <div class="d-flex align-items-center" >
                             <img class="flex-shrink-0 rounded-circle" src="assets/img/client_reviews/{{data.Client_Photo}}" alt="{{data.Client_Name}}">
                             <div class="ms-3">
                                 <h5 class="mb-1">{{data.Client_Name}}</h5>
                                 <span>{{data.Profession}}</span>
-                                <div>{{data.Review}}</div>
+                                <div class="testi-review">
+                               {{data.Review}}</div>
                             </div>
                         </div>
                     </div>
+
+                    <div class="testimonial-item position-relative bg-white p-5 mt-4">
+                    <div class="wrapper">
+                        <img class="float-image left" src="assets/img/client_reviews/{{data.Client_Photo}}" alt="{{data.Client_Name}}">
+                        
+                    </div>
+                    <div class="ms-3">
+                        <h5 class="mb-1">{{data.Client_Name}}</h5>
+                        <span>{{data.Profession}}</span>
+                     <div class="testi-review">
+                        <p style="color:#555555;font-weight: 400;">   {{data.Review}}
+                     
+                         
+                        </p>
+                    </div> 
+                      
+                      </div>
+                  </div>
+    
+                </ng-template>  
+            </ng-container>
+         </owl-carousel-o>
+    </div>
+</div> -->
+
+
+
+
+
+
+
+<div class="container-fluid bg-light bg-icon py-5 mb-2" *ngIf="customerReview.length > 0">
+    <div class="container" >
+        <div class="section-header text-center mx-auto mb-3 wow fadeInUp" data-wow-delay="0.1s"
+            style="max-width: 500px;">
+            <h1 class="display-5 mb-2">Customer Review</h1>
+        </div>
+        <owl-carousel-o [options]="customOptions">
+            <ng-container  *ngFor="let data of customerReview">
+                <ng-template carouselSlide [width]="375">
+                  
+
+                    <div class="card testimonial">
+                        <div class="card-body">
+                            <h4 class="card-title"><img src="assets/img/quote-left.png"></h4>
+                            
+                            <div class="template-demo testi-review">
+                               <div class="testi-review">
+                                <p style="color: #555555;
+                                font-weight: 500;">  {{data.Review}}</p></div>
+                            </div>
+                           
+    
+                            <hr  style="color: #555555;">
+    
+                            <div class="row">
+    
+                                  <div class="col-sm-2 col-4">
+    
+                                        <!-- <img class="profile-pic" src="https://img.icons8.com/bubbles/100/000000/edit-user.png"> -->
+                                        <img class="rounded-circle profile-pic" src="assets/img/client_reviews/{{data.Client_Photo}}" alt="{{data.Client_Name}}">
+                                        
+                                  </div>
+    
+                                  <div class="col-sm-10 col-8">
+                                        
+                                        <div class="profile">
+                                          
+                                          <h4 class="cust-name">{{data.Client_Name}}</h4>
+                                        <p class="cust-profession" style="font-size: 14px; color: gray; padding: 5px 0 0 0;"
+    >{{data.Profession}}</p>    
+    
+                                        </div>
+                                        
+                                        
+                                  </div>
+                                  
+    
+                            </div>
+                        </div>
+                    </div>
+    
                 </ng-template>  
             </ng-container>
          </owl-carousel-o>
     </div>
 </div>
-<!-- Customer Review End -->
+<!-- Testimonial End -->
 
 
+
+
+<!-- new testimonial -->
+
+
+<!-- new te -->
 <!-- Blog Start -->
 <div class="container-xxl py-5">
     <div class="container">
