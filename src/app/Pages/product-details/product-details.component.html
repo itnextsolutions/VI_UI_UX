@@ -73,33 +73,6 @@
     </div>
     <!--breadcrumb-->
 
-
-    <style type="text/css">
-        ul {
-            float: left;
-        }
-
-        ul li {
-            list-style-type: none;
-            margin: bottom 10px;
-            ;
-        }
-
-        ul li img {
-            width: 150px;
-            padding: 5px;
-            border: 1px solid #ebebeb;
-        }
-
-        .big_img {
-            float: left;
-            margin: top 20px;
-            margin-left: 10px;
-            margin-right: 40px;
-        }
-    </style>
-
-    
     <div [hidden]="isMenDivHidden" >
        
         <div *ngFor="let data of product" class="mo-order-2">
@@ -127,10 +100,7 @@
             <div class="row g-5 align-items-center" *ngFor="let data of product">
                 <div class="col-lg-6 w-100 p-0">
                     <div class="pro-detail-page-top">
-
-                    
-
-                    <div class="row g-4 mb-0 color bold align-items-center">
+                        <div class="row g-4 mb-0 color bold align-items-center">
 
                         <h3 class=" product-name-new">{{data.Product_Title}}</h3>
 
@@ -185,26 +155,16 @@
 
                     <div class="row g-4">
                         <h5 class="variationHead" style="margin-top: 25px;padding: 0!important; ">Choose Category:</h5>
-
                         <div class="genderButtonBlock mt-0 pt-0 pb-3" id="genderVariations">
-                            <div class="container" style="margin-top: 10px;padding: 0 !important;
-                        ">
-
+                            <div class="container" style="margin-top: 10px;padding: 0 !important;">
                                 <button (click)="onClickmenPhoto()"  class="genderButton pad-0" data-id="id_0" tabindex="0" data-title="Men"
                                     data-value="men" style="border-radius: 10px; height:40px; width: 80px;">
-                         
                                     Men
                                 </button>
-                               
-
-                                <button class="genderButton pad-0" data-id="id_1" tabindex="1" data-title="Women"
-                                    data-value="women"
-                                    style="margin-left: 10px; border-radius: 10px; height:40px; width: 80px;"
-                                    (click)="onClickWomenPhoto()">
+                                <button class="genderButton pad-0" data-id="id_1" tabindex="1" data-title="Women"  data-value="women"
+                                    style="margin-left: 10px; border-radius: 10px; height:40px; width: 80px;"  (click)="onClickWomenPhoto()">
                                     Women
                                 </button>
-                              
-
                             </div>
                         </div>
                     </div>
@@ -215,15 +175,6 @@
     </div>
 </div>
 <!--breadcrumb End-->
-
-
-
-
-<!-- new -->
-
-
-<!-- new -->
-
 
 <!-- Product Details End -->
 <!-- Similar Products Start -->
