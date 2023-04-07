@@ -30,7 +30,6 @@
     }
 
 .bg-icon {
-    background: url(../img/bg-icon.png) center center repeat;
     background-size: contain;
 }
 
@@ -160,7 +159,7 @@
     .navbar .navbar-nav {
         margin-top: 10px;
         border-top: 1px solid rgba(0, 0, 0, .07);
-        background: #FFFFFF;
+        background: #b5eea9;
     }
 
     .navbar .navbar-nav .nav-link {
