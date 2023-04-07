@@ -121,7 +121,7 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
     JwtModule.forRoot({
       config: {
         tokenGetter: tokenGetter,
-        allowedDomains: ["localhost:7181"],
+        allowedDomains: ["localhost:44321"],
         disallowedRoutes: []
       }
     }),
@@ -134,7 +134,7 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
 export class AppModule { }
 
 export interface AuthenticatedResponse { 
-  token:string;
+  Token:string;
 }
 
 export function tokenGetter() { 

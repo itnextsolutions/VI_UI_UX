@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import {AbstractControl,UntypedFormBuilder,UntypedFormGroup,Validators,FormControl} from '@angular/forms';
 import { HttpErrorResponse } from '@angular/common/http';
 import { AuthenticatedResponse } from 'src/app/app.module';
+import { JwtHelperService } from '@auth0/angular-jwt';
 
 @Component({
   selector: 'app-login',
@@ -26,7 +27,7 @@ export class LoginComponent implements OnInit {
 	msg = "";
 
    constructor(private service: SharedService ,private router: Router,
-               private formBuilder: UntypedFormBuilder) { }
+               private formBuilder: UntypedFormBuilder,private jwtHelper :JwtHelperService) { }
 
   ngOnInit(): void {
     this.loginForm = this.formBuilder.group({
@@ -73,7 +74,7 @@ export class LoginComponent implements OnInit {
   //   };
   //   this.service.Login(val).subscribe({
   //     next: (response: AuthenticatedResponse) => {
-  //       const token = response.token;
+  //       const token = response.Token;
   //       localStorage.setItem("jwt", token); 
   //       this.invalidLogin = false; 
   //       this.router.navigate(["admin/product-category"]);
@@ -122,3 +123,4 @@ export class LoginComponent implements OnInit {
 
   
 }
+
