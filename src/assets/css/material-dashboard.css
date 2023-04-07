@@ -2779,7 +2779,7 @@
     transition: 0.2s ease;
     margin-bottom: 1rem;
   }
-  }
+  
   
   @media (prefers-reduced-motion: reduce) {
     .form-control {
@@ -2793,14 +2793,6 @@
   
   .form-control[type="file"]:not(:disabled):not([readonly]) {
     cursor: pointer;
-  }
-  
-  .form-control:focus {
-    /* color: #495057;
-    background-color: transparent;
-    border-color: transparent;
-    outline: 0;
-    box-shadow: none; */
   }
   
   .form-control::-webkit-date-and-time-value {
@@ -8123,7 +8115,7 @@
   
   .text-bg-secondary {
     color: #000 !important;
-    background-color: RGBA(, 128, 154, var(--bs-bg-opacity, 1)) !important;
+    background-color: RGBA(130, 128, 154, var(--bs-bg-opacity, 1)) !important;
   }
   
   .text-bg-success {
@@ -9525,7 +9517,7 @@
   .my-auto {
     margin-top: auto !important;
     margin-bottom: auto !important;
-    padding-top: 9rem;
+    padding-top: 5rem;
   }
   
   .mt-0 {
@@ -20676,8 +20668,7 @@
     color: #3CB815;
   }
   
-  .btn-secondary,
-  .btn.bg-gradient-secondary {
+  .btn-secondary, .btn.bg-gradient-secondary {
     box-shadow: 0 3px 3px 0 rgba(, 128, 154, 0.15), 0 3px 1px -2px rgba(, 128, 154, 0.2), 0 1px 5px 0 rgba(, 128, 154, 0.15);
   }
   
@@ -22749,7 +22740,7 @@
   }
   
   .bg-gradient-faded-secondary {
-    background-image: radial-gradient(370px circle at 80% 50%, rgba(, 128, 154, 0.6) 0, #626780 100%);
+    background-image: radial-gradient(370px circle at 80% 50%, rgba(130, 128, 154, 0.6) 0, #626780 100%);
   }
   
   .bg-gradient-faded-success {
@@ -22785,7 +22776,7 @@
   }
   
   .bg-gradient-faded-secondary-vertical {
-    background-image: radial-gradient(200px circle at 50% 70%, rgba(, 128, 154, 0.3) 0, #7b809a 100%);
+    background-image: radial-gradient(200px circle at 50% 70%, rgba(130, 128, 154, 0.3) 0, #7b809a 100%);
   }
   
   .bg-gradient-faded-success-vertical {
@@ -23670,8 +23661,8 @@
   }
   
   .navbar-vertical.navbar-expand-xs .navbar-nav .nav-link {
-    padding-top: 0.75rem;
-    padding-bottom: 0.75rem;
+    padding-top: 0.45rem;
+    padding-bottom: 0.45rem;
     margin: 0 1rem;
     margin-bottom: 1.5px;
   }
@@ -27405,7 +27396,6 @@
     background: #fff;
     cursor: default;
     box-shadow: inset 0 0 1px #fff, inset 0 1px 7px #EBEBEB, 0 3px 6px -3px #BBB;
-    webkit-transition: .3s ease 0s;
     -moz-transition: .3s ease 0s;
     -ms-transition: .3s ease 0s;
     -o-transform: .3s ease 0s;
@@ -27857,10 +27847,7 @@
   .testimonial-carousel .owl-item .testimonial-item * {
     transition: .5s;
   }
-  
-  .testimonial-carousel .owl-item.center .testimonial-item {
-    /* background: var(--primary) !important; */
-  }
+
   
   .testimonial-carousel .owl-item.center .testimonial-item * {
     color: #FFFFFF !important;

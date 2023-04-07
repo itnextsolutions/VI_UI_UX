@@ -1,0 +1,17 @@
+@media (min-width: 1024px) and (max-width: 2560px) 
+{
+    /* .nav-toggle { display: none;} */
+}
+
+
+.nav-toggle
+{
+    padding: var(--bs-navbar-toggler-padding-y) var(--bs-navbar-toggler-padding-x);
+    font-size: var(--bs-navbar-toggler-font-size);
+    line-height: 1;
+    color: var(--bs-navbar-color);
+    background-color: transparent;
+    border: 0px;
+    border-radius: var(--bs-navbar-toggler-border-radius);
+    transition: var(--bs-navbar-toggler-transition);
+}

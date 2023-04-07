@@ -27,7 +27,7 @@
     }
 }
 
-@media (min-width: 320px) and (max-width: 425px) 
+@media (min-width: 320px) and (max-width: 768px) 
 {
     .header-top{
         font-size: 13px;

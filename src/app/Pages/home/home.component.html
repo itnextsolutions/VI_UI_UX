@@ -177,9 +177,9 @@
                                 <!-- <span class="text-primary me-1">{{data.productPrice|currency:"INR"}}</span>
                                 <span class="text-body text-decoration-line-through">$29.00</span> -->
                             </div>
-                            <div class="position-relative overflow-hidden">
+                            <div class="position-relative overflow-hidden"  style="height: 428px;">
                                 <img class="img-fluid" src="assets/img/category/{{data.Category_Photo}}" alt=""
-                                    style="height: 525px;">
+                                   >
                                 <!-- <div
                                     class="bg-secondary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">
                                     New</div> -->
@@ -188,7 +188,7 @@
                     </div>
                     <div class="col-12 text-center wow fadeInUp" data-wow-delay="0.1s"
                         style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
-                        <a class="btn btn-primary rounded-pill py-3 px-5" href="/category">View More Products</a>
+                        <a class="btn btn-primary rounded-pill py-3 px-5" href="category">View More Products</a>
                     </div>
                 </div>
             </div>
@@ -217,59 +217,18 @@
                         *ngFor="let data of brandList.slice(0,6)">
                         <div class="product-item pointer" id="tab-1" (click)="onCategoryClick(data)">
 
-                            <div class="position-relative overflow-hidden">
+                            <div class="position-relative overflow-hidden"  style="height: 428px;">
                                 <img class="img-fluid" src="../assets/img/brand/{{data.Category_Photo}}" alt=""
-                                    style="height: 450px; ">
+                                   >
                                 <div class="bg-secondary text-white position-absolute start-0 top-0 py-2 px-4">
                                     {{data.Category_Name}}</div>
                             </div>
                         </div>
                     </div>
-                    <!-- <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s" style="width: 33%;">
-                        <div class="product-item pointer" id="tab-1" >
-                           
-                            <div class="position-relative overflow-hidden">
-                                <img class="img-fluid" src="assets/img/brand/Adidas.jpg" alt="" style="height: 450px; width: 250px;">
-                                <div class="bg-secondary text-white position-absolute start-0 top-0 py-2 px-4"> Adidas</div>
-                          </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s" style="width: 33%;">
-                        <div class="product-item pointer" id="tab-1" >
-                           
-                            <div class="position-relative overflow-hidden">
-                                <img class="img-fluid" src="assets/img/brand/leotude.jpg" alt="" style="height: 450px; width: 250px;">
-                                <div class="bg-secondary text-white position-absolute start-0 top-0 py-2 px-4">  Leotude</div>
-                          </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s" style="width: 33%;">
-                        <div class="product-item pointer" id="tab-1" >
-                           
-                            <div class="position-relative overflow-hidden">
-                                <img class="img-fluid" src="assets/img/brand/lee.jpg" alt="" style="height: 450px; width: 250px;">
-                                <div class="bg-secondary text-white position-absolute start-0 top-0 py-2 px-4">  Lee</div>
-                          </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s" style="width: 33%;">
-                        <div class="product-item pointer" id="tab-1" >
-                           
-                            <div class="position-relative overflow-hidden">
-                                <img class="img-fluid" src="assets/img/brand/puma.jpg" alt="" style="height: 450px; width: 250px;">
-                                <div class="bg-secondary text-white position-absolute start-0 top-0 py-2 px-4">  Puma</div>
-                          </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s" style="width: 33%;">
-                        <div class="product-item pointer" id="tab-1" >
-                           
-                            <div class="position-relative overflow-hidden">
-                                <img class="img-fluid" src="assets/img/brand/reebox.jpg" alt="" style="height: 450px; width: 250px;">
-                                <div class="bg-secondary text-white position-absolute start-0 top-0 py-2 px-4">  Reebox</div>
-                          </div>
-                        </div>
-                    </div> -->
+                    <div class="col-12 text-center wow fadeInUp" data-wow-delay="0.1s"
+                    style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
+                    <a class="btn btn-primary rounded-pill py-3 px-5" href="category">View More Brands</a>
+                </div>
                 </div>
             </div>
         </div>
@@ -277,46 +236,37 @@
 </div>
 <!-- Brand End -->
 
-<!-- Testimonial Start -->
-<!-- <div class="container-fluid bg-light bg-icon py-6 mb-5">
-    <div class="container">
-        <div class="section-header text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
-          <h1 class="display-5 mb-3">Customer Review</h1>
-        </div>
-        <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.1s"> 
-            <div class="testimonial-item position-relative bg-white p-5 mt-4" *ngFor="let data of customerReview">
-            <i class="fa fa-quote-left fa-3x text-primary position-absolute top-0 start-0 mt-n4 ms-5"></i> 
-             -->
-<!-- <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et eos. Clita erat ipsum et lorem et sit.</p>S -->
-<!-- 
-<div class="d-flex align-items-center" >
-                <img class="flex-shrink-0 rounded-circle" src="assets/img/client_reviews/{{data.Client_Photo}}" alt="{{data.Client_Name}}">
-                <div class="ms-3">
-                    <h5 class="mb-1">{{data.Client_Name}}</h5>
-                    <span>{{data.Profession}}</span>
-                </div>
-            </div>
-        </div>
-      </div>
-  </div>
-</div> -->
-
+<!-- client review End -->
 <div class="container-fluid bg-light bg-icon py-5 mb-2" *ngIf="customerReview.length > 0">
     <div class="container" >
         <div class="section-header text-center mx-auto mb-3 wow fadeInUp" data-wow-delay="0.1s"
             style="max-width: 500px;">
-            <h1 class="display-5 mb-2">Customer Review</h1>
+            <h1 class="display-5 mb-2">Client Review</h1>
         </div>
         <owl-carousel-o [options]="customOptions">
             <ng-container  *ngFor="let data of customerReview">
-                <ng-template carouselSlide [width]="444">
-                    <div class="testimonial-item position-relative bg-white p-5 mt-4">
-                        <div class="d-flex align-items-center" >
-                            <img class="flex-shrink-0 rounded-circle" src="assets/img/client_reviews/{{data.Client_Photo}}" alt="{{data.Client_Name}}">
-                            <div class="ms-3">
-                                <h5 class="mb-1">{{data.Client_Name}}</h5>
-                                <span>{{data.Profession}}</span>
-                                <div>{{data.Review}}</div>
+                <ng-template carouselSlide [width]="375">
+                    <div class="card testimonial">
+                        <div class="card-body">
+                            <h4 class="card-title"><img src="assets/img/quote-left.png"></h4>
+                            <div class="template-demo testi-review">
+                               <div class="testi-review">
+                                <p style="color: #555555;
+                                font-weight: 500;">  {{data.Review}}</p></div>
+                            </div>
+                            <hr  style="color: #555555;">
+    
+                            <div class="row">
+                                <div class="col-sm-2 col-4">
+                                    <img class="rounded-circle profile-pic" src="assets/img/client_reviews/{{data.Client_Photo}}" alt="{{data.Client_Name}}">
+                                </div>
+    
+                                <div class="col-sm-10 col-8">
+                                    <div class="profile">
+                                        <h4 class="cust-name">{{data.Client_Name}}</h4>
+                                        <p class="cust-profession" style="font-size: 14px; color: gray; padding: 5px 0 0 0;">{{data.Profession}}</p>    
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -325,8 +275,7 @@
          </owl-carousel-o>
     </div>
 </div>
-<!-- Testimonial End -->
-
+<!-- client review End -->
 
 <!-- Blog Start -->
 <div class="container-xxl py-5">
@@ -349,6 +298,9 @@
                         <small class="me-3 read-more" (click)="onClick(data)">Read More...</small>
                     </div>
                 </div>
+            </div>
+            <div class="col-12 text-center wow fadeInUp" data-wow-delay="0.1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
+                <a class="btn btn-primary rounded-pill py-3 px-5" href="blog">View More Blogs</a>
             </div>
         </div>
     </div>
