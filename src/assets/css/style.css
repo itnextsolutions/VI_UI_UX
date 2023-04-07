@@ -1,3 +1,6 @@
+/* Option 2: Import via CSS */
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css");
+
 /********** Template CSS **********/
 :root {
     --primary: #c00b0b;
@@ -126,8 +129,9 @@
 .navbar .navbar-nav .nav-link:hover,
 .navbar .navbar-nav .nav-link.active {
     color: var(--dark);
-    font-size: 17px;
+    /* font-size: 17px; */
     text-transform: uppercase;
+    font-size: 14px;
 }
 
 .sidebar-link {
@@ -141,6 +145,19 @@
     padding-bottom: 5rem !important;
 }
 
+
+.testimonial-item.owl-carousel .owl-item img {
+    display: none;
+}
+.align-items-center {
+    align-items: center !important;
+}
+.navbar>.container, .navbar>.container-fluid, .navbar>.container-sm, .navbar>.container-md, .navbar>.container-lg, .navbar>.container-xl, .navbar>.container-xxl {
+    display: flex;
+    flex-wrap: inherit;
+    align-items: center !important;
+    justify-content: center !important;
+}
 @media (min-width: 320px) and (max-width: 425px) {
     .navbar .navbar-nav .nav-item .nav-link{
         font-size: 12px ;
@@ -150,11 +167,30 @@
         padding: 3px 0;
     }
 
+    .carousel-item {
+        margin-top: 12.5rem !important;}
     .header_bs_mo {
         padding-top: 14rem !important;
         padding-bottom: 0rem !important;
     }
 }
+@media (min-width: 1280px) and (max-width: 1366px) {
+.navbar .navbar-nav .nav-link:hover, .navbar .navbar-nav .nav-link.active {
+    color: var(--dark);
+  
+    text-transform: uppercase;
+    font-size: 14px;
+  
+    padding: 25px 3px 25px 3px;
+}
+
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+.navbar .navbar-nav .nav-link:hover, .navbar .navbar-nav .nav-link.active {
+    color: var(--dark);
+    /* font-size: 17px; */
+    text-transform: uppercase;
+    font-size: 12px;}}
 
 @media (max-width: 991.98px) {
     .navbar .navbar-nav {
@@ -222,11 +258,23 @@
     border-radius: 3rem;
 }
 
+.carousel-item  h1{
+font-size: 61px;
+    color: whii;
+    color: white;
+    text-align: center;
+    filter: drop-shadow(2px 4px 6px black);
+    font-weight: 500;
+}
 @media (max-width: 768px) {
     #header-carousel .carousel-item {
         position: relative;
-        min-height: 450px;
+        min-height: 143px;
+        object-fit: fill;
     }
+    .carousel-item h1 {
+        font-size: 28px;}
+    
     
     #header-carousel .carousel-item img {
         position: absolute;
@@ -595,6 +643,33 @@
     cursor: pointer;
 }
 
+.product-name-new{
+    padding: 0 !important;
+}
+
+.testi-img{
+    margin: 0 auto;
+    display: block;
+    position: relative;
+    bottom: 20px;
+}
+
+.testi-review{
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 4; /* number of lines to show */
+            line-clamp: 4; 
+    -webkit-box-orient: vertical;
+}
+.genderButton :hover{
+background-color: #007bff;
+}
+.size-btn{
+position: relative;
+    right: 20px;}
+    .colors-pallete{
+        padding: 0 !important;
+    }
 /* .container{
 
     width : 940px;

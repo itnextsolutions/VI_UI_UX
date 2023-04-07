@@ -9,6 +9,20 @@
         width: 33%;
     }
 }
+@media (min-width: 320px) and (max-width: 600px) {
+.product-item {
+    border: 1px solid #e9e6e6;
+    border-top: 3px solid #df0a0a;
+    width: 90%;
+    margin: 0 auto;
+    aspect-ratio: 4/5;
+}
+.card{
+    width: unset;
+}
+
+
+}
 .announcement-bar {
     font-size: 14.45px;
     position: relative;
@@ -67,3 +81,110 @@
     color: #FFFFFF;
     background: var(--primary);
 }
+
+.testimonial-carousel .owl-carousel .owl-item img {
+    display: -webkit-inline-box !important;
+}
+
+.testimonial-carousel .testimonial-item .quote-icon-left, .testimonial-carousel .testimonial-item .quote-icon-right {
+    color: #ffd565;
+    font-size: 26px;
+    line-height: 0;
+}
+
+.bi::before, [class^="bi-"]::before, [class*=" bi-"]::before {
+    display: inline-block;
+    font-family: bootstrap-icons !important;
+    font-style: normal;
+    font-weight: normal !important;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    vertical-align: -.125em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.card {
+    position: relative;
+    display: flex;
+    width: 350px;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid #d2d2dc;
+    border-radius: 11px;
+    -webkit-box-shadow: 0px 0px 5px 0px rgb(249, 249, 250);
+    -moz-box-shadow: 0px 0px 5px 0px rgba(212,182,212,1);
+    box-shadow: 0px 0px 5px 0px rgb(161, 163, 164);
+}
+
+ .testimonial .card-body {
+        padding: 1rem 1rem;
+ }
+
+ .testimonial.card-body {
+     flex: 1 1 auto;
+     padding: 1.25rem
+ }
+
+.testimonialp {
+     font-size: 0.875rem;
+     margin-bottom: .5rem;
+     line-height: 1.5rem
+ }
+
+ .testimonial h4{
+         line-height: .2 !important;
+ }
+.testimonial .profile{
+           margin-top: 16px;
+    margin-left: 11px;
+}
+
+.testimonial .profile-pic{
+     width: 58px;
+}
+
+.testimonial .cust-name{
+     font-size: 18px;
+}
+
+.testimonial.cust-profession{
+     font-size: 10px;
+}
+
+
+
+.testimonial.items {
+    width: 90%;
+    margin: 0px auto;
+    margin-top: 100px
+}
+
+.testimonial.slick-slide {
+    margin: 10px
+}
+.left-side {
+    float: left;
+    width: 25%;
+    padding: 1%;
+  }
+  
+  
+  .content-testi  {
+    width: 75%;
+    margin: 0 auto;
+  }
+
+  .wrapper {
+    max-width: 700px;
+  }
+  .wrapper .float-image {
+    margin: 10px;
+  }
+  .wrapper .float-image.left {
+    float: left;
+  }

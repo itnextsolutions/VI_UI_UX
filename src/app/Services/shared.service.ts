@@ -8,8 +8,8 @@ import { Observable } from "rxjs";
 })
 
 export class SharedService {
- // readonly APIUrl = "http://TestAPI.VastraIndia.com/api/";
- readonly APIUrl = "https://testapi.vastraindia.com/api/";
+ readonly APIUrl = "https://localhost:44321/api/";
+//  readonly APIUrl = "https://testapi.vastraindia.com/api/";
   constructor(private http: HttpClient) {}
 
 //Menu Binding
