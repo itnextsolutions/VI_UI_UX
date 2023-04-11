@@ -77,22 +77,29 @@
        
         <div *ngFor="let data of product" class="mo-order-2">
             <ul class="pro-small-img">
-                <li><img src="assets/img/{{data.Category_Name}}/{{data.Product_Photo}}" class="small_img"></li>
-                <li><img src="assets/img/{{data.Category_Name}}/{{data.Product_SidePhoto}}" class="small_img"></li>
-                <li><img src="assets/img/{{data.Category_Name}}/{{data.Product_BackPhoto}}" class="small_img"></li>
+                <li><img src="assets/img/{{this.productcategoryfolder}}/{{data.Product_Photo}}" class="small_img"></li>
+                <li><img src="assets/img/{{this.productcategoryfolder}}/{{data.Product_SidePhoto}}" class="small_img"></li>
+                <li><img src="assets/img/{{this.productcategoryfolder}}/{{data.Product_BackPhoto}}" class="small_img"></li>
             </ul>
-            <img class="big_img" src="assets/img/{{data.Category_Name}}/{{data.Product_Photo}}" style="width: 470px;">
+            <svg id="product-svg" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg"    height="571" width="467">
+                <defs/>
+                <path id="product-shape" [attr.d]="svg_path"  [ngStyle]="{ fill: bgColor }" />
+                </svg>
+            <img class="big_img" src="assets/img/{{this.productcategoryfolder}}/{{data.Product_Photo}}">
+           <!-- <div>{{svg_path}}
+            {{this.svg_path}}
+            {{data.men_f_svgpath}}</div>  -->
         </div>
     </div>
 
     <div [hidden]="isWoMenDivHidden">
         <div *ngFor="let data of product" class="mo-order-2">
             <ul class="pro-small-img">
-                <li><img src="assets/img/{{data.Category_Name}}/{{data.WomenProduct_Photo}}" class="small_img"></li>
-                <li><img src="assets/img/{{data.Category_Name}}/{{data.WomenProduct_SidePhoto}}" class="small_img"></li>
-                <li><img src="assets/img/{{data.Category_Name}}/{{data.WomenProduct_BackPhoto}}" class="small_img"></li>
+                <li><img src="assets/img/{{this.productcategoryfolder}}/{{data.WomenProduct_Photo}}" class="small_img"></li>
+                <li><img src="assets/img/{{this.productcategoryfolder}}/{{data.WomenProduct_SidePhoto}}" class="small_img"></li>
+                <li><img src="assets/img/{{this.productcategoryfolder}}/{{data.WomenProduct_BackPhoto}}" class="small_img"></li>
             </ul>
-            <img class="big_img" src="assets/img/{{data.Category_Name}}/{{data.WomenProduct_Photo}}"  style="">
+            <img class="big_img" src="assets/img/{{this.productcategoryfolder}}/{{data.WomenProduct_Photo}}"  style="">
         </div>
     </div>
     <div class="container-xxl py-5">
@@ -132,11 +139,17 @@
                             <div class="row row-cols-2 row-cols-lg-6 mb-5 w-90">
                                 <div *ngFor="let data of colors">
                                     {{data.ColorName}}
-                                    <li class="color-box" rel="tooltip"
+                                    <li class="color-box" rel="tooltip" (click)="onColorClick(data)"
                                         [ngStyle]="{'background-color':data.Description}" data-mobile=""
                                         data-create="false">
                                     </li>
                                 </div>
+                                <!-- <div class="colors">
+                                    <div class="productcolor" style="background-color: #4a9ccf" data-hex="#4a9ccf"></div>
+                                    <div class="productcolor" style="background-color: #8cd147" data-hex="#8cd147"></div>
+                                    <div class="productcolor" style="background-color: #661f45" data-hex="#661f45"></div>
+                                    <div class="productcolor" style="background-color: #1e2024" data-hex="#1e2024"></div>
+                                  </div> -->
                             </div>
                         </div>
                     </div>
@@ -197,7 +210,7 @@
                         <!-- <img class="img-fluid w-100"
                             src="assets/img/{{categoryfolder}}/{{simillarproduct.Product_Photo}}" alt=""> -->
                         <img class="img-fluid w-100"
-                            src="assets/img/{{simillarproduct.Category_Name}}/{{simillarproduct.Product_Photo}}" alt="">   
+                            src="assets/img/{{this.categoryfolder}}/{{simillarproduct.Product_Photo}}" alt="">   
                         <!-- <div class="bg-secondary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">Sale</div> -->
                     </div>
                     <div class="text-center p-4">

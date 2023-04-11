@@ -103,6 +103,8 @@ export class ProductDetailsComponent implements OnInit {
   colors: any = [];
   simillarProducts: any = [];
   hidden: any;
+  svg_path = '';
+  bgColor = 'grey';
 
   menDesc: string = "";
   womenDesc: string = "";
@@ -113,6 +115,8 @@ export class ProductDetailsComponent implements OnInit {
     this.productId = this.param.snapshot.paramMap.get('id');
     this.categoryName = this.param.snapshot.paramMap.get('categoryName');
     this.categoryName = this.categoryName.replace(/-/g, ' ').toUpperCase();
+
+    this.productcategoryfolder = this.categoryName.replace(/\s+/g, '-').toLowerCase();
 
     this.subcategoryName = this.param.snapshot.paramMap.get('subcategoryName');
     this.subcategoryName = this.subcategoryName.replace(/-/g, ' ').toUpperCase();
@@ -131,12 +135,14 @@ export class ProductDetailsComponent implements OnInit {
   }
 
   getProduct() {
+    debugger;
     this.userService.getProductById(this.productId).subscribe(data => {
       this.product = data;
 
       if (this.product != null) {
         this.product.forEach((element: any) => {
           this.category_id = element.Category_Id;
+          this.svg_path = element.men_f_svgpath;
         })
       }
     });
@@ -186,6 +192,11 @@ export class ProductDetailsComponent implements OnInit {
 
     this.womenDesc=this.product.WomenProduct_Description;
     this.id=0;
+  }
+
+  onColorClick(data:any) {
+  
+    this.bgColor = data.Description;
   }
 }
 
