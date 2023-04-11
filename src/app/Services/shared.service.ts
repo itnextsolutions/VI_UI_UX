@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Observable } from "rxjs";
+import { AuthenticatedResponse } from '../app.module';
 //import { AuthenticatedResponse } from '../app.module';
 
 @Injectable({
@@ -8,24 +9,28 @@ import { Observable } from "rxjs";
 })
 
 export class SharedService {
- readonly APIUrl = "https://localhost:44321/api/";
-//  readonly APIUrl = "https://testapi.vastraindia.com/api/";
+readonly APIUrl = "https://testapi.vastraindia.com/api/";
+//readonly APIUrl = "https://localhost:44321/api/";
   constructor(private http: HttpClient) {}
 
 //Menu Binding
 getMenuList(): Observable < any[] > {
-  return this.http.get < any > (this.APIUrl + 'Home/GetMenuList');
+  return this.http.get< any > (this.APIUrl + 'Home/GetMenuList');
 }
 
 // Login(val: any) {
 // return this.http.post(this.APIUrl + 'Login/login', val);
 // }
 
+// Login(val: any) {
+//   debugger
+//    return this.http.post(this.APIUrl + 'Login/login', val);
+// }
+
 Login(val: any) {
   debugger
    return this.http.post(this.APIUrl + 'Login/login', val);
 }
-
 //Product Category  Start
 getproductcategoryList(): Observable < any[] > {
     return this.http.get < any > (this.APIUrl + 'Product/GetCategory');
