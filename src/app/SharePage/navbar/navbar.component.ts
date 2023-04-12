@@ -24,6 +24,7 @@ export class NavbarComponent implements OnInit {
   }
 
   refreshproductcategoryList() {
+    debugger;
    this.getproductmenubar();
    this.getNotification();
   }

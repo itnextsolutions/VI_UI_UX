@@ -18,6 +18,7 @@ import { ProductDetailsComponent } from './Pages/product-details/product-details
 import { SearchresultComponent } from './Pages/searchresult/searchresult.component';
 import { FaqComponent } from './Pages/faq/faq.component';
 import { SubcategoryComponent } from './Pages/subcategory/subcategory.component';
+import { BrandComponent } from './Pages/brand/brand.component';
 
 import { NavbarComponent } from './SharePage/navbar/navbar.component';
 import { FooterComponent } from './SharePage/footer/footer.component';
@@ -62,6 +63,7 @@ import { JwtModule } from '@auth0/angular-jwt';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -88,6 +90,7 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
     ProductsComponent,
     UniquePipe,
     CategoryComponent,
+    BrandComponent,
     BlogComponent,
     BlogContentComponent,
     BlogmasterComponent,
@@ -109,7 +112,8 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
     ShowFaqComponent,
     AddEditFaqComponent,
     SidebarComponent,
-    CustmizeDesignComponent
+    CustmizeDesignComponent,
+    
   ],
   
   imports: [

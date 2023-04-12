@@ -7,8 +7,10 @@ import { Observable } from "rxjs";
 })
 
 export class UserService {
-  //readonly APIUrl = "https://testapi.vastraindia.com/api/";
-  readonly APIUrl = "https://localhost:44365/api/";
+
+  readonly APIUrl = "https://testapi.vastraindia.com/api/";
+  // readonly APIUrl = "https://localhost:44365/api/";
+
   constructor(private http: HttpClient) {}
 
     getFAQ(): Observable < any[] > {
@@ -31,8 +33,8 @@ export class UserService {
         return this.http.get < any > (this.APIUrl + 'Home/GetCategory');
     }
 
-    getallproductcategoryList(): Observable < any[] > {
-      return this.http.get < any > (this.APIUrl + 'Home/GetAllCategory');
+    getallproductcategoryList(IsBrand: any): Observable < any[] > {
+      return this.http.get < any > (this.APIUrl + 'Home/GetAllCategory?IsBrand=' + IsBrand);
     }
 
     getproductmenubar(): Observable < any[] > {

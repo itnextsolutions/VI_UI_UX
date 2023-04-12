@@ -43,10 +43,8 @@
 </div>
 <!-- Custmize design  Model End -->
 
-<!-- Product Details Start -->
-
 <!--breadcrumb start-->
-<div class="container-xxl pt-12">
+<div class="container pt-12">
     <div class="row g-0 gx-5 align-items-end">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb" itemscope="" itemtype="http://schema.org/BreadcrumbList">
@@ -71,112 +69,126 @@
             </ol>
         </nav>
     </div>
-    <!--breadcrumb-->
+</div>
+<!--breadcrumb- End -->
 
-    <div [hidden]="isMenDivHidden" >
-       
-        <div *ngFor="let data of product" class="mo-order-2">
-            <ul class="pro-small-img">
-                <li><img src="assets/img/{{data.Category_Name}}/{{data.Product_Photo}}" class="small_img"></li>
-                <li><img src="assets/img/{{data.Category_Name}}/{{data.Product_SidePhoto}}" class="small_img"></li>
-                <li><img src="assets/img/{{data.Category_Name}}/{{data.Product_BackPhoto}}" class="small_img"></li>
-            </ul>
-            <img class="big_img" src="assets/img/{{data.Category_Name}}/{{data.Product_Photo}}" style="width: 470px;">
-        </div>
-    </div>
-
-    <div [hidden]="isWoMenDivHidden">
-        <div *ngFor="let data of product" class="mo-order-2">
-            <ul class="pro-small-img">
-                <li><img src="assets/img/{{data.Category_Name}}/{{data.WomenProduct_Photo}}" class="small_img"></li>
-                <li><img src="assets/img/{{data.Category_Name}}/{{data.WomenProduct_SidePhoto}}" class="small_img"></li>
-                <li><img src="assets/img/{{data.Category_Name}}/{{data.WomenProduct_BackPhoto}}" class="small_img"></li>
-            </ul>
-            <img class="big_img" src="assets/img/{{data.Category_Name}}/{{data.WomenProduct_Photo}}"  style="">
-        </div>
-    </div>
-    <div class="container-xxl py-7">
+<!-- Product Details Start -->
+<section>
+    <div class="container-xxl py-4">
         <div class="container">
+        <div class="row">
+        <div class="col-lg-6 col-12">
+            <div [hidden]="isMenDivHidden" >
+                <div *ngFor="let data of product" class="mo-order-2">
+                    <svg id="product-svg" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg"    height="571" width="467">
+                        <defs/>
+                        <path id="product-shape" [attr.d]="svg_path"  [ngStyle]="{ fill: bgColor }" />
+                        </svg>
+                    <img class="big_img" src="assets/img/{{this.productcategoryfolder}}/{{data.Product_Photo}}">
+                </div>
+            </div>
+        
+            <div [hidden]="isWoMenDivHidden">
+                <div *ngFor="let data of product" class="mo-order-2">
+                    <svg id="product-svg" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg"    height="571" width="467">
+                        <defs/>
+                        <path id="product-shape" [attr.d]="svg_path"  [ngStyle]="{ fill: bgColor }" />
+                        </svg>
+                   <img class="big_img" src="assets/img/{{this.productcategoryfolder}}/{{data.WomenProduct_Photo}}"  style="">
+                </div>
+            </div>
+        </div>
+    
+        <div class="col-lg-6 col-12 ">
             <div class="row g-5 align-items-center" *ngFor="let data of product">
                 <div class="col-lg-6 w-100 p-0">
                     <div class="pro-detail-page-top">
                         <div class="row g-4 mb-0 color bold align-items-center">
+                            <h3 class=" product-name-new pt-4">{{data.Product_Title}}</h3>
 
-                        <h3 class=" product-name-new">{{data.Product_Title}}</h3>
+                            <div class="row g-4">
+                                <h5 class="colors-pallete" style="margin-top: 0px !important;">Colors:</h5>
+                                <div class="container py-5 pc-Style-hero-colors-sizeList-adultSizes mt-0 pt-0 pb-3">
+                                    <div class="row row-cols-2 row-cols-lg-6 w-90">
+                                        <div *ngFor="let data of colors">
+                                            <div style="height: 51px;"><li class="color-box" rel="tooltip" (click)="onColorClick(data)"
+                                                [ngStyle]="{'background-color':data.Description}" data-mobile=""
+                                                data-create="false">
+                                            </li></div>
+                                            <div class="label-name">{{data.ColorName}}</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
 
-                        <div [hidden]="isMenDivHidden" class="modal-body"  *ngFor="let data of product">
-                            <h5>Product Description :</h5>
-                            <div  class="detail-pro-dec" [innerHTML]="data.Product_Description"></div>
-                            
-                            <!-- <p class="mb-4 color text-center" >{{data.Product_Description}}</p> -->
+                            <div [hidden]="isMenDivHidden" class="modal-body"  *ngFor="let data of product">
+                                <h5>Product Description :</h5>
+                                <div  class="detail-pro-dec" [innerHTML]="data.Product_Description"></div>
+                            </div>
+                            <div [hidden]="isWoMenDivHidden" class="modal-body" *ngFor="let data of product">
+                                <h5>Product Description :</h5>
+                                <div class="detail-pro-dec"[innerHTML]="data.WomenProduct_Description"></div>
+                                <!-- <p class="mb-4 color text-center">{{data.WomenProduct_Description}}</p> -->
+                            </div>
+                            <div class="edit-btn-page" style="  margin-top: 0px !important;">
+                                <button type="button" class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#exampleModal"
+                                    class=" size-btn btn btn-link  fs-5" style="text-align: -webkit-match-parent;">
+                                    <i class="material-icons text-sm me-2">info</i>Size Chart
+                                </button>
+                                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal1"
+                                    class="btn btn-link  fs-5">
+                                    <i class="material-icons text-sm me-2">edit</i>Customize Design
+                                </button>
+                            </div>
                         </div>
-                        <div [hidden]="isWoMenDivHidden" class="modal-body" *ngFor="let data of product">
-                            <h5>Product Description :</h5>
-                            <div class="detail-pro-dec"[innerHTML]="data.WomenProduct_Description"></div>
-                            <!-- <p class="mb-4 color text-center">{{data.WomenProduct_Description}}</p> -->
+    
+                    <div class="row g-4 d-flex">
+                        <div class="col-lg-4 col-6 pad-0">
+                            <h5 class=" pad-0">Sizes available in:</h5>
                         </div>
-                    </div>
-                  
-                    <button type="button" class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#exampleModal"
-                        class=" size-btn btn btn-link  fs-5" style="text-align: -webkit-match-parent;">
-                        <i class="material-icons text-sm me-2">info</i>Size Chart
-                    </button>
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal1"
-                        class="btn btn-link w-35 fs-5">
-                        <i class="material-icons text-sm me-2">edit</i>Customize Design
-                    </button>
-                  
-                    <div class="row g-4">
-                        <h5 class="colors-pallete pad-0">Colors:</h5>
-                        <div class="container py-5 pc-Style-hero-colors-sizeList-adultSizes mt-0 pt-0 pb-3">
-                            <div class="row row-cols-2 row-cols-lg-6 mb-5 w-90">
-                                <div *ngFor="let data of colors">
-                                    {{data.ColorName}}
-                                    <li class="color-box" rel="tooltip"
-                                        [ngStyle]="{'background-color':data.Description}" data-mobile=""
-                                        data-create="false">
-                                    </li>
+                        <div class="col-lg-6 col-6  pad-0">
+                            <div class=" py-5 pc-Style-hero-colors-sizeList-adultSizes mt-0 pt-0 pb-3"style="">
+                                <div class="d-flex">
+                                    <div class="" *ngFor="let data of sizes">
+                                        <span class=" size pc-Style-hero-colors-sizeList-item in" style="margin: 10px;">{{data.Description}}</span>  <span>|</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-
+    
                     <div class="row g-4">
-                        <h5 class=" pad-0">Sizes available in:</h5>
-                        <div class="container py-5 pc-Style-hero-colors-sizeList-adultSizes mt-0 pt-0 pb-3">
-                            <div class="row row-cols-5 row-cols-lg-7 w-50">
-                                <div class="" *ngFor="let data of sizes">
-                                    <span class="pc-Style-hero-colors-sizeList-item in" style="margin-right: 10px;">
-                                        {{data.Description}} </span><span>   |</span>
-                                </div>
-                            </div>
+                        <div class="col-lg-4 col-6  pad-0">
+                            <h5 class="variationHead" style="margin-top: 25px;padding: 0!important; ">Choose Category:</h5>
                         </div>
-                    </div>
-
-                    <div class="row g-4">
-                        <h5 class="variationHead" style="margin-top: 25px;padding: 0!important; ">Choose Category:</h5>
-                        <div class="genderButtonBlock mt-0 pt-0 pb-3" id="genderVariations">
-                            <div class="container" style="margin-top: 10px;padding: 0 !important;">
-                                <button (click)="onClickmenPhoto()"  class="genderButton pad-0" data-id="id_0" tabindex="0" data-title="Men"
-                                    data-value="men" style="border-radius: 10px; height:40px; width: 80px;">
-                                    Men
-                                </button>
-                                <button class="genderButton pad-0" data-id="id_1" tabindex="1" data-title="Women"  data-value="women"
-                                    style="margin-left: 10px; border-radius: 10px; height:40px; width: 80px;"  (click)="onClickWomenPhoto()">
-                                    Women
-                                </button>
+    
+                        <div class="col-lg-6 col-6  pad-0">
+                            <div class="genderButtonBlock mt-0 pt-0 pb-3" id="genderVariations">
+                                <div class="container" style="margin-top: 10px;padding: 0 !important; ">
+                                    <div class="gender-btn">
+                                        <button (click)="onClickmenPhoto()"  class="genderButton pad-0" data-id="id_0" tabindex="0" data-title="Men"
+                                            data-value="men" style="border-radius: 10px; height:40px; width: 80px;">
+                                            Men
+                                        </button>
+                                        <!-- <button class="genderButton pad-0" data-id="id_1" tabindex="1" data-title="Women"  data-value="women"
+                                            style="margin-left: 10px; border-radius: 10px; height:40px; width: 80px;"  (click)="onClickWomenPhoto()">
+                                            Women
+                                        </button> -->
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            </div>
         </div>
     </div>
-</div>
-<!--breadcrumb End-->
-
+    </div>
+    </div>
+    </div>
+</section>
 <!-- Product Details End -->
+
 <!-- Similar Products Start -->
 <div class="container-xxl py-9">
     <div class="container">
@@ -190,14 +202,14 @@
         </div>
 
         <div class="row g-4">
-            <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s"
+            <div class="col-xl-3 col-lg-4 col-md-6  col-6 wow fadeInUp" data-wow-delay="0.1s"
                 *ngFor="let simillarproduct of simillarProducts">
                 <div class="product-item pointer" id="tab-1" (click) ="onClick(simillarproduct)">
                     <div class="position-relative bg-light overflow-hidden">
                         <!-- <img class="img-fluid w-100"
                             src="assets/img/{{categoryfolder}}/{{simillarproduct.Product_Photo}}" alt=""> -->
                         <img class="img-fluid w-100"
-                            src="assets/img/{{simillarproduct.Category_Name}}/{{simillarproduct.Product_Photo}}" alt="">   
+                            src="assets/img/{{this.categoryfolder}}/{{simillarproduct.Product_Photo}}" alt="">   
                         <!-- <div class="bg-secondary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">Sale</div> -->
                     </div>
                     <div class="text-center p-4">
@@ -218,9 +230,6 @@
     </div>
 </div>
 <!-- Similar Products End -->
-
-
-
 
 <!-- Page Footer start-->
 <app-footer></app-footer>
