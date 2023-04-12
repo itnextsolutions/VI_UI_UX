@@ -9,8 +9,8 @@ import { AuthenticatedResponse } from '../app.module';
 })
 
 export class SharedService {
-readonly APIUrl = "https://testapi.vastraindia.com/api/";
-//readonly APIUrl = "https://localhost:44321/api/";
+//readonly APIUrl = "https://testapi.vastraindia.com/api/";
+readonly APIUrl = "https://localhost:44365/api/";
   constructor(private http: HttpClient) {}
 
 //Menu Binding
@@ -92,8 +92,9 @@ getProductDetailsList(): Observable < any[] > {
   return this.http.get < any > (this.APIUrl + 'Product/GetProducts');
 }
 
-addProductDetails(val: any) {
-return this.http.post(this.APIUrl + 'Product/InsertProduct', val);
+addProductDetails(formData: any) {
+  debugger
+return this.http.post(this.APIUrl + 'Product/InsertProduct', formData);
 }
 
 updateProductDetails(val: any) {debugger
