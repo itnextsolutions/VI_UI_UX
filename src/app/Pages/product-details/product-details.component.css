@@ -1,3 +1,10 @@
+.label-name{
+  font-size: 11px;
+    line-height: 11px;
+    text-align: center;
+    margin-top: 4px;
+}
+
 #product-svg {
   position: absolute;
   z-index: 2;

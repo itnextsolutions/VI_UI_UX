@@ -69,6 +69,7 @@
             </ol>
         </nav>
     </div>
+</div>
 <!--breadcrumb- End -->
 
 <!-- Product Details Start -->
@@ -104,42 +105,42 @@
                     <div class="pro-detail-page-top">
                         <div class="row g-4 mb-0 color bold align-items-center">
                             <h3 class=" product-name-new pt-4">{{data.Product_Title}}</h3>
-                        <div [hidden]="isMenDivHidden" class="modal-body"  *ngFor="let data of product">
-                            
-                            <h5>Product Description :</h5>
-                            <div  class="detail-pro-dec" [innerHTML]="data.Product_Description"></div>
-                        </div>
-                        <div [hidden]="isWoMenDivHidden" class="modal-body" *ngFor="let data of product">
-                            <h5>Product Description :</h5>
-                            <div class="detail-pro-dec"[innerHTML]="data.WomenProduct_Description"></div>
-                            <!-- <p class="mb-4 color text-center">{{data.WomenProduct_Description}}</p> -->
-                        </div>
-                        <div class="edit-btn-page">
-                            <button type="button" class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#exampleModal"
-                                class=" size-btn btn btn-link  fs-5" style="text-align: -webkit-match-parent;">
-                                <i class="material-icons text-sm me-2">info</i>Size Chart
-                            </button>
-                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal1"
-                                class="btn btn-link  fs-5">
-                                <i class="material-icons text-sm me-2">edit</i>Customize Design
-                            </button>
-                        </div>
-                    </div>
-                 
-                    <div class="row g-4">
-                        <h5 class="colors-pallete pad-0">Colors:</h5>
-                        <div class="container py-5 pc-Style-hero-colors-sizeList-adultSizes mt-0 pt-0 pb-3">
-                            <div class="row row-cols-2 row-cols-lg-6 mb-5 w-90">
-                                <div *ngFor="let data of colors">
-                                    <!-- {{data.ColorName}} -->
-                                    <li class="color-box" rel="tooltip" (click)="onColorClick(data)"
-                                        [ngStyle]="{'background-color':data.Description}" data-mobile=""
-                                        data-create="false">
-                                    </li>
+
+                            <div class="row g-4">
+                                <h5 class="colors-pallete" style="margin-top: 0px !important;">Colors:</h5>
+                                <div class="container py-5 pc-Style-hero-colors-sizeList-adultSizes mt-0 pt-0 pb-3">
+                                    <div class="row row-cols-2 row-cols-lg-6 w-90">
+                                        <div *ngFor="let data of colors">
+                                            <div style="height: 51px;"><li class="color-box" rel="tooltip" (click)="onColorClick(data)"
+                                                [ngStyle]="{'background-color':data.Description}" data-mobile=""
+                                                data-create="false">
+                                            </li></div>
+                                            <div class="label-name">{{data.ColorName}}</div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
+
+                            <div [hidden]="isMenDivHidden" class="modal-body"  *ngFor="let data of product">
+                                <h5>Product Description :</h5>
+                                <div  class="detail-pro-dec" [innerHTML]="data.Product_Description"></div>
+                            </div>
+                            <div [hidden]="isWoMenDivHidden" class="modal-body" *ngFor="let data of product">
+                                <h5>Product Description :</h5>
+                                <div class="detail-pro-dec"[innerHTML]="data.WomenProduct_Description"></div>
+                                <!-- <p class="mb-4 color text-center">{{data.WomenProduct_Description}}</p> -->
+                            </div>
+                            <div class="edit-btn-page" style="  margin-top: 0px !important;">
+                                <button type="button" class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#exampleModal"
+                                    class=" size-btn btn btn-link  fs-5" style="text-align: -webkit-match-parent;">
+                                    <i class="material-icons text-sm me-2">info</i>Size Chart
+                                </button>
+                                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal1"
+                                    class="btn btn-link  fs-5">
+                                    <i class="material-icons text-sm me-2">edit</i>Customize Design
+                                </button>
+                            </div>
                         </div>
-                    </div>
     
                     <div class="row g-4 d-flex">
                         <div class="col-lg-4 col-6 pad-0">
@@ -149,7 +150,7 @@
                             <div class=" py-5 pc-Style-hero-colors-sizeList-adultSizes mt-0 pt-0 pb-3"style="">
                                 <div class="d-flex">
                                     <div class="" *ngFor="let data of sizes">
-                                        <span class=" size pc-Style-hero-colors-sizeList-item in" style="margin-right: 10px;">{{data.Description}}</span>  <span>|</span>
+                                        <span class=" size pc-Style-hero-colors-sizeList-item in" style="margin: 10px;">{{data.Description}}</span>  <span>|</span>
                                     </div>
                                 </div>
                             </div>
@@ -169,10 +170,10 @@
                                             data-value="men" style="border-radius: 10px; height:40px; width: 80px;">
                                             Men
                                         </button>
-                                        <button class="genderButton pad-0" data-id="id_1" tabindex="1" data-title="Women"  data-value="women"
+                                        <!-- <button class="genderButton pad-0" data-id="id_1" tabindex="1" data-title="Women"  data-value="women"
                                             style="margin-left: 10px; border-radius: 10px; height:40px; width: 80px;"  (click)="onClickWomenPhoto()">
                                             Women
-                                        </button>
+                                        </button> -->
                                     </div>
                                 </div>
                             </div>
