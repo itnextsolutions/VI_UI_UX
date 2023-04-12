@@ -1,14 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router,ActivatedRoute } from '@angular/router';
 import { UserService } from "src/app/Services/Api/User/user.service";
 
 @Component({
-  selector: 'app-category',
-  templateUrl: './category.component.html',
-  styleUrls: ['./category.component.css']
+  selector: 'app-brand',
+  templateUrl: './brand.component.html',
+  styleUrls: ['./brand.component.css']
 })
-export class CategoryComponent implements OnInit {
-
+export class BrandComponent {
   IsBrand: any = 0;
   allcategoryList:any = [];
   productcategory:any;
@@ -20,7 +19,7 @@ export class CategoryComponent implements OnInit {
   }
 
   refreshallcategoryList() {
-    this.IsBrand = 0;
+    this.IsBrand = 1;
 
     this.userService.getallproductcategoryList(this.IsBrand).subscribe(data =>{
       this.allcategoryList = data;
@@ -31,7 +30,4 @@ export class CategoryComponent implements OnInit {
     
     this.router.navigate(['products/',data.Category_Id,data.Category_Name]);
   }
-
-  }
-
-
+}

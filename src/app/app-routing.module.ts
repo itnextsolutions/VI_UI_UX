@@ -15,6 +15,7 @@ import { SearchresultComponent } from './Pages/searchresult/searchresult.compone
 import { FaqComponent } from './Pages/faq/faq.component';
 import { SubcategoryComponent } from './Pages/subcategory/subcategory.component';
 import { CustmizeDesignComponent } from './Pages/custmize-design/custmize-design.component';
+import { BrandComponent } from './Pages/brand/brand.component';
 
 import { LoginComponent } from './Admin/login/login.component';
 import { ProductCategoryComponent } from './Admin/product-category/product-category.component';
@@ -44,6 +45,7 @@ const routes: Routes = [
   {path:'blog/:blog_Id',component:BlogContentComponent},
   {path:'search-result/:search',component:SearchresultComponent},
   {path:'faq',component:FaqComponent},
+  {path:'brand',component:BrandComponent},
 
   {path:'admin/login',component:LoginComponent},
   {path:'admin/product-category',component:ProductCategoryComponent,canActivate:[AuthGuard]},
