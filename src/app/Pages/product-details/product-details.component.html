@@ -79,12 +79,20 @@
         <div class="col-lg-6 col-12">
             <div [hidden]="isMenDivHidden" >
                 <div *ngFor="let data of product" class="mo-order-2">
+                    <svg id="product-svg" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg"    height="571" width="467">
+                        <defs/>
+                        <path id="product-shape" [attr.d]="svg_path"  [ngStyle]="{ fill: bgColor }" />
+                        </svg>
                     <img class="big_img" src="assets/img/{{this.productcategoryfolder}}/{{data.Product_Photo}}">
                 </div>
             </div>
         
             <div [hidden]="isWoMenDivHidden">
                 <div *ngFor="let data of product" class="mo-order-2">
+                    <svg id="product-svg" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg"    height="571" width="467">
+                        <defs/>
+                        <path id="product-shape" [attr.d]="svg_path"  [ngStyle]="{ fill: bgColor }" />
+                        </svg>
                    <img class="big_img" src="assets/img/{{this.productcategoryfolder}}/{{data.WomenProduct_Photo}}"  style="">
                 </div>
             </div>
