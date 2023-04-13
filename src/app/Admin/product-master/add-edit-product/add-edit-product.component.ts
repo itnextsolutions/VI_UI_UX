@@ -106,8 +106,8 @@ export class AddEditProductComponent implements OnInit {
           this.Product_Description = this.product.Product_Description;
           this.Image_Name = this.product.Category_Photo;
          // this.ColorId = this.product.ColorId;
-          this.ColorId = this.product.ColorId.split(",");
-          this.SizeId =  this.product.SizeId.split(",");
+          this.ColorId = this.product.ColorId;
+          this.SizeId =  this.product.SizeId;
           this.MenFront_Photo = this.product.Product_Photo;
           this.MenSide_Photo = this.product.Product_SidePhoto;
           this.MenBack_Photo = this.product.Product_BackPhoto;
@@ -148,16 +148,7 @@ export class AddEditProductComponent implements OnInit {
   GetColorList() {debugger
     this.service.GetColor().subscribe((data:any) =>{
       this.ColorData = data;
-      
-     
-//       this.ColorData.forEach(element => {
-//        let a = GetColorName(element.Description);
-//       this.colorName.push(a)
-       
-// })
     }) 
-    //console.log(this.colorName);
-
   }
 
 
@@ -254,8 +245,8 @@ export class AddEditProductComponent implements OnInit {
 
   addProductDetails() {
 
-    //this.submitted = true;
-        //if (this.ProductForm.valid) {
+    debugger
+
           let formData = new FormData()
           formData.append('Category_Id', this.Category_Id);
           formData.append('SubCategory_Id', this.SubCategory_Id);
@@ -275,7 +266,6 @@ export class AddEditProductComponent implements OnInit {
           this.service.addProductDetails(formData).subscribe(res => {
             alert(res.toString());
           })
-        //}
       }
     
       updateProductDetails() {

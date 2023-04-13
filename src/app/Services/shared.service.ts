@@ -92,8 +92,9 @@ getProductDetailsList(): Observable < any[] > {
   return this.http.get < any > (this.APIUrl + 'Product/GetProducts');
 }
 
-addProductDetails(val: any) {
-return this.http.post(this.APIUrl + 'Product/InsertProduct', val);
+addProductDetails(formData: any) {
+  debugger
+return this.http.post(this.APIUrl + 'Product/InsertProduct', formData);
 }
 
 updateProductDetails(val: any) {debugger

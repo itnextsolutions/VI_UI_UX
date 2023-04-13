@@ -69,7 +69,7 @@
                     <div><img [src]="menfronturl" *ngIf="menfronturl else elseBlock" style="width: 200px;"></div>
                     <p>
                       <input type="file" (change)="onselectFile1($event,1)" id="inputMenFront_Photo"
-                        formControlName="MenFront_Photo">
+                    >
                     </p>
                     <ng-template #elseBlock>
                       <img src="assets/img/{{Category_Name}}/{{MenFront_Photo}}">
@@ -90,7 +90,7 @@
                     </p> -->
                     <p>
                       <input type="file" (change)="onselectFile2($event,2)" id="inputMenSide_Photo"
-                        formControlName="MenSide_Photo">
+                       >
                     </p>
                     <ng-template #elseBlock>
                       <img src="assets/img/{{Category_Name}}/{{MenSide_Photo}}">
@@ -108,7 +108,7 @@
                     <div><img [src]="menbackurl" *ngIf="menbackurl; else elseBlock" style="width: 200px;"></div>
                     <p>
                       <input type="file" (change)="onselectFile3($event,3)" id="inputMenBack_Photo"
-                        formControlName="MenBack_Photo">
+                      >
                     </p>
                     <ng-template #elseBlock>
                       <img src="assets/img/{{Category_Name}}/{{MenBack_Photo}}">
@@ -126,7 +126,7 @@
                     <div><img [src]="mensizecharturl" *ngIf="mensizecharturl; else elseBlock" style="width: 200px;"></div>
                     <p>
                       <input type="file" (change)="onselectFile4($event,4)" id="inputSizeChartForMen"
-                        formControlName="SizeChartForMen">
+                      >
                     </p>
                     <ng-template #elseBlock>
                       <img src="assets/img/{{Category_Name}}/{{SizeChartForMen}}">
@@ -158,7 +158,7 @@
             <div class="col-md-12 roundedTextBox mb-3">
               <label>Women Product Specification :</label>
               <textarea rows="4" cols="43" type="text" [(ngModel)]="WomenProduct_Description" class="form-control mb-2"
-                id="inputWomenProduct_Description" formControlName="WomenProduct_Description"
+                id="inputWomenProduct_Description" 
                 placeholder="Enter Product Specification"></textarea>
               <div *ngIf="submitted && formControl.WomenProduct_Description.errors" class="text-danger">
                 <div *ngIf="formControl.WomenProduct_Description.errors.required">Product Specification is required.</div>
@@ -174,7 +174,7 @@
                     <div><img [src]="womenfronturl" *ngIf="womenfronturl; else elseBlock" style="width: 200px;"></div>
                     <p class="color">
                       <input type="file" (change)="onselectFile5($event,5)" id="inputWomenProduct_Photo"
-                        formControlName="WomenProduct_Photo">
+                        >
                     </p>
                     <ng-template #elseBlock>
                       <img src="assets/img/{{Category_Name}}/{{WomenProduct_Photo}}">
@@ -191,7 +191,7 @@
                     <div><img [src]="womensideurl" *ngIf="womensideurl; else elseBlock" style="width: 200px;"></div>
                     <p>
                       <input type="file" (change)="onselectFile6($event,6)" id="inputWomenProductSide_Photo"
-                        formControlName="WomenProductSide_Photo">
+                      >
                     </p>
                     <ng-template #elseBlock>
                       <img src="assets/img/{{Category_Name}}/{{WomenProductSide_Photo}}">
@@ -208,7 +208,7 @@
                     <div><img [src]="womenbackurl" *ngIf="womenbackurl; else elseBlock" style="width: 200px;"></div>
                     <p>
                       <input type="file" (change)="onselectFile7($event,7)" id="inputWomenProductBack_Photo"
-                        formControlName="WomenProductBack_Photo">
+                        >
                     </p>
                     <ng-template #elseBlock>
                       <img src="assets/img/{{Category_Name}}/{{WomenProductBack_Photo}}">
@@ -226,7 +226,7 @@
                     <div><img [src]="womensizecharturl" *ngIf="womensizecharturl; else elseBlock" style="width: 200px;"></div>
                     <p>
                       <input type="file" (change)="onselectFile8($event,8)" id="inputSizeChartForWomen"
-                        formControlName="SizeChartForWomen">
+                        >
                     </p>
                     <ng-template #elseBlock>
                       <img src="assets/img/{{Category_Name}}/{{SizeChartForWomen}}">
@@ -253,10 +253,10 @@
         <label>Select Color :</label>
         <div class="container py-5">
           <div class="row row-cols-2 row-cols-lg-5 mb-5">
-            <div class="col" *ngFor="let data of ColorData; let i =index"  formControlName="ColorId"
+            <div class="col" *ngFor="let data of ColorData"  formControlName="ColorId"
               [(ngModel)]="ColorId" ngDefaultControl>
                 <label>
-                  <input type="checkbox" [checked]="ColorId[i]" style.color="{{data.Description}}" value="{{data.Lookup_Details_Id}}"
+                  <input type="checkbox"  style.color="{{data.Description}}" value="{{data.Lookup_Details_Id}}"
                     (change)="onSelectChange($event)" />
               
                     {{data.ColorName}}
@@ -287,10 +287,10 @@
         <label>Select Size :</label>
         <div class="container">
           <div class="row g-4" style="width: 400px;">
-            <div class="col" data-wow-delay="0.1s" *ngFor="let data of SizeData ; let i =index"  formControlName="SizeId"
+            <div class="col" data-wow-delay="0.1s" *ngFor="let data of SizeData"  formControlName="SizeId"
               [(ngModel)]="SizeId" ngDefaultControl>
               <label>
-                <input type="checkbox"  [checked]="SizeId[i]" style.color="{{data.Description}}" value="{{data.Lookup_Details_Id}}"
+                <input type="checkbox"  style.color="{{data.Description}}" value="{{data.Lookup_Details_Id}}"
                   (change)="onSelectSizeChange($event)" />
                 {{data.Description}}
                </label>
