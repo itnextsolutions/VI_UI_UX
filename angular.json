@@ -62,7 +62,17 @@
                   "maximumError": "4kb"
                 }
               ]
+            },
+            "devlopement":{
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk":true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
             }
+
+          
           }
         },
         "serve": {
@@ -74,8 +84,12 @@
           "configurations": {
             "production": {
               "browserTarget": "Vastra:build:production"
+            },
+            "devlopement": {
+              "browserTarget": "Vastra:build:devlopement"
             }
-          }
+          },
+          "defaultConfiguration": "devlopement"
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
