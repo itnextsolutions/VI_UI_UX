@@ -3,8 +3,14 @@
     line-height: 11px;
     text-align: center;
     margin-top: 4px;
+    color: #525252;
+    font-family: "Gilroy Medium", sans-serif;
 }
 
+.colorbox{
+  height: 51px;
+  margin-top: 10px;
+}
 #product-svg {
   position: absolute;
   z-index: 2;

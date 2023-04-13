@@ -104,8 +104,8 @@ export class ProductDetailsComponent implements OnInit {
   simillarProducts: any = [];
   hidden: any;
   svg_path = '';
-  bgColor = 'grey';
-
+  bgColor = '';
+  selected_colorname = '';
   menDesc: string = "";
   womenDesc: string = "";
 
@@ -195,8 +195,9 @@ export class ProductDetailsComponent implements OnInit {
   }
 
   onColorClick(data:any) {
-  
+    debugger;
     this.bgColor = data.Description;
+    this.selected_colorname = data.ColorName;
   }
 }
 
