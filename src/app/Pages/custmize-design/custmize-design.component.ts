@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { UserService } from 'src/app/Services/Api/User/user.service';
 
 @Component({
@@ -9,6 +10,7 @@ import { UserService } from 'src/app/Services/Api/User/user.service';
 export class CustmizeDesignComponent implements OnInit {
   @Input() Product: any;
   @Input() id:number=0; 
+  @Input() image:any;
   frontimage=false;
   sideimage = true;
   backimage = true;
@@ -21,21 +23,28 @@ export class CustmizeDesignComponent implements OnInit {
   backImage: any = "";
   sideImage: any = "";
   catName: any = "";
-  image:any="";
+  // image:any="";
 
   imageSrc = '';
   messageText = '';
-  imageButtons = [ 
-  {src:'../assets/img/Shirts/pro-1-1.jpeg', name: 'Front'}, 
-  {src:'../assets/img/Shirts/pro-1-3.jpeg', name: 'Back'}, 
-  {src:'../assets/img/Shirts/pro-1-2.jpeg', name: 'Side'}]
+  categoryName: any;
+  productcategoryfolder: any;
+  // imageButtons = [ 
+  // {src:'../assets/img/Shirts/pro-1-1.jpeg', name: 'Front'}, 
+  // {src:'../assets/img/Shirts/pro-1-3.jpeg', name: 'Back'}, 
+  // {src:'../assets/img/Shirts/pro-1-2.jpeg', name: 'Side'}]
 
  
 
 
 
-  constructor(private userService: UserService) { }
+  constructor(private param: ActivatedRoute,private userService: UserService) { }
   ngOnInit(): void {
+    this.categoryName = this.param.snapshot.paramMap.get('categoryName');
+    this.categoryName = this.categoryName.replace(/-/g, ' ').toUpperCase();
+    this.productcategoryfolder = this.categoryName.replace(/\s+/g, '-').toLowerCase();
+   
+
     // this.imageSrc = this.frontImage;
   }
   // onClick(imageNameObject: any) {

@@ -35,7 +35,7 @@
                     aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <app-custmize-design [Product]="product" [id]="id">
+                <app-custmize-design [Product]="product" [id]="id" [image]="image">
                 </app-custmize-design>
             </div>
         </div>
@@ -84,17 +84,24 @@
                         <defs/>
                         <path id="product-shape" [attr.d]="svg_path"  [ngStyle]="{ fill: bgColor }" />
                         </svg>
-                    <img class="big_img" src="assets/img/{{this.productcategoryfolder}}/{{data.Product_Photo}}">
+                    <img class="big_img" src="assets/img/{{this.productcategoryfolder}}/{{data.Product_Photo}}" style="width:400px">
                 </div>
             </div>
-        
+            
+            <div [hidden]="isTippingDivHidden">
+                
+                    
+                <img class="big_img" src="assets/img/{{this.productcategoryfolder}}/{{this.image}}" height="571" width="467">
+             
+         </div>
+
             <div [hidden]="isWoMenDivHidden">
                 <div *ngFor="let data of product" class="mo-order-2">
                     <svg id="product-svg" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg"    height="571" width="467">
                         <defs/>
                         <path id="product-shape" [attr.d]="svg_path"  [ngStyle]="{ fill: bgColor }" />
                         </svg>
-                   <img class="big_img" src="assets/img/{{this.productcategoryfolder}}/{{data.WomenProduct_Photo}}"  style="">
+                   <img class="big_img" src="assets/img/{{this.productcategoryfolder}}/{{data.WomenProduct_Photo}}" style="width:400px">
                 </div>
             </div>
         </div>
@@ -106,7 +113,7 @@
                         <div class="row g-4 mb-0 color bold align-items-center">
                             <h3 class=" product-name-new pt-4">{{data.Product_Title}}</h3>
 
-                            <div class="row g-4">
+                            <div class="row g-4" *ngIf="colors.length>0">
                                 <h5 class="colors-pallete" style="margin-top: 0px !important;">Colors : {{this.selected_colorname}}</h5>
                                 <div class="container py-5 pc-Style-hero-colors-sizeList-adultSizes mt-0 pt-0 pb-3">
                                     <div class="row row-cols-2 row-cols-lg-6 w-100">
@@ -120,6 +127,22 @@
                                     </div>
                                 </div>
                             </div>
+
+                            <div class="row g-4" *ngIf="tipping.length>0">
+                                <h5 class="colors-pallete" style="margin-top: 0px !important;">Colors:</h5>
+                                <div class="container py-5 pc-Style-hero-colors-sizeList-adultSizes mt-0 pt-0 pb-3">
+                                    <div class="row row-cols-2 row-cols-lg-6 w-90">
+                                        <div *ngFor="let item of tipping" (click)="onTippingClick(item)">
+                                             <img src="assets/img/tipping/{{item.tipping_img}}" class="" style="height: 51px;">
+                                            <div class="label-name">
+                                                {{item.Description}}
+                                            </div>
+                                            <!-- </div> -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
 
                             <div [hidden]="isMenDivHidden" class="modal-body"  *ngFor="let data of product">
                                 <h5>Product Description :</h5>
@@ -170,10 +193,10 @@
                                             data-value="men" style="border-radius: 10px; height:40px; width: 80px;">
                                             Men
                                         </button>
-                                        <!-- <button class="genderButton pad-0" data-id="id_1" tabindex="1" data-title="Women"  data-value="women"
+                                        <button class="genderButton pad-0" data-id="id_1" tabindex="1" data-title="Women"  data-value="women"
                                             style="margin-left: 10px; border-radius: 10px; height:40px; width: 80px;"  (click)="onClickWomenPhoto()">
                                             Women
-                                        </button> -->
+                                        </button>
                                     </div>
                                 </div>
                             </div>

@@ -94,8 +94,10 @@ export class ProductDetailsComponent implements OnInit {
 
   constructor(private param: ActivatedRoute, private userService: UserService,private router: Router) { }
 
-  // isMenDivHidden = false;
+  isMenDivHidden = false;
   isWoMenDivHidden = true;
+  isTippingDivHidden=true;
+
   categoryfolder: any;
   product: any;
   category_id: any;
@@ -106,8 +108,8 @@ export class ProductDetailsComponent implements OnInit {
   svg_path = '';
   bgColor = '';
   selected_colorname = '';
-  menDesc: string = "";
-  womenDesc: string = "";
+  //  menDesc: string = "";
+  //  womenDesc: string = "";
 
   id:number=0; 
 
@@ -153,9 +155,12 @@ export class ProductDetailsComponent implements OnInit {
 
     this.userService.getSizeListById(this.productId).subscribe(data => {
       this.sizes = data;
-
-
     });
+
+    this.userService.getTipingListById(this.productId).subscribe(data=>{
+      this.tipping=data; 
+      console.log(this.tipping)
+   });
   }
 
   onClick(product: any) {
@@ -177,7 +182,9 @@ export class ProductDetailsComponent implements OnInit {
 
     this.isMenDivHidden = true;
     this.isWoMenDivHidden = false;
-    this.menDesc=this.product.Product_Description;
+    this.isTippingDivHidden=true;
+
+    // this.menDesc=this.product.Product_Description;
     this.id=1;
     
   }
@@ -189,9 +196,26 @@ export class ProductDetailsComponent implements OnInit {
     });
     this.isMenDivHidden = false;
     this.isWoMenDivHidden = true;
+    this.isTippingDivHidden=true;
 
-    this.womenDesc=this.product.WomenProduct_Description;
+
+    // this.womenDesc=this.product.WomenProduct_Description;
     this.id=0;
+  }
+
+  onTippingClick(item:any){debugger
+    // this.userService.getTipingListById(this.productId).subscribe(data=>{
+    //   this.tipping=data; 
+    
+    // });
+    // this.tipping.filter((x: { tipping_Code: number; })=>x.tipping_Code==code);
+    this.isMenDivHidden = true;
+    this.isWoMenDivHidden = true;
+    this.isTippingDivHidden=false;
+    this.image=item.tipping_big_img;
+    this.id=2;
+    // (this.item.filter((x: { tipping_Code: number; })=>{return x.tipping_Code==item;}));
+
   }
 
   onColorClick(data:any) {
