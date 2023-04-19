@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { UserService } from 'src/app/Services/Api/User/user.service';
 
 @Component({
@@ -12,6 +13,8 @@ export class CustmizeDesignComponent implements OnInit {
   frontimage=false;
   sideimage = true;
   backimage = true;
+  productcategoryfolder:any;
+  categoryName:any="";
 
   modalTitle: any;
   activateCustmizeDesign: boolean = false;
@@ -23,19 +26,12 @@ export class CustmizeDesignComponent implements OnInit {
   catName: any = "";
   image:any="";
 
-  imageSrc = '';
-  messageText = '';
-  imageButtons = [ 
-  {src:'../assets/img/Shirts/pro-1-1.jpeg', name: 'Front'}, 
-  {src:'../assets/img/Shirts/pro-1-3.jpeg', name: 'Back'}, 
-  {src:'../assets/img/Shirts/pro-1-2.jpeg', name: 'Side'}]
 
- 
-
-
-
-  constructor(private userService: UserService) { }
+  constructor(private userService: UserService,private param: ActivatedRoute) { }
   ngOnInit(): void {
+    this.categoryName = this.param.snapshot.paramMap.get('categoryName');
+    this.categoryName = this.categoryName.replace(/-/g, ' ').toUpperCase();
+    this.productcategoryfolder = this.categoryName.replace(/\s+/g, '-').toLowerCase();
     // this.imageSrc = this.frontImage;
   }
   // onClick(imageNameObject: any) {
@@ -50,6 +46,7 @@ export class CustmizeDesignComponent implements OnInit {
     //   this.product = data;
     // });
 
+    this.productcategoryfolder = this.categoryName.replace(/\s+/g, '-').toLowerCase();
   this.sideimage = true;
   this.backimage = true;
   this.frontimage = false;
@@ -60,7 +57,7 @@ export class CustmizeDesignComponent implements OnInit {
     // this.userService.getProductById(this.productId).subscribe(data => {
     //   this.product = data;
     // });
-
+    this.productcategoryfolder = this.categoryName.replace(/\s+/g, '-').toLowerCase();
   this.sideimage = false;
   this.backimage = true;
   this.frontimage = true;
@@ -71,7 +68,7 @@ export class CustmizeDesignComponent implements OnInit {
     // this.userService.getProductById(this.productId).subscribe(data => {
     //   this.product = data;
     // });
-
+    this.productcategoryfolder = this.categoryName.replace(/\s+/g, '-').toLowerCase();
   this.sideimage = true;
   this.backimage = false;
   this.frontimage = true;

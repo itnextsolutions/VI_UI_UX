@@ -17,7 +17,7 @@
         <div class="row g-4" >
             <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s" *ngFor="let data of blogList">    
        
-                <img class="img-fluid" src="assets/img/blog/{{data.Image_Name}}">
+                <img class="img-fluid pointer" (click) ="onClick(data)" src="assets/img/blog/{{data.Image_Name}}">
                 <div class="bg-light p-4">
                     <a class="d-block h5 lh-base mb-2 me-3 pointer" (click) ="onClick(data)">{{data.Blog_Title}}</a>
                     <div class="text-muted border-top pt-2">
