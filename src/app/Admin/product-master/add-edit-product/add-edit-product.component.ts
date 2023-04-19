@@ -294,6 +294,7 @@ export class AddEditProductComponent implements OnInit {
       }
 
 
+      
 
   //selectFile(event) { //Angular 8
   onselectFile1(event: any,id: any) { //Angular 11, for stricter type

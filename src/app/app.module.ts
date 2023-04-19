@@ -63,7 +63,6 @@ import { JwtModule } from '@auth0/angular-jwt';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 
 
-
 @NgModule({
   declarations: [
     AppComponent,

@@ -82,6 +82,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { UserService } from 'src/app/Services/Api/User/user.service';
 import { __values } from 'tslib';
+import { OwlOptions } from 'ngx-owl-carousel-o';
 
 @Component({
   selector: 'app-product-details',
@@ -92,7 +93,7 @@ export class ProductDetailsComponent implements OnInit {
   [x: string]: any;
   route: any;
 
-  constructor(private param: ActivatedRoute, private userService: UserService,private router: Router) { }
+  constructor(private param: ActivatedRoute, private userService: UserService,private router: Router) {}
 
   // isMenDivHidden = false;
   isWoMenDivHidden = true;
@@ -125,6 +126,62 @@ export class ProductDetailsComponent implements OnInit {
     this.getSimillarProduct();
     this.imageSource();
   }
+  customOptions1:OwlOptions = {
+    autoplay:true,
+    loop: true,
+    mouseDrag: false,
+    touchDrag: false,
+    pullDrag: false,
+    dots: false,
+    nav:true,
+    margin:20,
+    autoWidth:true,
+    navText: ['', ''],
+    responsive: {
+      0:{
+        items:5
+      },
+      600:{
+        items:4
+      },
+      1000:{
+        items:8
+      }
+     
+    }
+  }
+  customOptions: OwlOptions = {
+    autoplay:true,
+    loop: true,
+    mouseDrag: false,
+    touchDrag: false,
+    pullDrag: false,
+    dots: false,
+    nav:true,
+    margin:20,
+    autoWidth:true,
+    navText: ['', ''],
+    responsive: {
+      0:{
+        items:5
+      },
+      600:{
+        items:4
+      },
+      1000:{
+        items:8
+      }
+     
+    }
+  }
+  
+
+  // rowCount = 2;
+  // itemsPerRow = Math.ceil(this.items.length / this.rowCount);
+
+  // // slice the items into rows
+  // rows = Array.from({length: this.rowCount}, (_, i) => this.items.slice(i * this.itemsPerRow, (i + 1) * this.itemsPerRow));
+  
 
   getSimillarProduct() {
 
