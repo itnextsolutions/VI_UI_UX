@@ -46,6 +46,15 @@
             </div>
         </div>
 
+        <div *ngIf="id==2">
+            <div [hidden]="frontimage">
+
+                <!-- <body *ngFor="let data of Product"> -->
+                    <img src="assets/img/{{this.productcategoryfolder}}/{{this.image}}" style="width: 400px; height: 450px;">
+                <!-- </body> -->
+            </div>
+        </div>
+
         <label for="tshirt-custompicture" style="padding-top: 10px;">Upload your own design:
             <input type="file" id="tshirt-custompicture" />
         </label>
