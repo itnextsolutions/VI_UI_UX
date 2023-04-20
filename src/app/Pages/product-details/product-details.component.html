@@ -13,7 +13,7 @@
                     aria-label="Close"></button>
             </div>
             <div [hidden]="isMenDivHidden" class="modal-body text-center" *ngFor="let data of product">
-                <img src="assets/img/{{this.productcategoryfolder}}/{{data.SizeChartForMen}}" class="" style="width: 700px;">
+                <img src="assets/img/size_chart/{{data.SizeChartForMen}}" class="" style="width: 700px;">
             </div>
             <div [hidden]="isWoMenDivHidden" class="modal-body text-center" *ngFor="let data of product">
                 <img src="assets/img/{{this.productcategoryfolder}}/{{data.SizeChartForWomen}}" class="" style="width: 700px;">
@@ -84,7 +84,7 @@
                         <defs/>
                         <path id="product-shape" [attr.d]="svg_path"  [ngStyle]="{ fill: bgColor }" />
                         </svg>
-                    <img class="big_img" src="assets/img/{{this.productcategoryfolder}}/{{data.Product_Photo}}" style="width:400px">
+                    <img class="big_img" src="assets/img/{{this.productcategoryfolder}}/{{data.Product_Photo}}" >
                 </div>
             </div>
             
@@ -115,44 +115,21 @@
 
                             <div class="row g-4" *ngIf="colors.length>0">
                                 <h5 class="colors-pallete" style="margin-top: 0px !important;">Colors : {{this.selected_colorname}}</h5>
-                                <owl-carousel-o>
-                                    <ng-container class="customOptions" *ngFor="let data of colors.slice(0,21)">
-                                    <ng-template carouselSlide >
+                                
                                     <div class="container py-5 pc-Style-hero-colors-sizeList-adultSizes mt-0 pt-0 pb-3">
                                     <div class="row row-cols-2 row-cols-lg-6 w-100">
-                                           <!-- <div *ngFor="let data of colors"> -->
+                                           <div *ngFor="let data of colors">
                                                <div class="colorbox"><li class="color-box" rel="tooltip" (click)="onColorClick(data)"
                                                 [ngStyle]="{'background-color':data.Description}" data-mobile=""
                                                 data-create="false">
                                                  </li></div>
                                                <div class="label-name">{{data.ColorName}}</div>
-                                           <!-- </div> -->
-                                      
+                                           </div>
                                     </div>
                                     </div>
-                                    </ng-template>
-                                    </ng-container>
-                                    <ng-container class="customOptions1" *ngFor="let data of colors.slice(22,42)">
-                                        <ng-template carouselSlide >
-                                        <div class="container py-5 pc-Style-hero-colors-sizeList-adultSizes mt-0 pt-0 pb-3">
-                                        <div class="row row-cols-2 row-cols-lg-6 w-100">
-                                               <!-- <div *ngFor="let data of colors"> -->
-                                                   <div class="colorbox"><li class="color-box" rel="tooltip" (click)="onColorClick(data)"
-                                                    [ngStyle]="{'background-color':data.Description}" data-mobile=""
-                                                    data-create="false">
-                                                     </li></div>
-                                                   <div class="label-name">{{data.ColorName}}</div>
-                                               <!-- </div> -->
-                                          
-                                        </div>
-                                        </div>
-                                        </ng-template>
-                                        </ng-container>
-                                    
-                                </owl-carousel-o>
                             </div>
 
-                            <div class="row g-4" *ngIf="tipping.length>0">
+                            <!-- <div class="row g-4" *ngIf="tipping.length>0">
                                 <h5 class="colors-pallete" style="margin-top: 0px !important;">Colors:</h5>
                                 <div class="container py-5 pc-Style-hero-colors-sizeList-adultSizes mt-0 pt-0 pb-3">
                                     <div class="row row-cols-2 row-cols-lg-6 w-90">
@@ -161,11 +138,11 @@
                                             <div class="label-name">
                                                 {{item.Description}}
                                             </div>
-                                            <!-- </div> -->
+                                            
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
 
 
                             <div [hidden]="isMenDivHidden" class="modal-body"  *ngFor="let data of product">

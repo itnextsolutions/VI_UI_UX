@@ -24,44 +24,58 @@
                 <div class="col-lg-6 col-md-12 wow fadeInUp" data-wow-delay="0.5s">
                     <p class="mb-4 color">Please fill the below form. We will get in touch with you soon.</p>
 
-                    <!-- <form #userForm="ngForm" (ngSubmit)="onSubmit(userForm)">
-                        
-                        <div class="row g-3">
-                            <div class="col-md-6">
-                        <div >
+                    <!-- <form #userForm="ngForm" (ngSubmit)="onSubmit(userForm)"> -->
+                 <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                        <div class="form-group">
                           <label for="name">Name</label>
-                          <input type="text" class="form-control" name="name" [(ngModel)]="formData.name" placeholder="Your Name">
-                          
+                          <input type="text" class="form-control" formControlName="name"  name="name" placeholder="Your Name">
+                          <div *ngIf="submitted && formControl.name.errors" class="text-danger">
+                            <div *ngIf="formControl.name.errors.required">Name is required.</div>
                         </div>
-                            </div>
-                    
-                    <div class="col-md-6">
+                        </div>
+                        </div>
+                          
+                        <div class="col-md-6">
                         <div >
                           <label for="email">Email</label>
-                          <input type="email"  class="form-control" name="email" [(ngModel)]="formData.email" placeholder="Your Email">
-                        
+                          <input type="email"  class="form-control"  name="email"   formControlName="email" placeholder="Your Email">
+                          <div *ngIf="submitted && formControl.email.errors" class="text-danger">
+                            <div *ngIf="formControl.email.errors.required">Email is required.</div>
+                            <div *ngIf="formControl.email.errors.pattern">
+                                Email is not valid,Please Try With Valid Email.
+                            </div> 
+                        </div>
+                        </div>
                         </div>
 
-                    </div>
                         <div class="col-md-6">
                         <div >
                           <label for="subject">Subject</label>
-                          <input type="text"  class="form-control" name="subject" [(ngModel)]="formData.subject" placeholder="Subject">
-                         
+                          <input type="text"  class="form-control" name="subject"   formControlName="subject"  placeholder="Subject">
+                          <div *ngIf="submitted && formControl.subject.errors" class="text-danger">
+                            <div *ngIf="formControl.subject.errors.required">subject is required.</div>
                         </div>
-                    </div>
+                        </div>
+                        </div>
+
                         <div class="col-md-6">
                         <div >
                           <label for="message">Message</label>
-                          <textarea name="message" class="form-control" placeholder="Leave a message here" [(ngModel)]="formData.message" style="height: 200px"></textarea>
-                          
+                          <textarea name="message" class="form-control" placeholder="Leave a message here" formControlName="message"  style="height: 200px"></textarea>
+                          <div *ngIf="submitted && formControl.message.errors" class="text-danger">
+                            <div *ngIf="formControl.message.errors.required">Message is required.</div>
+                        </div>
+                        </div>
+                        </div>
+
+                        <div class="col-12">
+                        <button class="btn btn-primary rounded-pill py-3 px-5"  type="submit">Send Message</button>
                         </div>
                     </div>
-                    <div class="col-12">
-                        <button class="btn btn-primary rounded-pill py-3 px-5" type="submit">Send Message</button>
-                    </div>
-                    </div>
-                      </form>  -->
+                </form> 
+                   
                     <!-- <form>
                         <div class="row g-3">
                             <div class="col-md-6">
@@ -93,7 +107,7 @@
                             </div>
                         </div>
                     </form> -->
-                    <form [formGroup]="form" (ngSubmit)="submit()">
+                    <!-- <form [formGroup]="userForm" (ngSubmit)="submit()">
         
                         <div class="form-group">
                             <label for="name">Name</label>
@@ -143,12 +157,12 @@
                                 class="form-control">
                             </textarea>
                             <div *ngIf="f['message'].touched && f['message'].invalid" class="alert alert-danger">
-                                <div *ngIf="f['message'].errors && f['message'].errors['required']">Please, enter message.</div>
+                            <div *ngIf="f['message'].errors && f['message'].errors['required']">Please, enter message.</div>
                             </div>
                         </div>
                         
-                        <button class="btn btn-primary" [disabled]="form.invalid" type="submit">Submit</button>
-                    </form>
+                        <button class="btn btn-primary" [disabled]="userForm.invalid" type="submit">Submit</button>
+                    </form> -->
                 </div>
             </div>
 

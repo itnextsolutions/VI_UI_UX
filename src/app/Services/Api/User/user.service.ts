@@ -8,7 +8,7 @@ import { Observable } from "rxjs";
 
 export class UserService {
 
-  readonly APIUrl = "https://localhost:44365/api/";
+  readonly APIUrl = "https://testapi.vastraindia.com/api/";
   // readonly APIUrl = "https://localhost:44365/api/";
 
   constructor(private http: HttpClient) {}
@@ -17,9 +17,9 @@ export class UserService {
       return this.http.get < any > (this.APIUrl + 'Home/GetFaq');
     }
 
-    sendContactUsEmail(formData: any) {
+    sendContactUsEmail(val: any) {
       debugger
-      return this.http.post(this.APIUrl + 'Home/SendEmail', formData);
+      return this.http.post(this.APIUrl + 'Home/SendEmail', val);
     }
 
     getNotification(): Observable < any[] > {
@@ -86,6 +86,10 @@ export class UserService {
     }
 
     getSizeListById(product_id : any):Observable<any>{
+      return this.http.get < any > (this.APIUrl + 'Home/GetSizeListByProductId?id=' + product_id);
+    }
+
+    getTipingListById(product_id : any):Observable<any>{
       return this.http.get < any > (this.APIUrl + 'Home/GetSizeListByProductId?id=' + product_id);
     }
 

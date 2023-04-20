@@ -40,6 +40,7 @@ export class AddEditLookupComponent implements OnInit {
     };
       this.service.addLookupMaster(val).subscribe(res =>{
         alert(res.toString());
+        this.lookupForm.reset();
       })
     }
   }
