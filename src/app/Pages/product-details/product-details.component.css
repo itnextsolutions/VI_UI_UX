@@ -79,6 +79,20 @@ background-color: #DBED64;
   margin-left: 0px;
 }
 
+.slick-slider {
+  width: 88%;
+  margin: auto;
+  background: rgb(255, 255, 255);
+}
+
+body .slick-prev, 
+body .slick-next {
+  height: 45px;
+  width: 40px;
+  background: rgb(252, 249, 249) !important;
+  z-index: 100;
+}
+
 @media (min-width: 320px) and (max-width: 374px) {
 .pro-small-img{
   display: flex !important;

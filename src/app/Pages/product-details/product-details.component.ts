@@ -82,7 +82,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { UserService } from 'src/app/Services/Api/User/user.service';
 import { __values } from 'tslib';
-import { OwlOptions } from 'ngx-owl-carousel-o';
+
 
 @Component({
   selector: 'app-product-details',
@@ -114,6 +114,59 @@ export class ProductDetailsComponent implements OnInit {
 
   id:number=0; 
 
+  slideConfig = {dots: true,
+    speed: 300,
+    slidesToShow: 6,
+    slidesToScroll: 6,
+    infinite: false,
+    rows:3,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+          infinite: true,
+          dots: true,
+          rows:3,
+        }
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          rows:3,
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          rows:2,
+        }
+      }
+    ]
+}
+
+   
+  // slickInit(e:any) {
+  //   console.log('slick initialized');
+  // }
+     
+  // breakpoint(e:any) {
+  //   console.log('breakpoint');
+  // }
+     
+  // afterChange(e:any) {
+  //   console.log('afterChange');
+  // }
+     
+  // beforeChange(e:any) {
+  //   console.log('beforeChange');
+  // }
+
   ngOnInit(): void {
     this.productId = this.param.snapshot.paramMap.get('id');
     this.categoryName = this.param.snapshot.paramMap.get('categoryName');
@@ -128,62 +181,7 @@ export class ProductDetailsComponent implements OnInit {
     this.getSimillarProduct();
     this.imageSource();
   }
-  customOptions1:OwlOptions = {
-    autoplay:true,
-    loop: true,
-    mouseDrag: false,
-    touchDrag: false,
-    pullDrag: false,
-    dots: false,
-    nav:true,
-    margin:20,
-    autoWidth:true,
-    navText: ['', ''],
-    responsive: {
-      0:{
-        items:5
-      },
-      600:{
-        items:4
-      },
-      1000:{
-        items:8
-      }
-     
-    }
-  }
-  customOptions: OwlOptions = {
-    autoplay:true,
-    loop: true,
-    mouseDrag: false,
-    touchDrag: false,
-    pullDrag: false,
-    dots: false,
-    nav:true,
-    margin:20,
-    autoWidth:true,
-    navText: ['', ''],
-    responsive: {
-      0:{
-        items:5
-      },
-      600:{
-        items:4
-      },
-      1000:{
-        items:8
-      }
-     
-    }
-  }
-  
 
-  // rowCount = 2;
-  // itemsPerRow = Math.ceil(this.items.length / this.rowCount);
-
-  // // slice the items into rows
-  // rows = Array.from({length: this.rowCount}, (_, i) => this.items.slice(i * this.itemsPerRow, (i + 1) * this.itemsPerRow));
-  
 
   getSimillarProduct() {
 

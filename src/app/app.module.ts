@@ -61,7 +61,7 @@ import { CustmizeDesignComponent } from './Pages/custmize-design/custmize-design
 import { AuthGuard } from './Auth.guard';
 import { JwtModule } from '@auth0/angular-jwt';
 import { CarouselModule } from 'ngx-owl-carousel-o';
-
+import { SlickCarouselModule } from 'ngx-slick-carousel';
 
 @NgModule({
   declarations: [
@@ -121,6 +121,7 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
     HttpClientModule,
     FormsModule,
     CarouselModule,
+    SlickCarouselModule,
     JwtModule.forRoot({
       config: {
         tokenGetter: tokenGetter,

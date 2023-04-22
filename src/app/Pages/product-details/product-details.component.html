@@ -116,17 +116,27 @@
                             <div class="row g-4" *ngIf="colors.length>0">
                                 <h5 class="colors-pallete" style="margin-top: 0px !important;">Colors : {{this.selected_colorname}}</h5>
                                 
+                        <ngx-slick-carousel class="carousel"
+                        #slickModal="slick-carousel"
+                        [config]="slideConfig" 
+                        (init)="slickInit($event)"
+                        (breakpoint)="breakpoint($event)"
+                        (afterChange)="afterChange($event)"
+                        (beforeChange)="beforeChange($event)">
+                        <div ngxSlickItem *ngFor="let data of colors" class="slide">
                                     <div class="container py-5 pc-Style-hero-colors-sizeList-adultSizes mt-0 pt-0 pb-3">
                                     <div class="row row-cols-2 row-cols-lg-6 w-100">
-                                           <div *ngFor="let data of colors">
+                                           <!-- <div *ngFor="let data of colors">  -->
                                                <div class="colorbox"><li class="color-box" rel="tooltip" (click)="onColorClick(data)"
                                                 [ngStyle]="{'background-color':data.Description}" data-mobile=""
                                                 data-create="false">
                                                  </li></div>
                                                <div class="label-name">{{data.ColorName}}</div>
-                                           </div>
+                                    <!-- </div> -->
                                     </div>
                                     </div>
+                                </div>
+                            </ngx-slick-carousel>
                             </div>
 
                             <!-- <div class="row g-4" *ngIf="tipping.length>0">
