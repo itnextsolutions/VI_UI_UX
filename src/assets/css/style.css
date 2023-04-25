@@ -167,7 +167,7 @@
     }
 
     .carousel-item {
-        margin-top: 12.5rem !important;}
+        margin-top: 9.5rem !important;}
     .header_bs_mo {
         padding-top: 14rem !important;
         padding-bottom: 0rem !important;
@@ -258,7 +258,7 @@
 }
 
 .carousel-item  h1{
-font-size: 61px;
+font-size: 39px;
     color: whii;
     color: white;
     text-align: center;
@@ -272,7 +272,7 @@ font-size: 61px;
         object-fit: fill;
     }
     .carousel-item h1 {
-        font-size: 28px;}
+        font-size: 0px;}
     
     
     #header-carousel .carousel-item img {
@@ -656,8 +656,8 @@ font-size: 61px;
 .testi-review{
     overflow: hidden;
     display: -webkit-box;
-    -webkit-line-clamp: 4; /* number of lines to show */
-            line-clamp: 4; 
+    -webkit-line-clamp: 5; /* number of lines to show */
+            line-clamp: 5; 
     -webkit-box-orient: vertical;
 }
 .genderButton :hover{
