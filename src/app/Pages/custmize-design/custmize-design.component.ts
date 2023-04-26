@@ -38,8 +38,14 @@ export class CustmizeDesignComponent implements OnInit {
 
 
 
-  constructor(private userService: UserService) { }
+  constructor(private userService: UserService,private param: ActivatedRoute) { }
   ngOnInit(): void {
+    
+    this.categoryName = this.param.snapshot.paramMap.get('categoryName');
+    this.categoryName = this.categoryName.replace(/-/g, ' ').toUpperCase();
+
+    this.productcategoryfolder = this.categoryName.replace(/\s+/g, '-').toLowerCase();
+
     // this.imageSrc = this.frontImage;
   }
   // onClick(imageNameObject: any) {
