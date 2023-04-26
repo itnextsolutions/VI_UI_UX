@@ -17,8 +17,8 @@
 
 <div class="container" id="navbarCollapse">
     <div class="navbar-nav px-lg-4">
-        <div class="nav-item dropdown px-2" *ngFor="let data of faqList" >
-            <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown" >{{data.Question}}</a>
+        <div class="nav-item dropdown px-2" *ngFor="let data of faqList; let i=index;" >
+            <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown" >{{i+1}}. {{data.Question}}</a>
             <div class="dropdown-menu m-0" >
                 <a href="" class="dropdown-item">{{data.Answer}}</a>
             </div>

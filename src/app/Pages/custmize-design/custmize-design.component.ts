@@ -25,64 +25,32 @@ export class CustmizeDesignComponent implements OnInit {
   backImage: any = "";
   sideImage: any = "";
   catName: any = "";
-  // image:any="";
 
   imageSrc = '';
   messageText = '';
-  imageButtons = [ 
-  {src:'../assets/img/Shirts/pro-1-1.jpeg', name: 'Front'}, 
-  {src:'../assets/img/Shirts/pro-1-3.jpeg', name: 'Back'}, 
-  {src:'../assets/img/Shirts/pro-1-2.jpeg', name: 'Side'}]
 
- 
-
-
-
-  constructor(private userService: UserService,private param: ActivatedRoute) { }
+  constructor(private userService: UserService, private param: ActivatedRoute ){ }
   ngOnInit(): void {
-    
     this.categoryName = this.param.snapshot.paramMap.get('categoryName');
-    this.categoryName = this.categoryName.replace(/-/g, ' ').toUpperCase();
-
     this.productcategoryfolder = this.categoryName.replace(/\s+/g, '-').toLowerCase();
-
-    // this.imageSrc = this.frontImage;
   }
-  // onClick(imageNameObject: any) {
-  //   this.imageSrc = imageNameObject.src;
-    
-  //   this.messageText = imageNameObject.name;
-  // }
+  
 
   onClickFrontPhoto() {
-  
-    // this.userService.getProductById(this.productId).subscribe(data => {
-    //   this.product = data;
-    // });
-
-    this.productcategoryfolder = this.categoryName.replace(/\s+/g, '-').toLowerCase();
   this.sideimage = true;
   this.backimage = true;
   this.frontimage = false;
 }
 
   onClickSidetPhoto() {
-    
-    // this.userService.getProductById(this.productId).subscribe(data => {
-    //   this.product = data;
-    // });
-    this.productcategoryfolder = this.categoryName.replace(/\s+/g, '-').toLowerCase();
+  this.productcategoryfolder = this.categoryName.replace(/\s+/g, '-').toLowerCase();
   this.sideimage = false;
   this.backimage = true;
   this.frontimage = true;
   }
 
   onClickBackPhoto() {
-  
-    // this.userService.getProductById(this.productId).subscribe(data => {
-    //   this.product = data;
-    // });
-    this.productcategoryfolder = this.categoryName.replace(/\s+/g, '-').toLowerCase();
+  this.productcategoryfolder = this.categoryName.replace(/\s+/g, '-').toLowerCase();
   this.sideimage = true;
   this.backimage = false;
   this.frontimage = true;

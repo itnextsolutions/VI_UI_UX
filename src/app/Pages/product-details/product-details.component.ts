@@ -179,7 +179,7 @@ export class ProductDetailsComponent implements OnInit {
 
     this.getProduct();
     this.getSimillarProduct();
-    this.imageSource();
+
   }
 
 
