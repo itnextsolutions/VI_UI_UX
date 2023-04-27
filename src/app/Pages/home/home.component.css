@@ -21,13 +21,21 @@
     width: unset;
 }
 
+.pro-img-hw{
+    height: auto !important;}
+
+
+}
+
 
 /* .testi-review p{
 overflow-y: scroll;
 height: 400px;
 } */
+.pro-img-hw{
+    height: 428px;}
 
-}
+
 .announcement-bar {
     font-size: 14.45px;
     position: relative;
