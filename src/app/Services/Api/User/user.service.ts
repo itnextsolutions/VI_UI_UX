@@ -18,7 +18,6 @@ export class UserService {
     }
 
     sendContactUsEmail(val: any) {
-      debugger
       return this.http.post(this.APIUrl + 'Home/SendEmail', val);
     }
 

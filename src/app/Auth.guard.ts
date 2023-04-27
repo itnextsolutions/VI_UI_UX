@@ -40,7 +40,6 @@ export class AuthGuard implements CanActivate {
 
 
       checkLogin(url: string): true | UrlTree {
-         debugger
          console.log("Url: " + url)
          let val = localStorage.getItem('jwt');
 

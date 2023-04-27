@@ -40,7 +40,7 @@ export class AddEditProductCategoryComponent implements OnInit {
   get formControl() {
     return this.Pro_CatForm.controls;
   }
-  addProductCategory(){debugger
+  addProductCategory(){
     
     this.submitted = true;
     //if (this.Pro_CatForm.valid){

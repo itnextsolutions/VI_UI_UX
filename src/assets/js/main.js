@@ -34,7 +34,6 @@
     });
     
     $(".navbar-toggler-icon").click(function(){
-        debugger;
         var x = document.getElementById("sidenav-main");
         if (x.style.display === "none") {
           x.style.display = "block";

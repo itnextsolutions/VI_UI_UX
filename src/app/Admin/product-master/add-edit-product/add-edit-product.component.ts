@@ -98,7 +98,6 @@ export class AddEditProductComponent implements OnInit {
             Product_Description: ["", [Validators.required]],
           });
       
-          debugger
           this.Product_Id = this.product.Product_Id,
           this.Category_Id = this.product.Category_Id;
           this.SubCategory_Id = this.product.Sub_Cat_Id;
@@ -244,8 +243,6 @@ export class AddEditProductComponent implements OnInit {
 
 
   addProductDetails() {
-
-    debugger
 
           let formData = new FormData()
           formData.append('Category_Id', this.Category_Id);

@@ -19,7 +19,6 @@ getMenuList(): Observable < any[] > {
 }
 
 Login(val: any) {
-  debugger
    return this.http.post(this.APIUrl + 'Login/login', val);
 }
 
@@ -35,7 +34,7 @@ getproductcategoryList(): Observable < any[] > {
 getSubcategoryByCategoryId(): Observable < any[] > {
   return this.http.get < any > (this.APIUrl + 'Product/GetSubCategoryByCategoryId');
 }
-addProductcategory(val: any) {debugger
+addProductcategory(val: any) {
     return this.http.post(this.APIUrl + 'Product/InsertCategory', val);
 }
 updateProductcategory(val: any) {
@@ -89,11 +88,10 @@ getProductDetailsList(): Observable < any[] > {
 }
 
 addProductDetails(formData: any) {
-  debugger
-return this.http.post(this.APIUrl + 'Product/InsertProduct', formData);
+  return this.http.post(this.APIUrl + 'Product/InsertProduct', formData);
 }
 
-updateProductDetails(val: any) {debugger
+updateProductDetails(val: any) {
 return this.http.put(this.APIUrl + 'Product/UpdateProduct', val);
 }
 
