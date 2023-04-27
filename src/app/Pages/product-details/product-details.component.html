@@ -55,7 +55,7 @@
                 </li>
                 <li class="breadcrumb-item" itemprop="itemListElement" itemscope=""
                     itemtype="http://schema.org/ListItem">
-                    <a itemprop="item" href="/products/{{category_id}}/{{categoryName}}">
+                    <a itemprop="item">
                         <span itemprop="name" style="font-weight: bold;">{{categoryName}}</span>
                     </a>
                     <meta itemprop="position" content="2">
@@ -114,7 +114,7 @@
                             <h3 class=" product-name-new pt-4">{{data.Product_Title}}</h3>
 
                             <div class="row g-4" *ngIf="colors.length>0">
-                                <h5 class="colors-pallete" style="margin-top: 0px !important;">Colors : {{this.selected_colorname}}</h5>
+                                <h5 class="colors-pallete" style="margin-top: 0px !important; margin-bottom: 15px;">Colors : {{this.selected_colorname}}</h5>
                                 
                         <ngx-slick-carousel class="carousel"
                         #slickModal="slick-carousel"
@@ -273,3 +273,4 @@
 <!-- Page Footer start-->
 <app-footer></app-footer>
 <!-- Page Footer End -->
+

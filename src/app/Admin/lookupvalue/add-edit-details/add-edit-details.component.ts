@@ -151,7 +151,7 @@ export class AddEditDetailsComponent implements OnInit {
       this.LookupName = data);
   } 
   
-  addLookupDetails(){debugger
+  addLookupDetails(){
     this.submitted = true;
     if (this.LookupValueForm.valid){
       if (this.Lookup_Id!="3"){

@@ -37,7 +37,6 @@ public submitted = false;
     return this.userForm.controls;
   }
   onSubmit() {
-    debugger
     this.submitted = true;
     if (this.userForm.valid){
     var val = {
@@ -54,7 +53,6 @@ public submitted = false;
 }
 
 public findInvalidControls() {
-  debugger
   const invalid = [];
   const controls = this.userForm.controls;
   for (const name in controls) {

@@ -24,7 +24,6 @@ export class NavbarComponent implements OnInit {
   }
 
   refreshproductcategoryList() {
-    debugger;
    this.getproductmenubar();
    this.getNotification();
   }
@@ -68,8 +67,10 @@ export class NavbarComponent implements OnInit {
   }
 
   onSearch(){
-    this.router.navigate(['search-result/', this.search]);
-  }
+    this.router.navigate(['search-result/', this.search]).then(() => {
+      window.location.reload();
+  });
+}
 
   onSubCategoryClick(data: any, item: any){
     this.router.navigate(['/product-details/', item.Category_Name, item.SubCategory, item.Product_Id]).then(() => {

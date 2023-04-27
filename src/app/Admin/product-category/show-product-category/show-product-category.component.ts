@@ -28,7 +28,7 @@ export class ShowProductCategoryComponent implements OnInit {
 
   constructor(private sharedService: SharedService,public paginationService: PaginationService) { }
 
-  ngOnInit(): void {debugger
+  ngOnInit(): void {
    // this.refreshproductcategoryList();
     this.getAllProductCategory();
   }
@@ -40,7 +40,6 @@ export class ShowProductCategoryComponent implements OnInit {
   }
 
   getAllProductCategory() {  
-    debugger
    this.sharedService.getProductCategoryPagination(this.pageNo, this.ProductCategoryPerPage).subscribe((data: any) => { 
      this.productcategoryList = data;  
       this.getAlltotalProductCategoryCount();

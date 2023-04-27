@@ -54,7 +54,6 @@ export class ContactComponent {
   }
 
   onSubmit( ) {
-    debugger
     this.submitted = true;
     if (this.userForm.valid){
     var val = {

@@ -192,7 +192,6 @@ export class ProductDetailsComponent implements OnInit {
   }
 
   getProduct() {
-    debugger;
     this.userService.getProductById(this.productId).subscribe(data => {
       this.product = data;
 
@@ -214,7 +213,6 @@ export class ProductDetailsComponent implements OnInit {
 
     this.userService.getTipingListById(this.productId).subscribe(data=>{
       this.tipping=data; 
-      console.log(this.tipping)
    });
   }
 
@@ -258,7 +256,7 @@ export class ProductDetailsComponent implements OnInit {
     this.id=0;
   }
 
-  onTippingClick(item:any){debugger
+  onTippingClick(item:any){
     // this.userService.getTipingListById(this.productId).subscribe(data=>{
     //   this.tipping=data; 
     
@@ -274,7 +272,6 @@ export class ProductDetailsComponent implements OnInit {
   }
 
   onColorClick(data:any) {
-    debugger;
     this.bgColor = data.Description;
     this.selected_colorname = data.ColorName;
   }
