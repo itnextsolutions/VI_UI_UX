@@ -49,3 +49,12 @@ describe('ProductDetailsComponent', () => {
     expect(component).toBeTruthy();
   });
 });
+
+
+$(".genderButton").on("click", function () {
+
+  $(".genderButton").removeClass("active");
+  
+  $(this).addClass("active");
+  
+  });

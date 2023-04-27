@@ -161,6 +161,11 @@
     .navbar .navbar-nav .nav-item .nav-link{
         font-size: 12px ;
     }
+    .navbar>.container, .navbar>.container-fluid, .navbar>.container-sm, .navbar>.container-md, .navbar>.container-lg, .navbar>.container-xl, .navbar>.container-xxl {
+        
+        align-items: left !important;
+        justify-content: left !important;
+    }
     
     .navbar .navbar-nav .nav-link {
         padding: 3px 0;
@@ -173,6 +178,15 @@
         padding-bottom: 0rem !important;
     }
 }
+
+@media (min-width: 426px) and (max-width: 768px) {
+   
+    .navbar>.container, .navbar>.container-fluid, .navbar>.container-sm, .navbar>.container-md, .navbar>.container-lg, .navbar>.container-xl, .navbar>.container-xxl {
+        
+        align-items: left !important;
+        justify-content: left !important;
+    }}
+    
 @media (min-width: 1280px) and (max-width: 1366px) {
 .navbar .navbar-nav .nav-link:hover, .navbar .navbar-nav .nav-link.active {
     color: var(--dark);
@@ -656,8 +670,8 @@ font-size: 39px;
 .testi-review{
     overflow: hidden;
     display: -webkit-box;
-    -webkit-line-clamp: 5; /* number of lines to show */
-            line-clamp: 5; 
+    -webkit-line-clamp: 7; /* number of lines to show */
+    line-clamp: 7; 
     -webkit-box-orient: vertical;
 }
 .genderButton :hover{

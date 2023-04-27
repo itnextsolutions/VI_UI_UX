@@ -79,11 +79,16 @@ background-color: #DBED64;
   margin-left: 0px;
 }
 
-.slick-slider {
-  width: 88%;
-  margin: auto;
+.slick-slider{
+  /* width: 88%; */
+  margin: 20px 0 0 0px;
   background: rgb(255, 255, 255);
+  font-variant: pos;
+  position: relative;
+  right: 50px;
 }
+
+
 
 body .slick-prev, 
 body .slick-next {
@@ -93,6 +98,26 @@ body .slick-next {
   z-index: 100;
 }
 
+.genderButton:focus:not(:focus-visible) {
+  /* outline: 0; */
+  background: #3f52a1 !important;
+  border: none;
+  color: #fff;
+}
+
+.genderButton:hover {
+  /* outline: 0; */
+  background: #3f52a1 !important;
+  border: none;
+  color: #fff;
+}
+
+.genderButton:active {
+  /* outline: 0; */
+  background: #3f52a1 !important;
+  border: none;
+  color: #fff;
+}
 @media (min-width: 320px) and (max-width: 374px) {
 .pro-small-img{
   display: flex !important;
