@@ -201,3 +201,39 @@ height: 400px;
   .wrapper .float-image.left {
     float: left;
   }
+
+  .testi-review p{
+    overflow-y: scroll !important;
+    height: 150px !important;
+  }
+
+  .testi-review p::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  .testi-review p::-webkit-scrollbar-track {
+    background-color: #f36363;
+    border-radius: 100px;
+  }
+  
+  .testi-review p::-webkit-scrollbar-thumb {
+    background-color: rgb(75, 71, 71);
+    border-radius: 100px;
+  }
+  .testimonial .card-body{
+    height: 335px;
+  }
+
+  @media (min-width: 320px) and (max-width: 425px) {
+
+    /* .pro-btn-new{
+        padding: 10px 15px 10px 15px !important;
+    } */
+    .variationHead{
+        font-size: 1em;
+    }
+    .testimonial .card-body{
+        height: auto;
+      }
+
+}

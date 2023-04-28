@@ -123,6 +123,7 @@ body .slick-next {
   display: flex !important;
   padding: 0;
 }
+
 .big_img{width: 100%!important;}
 .pro-small-img li img {
   width: 138px;}
@@ -157,8 +158,12 @@ body .slick-next {
     .pro-small-img li img {
       width: 138px;}
       .pro-detail-page-top{
-        padding: 0 0 0 17px!important;
+        padding: 0 0 0 37px!important;
       }
+
+      .color-box {
+       
+        margin: 20px 84px;}
       .py-9 {
         padding-top: 6rem !important;
     }

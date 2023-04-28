@@ -158,6 +158,10 @@
     justify-content: center !important;
 }
 @media (min-width: 320px) and (max-width: 425px) {
+
+    .pro-btn-new{
+        padding: 10px 20px 10px 20px !important;
+    }
     .navbar .navbar-nav .nav-item .nav-link{
         font-size: 12px ;
     }
