@@ -188,7 +188,7 @@
                     </div>
                     <div class="col-12 text-center wow fadeInUp" data-wow-delay="0.1s"
                         style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
-                        <a class="btn btn-primary rounded-pill py-3 px-5 pro-btn-new" href="category">View More Products</a>
+                        <a class="btn btn-primary rounded-pill py-2 px-5" href="category">View More</a>
                     </div>
                 </div>
             </div>
@@ -217,7 +217,7 @@
                         *ngFor="let data of brandList.slice(0,6)">
                         <div class="product-item pointer" id="tab-1" (click)="onCategoryClick(data)">
 
-                            <div class="pro-img-hw"  style="">
+                            <div class="pro-img-hw" >
                                 <img class="img-fluid" src="../assets/img/brand/{{data.Category_Photo}}" alt=""
                                    >
                                 <div class="bg-secondary text-white position-absolute start-0 top-0 py-2 px-4">
@@ -227,7 +227,7 @@
                     </div>
                     <div class="col-12 text-center wow fadeInUp" data-wow-delay="0.1s"
                     style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
-                    <a class="btn btn-primary rounded-pill py-3 px-5 pro-btn-new" href="brand">View More Brands</a>
+                    <a class="btn btn-primary rounded-pill py-3 px-5" href="brand">View More Brands</a>
                 </div>
                 </div>
             </div>
@@ -237,7 +237,7 @@
 <!-- Brand End -->
 
 <!-- client review End -->
-<div class="container-fluid bg-light bg-icon py-5 mb-2" *ngIf="customerReview.length > 0">
+<div class="container-fluid bg-light bg-icon py-6 mb-2" *ngIf="customerReview.length > 0">
     <div class="container" >
         <div class="section-header text-center mx-auto mb-3 wow fadeInUp" data-wow-delay="0.1s"
             style="max-width: 500px;">
@@ -278,7 +278,7 @@
 <!-- client review End -->
 
 <!-- Blog Start -->
-<div class="container-xxl py-5">
+<div class="container-xxl py-6">
     <div class="container">
         <div class="section-header text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s"
             style="max-width: 500px;">
@@ -299,7 +299,7 @@
                 </div>
             </div>
             <div class="col-12 text-center wow fadeInUp" data-wow-delay="0.1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
-                <a class="btn btn-primary rounded-pill py-3 px-5 pro-btn-new" href="blog">View More Blogs</a>
+                <a class="btn btn-primary rounded-pill py-3 px-5" href="blog">View More Blogs</a>
             </div>
         </div>
     </div>
