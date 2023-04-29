@@ -201,3 +201,66 @@ height: 400px;
   .wrapper .float-image.left {
     float: left;
   }
+
+  .testi-review p{
+    overflow-y: scroll !important;
+    height: 150px !important;
+  }
+
+  .testi-review p::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  .testi-review p::-webkit-scrollbar-track {
+    background-color: #f36363;
+    border-radius: 100px;
+  }
+  
+  .testi-review p::-webkit-scrollbar-thumb {
+    background-color: rgb(75, 71, 71);
+    border-radius: 100px;
+  }
+  .testimonial .card-body{
+    height: 335px;
+  }
+
+  @media (min-width: 320px) and (max-width: 425px) {
+
+    /* .pro-btn-new{
+        padding: 10px 15px 10px 15px !important;
+    } */
+    .variationHead{
+        font-size: 1em;
+    }
+    .testimonial .card-body{
+        height: auto;
+      }
+
+}
+
+@media (min-width: 370px) and (max-width: 375px) {
+.card {
+    position: relative;
+    display: flex;
+    width: 325px;}
+}
+
+@media (min-width: 320px) and (max-width: 369px) {
+    .card {
+        position: relative;
+        display: flex;
+        width: 271px;}
+        .testimonial .cust-name {
+            font-size: 14px;
+            line-height: 1;
+        }
+        .testi-review p {
+            overflow-y: scroll !important;
+            height: 121px !important;
+        }
+    }
+    @media (min-width: 376px) and (max-width: 425px) {
+    .testi-review[_ngcontent-hor-c7] p[_ngcontent-hor-c7] {
+        overflow-y: scroll !important;
+        height: 110px !important;
+    }}

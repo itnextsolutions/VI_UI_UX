@@ -7,6 +7,14 @@
     font-family: "Gilroy Medium", sans-serif;
 }
 
+.slick-track {
+  position: relative;
+  left: 0;
+  top: 0;
+  display: block;
+  margin-left:0!important;
+  margin-right: auto;
+}
 .colorbox{
   height: 51px;
   margin-top: 10px;
@@ -82,11 +90,20 @@ background-color: #DBED64;
 .slick-slider{
   /* width: 88%; */
   margin: 20px 0 0 0px;
-  background: rgb(255, 255, 255);
+  /* background: rgb(255, 255, 255); */
   font-variant: pos;
   position: relative;
   right: 50px;
 }
+.slick-slider{
+margin: 20px 0 0 0px;
+    /* background: rgb(255, 255, 255); */
+    font-variant: pos;
+    position: relative;
+    /* right: 209px; */
+}
+
+
 
 
 
@@ -119,19 +136,41 @@ body .slick-next {
   color: #fff;
 }
 @media (min-width: 320px) and (max-width: 374px) {
+  .dec-text-new{
+    font-size: 18px;
+    padding: 15px 0 15px 0;
+  }
+  .variationHead{
+    font-size: 18px;
+  }
 .pro-small-img{
   display: flex !important;
   padding: 0;
 }
+
 .big_img{width: 100%!important;}
 .pro-small-img li img {
   width: 138px;}
   .pro-detail-page-top{
     padding: 0 0 0 17px!important;
   }
+
+  .color-box {
+   
+    padding: 0 15px 0 10px;
+    margin: 20px 67px;
+   
+  }
+  .pro-detail-page-top {
+    padding: 0 0 0 33px!important;
+}
 }
 
 @media (min-width: 375px) and (max-width: 424px) {
+  .dec-text-new{
+    font-size: 18px;
+    padding: 15px 0 15px 0;
+  }
   .pro-small-img{
     display: flex !important;
     padding: 0;
@@ -145,9 +184,29 @@ body .slick-next {
     .py-9 {
       padding-top: 6rem !important;
   }
+  .color-box {
+   
+    padding: 0 15px 0 10px;
+    margin: 20px 67px;
+   
+  }
+  .pro-detail-page-top{
+    padding: 0 0 0 33px!important;
+}
+.variationHead{
+  font-size: 18px;
+}
 
 }
   @media (min-width:425px) and (max-width: 600px) {
+    .dec-text-new{
+      font-size: 18px;
+      padding: 15px 0 15px 0;
+    }
+
+    .variationHead{
+      font-size: 18px;
+    }
     .pro-small-img{
       display: flex !important;
       padding: 0;
@@ -157,8 +216,10 @@ body .slick-next {
     .pro-small-img li img {
       width: 138px;}
       .pro-detail-page-top{
-        padding: 0 0 0 17px!important;
+        padding: 0 0 0 37px!important;
       }
+
+    
       .py-9 {
         padding-top: 6rem !important;
     }
@@ -169,7 +230,18 @@ body .slick-next {
     .big_img{
       order: 1 !important;
     }
+    .color-box {
+   
+      padding: 0 15px 0 10px;
+      margin: 20px 84px;
+     
     }
+    }
+    @media (min-width:601px) and (max-width: 769px) {
+    .pro-detail-page-top{
+      padding: 0 0 0 24px!important;
+    }
+  }
 
- 
+
 /* new detail */

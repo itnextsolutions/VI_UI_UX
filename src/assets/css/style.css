@@ -17,6 +17,14 @@
     z-index: 99;
 }
 
+.slick-track {
+    position: relative;
+    left: 0;
+    top: 0;
+    display: block;
+    margin-left: 0!important;
+    margin-right: auto;
+}
 .my-6 {
     margin-top: 6rem;
     margin-bottom: 6rem;
@@ -158,6 +166,10 @@
     justify-content: center !important;
 }
 @media (min-width: 320px) and (max-width: 425px) {
+
+    .pro-btn-new{
+        padding: 10px 20px 10px 20px !important;
+    }
     .navbar .navbar-nav .nav-item .nav-link{
         font-size: 12px ;
     }
@@ -470,7 +482,7 @@ font-size: 39px;
 }
 
 .product-item:hover img {
-    transform: scale(1.1);
+    /* transform: scale(1.1); */
 }
 
 .product-item small a:hover {

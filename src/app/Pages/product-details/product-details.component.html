@@ -156,11 +156,11 @@
 
 
                             <div [hidden]="isMenDivHidden" class="modal-body"  *ngFor="let data of product">
-                                <h5>Product Description :</h5>
+                                <h5 class="dec-text-new">Product Description :</h5>
                                 <div  *ngIf="data.Product_Description.length>0" class="detail-pro-dec" [innerHTML]="data.Product_Description"></div>
                             </div>
                             <div [hidden]="isWoMenDivHidden" class="modal-body" *ngFor="let data of product">
-                                <h5>Product Description :</h5>
+                                <h5 class="dec-text-new">Product Description :</h5>
                                 <div *ngIf="data.WomenProduct_Description.length>0"class="detail-pro-dec"[innerHTML]="data.WomenProduct_Description"></div>
                                 <!-- <p class="mb-4 color text-center">{{data.WomenProduct_Description}}</p> -->
                             </div>
@@ -182,8 +182,8 @@
                         </div>
     
                     <div *ngIf="sizes.length>0" class="row g-4 d-flex">
-                        <div class="col-lg-4 col-6 pad-0">
-                            <h5 class=" pad-0">Sizes available in:</h5>
+                        <div class="col-lg-4 col-5 pad-0">
+                            <h5 class=" dec-text-new pad-0">Sizes available in:</h5>
                         </div>
                         <div class="col-lg-6 col-6  pad-0">
                             <div class=" py-5 pc-Style-hero-colors-sizeList-adultSizes mt-0 pt-0 pb-3"style="">
