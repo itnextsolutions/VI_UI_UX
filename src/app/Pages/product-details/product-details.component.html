@@ -25,7 +25,7 @@
 <!-- Size Chart Model End -->
 
 <!-- Custmize design  Model start -->
-<div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel1" aria-hidden="true"
+<div class="modal fade" id="exampleModal11" tabindex="-1" aria-labelledby="exampleModalLabel1" aria-hidden="true"
     style="margin-top:5px;">
     <div class="modal-dialog">
         <div class="modal-content" style="width: 500px; height: 700px; margin: 0 auto;">
@@ -41,10 +41,34 @@
         </div>
     </div>
 </div>
+
+
+
+<!-- new -->
+
+   <!-- Modal effect 1 -->
+   <div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog customize-model-dialog" role="document">
+       <div class="modal-content">
+          <div class="modal-header">
+           
+             <h5 class="modal-title" id="exampleModalLabel1">Customize Your Design</h5>
+             <button type="button" class="btn-close" (click)="closeClick()" data-bs-dismiss="modal"
+    aria-label="Close"></button>
+          </div>
+          <div class="modal-body customize-model-body">
+            <app-custmize-design [Product]="product" [id]="id" [image]="image">
+            </app-custmize-design>
+          </div>
+         
+       </div>
+    </div>
+ </div>
+
 <!-- Custmize design  Model End -->
 
 <!--breadcrumb start-->
-<div class="container pt-12">
+<div class="container pt-12 pad-mob">
     <div class="row g-0 gx-5 align-items-end">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb" itemscope="" itemtype="http://schema.org/BreadcrumbList">

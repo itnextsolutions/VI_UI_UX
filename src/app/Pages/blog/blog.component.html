@@ -19,7 +19,7 @@
        
                 <img class="img-fluid pointer" (click) ="onClick(data)" src="assets/img/blog/{{data.Image_Name}}">
                 <div class="bg-light p-4">
-                    <a class="d-block h5 lh-base mb-2 me-3 pointer" (click) ="onClick(data)">{{data.Blog_Title}}</a>
+                    <a class="d-block h5 lh-base mb-2 me-3 pointer blog-heading" (click) ="onClick(data)">{{data.Blog_Title}}</a>
                     <div class="text-muted border-top pt-2">
                         <small class="me-3"><i class="fa fa-clock text-primary me-2"></i>{{data.Updated_Date | date}}</small>
                         <small class="me-3 read-more" (click) ="onClick(data)">Read More...</small>
