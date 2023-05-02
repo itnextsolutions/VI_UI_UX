@@ -190,15 +190,15 @@
                             </div>
                             <div class="edit-btn-page" style="padding: 0px; margin-top: 0px !important;">
                                 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal1"
-                                    class="btn btn-link  fs-5" style="padding-right: 30px;  padding-left: 0px;">
+                                    class="btn btn-link  fs-5 other_btn" >
                                     <i class="Small material-icons text-sm me-2">edit</i>CUSTOMIZE DESIGN
                                 </button>
                                 <button [hidden]="isMenDivHidden" *ngIf="data.SizeChartForMen?.length" type="button" class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#exampleModal"
-                                class=" size-btn btn btn-link  fs-5" style="text-align: -webkit-match-parent;">
+                                class="btn btn-link  fs-5 other_btn" >
                                 <i class="large material-icons text-sm me-2">storage</i>SIZE CHART
                                 </button>
                                 <button [hidden]="isWoMenDivHidden"  *ngIf="data.SizeChartForWomen?.length" type="button" class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#exampleModal"
-                                class=" size-btn btn btn-link  fs-5" style="text-align: -webkit-match-parent;">
+                                class="btn btn-link  fs-5 other_btn">
                                     <i class="Small material-icons text-sm me-2">storage</i>SIZE CHART
                                 </button>
                                 
@@ -222,38 +222,32 @@
     
                     <div *ngIf="(data.SizeChartForMen?.length || data.SizeChartForMen?.length)>0 "  class="row g-4">
                         <div class="col-lg-4 col-12  pad-0">
-                            <h5 class="variationHead" style="margin-top: 12px; padding: 0!important; ">Choose Category :</h5>
+                            <h5 class="variationHead" style="padding: 0!important; ">Choose Category :</h5>
                         </div>
-    
-                        <div class="col-lg-6 col-12  pad-0">
-                            <div class="genderButtonBlock mt-0 pt-0 pb-3" id="genderVariations">
-                                <div class="container" style="margin-top: 10px;padding: 0 !important; ">
-                                    <div class="gender-btn">
-                                        <button *ngIf="data.Product_Photo?.length >0" (click)="onClickmenPhoto()"  class="genderButton pad-0 " data-id="id_0" tabindex="0" data-title="Men"
-                                            data-value="men" style="border-radius: 10px; height:40px; width: 80px;">
-                                            Men
-                                        </button>
-                                        <button *ngIf="data.WomenProduct_Photo?.length >0" class="genderButton pad-0 " data-id="id_1" tabindex="1" data-title="Women"  data-value="women"
-                                            style="margin-left: 10px; border-radius: 10px; height:40px; width: 80px;"  (click)="onClickWomenPhoto()">
-                                            Women
-                                        </button>
-                                    </div>
+                    </div>
+                    <div *ngIf="(data.SizeChartForMen?.length || data.SizeChartForMen?.length)>0 "  class="row g-4">
+                        <div class="col-lg-12 col-12  pad-0">
+                            <div class="col-lg-12 col-12  pad-0">
+                                <div class="genderButtonBlock" id="genderVariations">	
+                                    <div (click)="onClickmenPhoto()" class="genderButton" data-id="id_0" tabindex="0" data-title="Men" data-value="men">Men</div>	
+                                    <div  (click)="onClickWomenPhoto()" class="genderButton" data-id="id_1" tabindex="1" data-title="Women" data-value="women">Women</div>
                                 </div>
                             </div>
                         </div>
+                        </div>
+                    </div>
+                        
                     </div>
                 </div>
             </div>
         </div>
     </div>
     </div>
-    </div>
-    </div>
 </section>
 <!-- Product Details End -->
 
 <!-- Similar Products Start -->
-<div *ngIf="simillarProducts.length>0" class="container-xxl py-9">
+<div *ngIf="simillarProducts.length>0" class="container-xxl pt-7">
     <div class="container">
 
         <div class="row g-0 gx-5 align-items-end">
