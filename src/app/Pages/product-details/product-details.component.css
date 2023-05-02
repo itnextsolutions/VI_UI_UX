@@ -115,26 +115,43 @@ body .slick-next {
   z-index: 100;
 }
 
-.genderButton:focus:not(:focus-visible) {
-  /* outline: 0; */
-  background: #3f52a1 !important;
-  border: none;
-  color: #fff;
+.other_btn{
+  background-color: #f1f3f3;
+  padding: 10px 20px;
+  border: 1px solid #bec0c5;
 }
 
-.genderButton:hover {
-  /* outline: 0; */
-  background: #3f52a1 !important;
-  border: none;
-  color: #fff;
+.other_btn:first-child {
+  margin-right: 20px;
 }
 
-.genderButton:active {
-  /* outline: 0; */
-  background: #3f52a1 !important;
-  border: none;
-  color: #fff;
+.genderButtonBlock {
+  margin-top: 12px;
 }
+  .genderButton {
+    padding: 10px 40px;
+    display: inline-block;
+    border-radius: 5px;
+    font-size: 15px;
+    background-color: #202A45;
+    color: #fff;
+  }
+  .genderButton:first-child {
+      margin-right: 20px;
+    }
+    .genderButton.active {
+      background-color: #202A45;
+      color: #fff;
+    }
+    .genderButton:not(.active).genderButton:hover {
+       
+        outline: 3px solid #aaa;
+        cursor: pointer;
+      }
+    
+
+
+
 @media (min-width: 320px) and (max-width: 374px) {
   .dec-text-new{
     font-size: 18px;
