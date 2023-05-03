@@ -106,7 +106,7 @@
                 <div *ngFor="let data of product" class="mo-order-2">
                     <svg id="product-svg" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg"    height="571" width="467">
                         <defs/>
-                        <path id="product-shape" [attr.d]="svg_path"  [ngStyle]="{ fill: bgColor }" />
+                        <path id="product-shape" [attr.d]="men_svg_path"  [ngStyle]="{ fill: bgColor }" />
                         </svg>
                     <img class="big_img" src="assets/img/{{this.productcategoryfolder}}/{{data.Product_Photo}}" >
                 </div>
@@ -123,7 +123,7 @@
                 <div *ngFor="let data of product" class="mo-order-2">
                     <svg id="product-svg" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg"    height="571" width="467">
                         <defs/>
-                        <path id="product-shape" [attr.d]="svg_path"  [ngStyle]="{ fill: bgColor }" />
+                        <path id="product-shape" [attr.d]="women_svgpath"  [ngStyle]="{ fill: bgColor }" />
                         </svg>
                    <img class="big_img" src="assets/img/{{this.productcategoryfolder}}/{{data.WomenProduct_Photo}}" style="width:400px">
                 </div>
@@ -220,17 +220,17 @@
                         </div>
                     </div>
     
-                    <div *ngIf="(data.SizeChartForMen?.length || data.SizeChartForMen?.length)>0 "  class="row g-4">
+                    <div *ngIf="(data.SizeChartForMen?.length || data.SizeChartForWoMen?.length)>0 "  class="row g-4">
                         <div class="col-lg-4 col-12  pad-0">
                             <h5 class="variationHead" style="padding: 0!important; ">Choose Category :</h5>
                         </div>
                     </div>
-                    <div *ngIf="(data.SizeChartForMen?.length || data.SizeChartForMen?.length)>0 "  class="row g-4">
+                    <div  class="row g-4">
                         <div class="col-lg-12 col-12  pad-0">
                             <div class="col-lg-12 col-12  pad-0">
                                 <div class="genderButtonBlock" id="genderVariations">	
-                                    <div (click)="onClickmenPhoto()" class="genderButton" data-id="id_0" tabindex="0" data-title="Men" data-value="men">Men</div>	
-                                    <div  (click)="onClickWomenPhoto()" class="genderButton" data-id="id_1" tabindex="1" data-title="Women" data-value="women">Women</div>
+                                    <div *ngIf="(data.Product_Photo?.length)>0"  (click)="onClickmenPhoto()" class="genderButton" data-id="id_0" tabindex="0" data-title="Men" data-value="men">Men</div>	
+                                    <div *ngIf="(data.WomenProduct_Photo?.length)>0" (click)="onClickWomenPhoto()" class="genderButton" data-id="id_1" tabindex="1" data-title="Women" data-value="women">Women</div>
                                 </div>
                             </div>
                         </div>

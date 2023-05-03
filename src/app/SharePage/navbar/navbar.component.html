@@ -86,8 +86,8 @@
             </div> -->
 
             <div class="searchbar js-search">
-                <input class="search_input" type="text" name="" placeholder="Search...">
-                <a href="#" class="search_icon"><i class="fas fa-search"></i></a>
+                <input [(ngModel)]="search" type="search" class="search_input" name=""  placeholder="Search...">
+                <a class="search_icon"><i class="fas fa-search" (click)="onSearch()"></i></a>
               </div>
     
      
@@ -102,8 +102,8 @@
                     </div>
                 </div>
             </div>
-            
         </div>
+        
     </nav>
      
 </div>

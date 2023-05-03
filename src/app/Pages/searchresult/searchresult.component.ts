@@ -31,12 +31,11 @@ export class SearchresultComponent implements OnInit {
     this.userService.getsearchResult(this.SearchText).subscribe(data => {
       this.SearchResult = data;
 
-    //   if (this.SearchResult != null) {
-    //     this.SearchResult.forEach((element:any) => {
-    //       this.productsubcategory = element.SubCategory;
-    //       this.productcategory = element.Category_Name;
-    //     })
-    //   }
+      if (this.SearchResult != null) {
+        this.SearchResult.forEach((element:any) => {
+          element.Category_Name = element.Category_Name.replace(/\s+/g, '-').toLowerCase();
+        })
+      }
 
      });
   }
