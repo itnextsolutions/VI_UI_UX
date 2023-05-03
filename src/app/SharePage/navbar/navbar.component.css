@@ -77,9 +77,14 @@
         font-size: 12px;
     }
 } 
-
-
-
+@media (min-width: 765px) and (max-width: 768px) {
+.navbar .navbar-brand {
+    color: #344767;
+    font-size: 0.875rem;
+    position: relative;
+    left: 190px;
+}
+}
 /* new nav css */
 /* 
 @media (min-width: 320px) and (max-width: 768px) {

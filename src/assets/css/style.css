@@ -704,4 +704,6 @@ position: relative;
     grid-template-columns: 1fr 1fr;
 
 } */
-
+@media (min-width:320px) and (max-width: 768px) {
+    .pad-mob{
+      padding-top: 10rem !important;}}

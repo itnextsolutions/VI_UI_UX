@@ -236,6 +236,11 @@ height: 400px;
         height: auto;
       }
 
+      .carousel-control-prev-icon, .carousel-control-next-icon {
+        
+        display: none !important;
+    }
+
 }
 
 @media (min-width: 370px) and (max-width: 375px) {
