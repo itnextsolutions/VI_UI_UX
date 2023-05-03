@@ -103,11 +103,19 @@
         <div class="row">
         <div class="col-lg-6 col-12">
             <div [hidden]="isMenDivHidden" >
-                <div *ngFor="let data of product" class="mo-order-2">
-                    <svg id="product-svg" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg"    height="571" width="467">
+                <div *ngFor="let data of product" class="mo-order-2" style="height:auto;">
+                    <!-- <svg id="product-svg" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg"    height="571" width="467">
                         <defs/>
                         <path id="product-shape" [attr.d]="men_svg_path"  [ngStyle]="{ fill: bgColor }" />
-                        </svg>
+                    </svg> -->
+                    <svg class="lp-view" id="product-svg" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 467 571" height="571" width="467">
+                        <defs/>
+                        <path id="product-shape" [attr.d]="men_svg_path"  [ngStyle]="{ fill: bgColor }" />
+                    </svg>
+                    <svg class="mb-view"  id="product-svg" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 467 571" width="272" height="333">
+                        <defs/>
+                        <path id="product-shape" [attr.d]="men_svg_path"  [ngStyle]="{ fill: bgColor }" />
+                    </svg>
                     <img class="big_img" src="assets/img/{{this.productcategoryfolder}}/{{data.Product_Photo}}" >
                 </div>
             </div>
