@@ -198,7 +198,8 @@ export class ProductDetailsComponent implements OnInit {
       if (this.product != null) {
         this.product.forEach((element: any) => {
           this.category_id = element.Category_Id;
-          this.svg_path = element.men_f_svgpath;
+          this.men_svg_path = element.men_f_svgpath;
+          this.women_svgpath = element.women_f_svgpath;
         })
       }
     });
