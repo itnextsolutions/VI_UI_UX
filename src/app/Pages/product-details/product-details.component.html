@@ -12,13 +12,18 @@
                 <button type="button" class="btn-close" (click)="closeClick()" data-bs-dismiss="modal"
                     aria-label="Close"></button>
             </div>
-            <div [hidden]="isMenDivHidden" class="modal-body text-center" *ngFor="let data of product">
+            <!-- <div [hidden]="isMenDivHidden" class="modal-body text-center" *ngFor="let data of product">
                 <img src="assets/img/size_chart/{{data.SizeChartForMen}}" class="" style="width: 100%;">
             </div>
             <div [hidden]="isWoMenDivHidden" class="modal-body text-center" *ngFor="let data of product">
                 <img src="assets/img/size_chart/{{data.SizeChartForWomen}}" class="" style="width:100%;">
+            </div> -->
+            <div [hidden]="isMenDivHidden && isTippingDivHidden" class="modal-body text-center" *ngFor="let data of product">
+                <img src="assets/img/{{this.productcategoryfolder}}/{{data.SizeChartForMen}}" class="" style="width: 700px;">
             </div>
-
+            <div [hidden]="isWoMenDivHidden && isTippingWomenDivHidden" class="modal-body text-center" *ngFor="let data of product">
+                <img src="assets/img/{{this.productcategoryfolder}}/{{data.SizeChartForWomen}}" class="" style="width: 700px;">
+            </div>
         </div>
     </div>
 </div>
@@ -125,7 +130,12 @@
                     
                 <img class="big_img" src="assets/img/{{this.productcategoryfolder}}/{{this.image}}" height="571" width="467">
              
-         </div>
+            </div>
+
+            <div [hidden]="isTippingWomenDivHidden">
+
+                <img class="big_img" src="assets/img/{{this.productcategoryfolder}}/{{this.image}}" height="571" width="467">           
+            </div>
 
             <div [hidden]="isWoMenDivHidden">
                 <div *ngFor="let data of product" class="mo-order-2">
@@ -186,12 +196,48 @@
                                 </div>
                             </div> -->
 
+                            <div  class="row g-4" *ngIf="tipping.length>0">
+                                <div *ngIf="id==0 || id==2">
+                                    <h5 class="colors-pallete" style="margin-top: 0px !important;">Colors:</h5>
+                                
+                                    <div class="container py-5 pc-Style-hero-colors-sizeList-adultSizes mt-0 pt-0 pb-3">
+                                        <div class="row row-cols-2 row-cols-lg-6 w-90">
+                                            <div *ngFor="let item of tipping" (click)="onTippingClick(item)">
+                                                <img src="assets/img/tipping/{{item.tipping_img}}" class="" style="height: 51px;">
+                                                <div class="label-name">
+                                                    {{item.Description}}
+                                                </div>
+                                                <!-- </div> -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
 
-                            <div [hidden]="isMenDivHidden" class="modal-body"  *ngFor="let data of product">
+                            <div *ngIf="id==1 ||id==3">
+                                  
+                                <h5 class="colors-pallete" style="margin-top: 0px !important;">Colors:</h5>
+                            
+                                <div class="container py-5 pc-Style-hero-colors-sizeList-adultSizes mt-0 pt-0 pb-3">
+                                    <div class="row row-cols-2 row-cols-lg-6 w-90">
+                                        <div *ngFor="let item of tipping" (click)="onTippingWomenClick(item)">
+                                            <img src="assets/img/tipping/{{item.tipping_img}}" class="" style="height: 51px;">
+                                            <div class="label-name">
+                                                {{item.Description}}
+                                                <!-- {{item.tipping_women_img}} -->
+                                            </div>
+                                            <!-- </div> -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div [hidden]="isMenDivHidden && isTippingDivHidden" class="modal-body"  *ngFor="let data of product">
                                 <h5 class="dec-text-new">Product Description :</h5>
                                 <div  *ngIf="data.Product_Description.length>0" class="detail-pro-dec" [innerHTML]="data.Product_Description"></div>
                             </div>
-                            <div [hidden]="isWoMenDivHidden" class="modal-body" *ngFor="let data of product">
+                            <div [hidden]="isWoMenDivHidden && isTippingWomenDivHidden" class="modal-body" *ngFor="let data of product">
                                 <h5 class="dec-text-new">Product Description :</h5>
                                 <div *ngIf="data.WomenProduct_Description.length>0"class="detail-pro-dec"[innerHTML]="data.WomenProduct_Description"></div>
                                 <!-- <p class="mb-4 color text-center">{{data.WomenProduct_Description}}</p> -->
@@ -201,11 +247,11 @@
                                     class="btn btn-link  fs-5 other_btn" >
                                     <i class="Small material-icons text-sm me-2">edit</i>CUSTOMIZE DESIGN
                                 </button>
-                                <button [hidden]="isMenDivHidden" *ngIf="data.SizeChartForMen?.length" type="button" class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#exampleModal"
+                                <button [hidden]="isMenDivHidden && isTippingDivHidden" *ngIf="data.SizeChartForMen?.length" type="button" class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#exampleModal"
                                 class="btn btn-link  fs-5 other_btn" >
                                 <i class="large material-icons text-sm me-2">storage</i>SIZE CHART
                                 </button>
-                                <button [hidden]="isWoMenDivHidden"  *ngIf="data.SizeChartForWomen?.length" type="button" class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#exampleModal"
+                                <button [hidden]="isWoMenDivHidden && isTippingWomenDivHidden"  *ngIf="data.SizeChartForWomen?.length" type="button" class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#exampleModal"
                                 class="btn btn-link  fs-5 other_btn">
                                     <i class="Small material-icons text-sm me-2">storage</i>SIZE CHART
                                 </button>

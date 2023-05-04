@@ -8,8 +8,8 @@ import { Observable } from "rxjs";
 
 export class UserService {
 
-  readonly APIUrl = "https://testapi.vastraindia.com/api/";
-  // readonly APIUrl = "https://localhost:44365/api/";
+  // readonly APIUrl = "https://testapi.vastraindia.com/api/";
+  readonly APIUrl = "https://localhost:44365/api/";
 
   constructor(private http: HttpClient) {}
 
@@ -89,7 +89,7 @@ export class UserService {
     }
 
     getTipingListById(product_id : any):Observable<any>{
-      return this.http.get < any > (this.APIUrl + 'Home/GetSizeListByProductId?id=' + product_id);
+      return this.http.get < any > (this.APIUrl + 'Home/GetTippingCodeListByProductId?id=' + product_id);
     }
 
     submitContactForm(val: any) {

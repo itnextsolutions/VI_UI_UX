@@ -1,0 +1,529 @@
+<div class="ProductForm-form">
+    <form class="blog" [formGroup]="ProductForm">
+  
+      <div class="row">
+        <div class="col-md-12 roundedTextBox mb-3">
+          <label>Select Category :</label>
+          <select  id="inputCategory_Id"  name="Category_Name" [(ngModel)]="Category_Id" class="form-control" formControlName="Category_Id" #mySelect
+            (change)='onOptionsSelected(mySelect.value)'>
+            <option value="0" disabled selected>Select Category</option>
+            <option *ngFor="let web of CategoryName" [value]="web.Category_Id">{{web.Category_Name}}</option> 
+            
+          </select>
+          <div *ngIf="submitted && formControl.Category_Id.errors" class="text-danger">
+            <div *ngIf="formControl.Category_Id.errors.required">Category is required.</div>
+          </div>
+        </div>
+
+
+        <div class="col-md-12 roundedTextBox mb-3">
+          <label>Select Sub Category :</label>
+          <select [(ngModel)]="SubCategory_Id"   name="SubCategory" class="form-control" formControlName="SubCategory_Id">
+            <option value="0" disabled selected>Select Sub Category</option>
+            <option *ngFor="let web of SubCatList" [value]="web.SubCategory_Id" >{{web.SubCategory}}</option>
+             
+          </select>
+          <div *ngIf="submitted && formControl.SubCategory_Id.errors" class="text-danger">
+            <div *ngIf="formControl.SubCategory_Id.errors.required">Sub Category is required</div>
+          </div>
+        </div>
+        <div class="col-md-12 roundedTextBox mb-3">
+          <label>Product Name :</label>
+          <input type="text" [(ngModel)]="Product_Title" class="form-control mb-2" id="inputProduct_Title"
+            formControlName="Product_Title" placeholder="Enter Product Name">
+          <div *ngIf="submitted && formControl.Product_Title.errors" class="text-danger">
+            <div *ngIf="formControl.Product_Title.errors.required">Product Name is required.</div>
+          </div>
+        </div>
+
+
+        <div class="col-md-12 roundedTextBox mb-3">
+        <label>Men Product Specification :</label>
+        
+        <!-- <input type="text"  [(ngModel)]="Description" class="form-control mb-2" id="inputDescription" formControlName="Description"> -->
+        
+        <textarea rows="4" cols="43" type="text" [(ngModel)]="Product_Description" class="form-control mb-2"
+          id="inputProduct_Description" formControlName="Product_Description"></textarea>
+        <div *ngIf="submitted && formControl.Description.errors" class="text-danger">
+          <div *ngIf="formControl.Description.errors.required">Product Description is required.</div>
+        </div>
+      </div>
+
+
+      </div>
+
+      
+
+
+
+
+  
+      <br>
+
+
+      <div class="container py-5">
+        <div class="row row-cols-2 row-cols-lg-3 mb-5">
+          <div class="col">
+            <label>Men Front Image :</label>
+            <div class="col-sm-10">
+              <div [innerHtml]='msg' *ngIf="msg" style="color: red;"></div>
+             
+              <!-- <div><img [src]="url" *ngIf="url"></div> -->
+              
+              <div><img [src]="menfronturl" *ngIf="menfronturl else elseBlock" style="width: 200px;"></div>
+              <p>
+                <input type="file" (change)="onselectFile1($event,1)" 
+              >
+              </p>
+              <ng-template #elseBlock>
+                <img src="assets/img/{{Category_Name}}/{{MenFront_Photo}}">
+              </ng-template>
+            </div>
+            <div *ngIf="submitted && formControl.MenFront_Photo.errors" class="text-danger">
+              <div *ngIf="formControl.MenFront_Photo.errors.required">Photo is required.</div>
+            </div>
+          </div>
+
+         
+
+          <div class="col">
+            <label>Size Chart For Men :</label>
+            <div class="col-sm-10">
+              <div [innerHtml]='msg' *ngIf="msg" style="color: red;"></div>
+              <div><img [src]="mensizecharturl" *ngIf="mensizecharturl; else elseBlock" style="width: 200px;"></div>
+              <p>
+                <input type="file" (change)="onselectFile2($event,2)" id="inputSizeChartForMen"
+                >
+              </p>
+              <ng-template #elseBlock>
+                <img src="assets/img/{{Category_Name}}/{{SizeChartForMen}}">
+              </ng-template>
+            </div>
+            <div *ngIf="submitted && formControl.SizeChartForMen.errors" class="text-danger">
+              <div *ngIf="formControl.SizeChartForMen.errors.required">Product Side Photo is required.</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+
+      <div class="container py-5">
+        <div class="row row-cols-2 row-cols-lg-3 mb-5">
+          <div class="col">
+            <label>Women Front Image :</label>
+            <div class="col-sm-10">
+              <div [innerHtml]='msg' *ngIf="msg" style="color: red;"></div>
+              <div><img [src]="womenfronturl" *ngIf="womenfronturl; else elseBlock" style="width: 200px;"></div>
+              <p class="color">
+                <input type="file" (change)="onselectFile3($event,3)" id="inputWomenProduct_Photo"
+                  >
+              </p>
+              <ng-template #elseBlock>
+                <img src="assets/img/{{Category_Name}}/{{WomenProduct_Photo}}">
+            </ng-template>
+            </div>
+            <div *ngIf="submitted && formControl.WomenProduct_Photo.errors" class="text-danger">
+              <div *ngIf="formControl.WomenProduct_Photo.errors.required">Photo is required.</div>
+            </div>
+          </div>
+          
+
+          <div class="col">
+            <label>Size Chart For Women</label>
+            <div class="col-sm-10">
+              <div [innerHtml]='msg' *ngIf="msg" style="color: red;"></div>
+              <div><img [src]="womensizecharturl" *ngIf="womensizecharturl; else elseBlock" style="width: 200px;"></div>
+              <p>
+                <input type="file" (change)="onselectFile4($event,4)" id="inputSizeChartForWomen"
+                  >
+              </p>
+              <ng-template #elseBlock>
+                <img src="assets/img/{{Category_Name}}/{{SizeChartForWomen}}">
+              </ng-template>
+            </div>
+            <div *ngIf="submitted && formControl.SizeChartForWomen.errors" class="text-danger">
+              <div *ngIf="formControl.SizeChartForWomen.errors.required">Product Side Photo is required.</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- <div class="container dropdown">
+        <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+          <h4>Color :</h4>
+        </a>
+        <div class="dropdown-menu fade-up m-0">
+          <a href="#" class="dropdown-item">
+          
+      <div class="col-md-12 roundedTextBox mb-3">
+        <label>Select Color :</label>
+        <div class="container py-5">
+          <div class="row row-cols-2 row-cols-lg-2 mb-5">
+            <div class="col" *ngFor="let data of TippingData"  formControlName="TipingId"
+              [(ngModel)]="TipingId" ngDefaultControl>
+                <label>
+                  <input type="checkbox" style.color="{{data.Description}}" value="{{data.Lookup_Details_Id}}"
+                  (change)="onSelectChange($event)" />
+              
+                    {{data.Description}}
+                   <li class="color-box" rel="tooltip" im data-mobile=""
+                    data-create="false">
+                    <img src="assets/img/tipping/{{data.tipping_img}}">
+                  </li>
+                </label>
+              
+            </div>
+          </div>
+        </div>
+        <div *ngIf="submitted && formControl.ColorId.errors" class="text-danger">
+                <div *ngIf="formControl.ColorId.errors.required">Product Color is required.</div>
+        </div>
+      </div>
+
+      
+    </a>
+  </div>
+</div> -->
+
+      <!-- --Men Specification-- -->
+      
+      <!-- <div class="col-md-12 roundedTextBox mb-3">
+        <label>Men Product Specification :</label> -->
+        
+        <!-- <input type="text"  [(ngModel)]="Description" class="form-control mb-2" id="inputDescription" formControlName="Description" placeholder="Enter Product Description"> -->
+        
+        <!-- <textarea rows="4" cols="43" type="text" [(ngModel)]="Product_Description" class="form-control mb-2"
+          id="inputProduct_Description" formControlName="Product_Description"
+          placeholder="Enter Product Specification"></textarea>
+        <div *ngIf="submitted && formControl.Description.errors" class="text-danger">
+          <div *ngIf="formControl.Description.errors.required">Product Description is required.</div>
+        </div>
+      </div>
+  
+      <div class="container dropdown">
+        <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+          <h4>Men</h4>
+        </a>
+        <div class="dropdown-menu fade-up m-0">
+          <a href="#" class="dropdown-item">
+          
+            
+
+       
+            
+  
+            <div class="container py-5">
+              <div class="row row-cols-2 row-cols-lg-3 mb-5">
+                <div class="col">
+                  <label>Men Front Image :</label>
+                  <div class="col-sm-10">
+                    <div [innerHtml]='msg' *ngIf="msg" style="color: red;"></div> -->
+                   
+                    <!-- <div><img [src]="url" *ngIf="url"></div> -->
+                    
+                    <!-- <div><img [src]="menfronturl" *ngIf="menfronturl else elseBlock" style="width: 200px;"></div>
+                    <p>
+                      <input type="file" (change)="onselectFile1($event,1)" id="inputMenFront_Photo"
+                    >
+                    </p>
+                    <ng-template #elseBlock>
+                      <img src="assets/img/{{Category_Name}}/{{MenFront_Photo}}">
+                    </ng-template>
+                  </div>
+                  <div *ngIf="submitted && formControl.MenFront_Photo.errors" class="text-danger">
+                    <div *ngIf="formControl.MenFront_Photo.errors.required">Photo is required.</div>
+                  </div>
+                </div>
+  
+               
+  
+                <div class="col">
+                  <label>Size Chart For Men :</label>
+                  <div class="col-sm-10">
+                    <div [innerHtml]='msg' *ngIf="msg" style="color: red;"></div>
+                    <div><img [src]="mensizecharturl" *ngIf="mensizecharturl; else elseBlock" style="width: 200px;"></div>
+                    <p>
+                      <input type="file" (change)="onselectFile2($event,2)" id="inputSizeChartForMen"
+                      >
+                    </p>
+                    <ng-template #elseBlock>
+                      <img src="assets/img/{{Category_Name}}/{{SizeChartForMen}}">
+                    </ng-template>
+                  </div>
+                  <div *ngIf="submitted && formControl.SizeChartForMen.errors" class="text-danger">
+                    <div *ngIf="formControl.SizeChartForMen.errors.required">Product Side Photo is required.</div>
+                  </div>
+                </div>
+  
+              </div>
+            </div>
+  
+          </a>
+        </div>
+      </div>
+   -->
+  
+      <!-- --Women Specification-- -->
+  
+      <!-- <div class="container-fluid dropdown">
+        <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+          <h4>Women</h4>
+        </a>
+        <div class="dropdown-menu fade-up m-0">
+          <a href="#" class="dropdown-item">
+  
+            <div class="col-md-12 roundedTextBox mb-3">
+              <label>Select Color :</label>
+              <div class="container py-5">
+                <div class="row row-cols-2 row-cols-lg-2 mb-5">
+                  <div class="col" *ngFor="let data of TippingData"  formControlName="TipingId"
+                    [(ngModel)]="TipingId" ngDefaultControl>
+                      <label>
+                        <input type="checkbox"  style.color="{{data.Description}}" value="{{data.Lookup_Details_Id}}"
+                          (change)="onSelectChange($event)" />
+                    
+                          {{data.Description}}
+                         <li class="color-box" rel="tooltip" im data-mobile=""
+                          data-create="false">
+                          <img src="assets/img/tipping/{{data.tipping_img}}">
+                        </li>
+                      </label>
+                    
+                  </div>
+                </div>
+              </div>
+              <div *ngIf="submitted && formControl.ColorId.errors" class="text-danger">
+                      <div *ngIf="formControl.ColorId.errors.required">Product Color is required.</div>
+              </div>
+            </div>
+          
+  
+            <div class="container py-5">
+              <div class="row row-cols-2 row-cols-lg-3 mb-5">
+                <div class="col">
+                  <label>Women Front Image :</label>
+                  <div class="col-sm-10">
+                    <div [innerHtml]='msg' *ngIf="msg" style="color: red;"></div>
+                    <div><img [src]="womenfronturl" *ngIf="womenfronturl; else elseBlock" style="width: 200px;"></div>
+                    <p class="color">
+                      <input type="file" (change)="onselectFile3($event,3)" id="inputWomenProduct_Photo"
+                        >
+                    </p>
+                    <ng-template #elseBlock>
+                      <img src="assets/img/{{Category_Name}}/{{WomenProduct_Photo}}">
+                  </ng-template>
+                  </div>
+                  <div *ngIf="submitted && formControl.WomenProduct_Photo.errors" class="text-danger">
+                    <div *ngIf="formControl.WomenProduct_Photo.errors.required">Photo is required.</div>
+                  </div>
+                </div>
+                
+  
+                <div class="col">
+                  <label>Size Chart For Women</label>
+                  <div class="col-sm-10">
+                    <div [innerHtml]='msg' *ngIf="msg" style="color: red;"></div>
+                    <div><img [src]="womensizecharturl" *ngIf="womensizecharturl; else elseBlock" style="width: 200px;"></div>
+                    <p>
+                      <input type="file" (change)="onselectFile4($event,4)" id="inputSizeChartForWomen"
+                        >
+                    </p>
+                    <ng-template #elseBlock>
+                      <img src="assets/img/{{Category_Name}}/{{SizeChartForWomen}}">
+                    </ng-template>
+                  </div>
+                  <div *ngIf="submitted && formControl.SizeChartForWomen.errors" class="text-danger">
+                    <div *ngIf="formControl.SizeChartForWomen.errors.required">Product Side Photo is required.</div>
+                  </div>
+                </div>
+  
+              </div>
+            </div>
+  
+          </a>
+        </div>
+      </div> -->
+  
+  
+      <!-- --Colour-- -->
+  
+      <!-- <div class="col-md-12 roundedTextBox mb-3">
+        <label>Select Color :</label>
+        <div class="container py-5">
+          <div class="row row-cols-2 row-cols-lg-5 mb-5">
+            <div class="col" *ngFor="let data of TippingData"  formControlName="TipingId"
+              [(ngModel)]="TipingId" ngDefaultControl>
+                <label>
+                  <input type="checkbox"  style.color="{{data.Description}}" value="{{data.Lookup_Details_Id}}"
+                    (change)="onSelectChange($event)" />
+              
+                    {{data.Description}}
+                   <li class="color-box" rel="tooltip" im data-mobile=""
+                    data-create="false">
+                    <img src="assets/img/tipping/{{data.tipping_img}}">
+                  </li>
+                </label>
+              
+            </div>
+          </div>
+        </div>
+        <div *ngIf="submitted && formControl.ColorId.errors" class="text-danger">
+                <div *ngIf="formControl.ColorId.errors.required">Product Color is required.</div>
+        </div>
+      </div> -->
+  
+      <table class="table table-bordered" formArrayName="Images">
+        <tr>  
+          <th colspan="2">Add Multiple Images:</th>  
+          <th width="250px">
+            <button type="button" (click)="addImages()" class="btn">Add</button>
+          </th>  
+        </tr>  
+        
+        
+        <!-- <tr *ngFor="let quantity of Images.controls; let i=index" [formGroupName]="i"> -->
+         
+          <tr *ngFor="let control of Images.controls; let i=index" [formGroupName]="i">
+          <!-- <div class="form-group  col-md-4 roundedTextBox mb-3">
+          <div class="col"> -->
+          
+          <td>
+
+          <label>Select Color :</label>
+          <!-- <select  id="inputCategory_Id"  name="Description"  class="form-control" formControlName="TipingId"
+          (change)="onSelectChange($event)" > -->
+          <!-- <select  id="inputCategory_Id"  name="Description"  class="form-control" formControlName="'TipingId"
+           > -->
+           <select  id="inputCategory_Id"  name="Description"  class="form-control" formControlName="TipingId"
+           (change)="onSelectChange($event)">
+           <option value="0" disabled selected>Select Color</option>
+            <option *ngFor="let web of TippingData" [value]="web.Lookup_Details_Id">
+              {{web.Description}}
+              <!-- <div class="color-box"><img src="assets/img/tipping/{{web.tipping_img}}"></div> -->
+            </option> 
+            
+          </select>
+          <div *ngIf="submitted && formControl.TipingId.errors" class="text-danger">
+            <div *ngIf="formControl.TipingId.errors.required">Colour is required.</div>
+          </div>
+          
+          </td>
+
+          <!-- </div>
+         </div> -->
+
+       
+        <!-- <div class="form-group  col-md-4 roundedTextBox mb-3"> -->
+            <td>
+
+          <label>Women Front Image :</label>
+                  <div class="col-sm-10">
+                    <div [innerHtml]='msg' *ngIf="msg" style="color: red;"></div>
+                      
+                    <!-- <div><img [src]="womenfronturl" *ngIf="womenfronturl; else elseBlock" style="width: 200px;" formControlName="WomenFrontImgFile"></div> -->
+                    
+                    <p class="color">
+
+                      <!-- <input type="file" (change)="onselectFile3($event)" id="inputWomenProduct_Photo"
+                      formControlName="WomenFrontImgFile" > -->
+                      <input type="file" (change)="onMultiWomenFile($event)" id="inputWomenProduct_Photo"  formControlName="WomenFrontImgFile">
+                      
+                     
+                    
+                    </p>
+                    <ng-template #elseBlock>
+                      <img src="assets/img/{{Category_Name}}/{{WomenProduct_Photo}}" formControlName="WomenFrontImgFile">
+                  </ng-template>
+                  </div>
+                  <div *ngIf="submitted && formControl.WomenProduct_Photo.errors" class="text-danger">
+                    <div *ngIf="formControl.WomenProduct_Photo.errors.required">Photo is required.</div>
+                  </div>
+          
+                </td>
+
+        <!-- </div> -->
+     
+        <!-- <div class="form-group  col-md-4 roundedTextBox mb-3"> -->
+
+        <td>
+
+        <label>Men Front Image :</label>
+        <div class="col-sm-10">
+          <div [innerHtml]='msg' *ngIf="msg" style="color: red;"></div>
+          <!-- <div><img [src]="url" *ngIf="url"></div> -->
+
+          <!-- <div><img [src]="menfronturl"   *ngIf="menfronturl else elseBlock" style="width: 200px;"></div> -->
+          <!-- <div><img [src]="menfronturl" *ngIf="menfronturl else elseBlock" style="width: 200px;"formControlName="MenFrontImgFile"></div> -->
+
+          <p>
+            <!-- <input type="file" (change)="onselectFile1($event)"  id="inputMenFront_Photo"
+            formControlName="MenFrontImgFile"> -->
+            <!-- <input type="file"  id="inputMenFront_Photo" formControlName="MenFrontImgFile"> -->
+
+            <input type="file" (change)="onMultiMenFile($event)" id="inputMenFront_Photo" formControlName="MenFrontImgFile">
+
+            <!-- <input type="file"  id="inputMenFront_Photo" formControlName="MenFrontImgFile"  (change)="onselectFile1($event)"> -->
+          </p>
+          <ng-template #elseBlock>
+            <img src="assets/img/{{Category_Name}}/{{MenFront_Photo}}">
+          </ng-template>
+        </div>
+        <div *ngIf="submitted && formControl.MenFront_Photo.errors" class="text-danger">
+          <div *ngIf="formControl.MenFront_Photo.errors.required">Photo is required.</div>
+        </div>
+
+       </td>
+        <!-- </div> -->
+
+        <td>  
+          <button (click)="removeImages(i)" class="btn btn-danger">Remove</button>  
+      </td>
+    
+      </tr>
+      </table>
+  
+  
+      <!-- --Size-- -->
+  
+      <!-- <div class="container-fluid dropdown">
+              <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+               <h4> Select Size</h4>
+              </a>
+          <div class="dropdown-menu fade-up m-0">
+              <a href="#" class="dropdown-item"> -->
+  
+      <div class="col-md-12 roundedTextBox mb-3">
+        <label>Select Size :</label>
+        <div class="container">
+          <div class="row g-4" style="width: 400px;">
+            <div class="col" data-wow-delay="0.1s" *ngFor="let data of SizeData"  formControlName="SizeId"
+              [(ngModel)]="SizeId" ngDefaultControl>
+              <label>
+                <input type="checkbox"  style.color="{{data.Description}}" value="{{data.Lookup_Details_Id}}"
+                  (change)="onSelectSizeChange($event)" />
+                {{data.Description}}
+               </label>
+              </div>
+          </div>
+        </div>
+        <div *ngIf="submitted && formControl.SizeId.errors" class="text-danger">
+                <div *ngIf="formControl.SizeId.errors.required">Product Size is required.</div>
+              </div>
+      </div>
+  
+      <!-- </a>
+        </div>
+      </div> -->
+  
+      <div class="buttons">
+        <button type="button" (click)="multiProductDetails()" *ngIf="multiProduct.Product_Id==0"
+          class="btn btn-success">Add</button>
+        <!-- <button type="button" (click)="updateProductDetails()" *ngIf="product.Product_Id!=0"
+          class="btn btn-primary">Update</button> -->
+      </div>
+    </form>
+
+    {{this.ProductForm.value | json}}  
+  </div>

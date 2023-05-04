@@ -37,6 +37,7 @@ export class CustmizeDesignComponent implements OnInit {
   
 
   onClickFrontPhoto() {
+  this.productcategoryfolder = this.categoryName.replace(/\s+/g, '-').toLowerCase();
   this.sideimage = true;
   this.backimage = true;
   this.frontimage = false;
