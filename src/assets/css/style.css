@@ -184,9 +184,10 @@
     }
 
     .carousel-item {
-        margin-top: 8.5rem !important;}
+        margin-top: 8.5rem !important;
+    }
     .header_bs_mo {
-        padding-top: 14rem !important;
+        padding-top: 11rem !important;
         padding-bottom: 0rem !important;
     }
 }
@@ -479,10 +480,6 @@ font-size: 39px;
     display: block;
 }
 
-.product-item:hover img {
-    /* transform: scale(1.1); */
-}
-
 .product-item small a:hover {
     color: var(--primary) !important;
 }
@@ -667,7 +664,8 @@ font-size: 39px;
 }
 
 .product-name-new{
-    padding: 0 !important;
+    margin-top: 10px !important;
+    padding: 1px !important;
 }
 
 .testi-img{
@@ -684,26 +682,35 @@ font-size: 39px;
     line-clamp: 7; 
     -webkit-box-orient: vertical;
 }
-.genderButton :hover{
-background-color: #007bff;
-}
+
 .size-btn{
-position: relative;
-    right: 20px;}
-    .colors-pallete{
-        padding: 0 !important;
-    }
-/* .container{
+    position: relative;
+    right: 20px;
+}
 
-    width : 940px;
-    margin : 50px auto 0;
-    background-color: #ffff;
-    padding: 15px;
-    border-radius: 5px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+.colors-pallete{
+    padding: 0 !important;
+}
 
-} */
+.categoryName {
+    padding: 0px !important;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.categoryBox {
+    padding: 0px !important;
+    margin: 8px;
+}
+
 @media (min-width:320px) and (max-width: 768px) {
-    .pad-mob{
-      padding-top: 10rem !important;}}
+    .pad-mob {
+      padding-top: 10rem !important;
+    }
+    .categoryName {
+        font-size: 12px !important;
+        font-weight: bold;
+        padding: 0px !important;
+    }
+}
+

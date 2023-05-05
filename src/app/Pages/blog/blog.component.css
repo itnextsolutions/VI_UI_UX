@@ -8,11 +8,13 @@
     text-overflow: ellipsis;}
 
 
-    @media (min-width: 320px) and (max-width: 425px){
+    @media (min-width: 320px) and (max-width: 425px) {
         .blog-heading{
             font-size: 16px !important;
         }
     }
     @media (min-width:320px) and (max-width: 768px) {
         .pad-mob{
-          padding-top: 12rem !important;}}
+          padding-top: 11rem !important;
+        }
+    }

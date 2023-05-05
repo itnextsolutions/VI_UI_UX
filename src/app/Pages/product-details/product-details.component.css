@@ -98,17 +98,6 @@ background-color: #DBED64;
   position: relative;
   right: 23px;
 }
-.slick-slider{
-margin: 20px 0 0 0px;
-    /* background: rgb(255, 255, 255); */
-    font-variant: pos;
-    position: relative;
-    /* right: 209px; */
-}
-
-
-
-
 
 body .slick-prev, 
 body .slick-next {
@@ -156,16 +145,6 @@ body .slick-next {
 
 
 @media (min-width: 320px) and (max-width: 374px) {
-
-  .slick-slider {
-    right: 16px;
-}
-.color-box {
-   
-  padding: 0 15px 0 10px;
-  margin: 20px -33px;
- 
-}
   .lp-view {
     display: none;
   }
@@ -215,7 +194,8 @@ body .slick-next {
     display: flex !important;
     padding: 0;
   }
-  .big_img{width: 100%!important;}
+  
+
   .pro-small-img li img {
     width: 138px;}
     .pro-detail-page-top{
@@ -284,20 +264,6 @@ body .slick-next {
     }
     }
 
-    @media (min-width:768px) and (max-width: 769px) {
-      .slick-slider {
-        right: 16px;
-    }
-    .color-box {
-       
-      padding: 0 15px 0 10px;
-     margin: 23px -82px !important;
-    
-     
-    }
-    }
-
-
     @media (min-width:601px) and (max-width: 2560px) {
       .mb-view{
         display: none;
@@ -305,26 +271,25 @@ body .slick-next {
     }
 
 
-    @media (min-width:601px) and (max-width: 769px) {
+  @media (min-width:601px) and (max-width: 769px) {
     .pro-detail-page-top{
       padding: 0 0 0 24px!important;
     }
-    .mb-view{
-      display: none;
-    }
   }
   @media (min-width:320px) and (max-width: 768px) {
-  .pad-mob{
-    padding-top: 12rem !important;}
+    .pad-mob{
+      padding-top: 10rem !important;
+    }
   
     .breadcrumb-item {
       font-size: 9px;
       padding: 0;
-  }
-  .breadcrumb{
-    padding: 0;
-  }
+    }
 
+    .breadcrumb {
+      padding: 0;
+      margin: 0 0 0 18px;
+    }
 }
 /* new detail */
 
@@ -368,4 +333,36 @@ body .slick-next {
 .modal.show .customize-model-dialog {
   transform: none;
   width: 480px !important;
+}
+
+
+/* SVG settings */
+@media (min-width: 320px) and (max-width: 374px) {
+  .lp-view {
+    display: none;
+  }
+  .mm-view {
+    display: none;
+  }
+}
+
+@media (min-width:375px) and (max-width: 600px) {
+  .big_img{
+    width: 327px !important;
+  }
+  .mb-view {
+    display: none;
+  }
+  .lp-view {
+    display: none;
+  }
+}
+
+@media (min-width:601px) and (max-width: 2560px) {
+  .mb-view{
+    display: none;
+  }
+  .mm-view {
+    display: none;
+  }
 }
