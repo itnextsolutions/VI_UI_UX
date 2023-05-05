@@ -70,7 +70,7 @@
 <!--breadcrumb start-->
 <div class="container pt-12 pad-mob">
     <div class="row g-0 gx-5 align-items-end">
-        <nav aria-label="breadcrumb">
+        <nav aria-label="breadcrumb" class="breadcrumb">
             <ol class="breadcrumb" itemscope="" itemtype="http://schema.org/BreadcrumbList">
                 <li class="breadcrumb-item" itemprop="itemListElement" itemscope=""
                     itemtype="http://schema.org/ListItem">
@@ -115,6 +115,10 @@
                     <svg class="mb-view"  id="product-svg" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 467 571" width="272" height="333">
                         <defs/>
                         <path id="product-shape" [attr.d]="men_svg_path"  [ngStyle]="{ fill: bgColor }" />
+                    </svg> 
+                    <svg class="mm-view"  id="product-svg" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 467 571" width="327" height="400">
+                        <defs/>
+                        <path id="product-shape" [attr.d]="men_svg_path"  [ngStyle]="{ fill: bgColor }" />
                     </svg>
                     <img class="big_img" src="assets/img/{{this.productcategoryfolder}}/{{data.Product_Photo}}" >
                 </div>
@@ -146,7 +150,7 @@
                             <h3 class=" product-name-new pt-4">{{data.Product_Title}}</h3>
 
                             <div class="row g-4" *ngIf="colors.length>0">
-                                <h5 class="colors-pallete" style="margin-top: 0px !important; margin-bottom: 15px;">Colors : {{this.selected_colorname}}</h5>
+                                <h5 class="dec-text-new" style="margin-top: 0px !important; margin-bottom: 15px;">Colors : {{this.selected_colorname}}</h5>
                                 
                         <ngx-slick-carousel class="carousel"
                         #slickModal="slick-carousel"
