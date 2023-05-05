@@ -169,11 +169,12 @@
                                     <div class="container py-5 pc-Style-hero-colors-sizeList-adultSizes mt-0 pt-0 pb-3">
                                     <div class="row row-cols-2 row-cols-lg-6 w-100">
                                            <!-- <div *ngFor="let data of colors">  -->
+                                            <div class="label-name">{{data.ColorName}}</div>
                                                <div class="colorbox"><li class="color-box" rel="tooltip" (click)="onColorClick(data)"
                                                 [ngStyle]="{'background-color':data.Description}" data-mobile=""
                                                 data-create="false">
                                                  </li></div>
-                                               <div class="label-name">{{data.ColorName}}</div>
+                                               
                                     <!-- </div> -->
                                     </div>
                                     </div>

@@ -27890,7 +27890,7 @@
     z-index: 99;
   }
   
-  .color-box {
+  /* .color-box {
     width: 42px;
     height: 42px;
     display: inline-block;
@@ -27900,7 +27900,19 @@
     border: 1px solid #f3f2f2;
     position: relative;
     border-radius: 4px;
-  }
+  } */
+
+  .color-box {
+    width: 42px;
+    height: 42px;
+    display: inline-block;
+    margin: 18px -21px;
+    padding: 0 0px 0 10px;
+    cursor: pointer;
+    border: 1px solid #f3f2f2;
+    position: relative;
+    border-radius: 4px;
+}
   
   .rating-static {
     width: 72px;
