@@ -216,7 +216,7 @@
     color: var(--dark);
     /* font-size: 17px; */
     text-transform: uppercase;
-    font-size: 12px;}}
+    font-size: 11px;}}
 
 @media (max-width: 991.98px) {
     .navbar .navbar-nav {

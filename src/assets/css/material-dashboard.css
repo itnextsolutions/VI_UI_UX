@@ -498,6 +498,15 @@
     border: 1px solid #0f0f0f57;
   }
   
+
+  @media (min-width:769px) and (max-width: 1024px) {
+    
+
+    [type="search"] {
+   
+    width: 11rem !important;
+  }
+}
   /* rtl:raw:
   [type="tel"],
   [type="url"],
