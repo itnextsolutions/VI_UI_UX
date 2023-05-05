@@ -14,13 +14,16 @@ export class ShowProductComponent implements OnInit {
   pageNumber: boolean[] = [];  
   modalTitle:any;
   activateAddEditProCom:boolean = false;
-  product:any;
+  activateMultiProCom:boolean=false;
+  
   Color_CodeList:any = [];
   ColorIdList :any;
 
   pageField :any= []; 
   exactPageList: any; 
-  paginationData: any; ;
+  paginationData: any; 
+  multiProduct:any=[];
+  product:any=[]; 
   ProductPerPage: any = 10; 
   totalProduct: any ; 
   totalProductCount: any;
@@ -86,6 +89,29 @@ totalNoOfPages() {
     this.getAllProduct();  
   } 
 
+  MultiProduct(){debugger
+    this.multiProduct={
+      Product_Id:0,
+      Category_Id:"",
+      Product_Title:"",
+      Image_Name:"",
+      Category_Photo:"",
+      Category_Name:"",
+      SubCategory:"",
+      SubCategory_Id:"",
+      Product_Description:"",
+      TipingId:"",
+      SizeId:"",
+      Product_Photo:"",
+      SizeChartForMen:"",
+      WomenProduct_Photo:"",
+      SizeChartForWomen:""
+    }
+    this.modalTitle = "Multi Product"; 
+    this.activateMultiProCom = true; 
+    this.getAllProduct();
+  }
+
   AddProduct(){
     this.product={
       Product_Id:0,
@@ -96,6 +122,19 @@ totalNoOfPages() {
       SubCategory:"",
       SubCategory_Id:"",
       Product_Description:"",
+      ColorId:"",
+      SizeId:"",
+      Product_Photo:"",
+      // Product_SidePhoto:"",
+      // Product_BackPhoto:"",
+      SizeChartForMen:"",
+      WomenProduct_Description:"",
+      WomenProduct_Photo:"",
+      // WomenProductSide_Photo:"",
+      // WomenProductBack_Photo:"",
+      SizeChartForWomen:"",
+      men_f_svgpath:"",
+      women_f_svgpath:""
     }
     this.modalTitle = "Add Product";
     this.activateAddEditProCom = true;
@@ -120,6 +159,11 @@ totalNoOfPages() {
   }
   closeClick(){
     this.activateAddEditProCom=false;
+    this.getAllProduct();
+  }
+
+  closeClickMulti(){
+    this.activateMultiProCom=false;
     this.getAllProduct();
   }
 }

@@ -62,6 +62,8 @@ import { AuthGuard } from './Auth.guard';
 import { JwtModule } from '@auth0/angular-jwt';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
+import { MultiProductComponent } from './Admin/product-master/multi-product/multi-product.component';
+
 
 @NgModule({
   declarations: [
@@ -112,7 +114,7 @@ import { SlickCarouselModule } from 'ngx-slick-carousel';
     AddEditFaqComponent,
     SidebarComponent,
     CustmizeDesignComponent,
-    
+    MultiProductComponent
   ],
   
   imports: [

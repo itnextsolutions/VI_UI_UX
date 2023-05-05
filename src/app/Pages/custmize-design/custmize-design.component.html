@@ -31,7 +31,14 @@
             </div>
         </div>
 
-      
+        <div *ngIf="id==3">
+            <div [hidden]="frontimage">
+
+                <!-- <body *ngFor="let data of Product"> -->
+                    <img src="assets/img/{{this.productcategoryfolder}}/{{this.image}}" style="width: 400px; height: 450px;">
+                <!-- </body> -->
+            </div>
+        </div>
 
         <!-- <div class="container" style="margin-top: 10px;">
             <button (click)="onClickFrontPhoto()" style="border-radius: 10px; height:40px; width: 80px;">

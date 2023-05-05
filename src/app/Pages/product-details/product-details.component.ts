@@ -98,6 +98,7 @@ export class ProductDetailsComponent implements OnInit {
   isMenDivHidden = false;
   isWoMenDivHidden = true;
   isTippingDivHidden=true;
+  isTippingWomenDivHidden=true;
 
   categoryfolder: any;
   product: any;
@@ -233,11 +234,11 @@ export class ProductDetailsComponent implements OnInit {
       this.userService.getProductById(this.productId).subscribe(data => {
         this.product = data;
       });
-
+      this.productcategoryfolder = this.categoryName.replace(/\s+/g, '-').toLowerCase();
     this.isMenDivHidden = true;
     this.isWoMenDivHidden = false;
     this.isTippingDivHidden=true;
-
+    this.isTippingWomenDivHidden=true;
     // this.menDesc=this.product.Product_Description;
     this.id=1;
     
@@ -248,10 +249,11 @@ export class ProductDetailsComponent implements OnInit {
     this.userService.getProductById(this.productId).subscribe(data => {
       this.product = data;
     });
+    this.productcategoryfolder = this.categoryName.replace(/\s+/g, '-').toLowerCase();
     this.isMenDivHidden = false;
     this.isWoMenDivHidden = true;
     this.isTippingDivHidden=true;
-
+    this.isTippingWomenDivHidden=true;
 
     // this.womenDesc=this.product.WomenProduct_Description;
     this.id=0;
@@ -263,13 +265,27 @@ export class ProductDetailsComponent implements OnInit {
     
     // });
     // this.tipping.filter((x: { tipping_Code: number; })=>x.tipping_Code==code);
+    this.productcategoryfolder = this.categoryName.replace(/\s+/g, '-').toLowerCase();
     this.isMenDivHidden = true;
     this.isWoMenDivHidden = true;
     this.isTippingDivHidden=false;
+    this.isTippingWomenDivHidden=true;
     this.image=item.tipping_big_img;
     this.id=2;
     // (this.item.filter((x: { tipping_Code: number; })=>{return x.tipping_Code==item;}));
 
+  }
+
+  onTippingWomenClick(item:any){
+
+    this.isMenDivHidden = true;
+    this.isWoMenDivHidden = true;
+    this.isTippingDivHidden=true;
+    this.isTippingWomenDivHidden=false;
+    this.image=item.tipping_women_img;
+    this.id=3;
+    this.productcategoryfolder = this.categoryName.replace(/\s+/g, '-').toLowerCase();
+    
   }
 
   onColorClick(data:any) {
