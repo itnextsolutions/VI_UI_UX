@@ -484,7 +484,13 @@ font-size: 39px;
     color: var(--primary) !important;
 }
 
-
+.product-item  a{
+    overflow: hidden !important;
+    display: -webkit-box !important;
+    -webkit-line-clamp: 1;
+    line-clamp: 1;
+    -webkit-box-orient: vertical;
+}
 /*** Testimonial ***/
 .testimonial-carousel .owl-item .testimonial-item img {
     width: 60px;

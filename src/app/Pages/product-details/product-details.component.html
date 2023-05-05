@@ -19,10 +19,10 @@
                 <img src="assets/img/size_chart/{{data.SizeChartForWomen}}" class="" style="width:100%;">
             </div> -->
             <div [hidden]="isMenDivHidden && isTippingDivHidden" class="modal-body text-center" *ngFor="let data of product">
-                <img src="assets/img/{{this.productcategoryfolder}}/{{data.SizeChartForMen}}" class="" style="width: 700px;">
+                <img src="assets/img/{{this.productcategoryfolder}}/{{data.SizeChartForMen}}" class="" style="width: 100%;">
             </div>
             <div [hidden]="isWoMenDivHidden && isTippingWomenDivHidden" class="modal-body text-center" *ngFor="let data of product">
-                <img src="assets/img/{{this.productcategoryfolder}}/{{data.SizeChartForWomen}}" class="" style="width: 700px;">
+                <img src="assets/img/{{this.productcategoryfolder}}/{{data.SizeChartForWomen}}" class="" style="width:100%;">
             </div>
         </div>
     </div>
@@ -62,7 +62,7 @@
     aria-label="Close"></button>
           </div>
           <div class="modal-body customize-model-body">
-            <app-custmize-design [Product]="product" [id]="id" [image]="image" style="width: 100%;">
+            <app-custmize-design [Product]="product" [id]="id" [image]="image" class="custumise-img-model">
             </app-custmize-design>
           </div>
          
@@ -160,7 +160,7 @@
                             <h3 class=" product-name-new pt-4">{{data.Product_Title}}</h3>
 
                             <div class="row g-4" *ngIf="colors.length>0">
-                                <h5 class="dec-text-new" style="margin-top: 0px !important; margin-bottom: 15px;">Colors : {{this.selected_colorname}}</h5>
+                                <h5 class="dec-text-new pad-0" style="margin-top: 0px !important; ">Colors : {{this.selected_colorname}}</h5>
                                 
                         <ngx-slick-carousel class="carousel"
                         #slickModal="slick-carousel"

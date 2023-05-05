@@ -107,6 +107,9 @@ body .slick-next {
   z-index: 100;
 }
 
+.custumise-img-model{
+  width: 100%;
+}
 .other_btn{
   background-color: #f1f3f3;
   padding: 10px 20px;
@@ -171,6 +174,14 @@ body .slick-next {
   .pro-detail-page-top {
     padding: 0 0 0 33px!important;
 }
+
+.color-box {
+   
+  padding: 0 15px 0 10px;
+  margin: 20px -34px !important;
+
+ 
+}
 }
 
 @media (min-width: 375px) and (max-width: 424px) {
@@ -182,13 +193,13 @@ body .slick-next {
 .color-box {
    
   padding: 0 15px 0 10px;
-  margin: 11px -41px !important;
+  margin: 20px -29px !important;
 
  
 }
   .dec-text-new{
     font-size: 18px;
-    padding: 15px 0 15px 0;
+    /* padding: 15px 0 15px 0; */
   }
   .pro-small-img{
     display: flex !important;
@@ -221,7 +232,7 @@ body .slick-next {
   .color-box {
      
     padding: 0 15px 0 10px;
-   margin: 23px -49px !important;
+   margin: 23px -32px !important;
   
    
   }
@@ -256,13 +267,20 @@ body .slick-next {
     .big_img{
       order: 1 !important;
     }
-    .color-box {
    
-      padding: 0 15px 0 10px;
-      margin: 20px 84px;
+    }
+
+    @media (min-width:601px) and (max-width: 768px) {
+    .slick-slider {
+      right: 16px;
+  }
+  .color-box {
      
-    }
-    }
+    padding: 0 15px 0 10px;
+   margin: 23px -87px !important;
+  }
+   
+  }
 
     @media (min-width:601px) and (max-width: 2560px) {
       .mb-view{
@@ -338,15 +356,29 @@ body .slick-next {
 
 /* SVG settings */
 @media (min-width: 320px) and (max-width: 374px) {
+  .customize-model-body{
+    height: auto !important;
+}
   .lp-view {
     display: none;
   }
   .mm-view {
     display: none;
   }
+  .modal.show .customize-model-dialog {
+    transform: none;
+    width: auto !important;
+  }  
 }
 
 @media (min-width:375px) and (max-width: 600px) {
+  .customize-model-body{
+    height: auto !important;
+}
+  .modal.show .customize-model-dialog {
+    transform: none;
+    width: auto !important;
+  }  
   .big_img{
     width: 327px !important;
   }

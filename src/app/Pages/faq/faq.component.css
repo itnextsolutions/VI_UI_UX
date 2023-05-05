@@ -1,0 +1,15 @@
+.nav-item{
+    background: #c3c5cf;
+    /* color: white; */
+    margin: 0 0 20px 0;
+}
+.dropdown-item{
+    white-space: inherit;
+}
+
+.dropdown-toggle::after {
+    display: inline;
+    margin-left: 0.255em;
+ 
+}
+
