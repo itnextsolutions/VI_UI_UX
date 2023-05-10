@@ -4,12 +4,12 @@
         <div class="sidenav-header">
           <i class="fas fa-times p-3 cursor-pointer text-white opacity-5 position-absolute end-0 top-0 d-none d-xl-none" aria-hidden="true" id="iconSidenav"></i>
           <img src="assets/img/vastralogo_1.png" class="navbar-brand-img h-100" alt="main_logo">
-          <!-- <button _ngcontent-bqv-c1="" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-expanded="true" class="nav-toggle" id="nav-toggle">
-            <span _ngcontent-bqv-c1="" class="navbar-toggler-icon"></span>
-          </button> -->
+          <button (click)="toggleDisplayDiv()" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-expanded="true" class="nav-toggle" id="nav-toggle">
+            <span class="navbar-toggler-icon"></span>
+          </button>
         </div>
         <hr class="horizontal light mt-0 mb-2">
-        <div class="collapse navbar-collapse  w-auto " id="sidenav-collapse-main">
+        <div *ngIf="isShowDivIf"  class="collapse navbar-collapse  w-auto " id="sidenav-collapse-main">
             <ul class="navbar-nav">
             <li class="nav-item" *ngFor="let data of menulist">
                 <a class="nav-link" href="{{data.Url}}">

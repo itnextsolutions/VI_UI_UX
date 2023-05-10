@@ -19,10 +19,10 @@
                 <img src="assets/img/size_chart/{{data.SizeChartForWomen}}" class="" style="width:100%;">
             </div> -->
             <div [hidden]="isMenDivHidden && isTippingDivHidden" class="modal-body text-center" *ngFor="let data of product">
-                <img src="assets/img/{{this.productcategoryfolder}}/{{data.SizeChartForMen}}" class="" style="width: 100%;">
+                <img src="assets/img/size_chart/{{data.SizeChartForMen}}" class="" style="width: 100%;">
             </div>
             <div [hidden]="isWoMenDivHidden && isTippingWomenDivHidden" class="modal-body text-center" *ngFor="let data of product">
-                <img src="assets/img/{{this.productcategoryfolder}}/{{data.SizeChartForWomen}}" class="" style="width:100%;">
+                <img src="assets/img/size_chart/{{data.SizeChartForWomen}}" class="" style="width:100%;">
             </div>
         </div>
     </div>
@@ -56,10 +56,8 @@
     <div class="modal-dialog customize-model-dialog" role="document">
        <div class="modal-content">
           <div class="modal-header">
-           
              <h5 class="modal-title" id="exampleModalLabel1">Customize Your Design</h5>
-             <button type="button" class="btn-close" (click)="closeClick()" data-bs-dismiss="modal"
-    aria-label="Close"></button>
+             <button type="button" class="btn-close" (click)="closeClick()" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body customize-model-body">
             <app-custmize-design [Product]="product" [id]="id" [image]="image" class="custumise-img-model">
@@ -162,14 +160,14 @@
                             <div class="row g-4" *ngIf="colors.length>0">
                                 <h5 class="dec-text-new pad-0" style="margin-top: 0px !important; ">Colors : {{this.selected_colorname}}</h5>
                                 
-                        <ngx-slick-carousel class="carousel"
-                        #slickModal="slick-carousel"
-                        [config]="slideConfig" 
-                        (init)="slickInit($event)"
-                        (breakpoint)="breakpoint($event)"
-                        (afterChange)="afterChange($event)"
-                        (beforeChange)="beforeChange($event)">
-                        <div ngxSlickItem *ngFor="let data of colors" class="slide">
+                                    <ngx-slick-carousel class="carousel"
+                                    #slickModal="slick-carousel"
+                                    [config]="slideConfig" 
+                                    (init)="slickInit($event)"
+                                    (breakpoint)="breakpoint($event)"
+                                    (afterChange)="afterChange($event)"
+                                    (beforeChange)="beforeChange($event)">
+                                    <div ngxSlickItem *ngFor="let data of colors" class="slide">
                                     <div class="container py-5 pc-Style-hero-colors-sizeList-adultSizes mt-0 pt-0 pb-3">
                                     <div class="row row-cols-2 row-cols-lg-6 w-100">
                                            <!-- <div *ngFor="let data of colors">  -->
