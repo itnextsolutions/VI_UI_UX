@@ -1,7 +1,10 @@
 .nav-item{
-    background: #c3c5cf;
+    /* background: #c3c5cf; */
     /* color: white; */
-    margin: 0 0 20px 0;
+    margin: 0 0 25px 0;
+    border: 1px solid rgba(0, 0, 0, .1);
+    transition: .5s;
+    padding: 10px;
 }
 .dropdown-item{
     white-space: inherit;
@@ -12,4 +15,14 @@
     margin-left: 0.255em;
  
 }
+@media (min-width:320px) and (max-width: 768px) {
+    .mo-text{
+      white-space: inherit;
 
+    }
+    .dropdown-toggle::after {
+        display: none;
+        margin-left: 0.255em;
+    }
+
+}

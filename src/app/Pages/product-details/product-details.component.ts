@@ -160,6 +160,33 @@ export class ProductDetailsComponent implements OnInit {
     ]
 }
 
+
+// customOptions: customOptionsdetailpage = {
+//   autoplay:true,
+//   loop: true,
+//   mouseDrag: false,
+//   touchDrag: false,
+//   pullDrag: false,
+//   dots: true,
+//   margin:5,
+//   autoWidth:true,
+//   navText: ['', ''],
+//   responsive: {
+//     0: {
+//       items: 1
+//     },
+//     400: {
+//       items: 1
+//     },
+//     600: {
+//       items: 1
+//     },
+//     1000: {
+//       items: 1
+//     }
+//   }
+  
+// }
    
   // slickInit(e:any) {
   //   console.log('slick initialized');
