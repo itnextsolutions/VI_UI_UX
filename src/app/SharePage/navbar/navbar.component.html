@@ -42,25 +42,6 @@
                 <img _ngcontent-ifm-c51="" w src="assets/img/vastralogo_1.png" alt="main_logo" class="main_logo">
             </a>
         </div>
-        
-        <!-- <div _ngcontent-lgr-c65="" class="col-lg-4 col-md-6 col-12 d-xl-block text-center">
-            <small _ngcontent-lgr-c65="" class="menu"><a _ngcontent-lgr-c65="" href="">Home</a></small> 
-            <small _ngcontent-lgr-c65="" class="ms-4 menu"><a _ngcontent-lgr-c65="" href="about">About Us</a></small>
-            <small _ngcontent-lgr-c65="" class="ms-4 menu"><a _ngcontent-lgr-c65="" href="contact">Contact Us</a></small>
-            <small _ngcontent-lgr-c65="" class="ms-4 menu"><a _ngcontent-lgr-c65="" href="blog">Blog</a></small>
-        </div> -->
-
-        <!-- <div class="col-lg-4 col-md-12 col-12 px-2 search-box">
-            <div class="input-div mar-0" >
-                <form action="/a/search" method="get" class="" role="" >
-                    <button type="submit" class="search-btn" (click)="onSearch()">
-                        <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-search" viewBox="0 0 54 54"><defs><style>.cls-1{fill:none;stroke:#000;stroke-miterlimit:10;stroke-width:2px}</style></defs><path class="cls-1" d="M47.16 28.58A18.58 18.58 0 1 1 28.58 10a18.58 18.58 0 0 1 18.58 18.58zM54 54L41.94 42"></path></svg>
-                        <span class="icon__fallback-text"></span>
-                    </button>
-                    <input [(ngModel)]="search" type="search" name="q" value="" placeholder="Search by products.." class="search-text" aria-label="Search products here...." autocomplete="off">
-                </form>
-            </div>
-        </div> -->
     </nav>
        
     <div class="announcement-bar">
@@ -69,12 +50,9 @@
         </div>  
     </div>
     <nav class="navbar navbar-expand-lg navbar-light py-lg-0 px-lg-12 wow fadeIn" data-wow-delay="0.1s" style="padding: 0px;">
-       
-        
-       
-            <button type="button" class="navbar-toggler  me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-expanded="true">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+        <button (click)="toggleDisplayDiv()" type="button" class="navbar-toggler  me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-expanded="true">
+            <span class="navbar-toggler-icon"></span>
+        </button>
             <!-- <div class="input-div mar-0 js-search" >
                 <form action="/a/search" method="get" class="" role="" >
                     <button type="submit" class="text-link site-header__search-btn" (click)="onSearch()"  style="background: none;border: 0;">
@@ -85,14 +63,14 @@
                 </form>
             </div> -->
 
-            <div class="searchbar js-search">
-                <input [(ngModel)]="search" type="search" class="search_input" name=""  placeholder="Search...">
-                <a class="search_icon"><i class="fas fa-search" (click)="onSearch()"></i></a>
-              </div>
+        <div class="searchbar js-search">
+            <input [(ngModel)]="search" type="search" class="search_input" name=""  placeholder="Search...">
+            <a class="search_icon"><i class="fas fa-search" (click)="onSearch()"></i></a>
+        </div>
     
      
         
-        <div class="container-fluid" id="navbarCollapse">
+        <div *ngIf="isShowDivIf" class="container-fluid navbar-collapse " id="">
             <div class="navbar-nav px-lg-4">
                 <div class="nav-item dropdown px-2" *ngFor="let data of categorySubcategory">
                     <a href="#" class="nav-link dropdown-toggle active category_menubar" data-bs-toggle="dropdown" >{{data.Category_Name}}</a>

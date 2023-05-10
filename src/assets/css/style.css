@@ -713,7 +713,7 @@ font-size: 39px;
     .pad-mob {
       padding-top: 10rem !important;
     }
-    .categoryName {
+    .categoryName { 
         font-size: 12px !important;
         font-weight: bold;
         padding: 0px !important;

@@ -13,6 +13,7 @@ export class SidebarComponent implements OnInit {
 
   ngOnInit(): void {
     this.getMenuList();
+    this.isShowDivIf=false;
   }
   
   logOut= () => {
@@ -26,4 +27,9 @@ export class SidebarComponent implements OnInit {
     });
   }
 
+  isShowDivIf:boolean=false;
+  toggleDisplayDiv ()
+  {
+     this.isShowDivIf = !this.isShowDivIf;  
+  }
 }
