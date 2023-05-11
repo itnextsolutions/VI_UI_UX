@@ -89,7 +89,7 @@ totalNoOfPages() {
     this.getAllProduct();  
   } 
 
-  MultiProduct(){debugger
+  MultiProduct(){
     this.multiProduct={
       Product_Id:0,
       Category_Id:"",

@@ -23,7 +23,7 @@ Login(val: any) {
 }
 
 // Login(val: any) {
-//   debugger
+//   
 //    return this.http.post<AuthenticatedResponse>(this.APIUrl + 'Login/login', val);
 // }
 //Product Category  Start
