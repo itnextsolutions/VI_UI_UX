@@ -21,6 +21,7 @@ export class NavbarComponent implements OnInit {
 
   ngOnInit(): void {
     this.refreshproductcategoryList();
+    this.isShowDivIf=false;
   }
 
   refreshproductcategoryList() {
@@ -78,8 +79,12 @@ export class NavbarComponent implements OnInit {
     });
 
   }
-  
 
+  isShowDivIf:boolean=false;
+  toggleDisplayDiv ()
+  {
+     this.isShowDivIf = !this.isShowDivIf;  
+  }
 }
 
 // this.router.navigate(['product-details/', this.productcategory, this.productsubcategory, product.Product_Id]);

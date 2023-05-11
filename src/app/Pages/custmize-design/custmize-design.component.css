@@ -31,6 +31,8 @@
     cursor: default;
 }
 
-
-
+@media (min-width:320px) and (max-width: 600px) {
+#tshirt-div {
+    width: 100%;}
+}
 

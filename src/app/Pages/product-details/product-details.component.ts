@@ -135,22 +135,58 @@ export class ProductDetailsComponent implements OnInit {
       {
         breakpoint: 600,
         settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2,
+          slidesToShow: 3,
+          slidesToScroll: 3,
+          rows:3,
+        }
+      },
+
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 4,
+          slidesToScroll: 4,
           rows:3,
         }
       },
       {
-        breakpoint: 480,
+        breakpoint: 380,
         settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          rows:2,
+          slidesToShow:3,
+          slidesToScroll: 3,
+          rows:3,
         }
       }
     ]
 }
 
+
+// customOptions: customOptionsdetailpage = {
+//   autoplay:true,
+//   loop: true,
+//   mouseDrag: false,
+//   touchDrag: false,
+//   pullDrag: false,
+//   dots: true,
+//   margin:5,
+//   autoWidth:true,
+//   navText: ['', ''],
+//   responsive: {
+//     0: {
+//       items: 1
+//     },
+//     400: {
+//       items: 1
+//     },
+//     600: {
+//       items: 1
+//     },
+//     1000: {
+//       items: 1
+//     }
+//   }
+  
+// }
    
   // slickInit(e:any) {
   //   console.log('slick initialized');

@@ -171,9 +171,9 @@
                     <div class="col-xl-3 col-lg-4 col-md-6  col-6 wow fadeInUp Product_Category_item" data-wow-delay="0.1s"
                         *ngFor="let data of categoryList.slice(0,6)">
                         <div class="product-item pointer" id="tab-1" (click)="onCategoryClick(data)">
-                            <div class="text-center p-4  ">
+                            <div class="text-center categoryBox">
                                 <!-- <a class="d-block h5 mb-2" [routerLink] ="['products/','data.Category_Id']" >{{data.Category_Name}}</a> -->
-                                <a class="d-block h5 mb-2">{{data.Category_Name}}</a>
+                                <a class="d-block mb-2 categoryName">{{data.Category_Name}}</a>
                                 <!-- <span class="text-primary me-1">{{data.productPrice|currency:"INR"}}</span>
                                 <span class="text-body text-decoration-line-through">$29.00</span> -->
                             </div>
@@ -217,8 +217,7 @@
                         *ngFor="let data of brandList.slice(0,6)">
                         <div class="product-item pointer" id="tab-1" (click)="onCategoryClick(data)">
                             <!-- <a class="d-block h5 mb-2 text-center">{{data.Category_Name}}</a> -->
-                            <div class="bg-secondary text-white py-2 px-4">
-                                {{data.Category_Name}}</div>
+                            <div class="bg-secondary text-white py-2 px-4">{{data.Category_Name}}</div>
                         </div>
 
                             <div class="pro-img-hw" >
