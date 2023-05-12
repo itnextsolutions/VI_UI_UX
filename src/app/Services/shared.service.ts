@@ -13,7 +13,7 @@ export class SharedService {
 
 // readonly APIUrl = "https://localhost:44365/api/";
 
-readonly APIUrl = "https://test.vastraindia.com/testAPI/api/";
+readonly APIUrl = "https://test.vastraindia.com/api/";
   constructor(private http: HttpClient) {}
 
 //Menu Binding
