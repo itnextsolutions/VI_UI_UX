@@ -144,7 +144,7 @@
 
 
 
-//   GetColorList() {debugger
+//   GetColorList() {
 //     this.service.GetColor().subscribe((data:any) =>{
 //       this.ColorData = data;
 //     }) 
@@ -519,7 +519,7 @@ export class AddEditProductComponent implements OnInit {
             women_f_svgpath:["",[Validators.required]]
           });
       
-          debugger
+          
           this.Product_Id = this.product.Product_Id,
           this.Category_Id = this.product.Category_Id;
           this.SubCategory_Id = this.product.SubCategory_Id;

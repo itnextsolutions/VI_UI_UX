@@ -176,7 +176,7 @@ export class MultiProductComponent implements OnInit {
     return this.ProductForm.controls;
   }
 
-  onFileChange(event:any) {debugger
+  onFileChange(event:any) {
     const files = event.target.files;
     for (let i = 0; i < files.length; i++) {
       const file = files[i];
@@ -222,7 +222,7 @@ export class MultiProductComponent implements OnInit {
     });
   }
 
-  onSelectChange(e: any) {debugger
+  onSelectChange(e: any) {
     
     let index = this.selectedTipping.indexOf(e.target.value);
     if (index == -1) {
@@ -256,7 +256,7 @@ export class MultiProductComponent implements OnInit {
     
   }
 
-  // multiProductDetails() {debugger
+  // multiProductDetails() {
   //   const formArray = this.ProductForm.get('Images') as FormArray;
   //   const formData = new FormData();
   //         formData.append('Category_Id', this.Category_Id);
@@ -289,7 +289,10 @@ export class MultiProductComponent implements OnInit {
           this.totaltipping=this.selectedTipping.length;
           this.totalMenImages=this.selectedMenImages.length;
           this.totalWomenImages=this.selectedWomenImages.length;
-         
+          // if(this.totalWomenImages==this.totalMenImages)
+          // {
+          //   if(this.totaltipping==this.totalMenImages)
+          //   {
             for (let i = 0; i < this.selectedTipping.length; i++) {
               formData.append('TipingId', this.selectedTipping[i]);
             }
@@ -302,7 +305,8 @@ export class MultiProductComponent implements OnInit {
             for (let i = 0; i < this.selectedWomenImages.length; i++) {
               formData.append('WomenImgFiles', this.selectedWomenImages[i]);
             }
-          
+          // }
+          // }
 
           formData.append('MenFrontImgFile', this.MenFrontImgFile);
           formData.append('MenSizeChartImgFile', this.MenSizeChartImgFile);
@@ -321,7 +325,7 @@ export class MultiProductComponent implements OnInit {
 
 
 //   multiProductDetails() {
-//     debugger
+//     
 
 //     let addModel = {} as MultiProduct;
 //     addModel.Category_Id = this.formControl.Category_Id.value;
@@ -346,7 +350,7 @@ export class MultiProductComponent implements OnInit {
 
 // }
 
-  // onselectFile1(event: any) {debugger
+  // onselectFile1(event: any) {
   //   for (var i = 0; i < event.target.files.length; i++) {
   //     this.selectedMenImages.push(event.target.files[i]);
   //   }
@@ -360,7 +364,7 @@ export class MultiProductComponent implements OnInit {
 
  
 
-  onMultiMenFile(event: any) { debugger
+  onMultiMenFile(event: any) { 
    
     let index = this.selectedMenImages.indexOf(event.target.files[0]);
     if (index == -1) {
@@ -428,7 +432,7 @@ export class MultiProductComponent implements OnInit {
     }
   }
 
-  onMultiWomenFile(event: any) { debugger
+  onMultiWomenFile(event: any) { 
     // if(id=="i"){
       let index = this.selectedWomenImages.indexOf(event.target.files[0]);
       if (index == -1) {

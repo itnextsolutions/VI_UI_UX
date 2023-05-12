@@ -64,7 +64,7 @@ export class LoginComponent implements OnInit {
   invalidLogin:boolean=true;
 
   // CheckLogin(){
-  //   debugger
+  //   
   //   this.submitted = true;
   //   if (this.loginForm.valid){
   //   var val = {
