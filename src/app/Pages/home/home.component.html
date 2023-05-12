@@ -220,7 +220,7 @@
                             <div class="bg-secondary text-white py-2 px-4">{{data.Category_Name}}</div>
                         </div>
 
-                            <div class="pro-img-hw" >
+                            <div class="" >
                                 <img class="img-fluid" src="../assets/img/brand/{{data.Category_Photo}}" alt=""
                                    >
                                 <!-- <div class="bg-secondary text-white position-absolute start-0 top-0 py-2 px-4">
@@ -294,7 +294,7 @@
 
                 <img class="img-fluid" src="assets/img/blog/{{data.Image_Name}}">
                 <div class="bg-light p-4">
-                    <a class="d-block h5 lh-base mb-2 me-3" (click)="onClick(data)">{{data.Blog_Title}}</a>
+                    <a class="d-block h5 lh-base mb-2 me-3 blog-heading" (click)="onClick(data)">{{data.Blog_Title}}</a>
                     <div class="text-muted border-top pt-2">
                         <small class="me-3"><i class="fa fa-clock text-primary me-2"></i>{{data.Updated_Date | date}}</small>
                         <small class="me-3 read-more" (click)="onClick(data)">Read More...</small>

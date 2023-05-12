@@ -4,6 +4,8 @@ import { HttpClient } from '@angular/common/http';
 import { UserService } from 'src/app/Services/Api/User/user.service';
 import { FormBuilder, FormControl, FormGroup, NgForm, UntypedFormGroup, Validators } from '@angular/forms';
 import Swal from 'sweetalert2';
+import { SeoService } from 'src/app/Services/seo.service';
+
 
 @Component({
   selector: 'app-contact',
@@ -30,7 +32,7 @@ export class ContactComponent {
   // };
 
   
-  constructor(private http: HttpClient,private userService: UserService,private formBuilder:FormBuilder) {}
+  constructor(private http: HttpClient,private userService: UserService,private formBuilder:FormBuilder, private seoService: SeoService) {}
 
   
   emailPattern = "^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$";
@@ -47,6 +49,7 @@ export class ContactComponent {
     this.email=this.Contact.email;
     this.subject=this.Contact.subject;
     this.message=this.Contact.message;
+    this.seoService.setCanonicalURL(window.location.href);
   }
 
   get formControl() {

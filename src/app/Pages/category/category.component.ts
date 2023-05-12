@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router,ActivatedRoute } from '@angular/router';
 import { UserService } from "src/app/Services/Api/User/user.service";
+import { SeoService } from 'src/app/Services/seo.service';
 
 @Component({
   selector: 'app-category',
@@ -13,10 +14,11 @@ export class CategoryComponent implements OnInit {
   allcategoryList:any = [];
   productcategory:any;
 
-  constructor(private param: ActivatedRoute, private userService: UserService, private router: Router) { }
+  constructor(private param: ActivatedRoute, private userService: UserService, private router: Router, private seoService: SeoService) { }
 
   ngOnInit(): void {
     this.refreshallcategoryList();
+    this.seoService.setCanonicalURL(window.location.href);
   }
 
   refreshallcategoryList() {

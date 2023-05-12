@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { DataService } from "src/app/Services/Api/Data/data.service";
 import {ActivatedRoute, Router} from '@angular/router';
 import { UserService } from "src/app/Services/Api/User/user.service";
+import { SeoService } from 'src/app/Services/seo.service';
 
 @Component({
   selector: 'app-searchresult',
@@ -19,12 +20,12 @@ export class SearchresultComponent implements OnInit {
   SearchResult : any = [];
   subcategorydetails : any = [];
 
-  constructor(private userService: UserService, private router :Router, private param :ActivatedRoute,) { }
+  constructor(private userService: UserService, private router :Router, private param :ActivatedRoute,private seoService: SeoService) { }
 
   ngOnInit(): void {
     this.SearchText = this.param.snapshot.paramMap.get('search');
     this.getsearchResult(this.SearchText);
-    
+    this.seoService.setCanonicalURL(window.location.href);
   }
   
   getsearchResult(SearchText: any){

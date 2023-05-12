@@ -2,6 +2,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import { UserService } from 'src/app/Services/Api/User/user.service';
+import { SeoService } from 'src/app/Services/seo.service';
 
 @Component({
   selector: 'app-products',
@@ -21,12 +22,13 @@ export class ProductsComponent implements OnInit {
 
   constructor(private param :ActivatedRoute,
               private userService: UserService,
-              private router :Router) { }
+              private router :Router,
+              private seoService: SeoService) { }
 
   ngOnInit(): void {
     this.getProductByCategory();
     this.getProductSubcategoryList();
-    
+    this.seoService.setCanonicalURL(window.location.href);
   }
 
   getProductSubcategoryList(){

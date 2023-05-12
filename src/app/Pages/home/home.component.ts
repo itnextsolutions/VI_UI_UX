@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserService } from "src/app/Services/Api/User/user.service";
 import { OwlOptions } from 'ngx-owl-carousel-o';
-
+import { SeoService } from 'src/app/Services/seo.service';
 
 @Component({
   selector: 'app-home',
@@ -20,12 +20,13 @@ export class HomeComponent implements OnInit {
   productcategory:any;
   blogno:any=0;  
  
-  constructor(private userService: UserService, private router : Router) { }
+  constructor(private userService: UserService, private router : Router, private seoService: SeoService) { }
 
   ngOnInit(): void {
     this.refreshproductcategoryList();
     this.refreshblogList();
     this.getCustomerReviews();
+    this.seoService.setCanonicalURL(window.location.href);
   }
 
   customOptions: OwlOptions = {

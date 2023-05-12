@@ -23,8 +23,6 @@
 
 .pro-img-hw{
     height: auto !important;}
-
-
 }
 
 
@@ -33,9 +31,8 @@ overflow-y: scroll;
 height: 400px;
 } */
 .pro-img-hw{
-    height: 428px;}
-
-
+    height: 428px;
+}
 .announcement-bar {
     font-size: 14.45px;
     position: relative;
@@ -45,6 +42,13 @@ height: 400px;
     padding: 10px 0;
 }
 
+.blog-heading {
+    height: 55px;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
 /*** Testimonial ***/
 .testimonial-carousel .owl-item .testimonial-item img {
     width: 60px;

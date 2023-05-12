@@ -75,6 +75,12 @@ totalNoOfPages() {
   this.pageField = this.paginationService.pageField;  
   } 
   
+  isShowDivIf:boolean=false;
+  toggleDisplayDiv ()
+  {
+     this.isShowDivIf = !this.isShowDivIf;  
+  }
+  
   showProductByPageNumber(page :any, i :any) {  
   this.productcategoryList = [];  
   this.pageNumber = [];  
@@ -110,7 +116,6 @@ totalNoOfPages() {
     }
   }
 
- 
   closeClick(){
     this.activateAddEditProCatCom=false;
     this.refreshproductcategoryList();

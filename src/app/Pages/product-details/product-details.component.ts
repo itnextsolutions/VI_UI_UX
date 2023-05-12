@@ -1,88 +1,8 @@
-// import { Component, OnInit } from '@angular/core';
-// import { ActivatedRoute } from '@angular/router';
-// import { UserService } from 'src/app/Services/Api/User/user.service';
-// import { __values } from 'tslib';
-
-// @Component({
-//   selector: 'app-product-details',
-//   templateUrl: './product-details.component.html',
-//   styleUrls: ['./product-details.component.css']
-// })
-// export class ProductDetailsComponent implements OnInit {
-//   [x: string]: any;
-//   route: any;
-
-//   constructor(private param: ActivatedRoute, private userService: UserService) { }
-
-//   categoryfolder: any ;
-//   product: any;
-//   category_id: any;
-//   sizes: any = [];
-//   colors: any = [];
-//   simillarProducts: any = [];
-//   hidden:any;
- 
-//   ngOnInit(): void {
-//     this.productId =this.param.snapshot.paramMap.get('id');
-//     this.categoryName =this.param.snapshot.paramMap.get('categoryName');
-//     this.categoryName = this.categoryName.replace(/-/g, ' ').toUpperCase();
-    
-//     this.subcategoryName =this.param.snapshot.paramMap.get('subcategoryName');
-//     this.subcategoryName = this.subcategoryName.replace(/-/g, ' ').toUpperCase();
-
-//     this.getProduct();
-//     this.getSimillarProduct();
-//     this.imageSource();
-//   }
-
-//   getSimillarProduct()
-//   {
-    
-//     this.userService.getSimillarProduct(this.productId).subscribe(data =>{
-//     this.simillarProducts = data;
-//      this.categoryfolder = this.categoryName.replace(/\s+/g, '-').toLowerCase();
-//     });
-//   }
-
-//   getProduct()
-//   {
-//       this.userService.getProductById(this.productId).subscribe(data =>{
-//       this.product = data;
-
-//       if (this.product != null) {
-//         this.product.forEach((element:any) => {
-//           this.category_id = element.Category_Id;
-//         })
-//       }
-//      });
-
-//      this.userService.getColorListById(this.productId).subscribe(data =>{
-//       this.colors =data;
-//      });
-
-//      this.userService.getSizeListById(this.productId).subscribe(data =>{
-//       this.sizes = data;
-
-      
-//      });
-//   }
-
-//   onClick(product: any){
-//     this.router.navigate(['product-details/', product.Category_Name, product.SubCategory, product.Product_Id]);
-
-//     // this.router.navigate(['blog/', data.Blog_Id]).then(() => {
-//     //   window.location.reload();
-//     this.ngOnInit();
-//   }
- 
- 
-// }
-
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { UserService } from 'src/app/Services/Api/User/user.service';
 import { __values } from 'tslib';
-
+import { SeoService } from 'src/app/Services/seo.service';
 
 @Component({
   selector: 'app-product-details',
@@ -93,7 +13,7 @@ export class ProductDetailsComponent implements OnInit {
   [x: string]: any;
   route: any;
 
-  constructor(private param: ActivatedRoute, private userService: UserService,private router: Router) {}
+  constructor(private param: ActivatedRoute, private userService: UserService,private router: Router, private seoService: SeoService) {}
 
   isMenDivHidden = false;
   isWoMenDivHidden = true;
@@ -160,50 +80,6 @@ export class ProductDetailsComponent implements OnInit {
     ]
 }
 
-
-// customOptions: customOptionsdetailpage = {
-//   autoplay:true,
-//   loop: true,
-//   mouseDrag: false,
-//   touchDrag: false,
-//   pullDrag: false,
-//   dots: true,
-//   margin:5,
-//   autoWidth:true,
-//   navText: ['', ''],
-//   responsive: {
-//     0: {
-//       items: 1
-//     },
-//     400: {
-//       items: 1
-//     },
-//     600: {
-//       items: 1
-//     },
-//     1000: {
-//       items: 1
-//     }
-//   }
-  
-// }
-   
-  // slickInit(e:any) {
-  //   console.log('slick initialized');
-  // }
-     
-  // breakpoint(e:any) {
-  //   console.log('breakpoint');
-  // }
-     
-  // afterChange(e:any) {
-  //   console.log('afterChange');
-  // }
-     
-  // beforeChange(e:any) {
-  //   console.log('beforeChange');
-  // }
-
   ngOnInit(): void {
     this.productId = this.param.snapshot.paramMap.get('id');
     this.categoryName = this.param.snapshot.paramMap.get('categoryName');
@@ -216,7 +92,7 @@ export class ProductDetailsComponent implements OnInit {
 
     this.getProduct();
     this.getSimillarProduct();
-
+    this.seoService.setCanonicalURL(window.location.href);
   }
 
 

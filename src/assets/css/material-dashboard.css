@@ -7210,7 +7210,7 @@
   }
   
   .carousel-item {
-    margin-top: 13.80rem;
+    margin-top: 11.8rem;
     position: relative;
     display: none;
     float: left;
@@ -21952,7 +21952,7 @@
     }
   
     .dropdown:not(.dropdown-hover) .dropdown-menu {
-      margin-top: 1.5rem !important;
+      margin-top: 0.25rem !important;
     }
   
     .dropdown .dropdown-menu.show {
@@ -21967,7 +21967,7 @@
     }
   
     .dropdown.nav-item .dropdown-menu {
-      position: absolute;
+      position: inherit;
     }
   
     .dropdown.nav-item .dropdown-menu-animation {
@@ -24410,6 +24410,7 @@
   
   .sidenav-header {
     height: 4.875rem;
+    margin: 10px 10px 0px 27px;
   }
   
   .sidenav-footer .card.card-background:after {

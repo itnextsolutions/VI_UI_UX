@@ -1,29 +1,26 @@
-<!-- Navbar Start -->
-<div class="container-fluid fixed-top px-0 wow fadeIn desktop-view" data-wow-delay="0.1s">
-    
+ <!-- desktop view -->
+<div class="container-fluid fixed-top px-0 wow fadeIn device" data-wow-delay="0.1s">
     <div class="top-bar row gx-0 align-items-center d-lg-flex bg-white">
-        <div class="col-lg-8 col-md-4  text-start"></div>
-        <div class="col-lg-4 col-md-8 d-xl-block header-top">
-            <small class="topbarsmall"><i class="fa fa-envelope me-2"></i>shailesh.vastra@gmail.com</small>
-            <small class="ms-4 topbarsmall"></small>
-            <small class="topbarsmall"><i class="fa fa-phone me-2"></i>9820146569</small>
-        </div>
+      <div class="col-lg-8 col-md-4  text-start"></div>
+      <div class="col-lg-4 col-md-8 d-xl-block header-top">
+          <small class="topbarsmall"><i class="fa fa-envelope me-2"></i>shailesh.vastra@gmail.com</small>
+          <small class="ms-4 topbarsmall"></small>
+          <small class="topbarsmall"><i class="fa fa-phone me-2"></i>9820146569</small>
+      </div>
     </div>
-
+  
     <nav class="navbar navbar-expand-lg  py-lg-0 px-lg-5 wow fadeIn device bg-white" data-wow-delay="0.1s">
         <div class="col-lg-5 col-md-4 px-5 text-start">
             <a href="index.html" class="navbar-brand ms-4 ms-lg-0">
                 <img _ngcontent-ifm-c51="" src="assets/img/vastralogo_1.png" alt="main_logo" class="navbar-brand-img h-100">
             </a>
         </div>
-        
         <div _ngcontent-lgr-c65="" class="col-lg-4 col-md-6 col-12 d-xl-block text-center">
             <small _ngcontent-lgr-c65="" class="menu"><a _ngcontent-lgr-c65="" href="">Home</a></small> 
             <small _ngcontent-lgr-c65="" class="ms-4 menu"><a _ngcontent-lgr-c65="" href="about">About Us</a></small>
             <small _ngcontent-lgr-c65="" class="ms-4 menu"><a _ngcontent-lgr-c65="" href="contact">Contact Us</a></small>
             <small _ngcontent-lgr-c65="" class="ms-4 menu"><a _ngcontent-lgr-c65="" href="blog">Blog</a></small>
         </div>
-
         <div class="col-lg-4 col-md-12 col-12 px-2">
             <div class="input-div mar-0" >
                 <form action="/a/search" method="get" class="" role="" >
@@ -36,39 +33,54 @@
             </div>
         </div>
     </nav>
-    <nav class="navbar navbar-expand-lg  py-lg-0 px-lg-5 wow fadeIn mobile" data-wow-delay="0.1s">
-        <div class="col-lg-4 col-md-6 col-12 d-xl-block text-center">
-            <a href="index.html" class="navbar-brand ms-lg-0">
-                <img _ngcontent-ifm-c51="" w src="assets/img/vastralogo_1.png" alt="main_logo" class="main_logo">
-            </a>
-        </div>
-    </nav>
-       
-    <div class="announcement-bar">
+    <div *ngIf="Notification" class="announcement-bar">
         <div class="page-width" *ngFor="let data of Notification">
             <span>{{data.NotificationTitle}}<a href="{{data.ButtonUrl}}" class="btn-browse">&nbsp;{{data.ButtonText}}</a></span>
         </div>  
     </div>
     <nav class="navbar navbar-expand-lg navbar-light py-lg-0 px-lg-12 wow fadeIn" data-wow-delay="0.1s" style="padding: 0px;">
+        <div class="container-fluid navbar-collapse " id="">
+            <div class="navbar-nav px-lg-4">
+                <div class="nav-item dropdown px-2" *ngFor="let data of categorySubcategory">
+                    <a href="#" class="nav-link dropdown-toggle active category_menubar" data-bs-toggle="dropdown" >{{data.Category_Name}}</a>
+                    <div class="dropdown-menu m-0" >
+                        <a  (click)="onSubCategoryClick(data,item)" class="dropdown-item" *ngFor="let item of data.subCat;">{{item.SubCategory}}</a>
+                        <!-- <a  href= "http://localhost:4200/product-details/Collared%20T-Shirt/Combination%20Collared%20T-shirt%20/1" class="dropdown-item" *ngFor="let item of data.subCat;">{{item.SubCategory}}</a> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+  </div>
+
+  <!-- Mobile view -->
+  <div class="container-fluid fixed-top px-0 wow fadeIn mobile" data-wow-delay="0.1s">
+    <div class="top-bar row gx-0 align-items-center d-lg-flex bg-white">
+        <div class="col-lg-8 col-md-4  text-start"></div>
+        <div class="col-lg-4 col-md-8 d-xl-block header-top">
+            <small class="topbarsmall"><i class="fa fa-envelope me-2"></i>shailesh.vastra@gmail.com</small>
+            <small class="ms-4 topbarsmall"></small>
+            <small class="topbarsmall"><i class="fa fa-phone me-2"></i>9820146569</small>
+        </div>
+    </div>
+    <div class="col-lg-4 col-md-6 col-12 d-xl-block text-center">
+        <a href="index.html" class="navbar-brand ms-lg-0">
+            <img _ngcontent-ifm-c51="" w src="assets/img/vastralogo_1.png" alt="main_logo" class="main_logo">
+        </a>
+    </div>
+    <div *ngIf="Notification" class="announcement-bar-mobile mobile">
+        <marquee scrolldelay="200" behavior="loop" direction="left"><div class="page-width" *ngFor="let data of Notification">
+            <span>{{data.NotificationTitle}}<a href="{{data.ButtonUrl}}" class="btn-browse">&nbsp;{{data.ButtonText}}</a></span>
+        </div></marquee>
+    </div>
+    <nav *ngIf="categorySubcategory" class="navbar navbar-expand-lg navbar-light py-lg-0 px-lg-12 wow fadeIn" data-wow-delay="0.1s" style="padding: 0px;">
         <button (click)="toggleDisplayDiv()" type="button" class="navbar-toggler  me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-expanded="true">
             <span class="navbar-toggler-icon"></span>
         </button>
-            <!-- <div class="input-div mar-0 js-search" >
-                <form action="/a/search" method="get" class="" role="" >
-                    <button type="submit" class="text-link site-header__search-btn" (click)="onSearch()"  style="background: none;border: 0;">
-                        <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-search" viewBox="0 0 54 54"><defs><style>.cls-1{fill:none;stroke:#000;stroke-miterlimit:10;stroke-width:2px}</style></defs><path class="cls-1" d="M47.16 28.58A18.58 18.58 0 1 1 28.58 10a18.58 18.58 0 0 1 18.58 18.58zM54 54L41.94 42"></path></svg>
-                        <span class="icon__fallback-text"></span>
-                    </button>
-                    <input [(ngModel)]="search" type="search" name="q" value="" placeholder="Search by products.." class="site-header__search-input" aria-label="Search products here...." autocomplete="off">
-                </form>
-            </div> -->
-
         <div class="searchbar js-search">
             <input [(ngModel)]="search" type="search" class="search_input" name=""  placeholder="Search...">
             <a class="search_icon"><i class="fas fa-search" (click)="onSearch()"></i></a>
         </div>
-    
-     
         
         <div *ngIf="isShowDivIf" class="container-fluid navbar-collapse " id="">
             <div class="navbar-nav px-lg-4">
@@ -81,38 +93,5 @@
                 </div>
             </div>
         </div>
-        
     </nav>
-     
-</div>
-<!-- Navbar End -->
-
-
-<!-- <nav class="navbar navbar-expand-lg navbar-light bg-light mobile-view">
-    <div class="container">
-        <a href="index.html" class="navbar-brand ms-4 ms-lg-0">
-            <img _ngcontent-ifm-c51="" src="assets/img/vastralogo_1.png" alt="main_logo" class="navbar-brand-img " style=" width: 57%;">
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#top">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#top">Link</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link disabled" href="#top">Disabled</a>
-                </li>
-            </ul>
-            <form class="d-flex my-2 my-lg-0">
-                <input class="form-control me-sm-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-            </form>
-        </div>
-    </div>
-</nav> -->
-<!-- <div id="top"></div> -->
+  </div>

@@ -4,7 +4,7 @@
 <!-- Page Header End -->
 
 <!-- blog content Start -->
-<div class="container-xxl header_bs_mo pad-mob">
+<div class="container-xxl header_bs_mo">
     <div class="container">
         <div class="row g-0 gx-5 align-items-end">
             <nav aria-label="breadcrumb">
@@ -21,11 +21,11 @@
             <div class="row g-0 gx-5 ">
                 <div class="col-lg-7 col-md-7 col-12">
                     <div class="row g-5 align-items-center" *ngFor="let data of blogContent">
-                        <div class="blog-heading">
+                        <div class="blog-heading mt-0">
                             <h3 class="font-weight-bold text-dark py-4">{{data.Blog_Title}}</h3>
                         </div>
-                           <img class="big_img mt-sm-2 pb-3" src="assets/img/blog/{{data.Image_Name}}">
-                           <div text-justify [innerHTML]="data.Blog_Content" style="margin-top: 20px;" ></div>
+                           <img class="big_img mt-sm-2 pb-3 mt-0" src="assets/img/blog/{{data.Image_Name}}">
+                           <div text-justify [innerHTML]="data.Blog_Content" class="blogContent mt-1" ></div>
                     </div>
                 </div>
             

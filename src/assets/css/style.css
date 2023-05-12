@@ -148,7 +148,7 @@
 }
 
 .header_bs_mo {
-    padding-top: 18rem !important;
+    padding-top: 15rem !important;
     padding-bottom: 5rem !important;
 }
 
@@ -184,10 +184,10 @@
     }
 
     .carousel-item {
-        margin-top: 8.5rem !important;
+        margin-top: 10.5rem !important;
     }
     .header_bs_mo {
-        padding-top: 11rem !important;
+        padding-top: 12rem !important;
         padding-bottom: 0rem !important;
     }
 }
@@ -207,7 +207,7 @@
     text-transform: uppercase;
     font-size: 14px;
   
-    padding: 25px 3px 25px 3px;
+    padding: 13px 3px;
 }
 
 }
@@ -707,6 +707,22 @@ font-size: 39px;
 .categoryBox {
     padding: 0px !important;
     margin: 8px;
+}
+
+.m_header {
+    margin: 10px 10px 0px 27px;
+}
+
+.nav-toggle{
+    float: right;
+    margin-top: 20px;
+    background-color: #ed3237;
+    border: 0px;
+    border-radius: 6px;
+}
+
+.m-logo{
+    width: 150px;
 }
 
 @media (min-width:320px) and (max-width: 768px) {
