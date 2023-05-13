@@ -123,7 +123,7 @@
     margin-bottom: 0;
     font-weight: 400;
     line-height: 1.2;
-    color: #160381;
+    color: #0d206c;
   }
   
   h1,
@@ -192,7 +192,7 @@
     margin-top: 0;
     margin-bottom: 1rem;
   }
-  p,.color { color: #000; font-weight: 400; text-align: jus; }
+  p,.color { color: #302d2d; font-weight: 400; text-align: jus; }
   p,.bold { font-weight: bold; }
 
   abbr[title] {
@@ -255,8 +255,9 @@
   }
   
   .menu {
-    font-size: 1rem;
-    font-weight: bold;
+    font-size: 0.95rem;
+    font-weight: 500;
+    text-transform: uppercase;
   }
   
   mark,
@@ -282,7 +283,7 @@
   }
   
   a {
-    color: var(--bs-link-color);
+    color: #0d206c;
     text-decoration: none;
   }
   
@@ -607,14 +608,15 @@
   }
   
   .display-5 {
-    font-size: calc(1.425rem + 2.1vw);
-    font-weight: 300;
-    line-height: 1.2;
+    color: #0d206c;
+    font-weight: 400;
   }
   
   @media (min-width: 1200px) {
     .display-5 {
-      font-size: 3rem;
+      font-size: 2.5rem;
+      color: #0d206c;
+      font-weight: 400;
     }
   }
   
@@ -7210,7 +7212,7 @@
   }
   
   .carousel-item {
-    margin-top: 11.8rem;
+    margin-top: 12.8rem;
     position: relative;
     display: none;
     float: left;
@@ -8534,7 +8536,7 @@
   
   .d-block {
     display: block !important;
-    color: #1b0756;
+    color: #0d206c;
   }
   
   .d-grid {
@@ -10716,7 +10718,7 @@
   }
   
   .text-dark {
-    color: #344767 !important;
+    color: #0d206c !important;
   }
   
   .text-white {

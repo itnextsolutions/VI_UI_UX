@@ -166,7 +166,9 @@ height: 400px;
 }
 
 .testimonial .cust-name{
-     font-size: 18px;
+     font-size: 16px;
+     color: #0d206c;
+     margin-bottom: 6px;
 }
 
 .testimonial.cust-profession{
