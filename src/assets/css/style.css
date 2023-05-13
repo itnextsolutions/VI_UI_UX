@@ -240,7 +240,7 @@
         transition: .5s;
         opacity: 0;
         border-top: 7px solid #0f0f0f;
-        padding: 1rem 2rem;
+        padding: 0.85rem 2rem;
     }
 
     .navbar .nav-item:hover .dropdown-menu {
