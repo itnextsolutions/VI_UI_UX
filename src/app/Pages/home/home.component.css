@@ -169,6 +169,7 @@ height: 400px;
      font-size: 16px;
      color: #0d206c;
      margin-bottom: 6px;
+     letter-spacing: 0.5px;
 }
 
 .testimonial.cust-profession{
@@ -264,6 +265,7 @@ height: 400px;
         .testimonial .cust-name {
             font-size: 14px;
             line-height: 1;
+            letter-spacing: 0.5px;
         }
         .testi-review p {
             overflow-y: scroll !important;
