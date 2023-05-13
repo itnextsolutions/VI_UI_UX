@@ -33,6 +33,12 @@ export class ShowCustomerReviewComponent implements OnInit {
     this.getAllReview();
   }
 
+  isShowDivIf:boolean=false;
+  toggleDisplayDiv ()
+  {
+     this.isShowDivIf = !this.isShowDivIf;  
+  }
+  
   refreshCust_ReviewList() {
     this.sharedService.getCustomerReview().subscribe(data =>{
       this.CustomerReviewList = data;

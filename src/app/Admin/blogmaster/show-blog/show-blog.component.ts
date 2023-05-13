@@ -33,6 +33,12 @@ export class ShowBlogComponent implements OnInit {
     this.getAllBlog();
   }
 
+  isShowDivIf:boolean=false;
+  toggleDisplayDiv ()
+  {
+     this.isShowDivIf = !this.isShowDivIf;  
+  }
+  
   refreshBlogList() {
     this.sharedService.getAllblog().subscribe(data =>{
       this.blogList = data;

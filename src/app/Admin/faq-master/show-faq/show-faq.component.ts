@@ -32,6 +32,12 @@ export class ShowFaqComponent implements OnInit {
     this.getAllFaq();
     this.getMenuList();
   }
+  
+  isShowDivIf:boolean=false;
+  toggleDisplayDiv ()
+  {
+     this.isShowDivIf = !this.isShowDivIf;  
+  }
 
   getMenuList()
   {

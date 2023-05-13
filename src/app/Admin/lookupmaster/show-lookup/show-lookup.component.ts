@@ -32,6 +32,13 @@ export class ShowLookupComponent implements OnInit {
     //this.refreshlookupmasterList();
     this.getAllLookup();
   }
+
+  isShowDivIf:boolean=false;
+  toggleDisplayDiv ()
+  {
+     this.isShowDivIf = !this.isShowDivIf;  
+  }
+  
   refreshlookupmasterList() {
     this.sharedService.getLookupMasterList().subscribe(data =>{
       this.lookupmasterList = data;

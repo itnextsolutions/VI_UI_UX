@@ -36,6 +36,12 @@ export class ShowProductComponent implements OnInit {
     //this.refreshproductList();
   }
 
+  isShowDivIf:boolean=false;
+  toggleDisplayDiv ()
+  {
+     this.isShowDivIf = !this.isShowDivIf;  
+  }
+
   refreshproductList() {
     this.sharedService.getProductDetailsList().subscribe(data =>{
       this.ProductList = data;

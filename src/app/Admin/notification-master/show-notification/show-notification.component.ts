@@ -32,6 +32,12 @@ export class ShowNotificationComponent implements OnInit {
     this.getAllNotification();
   }
 
+  isShowDivIf:boolean=false;
+  toggleDisplayDiv ()
+  {
+     this.isShowDivIf = !this.isShowDivIf;  
+  }
+  
   refreshnotificationList() {
     this.sharedService.getNotificationList().subscribe(data =>{
       this.notificationList = data;

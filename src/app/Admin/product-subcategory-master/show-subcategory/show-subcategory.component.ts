@@ -34,6 +34,12 @@ export class ShowSubcategoryComponent implements OnInit {
     this.getAllSubCategory();
   }
 
+  isShowDivIf:boolean=false;
+  toggleDisplayDiv ()
+  {
+     this.isShowDivIf = !this.isShowDivIf;  
+  }
+
   refreshsubcategoryList() {
     this.sharedService.getSubproductcategoryList().subscribe(data =>{
       this.SubcategoryList = data;

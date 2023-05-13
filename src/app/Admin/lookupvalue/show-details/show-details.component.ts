@@ -35,6 +35,13 @@ export class ShowDetailsComponent implements OnInit {
    // this.refreshlookupdetailsList();
     const colorName = GetColorName('000000'); 
   }
+
+  isShowDivIf:boolean=false;
+  toggleDisplayDiv ()
+  {
+     this.isShowDivIf = !this.isShowDivIf;  
+  }
+  
   refreshlookupdetailsList() {
     this.sharedService.getLookupDetailsList().subscribe(data =>{
       this.lookupdetailsList = data;
