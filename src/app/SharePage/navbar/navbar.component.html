@@ -33,7 +33,7 @@
             </div>
         </div>
     </nav>
-    <div *ngIf="Notification" class="announcement-bar">
+    <div *ngIf="Notification.length > 0" class="announcement-bar">
         <div class="page-width" *ngFor="let data of Notification">
             <span>{{data.NotificationTitle}}<a href="{{data.ButtonUrl}}" class="btn-browse">&nbsp;{{data.ButtonText}}</a></span>
         </div>  
@@ -68,7 +68,7 @@
             <img _ngcontent-ifm-c51="" w src="assets/img/vastralogo_1.png" alt="main_logo" class="main_logo">
         </a>
     </div>
-    <div *ngIf="Notification" class="announcement-bar-mobile mobile">
+    <div *ngIf="Notification.length > 0" class="announcement-bar-mobile mobile">
         <marquee scrolldelay="200" behavior="loop" direction="left"><div class="page-width" *ngFor="let data of Notification">
             <span>{{data.NotificationTitle}}<a href="{{data.ButtonUrl}}" class="btn-browse">&nbsp;{{data.ButtonText}}</a></span>
         </div></marquee>
@@ -83,7 +83,7 @@
         </div>
         
         <div *ngIf="isShowDivIf" class="container-fluid navbar-collapse " id="">
-            <div class="navbar-nav px-lg-4">
+            <div *ngIf="categorySubcategory.length > 0" class="navbar-nav px-lg-4">
                 <div class="nav-item dropdown px-2" *ngFor="let data of categorySubcategory">
                     <a href="#" class="nav-link dropdown-toggle active category_menubar" data-bs-toggle="dropdown" >{{data.Category_Name}}</a>
                     <div class="dropdown-menu m-0" >
