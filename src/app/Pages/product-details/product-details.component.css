@@ -382,6 +382,9 @@ body .slick-next {
   .mm-view {
     display: none;
   }
+  .big_img{
+    width: 248px !important;
+  }
   .modal.show .customize-model-dialog {
     transform: none;
     width: auto !important;
