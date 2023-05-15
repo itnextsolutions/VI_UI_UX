@@ -10,6 +10,7 @@ import { AuthenticatedResponse } from '../app.module';
 
 export class SharedService {
   readonly APIUrl = "https://test.vastraindia.com/api/";
+  // readonly APIUrl = "https://localhost:44365/api/";
   constructor(private http: HttpClient) {}
 
 //Menu Binding
@@ -48,7 +49,7 @@ deleteProductcategory(category_id: any) {
 getLookupMasterList(): Observable < any[] > {
   return this.http.get < any > (this.APIUrl + 'Lookup/GetLookupMaster');
 }
-addLookupMaster(val: any) {
+addLookupMaster(val: any) {debugger
   return this.http.post(this.APIUrl + 'Lookup/InsertLookupMaster', val);
 }
 updateLookupMaster(val: any) {
@@ -163,7 +164,7 @@ getSubproductcategoryList(): Observable < any[] > {
 return this.http.get < any > (this.APIUrl + 'Product/GetSubCategory');
 }
 
-addSubProductcategory(val: any) {
+addSubProductcategory(val: any) {debugger
 return this.http.post(this.APIUrl + 'Product/InsertSubCategory', val);
 }
 
