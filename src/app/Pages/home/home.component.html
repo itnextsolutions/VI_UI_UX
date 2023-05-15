@@ -168,8 +168,8 @@
         <div class="tab-content">
             <div id="tab-1" class="tab-pane fade show p-0 active">
                 <div class="row g-4">
-                    <div class="col-xl-3 col-lg-4 col-md-6  col-6 wow fadeInUp Product_Category_item" data-wow-delay="0.1s"
-                        *ngFor="let data of categoryList.slice(0,6)">
+                    <div class="col-xl-3 col-lg-6 col-md-6  col-12 wow fadeInUp Product_Category_item" data-wow-delay="0.1s"
+                        *ngFor="let data of categoryList.slice(0,6)" style="">
                         <div class="product-item pointer" id="tab-1" (click)="onCategoryClick(data)">
                             <div class="" >
                                 <img class="img-fluid pro-img-hw" src="assets/img/category/{{data.Category_Photo}}" alt="">
@@ -204,7 +204,7 @@
         <div class="tab-content">
             <div id="tab-1" class="tab-pane fade show p-0 active">
                 <div class="row g-4">
-                    <div class="col-xl-3 col-lg-4 col-md-6  col-6 wow fadeInUp Brand-item" data-wow-delay="0.1s" 
+                    <div class="col-xl-3 col-lg-6 col-md-6  col-12 wow fadeInUp Brand-item" data-wow-delay="0.1s" 
                         *ngFor="let data of brandList.slice(0,6)">
                         <div class="product-item" (click)="onCategoryClick(data)" >
                             <img class="img-fluid pro-img-hw" src="../assets/img/brand/{{data.Category_Photo}}" alt="" >

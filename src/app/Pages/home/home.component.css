@@ -1,4 +1,7 @@
 
+.container {
+    width: 1200px;
+}
 .product-item{
     position: relative;
 }
@@ -11,7 +14,7 @@
     padding: 30px 20px;
     width: 100%;
     display: inline-block;
-    max-width: 543px;
+    max-width: 574px;
 }
 
 .tagname {
@@ -34,12 +37,16 @@
 }
 @media (min-width: 320px) and (max-width: 600px) {
 .product-item {
-    border: 1px solid #e9e6e6;
-    border-top: 3px solid #df0a0a;
-    width: 90%;
+    /* border: 1px solid #e9e6e6; */
+    /* border-top: 3px solid #df0a0a; */
+    width: 100%;
     margin: 0 auto;
-    aspect-ratio: 4/5;
+    /* aspect-ratio: 4/5; */
 }
+.tag {
+    position: absolute;
+    left: 0;
+    bottom: 10%;}
 .card{
     width: unset;
 }
@@ -57,7 +64,8 @@ height: 400px;
     /* height: 428px; */
     border: 1px solid #f1f1f1;
     border-radius: 15px;
-    max-height: 545px;
+    /* max-height: 545px; */
+    width: 100%;
 }
 .announcement-bar {
     font-size: 14.45px;
@@ -272,6 +280,9 @@ height: 400px;
       .carousel-control-prev-icon, .carousel-control-next-icon {
         
         display: none !important;
+    }
+    .container {
+        width:unset;
     }
 
 }
