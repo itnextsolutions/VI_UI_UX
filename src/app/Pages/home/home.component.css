@@ -1,12 +1,35 @@
 
+.product-item{
+    position: relative;
+}
+.tag{
+    position: absolute;
+    left: 0;
+    bottom: 5%;
+    z-index: 1000;
+    background-color: rgba(32, 42, 69, 0.6);
+    padding: 30px 20px;
+    width: 100%;
+    display: inline-block;
+    max-width: 543px;
+}
+
+.tagname {
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+}
 @media (min-width: 1024px) and (max-width: 2560px) 
 {
     .Product_Category_item
     {
-        width: 33%;
+        width: 50%;
     }
     .Brand-item{
-        width: 33%;
+        width: 50%;
     }
 }
 @media (min-width: 320px) and (max-width: 600px) {
@@ -31,7 +54,10 @@ overflow-y: scroll;
 height: 400px;
 } */
 .pro-img-hw{
-    height: 428px;
+    /* height: 428px; */
+    border: 1px solid #f1f1f1;
+    border-radius: 15px;
+    max-height: 545px;
 }
 .announcement-bar {
     font-size: 14.45px;
