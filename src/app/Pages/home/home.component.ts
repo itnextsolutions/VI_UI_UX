@@ -50,7 +50,7 @@ export class HomeComponent implements OnInit {
         items: 3
       },
       1000: {
-        items: 3.5
+        items: 3
       }
     }
     

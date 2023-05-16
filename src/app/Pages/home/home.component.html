@@ -223,11 +223,23 @@
 <!-- Brand End -->
 
 <!-- client review End -->
-<div class="container-fluid bg-light bg-icon py-5 mb-2" *ngIf="customerReview.length > 0">
+<section class="review-bg"style="background-image: url('assets/img/review-bg.jpg');
+
+
+background-attachment: fixed;
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;">
+
+
+<div class="container-fluid bg-light bg-icon py-5 mb-2" style="background-color: #0f0f0f8f !important;
+" *ngIf="customerReview.length > 0">
     <div class="container" >
         <div class="section-header text-center mx-auto mb-3 mt-3 wow fadeInUp" data-wow-delay="0.1s"
             style="max-width: 500px;">
-            <h1 class="display-5 mb-2 pb-2">Client Reviews</h1>
+            <h1 class="display-5 mb-2 pb-2" style="color: #ffffff;
+          
+            filter: drop-shadow(2px 4px 6px black);">Client Reviews</h1>
         </div>
         <owl-carousel-o [options]="customOptions">
             <ng-container  *ngFor="let data of customerReview">
@@ -260,6 +272,7 @@
          </owl-carousel-o>
     </div>
 </div>
+</section>
 <!-- client review End -->
 
 <!-- Blog Start -->
