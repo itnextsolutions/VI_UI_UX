@@ -75,7 +75,7 @@
 
 ul{float: left; width: 12rem; }
 ul li{list-style-type: none; margin: bottom 10px; font-weight: 400;}
-ol,ul {padding:0px 18px !important ;}
+ol,ul {padding-left: 24px !important ;}
 ul li img{width: 150px; padding: 5px; border: 1px solid #ebebeb; }
 .big_img{float:left; margin: top 20px; margin-left: 10px; }
 #id_0 :hover{
@@ -331,12 +331,8 @@ body .slick-next {
     }
   
     .breadcrumb-item {
-      font-size: 0.90rem;
+      font-size: 0.70rem;
       padding: 0;
-    }
-
-    .breadcrumb {
-      padding: 0 0 0 8px !important;
     }
 }
 /* new detail */
