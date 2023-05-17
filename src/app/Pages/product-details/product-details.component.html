@@ -229,25 +229,61 @@
                                         </div>
                                     </ngx-slick-carousel>
                                 </div>
-                            </div>
-
-                            <div *ngIf="id==1 ||id==3">
+                                
+                                <div *ngIf="id==1 ||id==3">
                                   
-                                <h5 class="colors-pallete" style="margin-top: 0px !important;">Colors:</h5>
-                            
-                                <div class="container py-5 pc-Style-hero-colors-sizeList-adultSizes mt-0 pt-0 pb-3">
-                                    <div class="row row-cols-2 row-cols-lg-6 w-90">
-                                        <div *ngFor="let item of tipping" (click)="onTippingWomenClick(item)">
-                                            <img src="assets/img/tipping/{{item.tipping_img}}" class="" style="height: 51px;">
-                                            <div class="label-name">
-                                                {{item.Description}}
-                                                <!-- {{item.tipping_women_img}} -->
+                                    <h5 class="colors-pallete" style="margin-top: 0px !important;">Colors:</h5>
+                                    <ngx-slick-carousel class="carousel"
+                                    #slickModal="slick-carousel"
+                                    [config]="slideConfig" 
+                                    (init)="slickInit($event)"
+                                    (breakpoint)="breakpoint($event)"
+                                    (afterChange)="afterChange($event)"
+                                    (beforeChange)="beforeChange($event)">
+                                    <div ngxSlickItem *ngFor="let item of tipping" class="slide">
+                                    <div class="container py-5 pc-Style-hero-colors-sizeList-adultSizes mt-0 pt-0 pb-3">
+                                        <div class="row row-cols-2 row-cols-lg-6 w-90">
+                                            <div (click)="onTippingWomenClick(item)">
+                                                <img src="assets/img/tipping/{{item.tipping_img}}" class="" style="height: 51px;">
+                                                <div class="label-name">
+                                                    {{item.Description}}
+                                                    <!-- {{item.tipping_women_img}} -->
+                                                </div>
+                                                <!-- </div> -->
                                             </div>
-                                            <!-- </div> -->
                                         </div>
                                     </div>
                                 </div>
+                            </ngx-slick-carousel>
+                                </div>
                             </div>
+
+                            <!-- <div *ngIf="id==1 ||id==3">
+                                  
+                                <h5 class="colors-pallete" style="margin-top: 0px !important;">Colors:</h5>
+                                <ngx-slick-carousel class="carousel"
+                                #slickModal="slick-carousel"
+                                [config]="slideConfig" 
+                                (init)="slickInit($event)"
+                                (breakpoint)="breakpoint($event)"
+                                (afterChange)="afterChange($event)"
+                                (beforeChange)="beforeChange($event)">
+                                <div ngxSlickItem *ngFor="let item of tipping" class="slide">
+                                <div class="container py-5 pc-Style-hero-colors-sizeList-adultSizes mt-0 pt-0 pb-3">
+                                    <div class="row row-cols-2 row-cols-lg-6 w-90">
+                                        <div (click)="onTippingWomenClick(item)">
+                                            <img src="assets/img/tipping/{{item.tipping_img}}" class="" style="height: 51px;">
+                                            <div class="label-name">
+                                                {{item.Description}} -->
+                                                <!-- {{item.tipping_women_img}} -->
+                                            <!-- </div> -->
+                                            <!-- </div> -->
+                                        <!-- </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </ngx-slick-carousel>
+                            </div> -->
 
 
                             <div [hidden]="isMenDivHidden && isTippingDivHidden" class="modal-body"  *ngFor="let data of product">
