@@ -155,47 +155,77 @@ export class AddEditDetailsComponent implements OnInit {
     this.submitted = true;
     if (this.LookupValueForm.valid){
       if (this.Lookup_Id!="3"){
-   this.ColorName=GetColorName(this.Description)
+        this.ColorName=GetColorName(this.Description)
 
-    let formData = new FormData()
-    formData.append('Lookup_Id', this.Lookup_Id);
-    formData.append('Description', this.Description);
-    formData.append('ColorName', this.ColorName);
-    
-    this.service.addLookupDetails(formData).subscribe(res =>{
-      alert(res.toString());
-    })
-  }
-  else{
-  this.ColorName=GetColorName(this.Description)
+        let formData = new FormData()
+        formData.append('Lookup_Id', this.Lookup_Id);
+        formData.append('Description', this.Description);
+        formData.append('ColorName', this.ColorName);
+        
+        this.service.addLookupDetails(formData).subscribe(res =>{
+          alert(res.toString());
+        })
+      }
+      else{
+        this.ColorName=GetColorName(this.Description)
 
-    let formData = new FormData()
-    formData.append('Lookup_Id', this.Lookup_Id);
-    formData.append('Description', this.Description);
-    formData.append('ColorName', this.ColorName);
-    formData.append('formFile', this.selectedFile);
-    this.service.addLookupDetails(formData).subscribe(res =>{
-      alert(res.toString());
-    })
+        let formData = new FormData()
+        formData.append('Lookup_Id', this.Lookup_Id);
+        formData.append('Description', this.Description);
+        formData.append('ColorName', this.ColorName);
+        formData.append('formFile', this.selectedFile);
+        this.service.addLookupDetails(formData).subscribe(res =>{
+          alert(res.toString());
+        })
+      }
+    }
   }
-  }
-}
   
 
-  updateLookupDetails(){
+  updateLookupDetails(){debugger
     this.submitted = true;
     if (this.LookupValueForm.valid){
-    var val = {
-      Lookup_Details_Id:this.Lookup_Details_Id,
-      Lookup_Id:this.Lookup_Id,
-      Description:this.Description,
-      ColorName:GetColorName(this.Description)
-    };
-      this.service.updateLookupDetails(val).subscribe(res =>{
+    // var val = {
+    //   Lookup_Details_Id:this.Lookup_Details_Id,
+    //   Lookup_Id:this.Lookup_Id,
+    //   Description:this.Description,
+    //   ColorName:GetColorName(this.Description)
+    // };
+    //   this.service.updateLookupDetails(val).subscribe(res =>{
+    //     alert(res.toString());
+    // })
+
+
+    if (this.Lookup_Id!="3"){
+      this.ColorName=GetColorName(this.Description)
+
+      let formData = new FormData()
+      formData.append('Lookup_Details_Id', this.Lookup_Details_Id);
+      formData.append('Lookup_Id', this.Lookup_Id);
+      formData.append('Description', this.Description);
+      formData.append('ColorName', this.ColorName);
+      
+      this.service.updateLookupDetails(formData).subscribe(res =>{
         alert(res.toString());
-    })
+      })
+    }
+    else{
+      this.ColorName=GetColorName(this.Description)
+
+      let formData = new FormData()
+      formData.append('Lookup_Details_Id', this.Lookup_Details_Id);
+      formData.append('Lookup_Id', this.Lookup_Id);
+      formData.append('Description', this.Description);
+      formData.append('ColorName', this.ColorName);
+      formData.append('formFile', this.selectedFile);
+      this.service.updateLookupDetails(formData).subscribe(res =>{
+        alert(res.toString());
+      })
+    }
   }
   }
+
+
   onselectFile(event: any) { //Angular 11, for stricter type
 		if(!event.target.files[0] || event.target.files[0].length == 0) {
 			this.msg = 'You must select an image';
