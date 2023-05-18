@@ -25,7 +25,7 @@
        </div>
         <div class="col-md-12 roundedTextBox mb-3">
           <label>Sub Category Name :</label>
-          <input type="text"  [(ngModel)]="Sub_Cat_Name" class="form-control" id="inputSub_Cat_Name" formControlName="Sub_Cat_Name" placeholder="Enter Sub Category Name">
+          <input type="text"  [(ngModel)]="SubCategory" class="form-control" id="inputSub_Cat_Name" formControlName="Sub_Cat_Name" placeholder="Enter Sub Category Name">
           <div *ngIf="submitted && formControl.Sub_Cat_Name.errors" class="text-danger">
             <div *ngIf="formControl.Sub_Cat_Name.errors.required">Sub Category Name is required.</div>
           </div>
@@ -46,8 +46,8 @@
     </div>
       <br>
       <div class="buttons">
-          <button type="button" *ngIf="subcategory.Id==0" class="btn btn-primary" (click)="addSubProductCategory()">Add</button>
-          <button type="button" *ngIf="subcategory.Id!=0" class="btn btn-primary" (click)="updateSubProductCategory()">Update</button>
+          <button type="button" *ngIf="subcategory.SubCategory_Id==0" class="btn btn-primary" (click)="addSubProductCategory()">Add</button>
+          <button type="button" *ngIf="subcategory.SubCategory_Id!=0" class="btn btn-primary" (click)="updateSubProductCategory()">Update</button>
       </div>
     </form>
 </div> 

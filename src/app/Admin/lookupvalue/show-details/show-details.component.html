@@ -118,12 +118,18 @@
                         <div class="d-flex px-2 py-1">
                           <div class="d-flex flex-column justify-content-center" style="margin: auto;">
                             <div *ngIf="dataItem.Lookup_Id!=3; else elseBlock">
-                            <div  class="color-box" [style.background-color]="dataItem.Description"></div><h6 class="mb-0 text-sm">{{dataItem.Description}}</h6>
+                              <div *ngIf="dataItem.Lookup_Id==1; else elseBlock">
+                                <div  class="color-box" [style.background-color]="dataItem.Description"></div><h6 class="mb-0 text-sm">{{dataItem.ColorName}}</h6>
+                              </div>
+                              <ng-template #elseBlock>
+                                <h6 class="mb-0 text-sm">{{dataItem.Description}}</h6>
+                              </ng-template>
+                              
                             </div>
                             <ng-template #elseBlock>
                               <img src="assets/img/tipping/{{dataItem.tipping_img}}" style="width:30px; margin:auto;">
                               {{dataItem.Description}}
-                          </ng-template>
+                            </ng-template>
                           </div>
                         </div>
                       </td>

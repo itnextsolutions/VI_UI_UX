@@ -19,13 +19,15 @@ export class AddEditSubcategoryComponent implements OnInit {
   CategoryName: any =[];
 
   @Input() subcategory:any;
-  Id : string ="";
-  Category_Id:string = "";
+  SubCategory_Id:string="";
+  Category_Id: string ="";
   Sub_Cat_Name: string ="";
 
 
   url: any; 
 	msg = "";
+  SubCategory:string ="";
+  // SubCategory_Id: string="";
 
   constructor(private service: SharedService,private formBuilder: UntypedFormBuilder) { }
 
@@ -36,9 +38,10 @@ export class AddEditSubcategoryComponent implements OnInit {
       Sub_Cat_Name: ["",[ Validators.required]],
       // Sub_Cat_Photo: ["",[ Validators.required]],
     });
-    this.Id = this.subcategory.SubCategory_Id;
+    this.SubCategory_Id = this.subcategory.SubCategory_Id;
+    // this.SubCategory_Id = this.subcategory.SubCategory_Id;
     this.Category_Id =this.subcategory.Category_Id;
-    this.Sub_Cat_Name = this.subcategory.SubCategory;
+    this.SubCategory = this.subcategory.SubCategory;
     this.CategoryNameList();
   }
   
@@ -55,29 +58,41 @@ export class AddEditSubcategoryComponent implements OnInit {
   addSubProductCategory(){
     
     this.submitted = true;
-    if (this.Pro_SubCatForm.valid){
-    var val = {
-      Category_Id:this.Category_Id,
-      Sub_Cat_Name:this.Sub_Cat_Name,
-      // Sub_Cat_Photo:this.Sub_Cat_Photo.replace(/.*[\/\\]/, '')
-    };
-      this.service.addSubProductcategory(val).subscribe(res =>{
-        alert(res.toString()); 
-      })
-    }
+    // if (this.Pro_SubCatForm.valid){
+    // var val = {
+    //   // SubCategory_Id:this.SubCategory_Id,
+    //   Category_Id:this.Category_Id,
+    //   Sub_Cat_Name:this.Sub_Cat_Name
+    //   // SubCategory:this.Sub_Cat_Name,
+    //   // Sub_Cat_Photo:this.Sub_Cat_Photo.replace(/.*[\/\\]/, '')
+    // };
+    let formData = new FormData()
+    // formData.append('SubCategory_Id', this.SubCategory_Id);
+        formData.append('Category_Id', this.Category_Id);
+        formData.append('SubCategory', this.SubCategory);
+      
+    // }
+    this.service.addSubProductcategory(formData).subscribe(res =>{
+      alert(res.toString()); 
+    })
   }
 
   updateSubProductCategory(){
     
     this.submitted = true;
     if (this.Pro_SubCatForm.valid){
-    var val = {
-     Id : this.Id,
-      Category_Id:this.Category_Id,
-      Sub_Cat_Name:this.Sub_Cat_Name,
-      // Sub_Cat_Photo:this.Sub_Cat_Photo.replace(/.*[\/\\]/, '')
-    };
-      this.service.updateSubProductcategory(val).subscribe(res =>{
+    // var val = {
+    //   Id : this.Id,
+    //   // SubCategory_Id : this.SubCategory_Id,
+    //   Category_Id:this.Category_Id,
+    //   Sub_Cat_Name:this.Sub_Cat_Name,
+    //   // Sub_Cat_Photo:this.Sub_Cat_Photo.replace(/.*[\/\\]/, '')
+    // };
+    let formData = new FormData()
+    formData.append('SubCategory_Id', this.SubCategory_Id);
+        formData.append('Category_Id', this.Category_Id);
+        formData.append('SubCategory', this.SubCategory);
+      this.service.updateSubProductcategory(formData).subscribe(res =>{
         alert(res.toString());
     })
    }

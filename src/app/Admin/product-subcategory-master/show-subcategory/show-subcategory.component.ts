@@ -93,10 +93,10 @@ totalNoOfPages() {
 
   AddSubProductCategory(){
     this.subcategory={
-      Id:0,
+      SubCategory_Id:0,
+      // Id:0,
       Category_Id:"",
-      Sub_Cat_Name:"",
-      Sub_Cat_Photo:""
+      Sub_Cat_Name:""
     }
     this.modalTitle = "Add Sub Product Category";
     this.activateAddEditSubCatCom = true;
@@ -108,6 +108,7 @@ totalNoOfPages() {
     this.subcategory = item;
     this.activateAddEditSubCatCom = true;
     this.modalTitle = "Update Sub Product Category";
+    this.refreshsubcategoryList();
   }
 
   deleteClick(item: any){
