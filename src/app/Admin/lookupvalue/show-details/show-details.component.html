@@ -99,11 +99,13 @@
                   <tbody>
                     <tr *ngFor="let dataItem of lookupdetailsList; let i =index;">
                       <td><div class="d-flex px-2 py-1"></div></td>
+                      
                       <td>
                         <div class="d-flex px-2 py-1">
                           {{ (pageNo - 1) * lookupvaluesPerPage + i +1 }}
                         </div>
                       </td>
+
                       <td>
                         <div class="d-flex px-2 py-1">
                           <div class="d-flex flex-column justify-content-center">
@@ -111,6 +113,7 @@
                           </div>
                         </div>
                       </td>
+
                       <td>
                         <div class="d-flex px-2 py-1">
                           <div class="d-flex flex-column justify-content-center" style="margin: auto;">
@@ -124,19 +127,23 @@
                           </div>
                         </div>
                       </td>
+
                       <td class="align-middle text-center">
                         <!-- <span class="badge badge-sm bg-gradient-success">Active</span> -->
-                        <div *ngIf="dataItem.IsActive!=0; else elseBlock">
+                        <div *ngIf="dataItem.IsActive!=0">
                           <span class="badge badge-sm bg-gradient-success">Active</span>
-                          </div>
-                        <ng-template #elseBlock>
-                          <span class="badge badge-sm bg-gradient-success">DeActive</span></ng-template>
+                        </div>
+                        <div *ngIf="dataItem.IsActive==0">
+                          <span class="badge badge-sm bg-gradient-success">DeActive</span>
+                        </div>
                       </td>
+
                       <td class="align-middle">
                           <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-link"
                           (click)="EditLookupDetails(dataItem)"><i class="material-icons text-sm me-2">edit</i>Edit</button>
                         <button type="button" class="btn btn-link" (click)="deleteClick(dataItem.Lookup_Details_Id)"><i class="material-icons text-sm me-2">delete</i>Delete</button>
                       </td>
+
                     </tr>
                   </tbody>
                 </table>

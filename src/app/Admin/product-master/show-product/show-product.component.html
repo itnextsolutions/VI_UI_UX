@@ -111,18 +111,20 @@
                       <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Product Name </th>
                       <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Category</th>
                       <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Sub Category</th>
-                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Status</th>
+                      <!-- <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Status</th> -->
                       <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Action</th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr *ngFor="let dataItem of ProductList ; let i=index;">
                       <td><div></div> </td>
+                      
                       <td>
                         <div>
                           {{ (pageNo - 1) * ProductPerPage + i +1 }}
                         </div>
                       </td>
+                      
                       <td>
                         <div class="d-flex px-2 py-1">
                           <div class="d-flex flex-column justify-content-center">
@@ -130,6 +132,7 @@
                           </div>
                         </div>
                       </td>
+                      
                       <td>
                         <div class="d-flex px-2 py-1">
                           <div class="d-flex flex-column justify-content-center">
@@ -137,6 +140,7 @@
                           </div>
                         </div>
                       </td>
+                      
                       <td>
                         <div class="d-flex px-2 py-1">
                           <div class="d-flex flex-column justify-content-center">
@@ -144,6 +148,7 @@
                           </div>
                         </div>
                       </td>
+                      
                       <td>
                         <div class="d-flex px-2 py-1">
                           <div class="d-flex flex-column justify-content-center">
@@ -151,18 +156,26 @@
                           </div>
                         </div>
                       </td>
-                      <td class="align-middle text-center">
-                        <!-- <span class="badge badge-sm bg-gradient-success">Active</span> -->
+                      <!-- <td class="align-middle text-center">
+                        
                         <div *ngIf="dataItem.IsActive!=0; else elseBlock">
                           <span class="badge badge-sm bg-gradient-success">Active</span>
                           </div>
                         <ng-template #elseBlock>
                           <span class="badge badge-sm bg-gradient-success">DeActive</span></ng-template>
-                      </td>
+                      </td> -->
+                      
                       <td class="text-center">
+                        <div *ngIf="dataItem.Product_type==1">
                         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-link"
                           (click)="EditProduct(dataItem)"><i class="material-icons text-sm me-2">edit</i>Edit</button>
                         <button type="button" class="btn btn-link" (click)="deleteClick(dataItem.Product_Id)"><i class="material-icons text-sm me-2">delete</i>Delete</button>
+                        </div>
+                        <div *ngIf="dataItem.Product_type==2">
+                          <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal2" class="btn btn-link"
+                          (click)="EditMultiProduct(dataItem)"><i class="material-icons text-sm me-2">edit</i>Edit</button> -->
+                          <button type="button" class="btn btn-link" (click)="deleteClick(dataItem.Product_Id)"><i class="material-icons text-sm me-2">delete</i>Delete</button>
+                        </div>
                       </td>
                       
                     </tr>

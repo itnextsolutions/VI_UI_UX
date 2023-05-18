@@ -194,7 +194,7 @@ export class ProductDetailsComponent implements OnInit {
     this.isWoMenDivHidden = true;
     this.isTippingDivHidden=true;
     this.isTippingWomenDivHidden=false;
-    this.image=item.tipping_women_img;
+    this.image1=item.tipping_women_img;
     this.id=3;
     this.productcategoryfolder = this.categoryName.replace(/\s+/g, '-').toLowerCase();
     

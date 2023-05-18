@@ -60,7 +60,7 @@
              <button type="button" class="btn-close" (click)="closeClick()" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body customize-model-body">
-            <app-custmize-design [Product]="product" [id]="id" [image]="image" class="custumise-img-model">
+            <app-custmize-design [Product]="product" [id]="id" [image]="image" [image1]="image1" class="custumise-img-model">
             </app-custmize-design>
           </div>
          
@@ -125,8 +125,7 @@
                         <defs/>
                         <path id="product-shape" [attr.d]="men_svg_path"  [ngStyle]="{ fill: bgColor }" />
                     </svg>
-                    <!-- <img  src="https://localhost:44365/VastraIndiaWebAPI/vastra/image/dri-fit-t-shirt/wdfsadzxfcMenFront06-05-2023-1636.jpg" alt="abc"> -->
-                
+    
                     <img class="big_img" src="assets/img/{{this.productcategoryfolder}}/{{data.Product_Photo}}" >
                 </div>
             </div>
@@ -139,7 +138,7 @@
 
             <div [hidden]="isTippingWomenDivHidden">
 
-                <img class="big_img" src="assets/img/{{this.productcategoryfolder}}/{{this.image}}" height="571" width="467">           
+                <img class="big_img" src="assets/img/{{this.productcategoryfolder}}/{{this.image1}}" height="571" width="467">           
             </div>
 
             <div [hidden]="isWoMenDivHidden">
@@ -229,7 +228,6 @@
                                         </div>
                                     </ngx-slick-carousel>
                                 </div>
-                                
                                 <div *ngIf="id==1 ||id==3">
                                   
                                     <h5 class="colors-pallete" style="margin-top: 0px !important;">Colors:</h5>

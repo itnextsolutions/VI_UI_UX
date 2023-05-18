@@ -155,6 +155,14 @@ totalNoOfPages() {
     this.getAllProduct();
   }
 
+  // EditMultiProduct(item: any){
+  //   this.multiProduct = item;
+  //   //this.ColorIdList=this.Color_CodeList;
+  //   this.activateMultiProCom = true;
+  //   this.modalTitle = "Update Multi Product";
+  //   this.getAllProduct();
+  // }
+
   deleteClick(item: any){
     if(confirm('Are you sure??')){
       this.sharedService.deleteProductDetails(item).subscribe(data =>{
