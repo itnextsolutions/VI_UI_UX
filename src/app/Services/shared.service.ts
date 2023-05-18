@@ -9,8 +9,8 @@ import { AuthenticatedResponse } from '../app.module';
 })
 
 export class SharedService {
-  // readonly APIUrl = "https://test.vastraindia.com/api/";
-  readonly APIUrl = "https://localhost:44365/api/";
+  readonly APIUrl = "https://test.vastraindia.com/api/";
+  // readonly APIUrl = "https://localhost:44365/api/";
   constructor(private http: HttpClient) {}
 
 //Menu Binding
