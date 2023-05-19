@@ -323,8 +323,8 @@
             <option *ngFor="let web of CategoryName" [value]="web.Category_Id">{{web.Category_Name}}</option> 
             
           </select>
-          <div *ngIf="submitted && formControl.Category_Id.errors" class="text-danger">
-            <div *ngIf="formControl.Category_Id.errors.required">Category is required.</div>
+          <div *ngIf="submitted && this.ProductForm.controls['Category_Id'].errors" class="text-danger">
+            <div *ngIf="this.ProductForm.controls['Category_Id'].errors.required">Category is required.</div>
           </div>
         </div>
         <div class="col-md-12 roundedTextBox mb-3">
@@ -334,16 +334,16 @@
             <option *ngFor="let web of SubCatList" [value]="web.SubCategory_Id" >{{web.SubCategory}}</option>
              
           </select>
-          <div *ngIf="submitted && formControl.SubCategory_Id.errors" class="text-danger">
-            <div *ngIf="formControl.SubCategory_Id.errors.required">Sub Category is required</div>
+          <div *ngIf="submitted && this.ProductForm.controls['SubCategory_Id'].errors" class="text-danger">
+            <div *ngIf="this.ProductForm.controls['SubCategory_Id'].errors.required">Sub Category is required</div>
           </div>
         </div>
         <div class="col-md-12 roundedTextBox mb-3">
           <label>Product Name :</label>
           <input type="text" [(ngModel)]="Product_Title" class="form-control mb-2" id="inputProduct_Title"
             formControlName="Product_Title" placeholder="Enter Product Name">
-          <div *ngIf="submitted && formControl.Product_Title.errors" class="text-danger">
-            <div *ngIf="formControl.Product_Title.errors.required">Product Name is required.</div>
+          <div *ngIf="submitted && this.ProductForm.controls['Product_Title'].errors" class="text-danger">
+            <div *ngIf="this.ProductForm.controls['Product_Title'].errors.required">Product Name is required.</div>
           </div>
         </div>
       </div>
@@ -367,9 +367,12 @@
               <textarea rows="4" cols="43" type="text" [(ngModel)]="Product_Description" class="form-control mb-2"
                 id="inputProduct_Description" formControlName="Product_Description"
                 placeholder="Enter Product Specification"></textarea>
-              <div *ngIf="submitted && formControl.Description.errors" class="text-danger">
+                <!-- <textarea rows="4" cols="43" type="text" [(ngModel)]="Product_Description" class="form-control mb-2"
+                id="inputProduct_Description"
+                placeholder="Enter Product Specification"></textarea> -->
+              <!-- <div *ngIf="submitted && formControl.Description.errors" class="text-danger">
                 <div *ngIf="formControl.Description.errors.required">Product Description is required.</div>
-              </div>
+              </div> -->
             </div>
   
             <div class="container py-5">
@@ -388,9 +391,9 @@
                       <img src="assets/img/{{Category_Name}}/{{MenFront_Photo}}">
                     </ng-template>
                   </div>
-                  <div *ngIf="submitted && formControl.MenFront_Photo.errors" class="text-danger">
+                  <!-- <div *ngIf="submitted && formControl.MenFront_Photo.errors" class="text-danger">
                     <div *ngIf="formControl.MenFront_Photo.errors.required">Photo is required.</div>
-                  </div>
+                  </div> -->
                 </div>
   
                 <!-- <div class="col">
@@ -443,9 +446,9 @@
                       <img src="assets/img/{{Category_Name}}/{{SizeChartForMen}}">
                     </ng-template>
                   </div>
-                  <div *ngIf="submitted && formControl.SizeChartForMen.errors" class="text-danger">
+                  <!-- <div *ngIf="submitted && formControl.SizeChartForMen.errors" class="text-danger">
                     <div *ngIf="formControl.SizeChartForMen.errors.required">Product Side Photo is required.</div>
-                  </div>
+                  </div> -->
                 </div>
   
               </div>
@@ -458,9 +461,12 @@
               <textarea rows="4" cols="43" type="text" [(ngModel)]="men_f_svgpath" class="form-control mb-2"
                  formControlName="men_f_svgpath"
                 placeholder="Enter SVG Path"></textarea>
-              <div *ngIf="submitted && formControl.Description.errors" class="text-danger">
+                <!-- <textarea rows="4" cols="43" type="text" [(ngModel)]="men_f_svgpath" class="form-control mb-2"
+                
+                placeholder="Enter SVG Path"></textarea> -->
+              <!-- <div *ngIf="submitted && formControl.Description.errors" class="text-danger">
                 <div *ngIf="formControl.Description.errors.required">SVG Path is required.</div>
-              </div>
+              </div> -->
             </div>
   
           <!-- </a>
@@ -483,9 +489,12 @@
               <textarea rows="4" cols="43" type="text" [(ngModel)]="WomenProduct_Description" class="form-control mb-2"
                 id="inputWomenProduct_Description" formControlName="WomenProduct_Description"
                 placeholder="Enter Product Specification"></textarea>
-              <div *ngIf="submitted && formControl.WomenProduct_Description.errors" class="text-danger">
+                <!-- <textarea rows="4" cols="43" type="text" [(ngModel)]="WomenProduct_Description" class="form-control mb-2"
+                id="inputWomenProduct_Description" 
+                placeholder="Enter Product Specification"></textarea> -->
+              <!-- <div *ngIf="submitted && formControl.WomenProduct_Description.errors" class="text-danger">
                 <div *ngIf="formControl.WomenProduct_Description.errors.required">Product Specification is required.</div>
-              </div>
+              </div> -->
             </div>
   
             <div class="container py-5">
@@ -503,9 +512,9 @@
                       <img src="assets/img/{{Category_Name}}/{{WomenProduct_Photo}}">
                   </ng-template>
                   </div>
-                  <div *ngIf="submitted && formControl.WomenProduct_Photo.errors" class="text-danger">
+                  <!-- <div *ngIf="submitted && formControl.WomenProduct_Photo.errors" class="text-danger">
                     <div *ngIf="formControl.WomenProduct_Photo.errors.required">Photo is required.</div>
-                  </div>
+                  </div> -->
                 </div>
                 <!-- <div class="col">
                   <label>Women Side Image :</label>
@@ -555,9 +564,9 @@
                       <img src="assets/img/{{Category_Name}}/{{SizeChartForWomen}}">
                     </ng-template>
                   </div>
-                  <div *ngIf="submitted && formControl.SizeChartForWomen.errors" class="text-danger">
+                  <!-- <div *ngIf="submitted && formControl.SizeChartForWomen.errors" class="text-danger">
                     <div *ngIf="formControl.SizeChartForWomen.errors.required">Product Side Photo is required.</div>
-                  </div>
+                  </div> -->
                 </div>
   
               </div>
@@ -569,9 +578,12 @@
               <textarea rows="4" cols="43" type="text" [(ngModel)]="women_f_svgpath" class="form-control mb-2"
                  formControlName="women_f_svgpath"
                 placeholder="Enter SVG Path"></textarea>
-              <div *ngIf="submitted && formControl.Description.errors" class="text-danger">
+                <!-- <textarea rows="4" cols="43" type="text" [(ngModel)]="women_f_svgpath" class="form-control mb-2"
+               
+               placeholder="Enter SVG Path"></textarea> -->
+              <!-- <div *ngIf="submitted && formControl.Description.errors" class="text-danger">
                 <div *ngIf="formControl.Description.errors.required">SVG Path is required.</div>
-              </div>
+              </div> -->
             </div>
   
           <!-- </a>
@@ -589,6 +601,8 @@
           <div class="row row-cols-2 row-cols-lg-5 mb-5">
             <div class="col" *ngFor="let data of ColorData"  formControlName="ColorId"
               [(ngModel)]="ColorId" ngDefaultControl>
+            <!-- <div class="col" *ngFor="let data of ColorData" 
+              [(ngModel)]="ColorId" ngDefaultControl> -->
                 <label>
                   <input type="checkbox"  style.color="{{data.Description}}" value="{{data.Lookup_Details_Id}}"
                     (change)="onSelectChange($event)" />
@@ -621,7 +635,9 @@
         <label>Select Size :</label>
         <div class="container">
           <div class="row g-4" style="width: 400px;">
-            <div class="col" data-wow-delay="0.1s" *ngFor="let data of SizeData"  formControlName="SizeId"
+            <!-- <div class="col" data-wow-delay="0.1s" *ngFor="let data of SizeData"  formControlName="SizeId"
+              [(ngModel)]="SizeId" ngDefaultControl> -->
+              <div class="col" data-wow-delay="0.1s" *ngFor="let data of SizeData" formControlName="SizeId"
               [(ngModel)]="SizeId" ngDefaultControl>
               <label>
                 <input type="checkbox"  style.color="{{data.Description}}" value="{{data.Lookup_Details_Id}}"

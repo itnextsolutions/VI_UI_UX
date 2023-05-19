@@ -509,14 +509,20 @@ export class AddEditProductComponent implements OnInit {
             Category_Id: ["", [Validators.required]],
             SubCategory_Id: ["", [Validators.required]],
             Product_Title: ["", [Validators.required]],
-            Image_Name: ["", [Validators.required]],
-            ColorId: ["", [Validators.required]],
-            SizeId: ["", [Validators.required]],
-            //i: ["", [Validators.required]],
-            Product_Description: ["", [Validators.required]],
-            WomenProduct_Description:["",[Validators.required]],
-            men_f_svgpath:["",[Validators.required]],
-            women_f_svgpath:["",[Validators.required]]
+            // // Image_Name: ["", [Validators.required]],
+            // ColorId: ["", [Validators.required]],
+            // SizeId: ["", [Validators.required]],
+            // //i: ["", [Validators.required]],
+            // Product_Description: ["", [Validators.required]],
+            // WomenProduct_Description:["",[Validators.required]],
+            // men_f_svgpath:["",[Validators.required]],
+            // women_f_svgpath:["",[Validators.required]]
+            ColorId: [""],
+            SizeId: [""],
+            Product_Description: [""],
+            WomenProduct_Description:[""],
+            men_f_svgpath:[""],
+            women_f_svgpath:[""]
           });
       
           
@@ -547,9 +553,9 @@ export class AddEditProductComponent implements OnInit {
           //this.SubCatLists();
   }
 
-  get formControl() {
-    return this.ProductForm.controls;
-  }
+  // get formControl() {
+  //   return this.ProductForm.controls;
+  // }
 
   CategoryNameList() {
 
@@ -615,7 +621,9 @@ export class AddEditProductComponent implements OnInit {
 
 
 
-  addProductDetails() {debugger
+  addProductDetails() {
+    this.submitted = true;
+    if (this.ProductForm.valid){
           let formData = new FormData()
           formData.append('Category_Id', this.Category_Id);
           formData.append('SubCategory_Id', this.SubCategory_Id);
@@ -636,11 +644,23 @@ export class AddEditProductComponent implements OnInit {
           formData.append('Women_f_svgpath', this.women_f_svgpath);
           this.service.addProductDetails(formData).subscribe(res => {
             alert(res.toString());
-          })
+          }
+          // (response:any) => {
+          //   alert(response.res.toString());
+          //   const filePaths = response.filePaths; 
+            
+          //   console.log(filePaths); 
+          // },
+          // (error) => {
+          //   console.error(error); 
+          // }
+          )
+        }
       }
     
       updateProductDetails() {
-    
+        // this.submitted = true;
+        // if (this.ProductForm.valid){
         let formData = new FormData()
         formData.append('Product_Id', this.Product_Id);
         formData.append('Category_Id', this.Category_Id);
@@ -663,6 +683,7 @@ export class AddEditProductComponent implements OnInit {
         this.service.updateProductDetails(formData).subscribe(res => {
           alert(res.toString());
         })
+      // }
       }
 
 

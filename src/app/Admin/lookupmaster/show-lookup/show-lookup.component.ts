@@ -97,7 +97,7 @@ totalNoOfPages() {
     this.modalTitle = "Add Lookup";
     this.activateAddEditProlookupCom = true;
     // this.refreshlookupmasterList();
-    this.getAllLookup();
+    // this.getAllLookup();
   }
   
   
@@ -107,7 +107,7 @@ totalNoOfPages() {
     this.activateAddEditProlookupCom = true;
     this.modalTitle = "Update Lookup";
     // this.refreshlookupmasterList();
-    this.getAllLookup();
+    // this.getAllLookup();
   }
 
   deleteClick(item: any){
