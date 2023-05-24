@@ -94,7 +94,8 @@ totalNoOfPages() {
       Category_Id:0,
       Category_Name:"",
       Category_Description:"",
-      Category_Photo:""
+      Category_Photo:"",
+      Is_Brand:""
     }
     this.modalTitle = "Add Product Category";
     this.activateAddEditProCatCom = true;

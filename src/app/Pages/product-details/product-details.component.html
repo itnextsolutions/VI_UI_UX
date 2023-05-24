@@ -217,6 +217,7 @@
                                             <div class="container py-5 pc-Style-hero-colors-sizeList-adultSizes mt-0 pt-0 pb-3">
                                                 <div class="row row-cols-2 row-cols-lg-6 w-100">
                                                     <div  (click)="onTippingClick(item)">
+                                                        <!-- <div *ngIf="item.tipping_women_img==1"> -->
                                                         <img src="assets/img/tipping/{{item.tipping_img}}" class="" style="height: 51px;">
                                                         <div class="label-name">
                                                             {{item.Description}}
@@ -228,6 +229,9 @@
                                         </div>
                                     </ngx-slick-carousel>
                                 </div>
+                            </div>
+
+                            <div  class="row g-4" *ngIf="tippingWomen.length>0">
                                 <div *ngIf="id==1 ||id==3">
                                   
                                     <h5 class="colors-pallete" style="margin-top: 0px !important;">Colors:</h5>
@@ -238,19 +242,23 @@
                                     (breakpoint)="breakpoint($event)"
                                     (afterChange)="afterChange($event)"
                                     (beforeChange)="beforeChange($event)">
-                                    <div ngxSlickItem *ngFor="let item of tipping" class="slide">
+                                    <!-- <div ngxSlickItem *ngFor="let item of tipping" class="slide"> -->
+                                    <!-- <div  *ngFor="let item of tipping"> -->
+                                    <div ngxSlickItem *ngFor="let item of tippingWomen" class="slide">
                                     <div class="container py-5 pc-Style-hero-colors-sizeList-adultSizes mt-0 pt-0 pb-3">
                                         <div class="row row-cols-2 row-cols-lg-6 w-90">
-                                            <div (click)="onTippingWomenClick(item)">
-                                                <img src="assets/img/tipping/{{item.tipping_img}}" class="" style="height: 51px;">
+                                            <!-- <div (click)="onTippingWomenClick(item)" *ngIf="item.tipping_women_img==54"> -->
+                                                <div (click)="onTippingWomenClick(item)"> 
+                                                <img src="assets/img/tipping/{{item.tipping_img}}"  style="height: 51px;">
                                                 <div class="label-name">
                                                     {{item.Description}}
                                                     <!-- {{item.tipping_women_img}} -->
                                                 </div>
-                                                <!-- </div> -->
+                                                
                                             </div>
                                         </div>
                                     </div>
+                                <!-- </div> -->
                                 </div>
                             </ngx-slick-carousel>
                                 </div>

@@ -383,7 +383,7 @@
                     <div [innerHtml]='msg' *ngIf="msg" style="color: red;"></div>
                     
                     <div><img [src]="menfronturl" *ngIf="menfronturl else elseBlock" style="width: 200px;"></div>
-                    <p>
+                    <p class="color">
                       <input type="file" (change)="onselectFile1($event,1)" id="inputMenFront_Photo"
                     >
                     </p>
@@ -438,7 +438,7 @@
                   <div class="col-sm-10">
                     <div [innerHtml]='msg' *ngIf="msg" style="color: red;"></div>
                     <div><img [src]="mensizecharturl" *ngIf="mensizecharturl; else elseBlock" style="width: 200px;"></div>
-                    <p>
+                    <p class="color">
                       <input type="file" (change)="onselectFile4($event,4)" id="inputSizeChartForMen"
                       >
                     </p>
@@ -556,7 +556,7 @@
                   <div class="col-sm-10">
                     <div [innerHtml]='msg' *ngIf="msg" style="color: red;"></div>
                     <div><img [src]="womensizecharturl" *ngIf="womensizecharturl; else elseBlock" style="width: 200px;"></div>
-                    <p>
+                    <p class="color">
                       <input type="file" (change)="onselectFile8($event,8)" id="inputSizeChartForWomen"
                         >
                     </p>

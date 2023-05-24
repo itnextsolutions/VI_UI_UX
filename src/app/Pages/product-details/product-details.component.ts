@@ -40,6 +40,7 @@ export class ProductDetailsComponent implements OnInit {
     slidesToShow: 6,
     slidesToScroll: 6,
     infinite: false,
+    // column:6,
     rows:3,
     responsive: [
       {
@@ -128,6 +129,11 @@ export class ProductDetailsComponent implements OnInit {
     this.userService.getTipingListById(this.productId).subscribe(data=>{
       this.tipping=data; 
    });
+
+
+   this.userService.getTipingWomenListById(this.productId).subscribe(data=>{
+    this.tippingWomen=data; 
+ });
   }
 
   onClick(product: any) {
@@ -190,11 +196,19 @@ export class ProductDetailsComponent implements OnInit {
 
   onTippingWomenClick(item:any){
 
+    // this.isMenDivHidden = true;
+    // this.isWoMenDivHidden = true;
+    // this.isTippingDivHidden=true;
+    // this.isTippingWomenDivHidden=false;
+    // this.image1=item.tipping_women_img;
+    // this.id=3;
+    // this.productcategoryfolder = this.categoryName.replace(/\s+/g, '-').toLowerCase();
+
     this.isMenDivHidden = true;
     this.isWoMenDivHidden = true;
     this.isTippingDivHidden=true;
     this.isTippingWomenDivHidden=false;
-    this.image1=item.tipping_women_img;
+    this.image1=item.tipping_big_img;
     this.id=3;
     this.productcategoryfolder = this.categoryName.replace(/\s+/g, '-').toLowerCase();
     
