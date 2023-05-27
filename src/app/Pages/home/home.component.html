@@ -1,4 +1,16 @@
+
+<div class="d-flex justify-content-center">
+    
+    <div class="spinner-border" role="status">
+        <span class="sr-only" id="loading"></span>
+    </div>
+</div>
+
+<!-- <div *ngIf="spinnerService.visibility | async">
+</div> -->
 <app-navbar></app-navbar>
+
+
 <!-- Carousel Start -->
 <div class="container-fluid p-0 mb-5 wow fadeIn" data-wow-delay="0.1s">
     <div id="header-carousel" class="carousel slide" data-bs-ride="carousel">
@@ -153,6 +165,7 @@
 
 
 
+
 <!-- Product Start -->
 <div *ngIf="categoryList.length > 0" class="container-xxl py-5">
     <div class="container">
@@ -205,10 +218,10 @@
             <div id="tab-1" class="tab-pane fade show p-0 active">
                 <div class="row g-4">
                     <div class="col-xl-3 col-lg-6 col-md-6  col-12 wow fadeInUp Brand-item" data-wow-delay="0.1s" 
-                        *ngFor="let data of brandList.slice(0,6)">
-                        <div class="product-item" (click)="onCategoryClick(data)" >
-                            <img class="img-fluid pro-img-hw" src="assets/img/brand/{{data.Category_Photo}}" alt="" >
-                            <span class="tag"><h1 class="tagname">{{data.Category_Name}}</h1></span>
+                        *ngFor="let item of brandList.slice(0,6)">
+                        <div class="product-item"  (click)="onBrandClick(item)">
+                            <img class="img-fluid pro-img-hw" src="assets/img/brand/{{item.Category_Photo}}" alt="" >
+                            <span class="tag"><h1 class="tagname">{{item.Category_Name}}</h1></span>
                         </div>
                     </div>
                     <div class="col-12 text-center wow fadeInUp" data-wow-delay="0.1s"
@@ -221,7 +234,7 @@
     </div>
 </div>
 <!-- Brand End -->
-
+<!-- <app-products [id]="id"></app-products> -->
 <!-- client review End -->
 <section class="review-bg"style="background-image: url('assets/img/review-bg.jpg');
 

@@ -43,7 +43,7 @@ export class AddEditProductCategoryComponent implements OnInit {
   get formControl() {
     return this.Pro_CatForm.controls;
   }
-  addProductCategory(){debugger
+  addProductCategory(){
     
     this.submitted = true;
     if (this.Pro_CatForm.valid){
@@ -64,7 +64,7 @@ export class AddEditProductCategoryComponent implements OnInit {
     }
   }
 
-  onSelectChange(e: any) {debugger
+  onSelectChange(e: any) {
     let index = this.Is_Brand.indexOf(e.target.value);
     if (index == -1) {
       this.Is_Brand.push(e.target.value);
@@ -74,11 +74,11 @@ export class AddEditProductCategoryComponent implements OnInit {
     }
   }
 
-  onClick(e: any) {debugger
+  onClick(e: any) {
    this.IsChecked=e;
   }
 
-  updateProductCategory(){debugger
+  updateProductCategory(){
     this.submitted = true;
     // if (this.Pro_CatForm.valid){
       let formData = new FormData()

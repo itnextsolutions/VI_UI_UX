@@ -182,7 +182,7 @@ export class AddEditDetailsComponent implements OnInit {
   }
   
 
-  updateLookupDetails(){debugger
+  updateLookupDetails(){
     this.submitted = true;
     if (this.LookupValueForm.valid){
     // var val = {

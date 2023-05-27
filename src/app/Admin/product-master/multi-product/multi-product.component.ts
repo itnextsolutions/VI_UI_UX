@@ -261,7 +261,7 @@ export class MultiProductComponent implements OnInit {
    
   }
 
-  onWOmenTippingChange(e: any) {debugger
+  onWOmenTippingChange(e: any) {
     
     let index = this.selectedWomenTipping.indexOf(e.target.value);
     if (index == -1) {
@@ -317,7 +317,7 @@ export class MultiProductComponent implements OnInit {
   // }
  
 
-  multiProductDetails() {debugger
+  multiProductDetails() {
     this.submitted = true;
     if (this.ProductForm.valid){
           let formData = new FormData()

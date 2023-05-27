@@ -49,7 +49,7 @@ deleteProductcategory(category_id: any) {
 getLookupMasterList(): Observable < any[] > {
   return this.http.get < any > (this.APIUrl + 'Lookup/GetLookupMaster');
 }
-addLookupMaster(val: any) {debugger
+addLookupMaster(val: any) {
   return this.http.post(this.APIUrl + 'Lookup/InsertLookupMaster', val);
 }
 updateLookupMaster(val: any) {
@@ -69,7 +69,7 @@ addLookupDetails(val: any) {
   return this.http.post(this.APIUrl + 'Lookup/InsertLookupDetails', val);
 }
 
-updateLookupDetails(val: any) {debugger
+updateLookupDetails(val: any) {
   return this.http.put(this.APIUrl + 'Lookup/UpdateLookupDetails', val);
 }
 
@@ -164,8 +164,8 @@ getSubproductcategoryList(): Observable < any[] > {
 return this.http.get < any > (this.APIUrl + 'Product/GetSubCategory');
 }
 
-addSubProductcategory(val: any) {debugger
-return this.http.post(this.APIUrl + 'Product/InsertSubCategory', val);
+addSubProductcategory(formData: any) {
+return this.http.post(this.APIUrl + 'Product/InsertSubCategory', formData);
 }
 
 updateSubProductcategory(val: any) {

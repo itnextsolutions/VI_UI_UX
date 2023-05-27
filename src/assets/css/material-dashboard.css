@@ -7418,7 +7418,8 @@
   
   .spinner-grow,
   .spinner-border {
-    display: inline-block;
+    /* display: inline-block; */
+    position: fixed;
     width: var(--bs-spinner-width);
     height: var(--bs-spinner-height);
     vertical-align: var(--bs-spinner-vertical-align);

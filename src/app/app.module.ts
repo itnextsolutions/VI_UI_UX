@@ -24,7 +24,7 @@ import { NavbarComponent } from './SharePage/navbar/navbar.component';
 import { FooterComponent } from './SharePage/footer/footer.component';
 
 import { LoginComponent } from './Admin/login/login.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http'; 
 import { SharedService } from "./Services/shared.service";
 import { DataService } from "./Services/Api/Data/data.service";
 
@@ -63,6 +63,9 @@ import { JwtModule } from '@auth0/angular-jwt';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
 import { MultiProductComponent } from './Admin/product-master/multi-product/multi-product.component';
+import { CustomHttpInterceptor } from 'src/http-interceptor';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 
 @NgModule({
@@ -124,6 +127,7 @@ import { MultiProductComponent } from './Admin/product-master/multi-product/mult
     FormsModule,
     CarouselModule,
     SlickCarouselModule,
+    BrowserAnimationsModule,
     JwtModule.forRoot({
       config: {
         tokenGetter: tokenGetter,
@@ -133,7 +137,11 @@ import { MultiProductComponent } from './Admin/product-master/multi-product/mult
     }),
     ReactiveFormsModule
   ],
-  providers: [SharedService, DataService,AuthGuard],
+  providers: [SharedService, DataService,AuthGuard,{
+    provide: HTTP_INTERCEPTORS,
+    useClass: CustomHttpInterceptor,
+    multi: true
+  } ],
   bootstrap: [AppComponent]
 })
 

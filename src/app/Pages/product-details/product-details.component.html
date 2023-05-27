@@ -1,3 +1,9 @@
+<div class="d-flex justify-content-center">
+    
+    <div class="spinner-border" role="status">
+        <span class="sr-only" id="loading"></span>
+    </div>
+</div>
 <!-- Page Header start-->
 <app-navbar></app-navbar>
 <!-- Page Header End -->
@@ -159,7 +165,7 @@
                         <div class="row g-4 mb-0 color bold align-items-center">
                             <h3 class=" product-name-new pt-4">{{data.Product_Title}}</h3>
 
-                            <div class="row g-4" *ngIf="colors.length>0">
+                            <div class="row g-4" *ngIf="colors!=0">
                                 <h5 class="dec-text-new pad-0" style="margin-top: 0px !important; ">Colors : {{this.selected_colorname}}</h5>
                                 
                                 <ngx-slick-carousel class="carousel"
@@ -203,7 +209,7 @@
                                 </div>
                             </div> -->
 
-                            <div  class="row g-4" *ngIf="tipping.length>0">
+                            <div  class="row g-4" *ngIf="tipping!=0">
                                 <div *ngIf="id==0 || id==2">
                                     <h5 class="dec-text-new pad-0" style="margin-top: 0px !important;">Colors:</h5>
                                     <ngx-slick-carousel class="carousel"
@@ -231,7 +237,7 @@
                                 </div>
                             </div>
 
-                            <div  class="row g-4" *ngIf="tippingWomen.length>0">
+                            <div  class="row g-4" *ngIf="tippingWomen!=0">
                                 <div *ngIf="id==1 ||id==3">
                                   
                                     <h5 class="colors-pallete" style="margin-top: 0px !important;">Colors:</h5>
