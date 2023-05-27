@@ -11,6 +11,7 @@ export class CustmizeDesignComponent implements OnInit {
   @Input() Product: any;
   @Input() id:number=0; 
   @Input() image:any;
+  @Input() image1:any;
   frontimage=false;
   sideimage = true;
   backimage = true;

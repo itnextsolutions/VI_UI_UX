@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { UserService } from "src/app/Services/Api/User/user.service";
 import { OwlOptions } from 'ngx-owl-carousel-o';
 import { SeoService } from 'src/app/Services/seo.service';
+import { SpinnerService } from 'src/app/spinner-service.service';
 
 @Component({
   selector: 'app-home',
@@ -19,8 +20,8 @@ export class HomeComponent implements OnInit {
   modalTitle:any;
   productcategory:any;
   blogno:any=0;  
- 
-  constructor(private userService: UserService, private router : Router, private seoService: SeoService) { }
+//  public id:any;
+  constructor(private userService: UserService, private router : Router, private seoService: SeoService,public spinnerService:SpinnerService) { }
 
   ngOnInit(): void {
     this.refreshproductcategoryList();
@@ -59,21 +60,23 @@ export class HomeComponent implements OnInit {
   refreshproductcategoryList() {
     this.userService.getproductcategoryList().subscribe(data =>{
       this.productcategoryList = data;
-
+// console.log(this.productcategoryList)
       if (this.productcategoryList != null) {
         this.productcategoryList.forEach((element:any) => {
           if (element.IsBrand ==0) {
               this.categoryList.push({
               Category_Id:    element.Category_Id,
               Category_Name:  element.Category_Name,
-              Category_Photo:  element.Category_Photo
+              Category_Photo:  element.Category_Photo,
+              IsBrand:element.IsBrand
             })
           }
           else {
              this.brandList.push({
               Category_Id:    element.Category_Id,
               Category_Name:  element.Category_Name,
-              Category_Photo:  element.Category_Photo
+              Category_Photo:  element.Category_Photo,
+              IsBrand:element.IsBrand
             });
           }
         });
@@ -81,6 +84,9 @@ export class HomeComponent implements OnInit {
 
     });
   }
+
+ 
+
 
   refreshblogList() 
   {
@@ -103,6 +109,12 @@ export class HomeComponent implements OnInit {
 
   onCategoryClick(data: any){
     this.router.navigate(['products/',data.Category_Id,data.Category_Name]);
+    // this.id=0;
+  }
+
+  onBrandClick(item: any){
+    this.router.navigate(['products/',item.Category_Id,item.Category_Name]);
+    // this.id=1;
   }
 
   onClick(data: any){

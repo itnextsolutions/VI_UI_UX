@@ -50,7 +50,7 @@ export class MultiProductComponent implements OnInit {
   CategoryName: any;
   TippingData: any;
   SizeData: any;
-  selectedTipping: any = [];
+  selectedMenTipping: any = [];
 
   selectedMenImages: any = [];
 
@@ -73,6 +73,8 @@ export class MultiProductComponent implements OnInit {
   totaltipping:number=0;
   totalMenImages: number=0;
   totalWomenImages: number=0;
+  selectedWomenTipping: any=[];
+  WomenTippingData: any;
 
 
   constructor(private service: SharedService, private formBuilder: UntypedFormBuilder) {
@@ -130,14 +132,17 @@ export class MultiProductComponent implements OnInit {
       Category_Id: ["", [Validators.required]],
       SubCategory_Id: ["", [Validators.required]],
       Product_Title: ["", [Validators.required]],
-      Image_Name: ["", [Validators.required]],
+      // Image_Name: ["", [Validators.required]],
       // TipingId: ["", [Validators.required]],
-      SizeId: ["", [Validators.required]],
+      // SizeId: ["", [Validators.required]],
       // selectedsize: ["", [Validators.required]],
       //i: ["", [Validators.required]],
-      Product_Description: ["", [Validators.required]],
-
-      Images: this.formBuilder.array([])
+      // Product_Description: ["", [Validators.required]],
+      Product_Description: [""],
+      // WomenProduct_Description:[""],
+      SizeId: [""],
+      Images: this.formBuilder.array([]),
+      WomenImages:this.formBuilder.array([])
     });
   }
 
@@ -146,17 +151,35 @@ export class MultiProductComponent implements OnInit {
     return this.ProductForm.get("Images") as FormArray
   }
 
+  get WomenImages(): FormArray {
+    return this.ProductForm.get("WomenImages") as FormArray
+  }
+
   newQuantity(): FormGroup {
     return this.formBuilder.group({
       TipingId: "",
       MenFrontImgFile:  "",
+      // WomenFrontImgFile: ""
+    })
+  }
+
+  womenImages(): FormGroup {
+    return this.formBuilder.group({
+      TipingWomenId: "",
+      // MenFrontImgFile:  "",
       WomenFrontImgFile: ""
     })
   }
 
+
   addImages() {
     this.Images.push(this.newQuantity());
   }
+
+  addWomenImages() {
+    this.WomenImages.push(this.womenImages());
+  }
+
 
   // addImages() {
   // const items = <FormArray>this.ProductForm.controls["Images"];
@@ -165,6 +188,10 @@ export class MultiProductComponent implements OnInit {
 
   removeImages(i: number) {
     this.Images.removeAt(i);
+  }
+
+  removeWomenImages(i: number) {
+    this.WomenImages.removeAt(i);
   }
 
   // removeImages(i:number) {
@@ -203,9 +230,7 @@ export class MultiProductComponent implements OnInit {
   GetTippingImg() {
     this.service.GetTipping().subscribe((data: any) =>
       this.TippingData = data);
-
-
-    console.log(this.TippingData);
+     
   }
 
   GetSizeList() {
@@ -224,13 +249,27 @@ export class MultiProductComponent implements OnInit {
 
   onSelectChange(e: any) {
     
-    let index = this.selectedTipping.indexOf(e.target.value);
+    let index = this.selectedMenTipping.indexOf(e.target.value);
     if (index == -1) {
-      this.selectedTipping.push(e.target.value);
+      this.selectedMenTipping.push(e.target.value);
 
     }
     else {
-      this.selectedTipping.splice(index, 1);
+      this.selectedMenTipping.splice(index, 1);
+    }
+  
+   
+  }
+
+  onWOmenTippingChange(e: any) {
+    
+    let index = this.selectedWomenTipping.indexOf(e.target.value);
+    if (index == -1) {
+      this.selectedWomenTipping.push(e.target.value);
+
+    }
+    else {
+      this.selectedWomenTipping.splice(index, 1);
     }
   
    
@@ -278,25 +317,29 @@ export class MultiProductComponent implements OnInit {
   // }
  
 
-  multiProductDetails() {debugger
-
+  multiProductDetails() {
+    this.submitted = true;
+    if (this.ProductForm.valid){
           let formData = new FormData()
           formData.append('Category_Id', this.Category_Id);
           formData.append('SubCategory_Id', this.SubCategory_Id);
           formData.append('Product_Title', this.Product_Title);
           formData.append('Product_Description', this.Product_Description);
           formData.append('SizeId', this.selectedsize);
-          this.totaltipping=this.selectedTipping.length;
+          this.totaltipping=this.selectedMenTipping.length;
           this.totalMenImages=this.selectedMenImages.length;
           this.totalWomenImages=this.selectedWomenImages.length;
           // if(this.totalWomenImages==this.totalMenImages)
           // {
           //   if(this.totaltipping==this.totalMenImages)
           //   {
-            for (let i = 0; i < this.selectedTipping.length; i++) {
-              formData.append('TipingId', this.selectedTipping[i]);
+            for (let i = 0; i < this.selectedMenTipping.length; i++) {
+              formData.append('TipingId', this.selectedMenTipping[i]);
             }
           
+            for (let i = 0; i < this.selectedWomenTipping.length; i++) {
+              formData.append('TipingWomenId', this.selectedWomenTipping[i]);
+            }
 
             for (let i = 0; i < this.selectedMenImages.length; i++) {
               formData.append('MenImgFiles', this.selectedMenImages[i]);
@@ -316,7 +359,7 @@ export class MultiProductComponent implements OnInit {
             alert(res.toString());
 
           })
-
+        }
           // console.log(this.ProductForm.value); 
       }
 

@@ -79,7 +79,7 @@
             <div class="col-sm-10">
                 <div [innerHtml]='msg' *ngIf="msg" style="color: red;"></div>
                 <div><img [src]="url" *ngIf="url; else elseBlock"></div>
-                <p>
+                <p class="color">
                     <input type="file" #file [(ngModel)]="Client_Photo" (change)="onselectFile($event)" id="inputClient_Photo" formControlName="Client_Photo" >
                 </p>
                 <ng-template #elseBlock>

@@ -93,6 +93,10 @@ export class UserService {
       return this.http.get < any > (this.APIUrl + 'Home/GetTippingCodeListByProductId?id=' + product_id);
     }
 
+    getTipingWomenListById(product_id : any):Observable<any>{
+      return this.http.get < any > (this.APIUrl + 'Home/GetTippingWomenByProductId?id=' + product_id);
+    }
+
     submitContactForm(val: any) {
       return this.http.post(this.APIUrl + 'Contact/ContactUs', val);
      }

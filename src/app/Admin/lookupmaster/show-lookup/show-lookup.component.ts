@@ -96,7 +96,8 @@ totalNoOfPages() {
     }
     this.modalTitle = "Add Lookup";
     this.activateAddEditProlookupCom = true;
-    this.refreshlookupmasterList();
+    // this.refreshlookupmasterList();
+    // this.getAllLookup();
   }
   
   
@@ -105,14 +106,16 @@ totalNoOfPages() {
     this.lookupmaster = item;
     this.activateAddEditProlookupCom = true;
     this.modalTitle = "Update Lookup";
-    this.refreshlookupmasterList();
+    // this.refreshlookupmasterList();
+    // this.getAllLookup();
   }
 
   deleteClick(item: any){
     if(confirm('Are you sure??')){
       this.sharedService.deleteLookupMaster(item).subscribe(data =>{
         alert(data.toString());
-        this.refreshlookupmasterList();
+        // this.refreshlookupmasterList();
+        this.getAllLookup();
       })
     }
   }

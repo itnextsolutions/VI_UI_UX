@@ -1,3 +1,9 @@
+<div class="d-flex justify-content-center">
+    
+    <div class="spinner-border" role="status">
+        <span class="sr-only" id="loading"></span>
+    </div>
+</div>
 <!-- Page Header start-->
 <app-navbar></app-navbar>
 <!-- Page Header End -->
@@ -60,7 +66,7 @@
              <button type="button" class="btn-close" (click)="closeClick()" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body customize-model-body">
-            <app-custmize-design [Product]="product" [id]="id" [image]="image" class="custumise-img-model">
+            <app-custmize-design [Product]="product" [id]="id" [image]="image" [image1]="image1" class="custumise-img-model">
             </app-custmize-design>
           </div>
          
@@ -125,8 +131,7 @@
                         <defs/>
                         <path id="product-shape" [attr.d]="men_svg_path"  [ngStyle]="{ fill: bgColor }" />
                     </svg>
-                    <!-- <img  src="https://localhost:44365/VastraIndiaWebAPI/vastra/image/dri-fit-t-shirt/wdfsadzxfcMenFront06-05-2023-1636.jpg" alt="abc"> -->
-                
+    
                     <img class="big_img" src="assets/img/{{this.productcategoryfolder}}/{{data.Product_Photo}}" >
                 </div>
             </div>
@@ -139,7 +144,7 @@
 
             <div [hidden]="isTippingWomenDivHidden">
 
-                <img class="big_img" src="assets/img/{{this.productcategoryfolder}}/{{this.image}}" height="571" width="467">           
+                <img class="big_img" src="assets/img/{{this.productcategoryfolder}}/{{this.image1}}" height="571" width="467">           
             </div>
 
             <div [hidden]="isWoMenDivHidden">
@@ -160,7 +165,7 @@
                         <div class="row g-4 mb-0 color bold align-items-center">
                             <h3 class=" product-name-new pt-4">{{data.Product_Title}}</h3>
 
-                            <div class="row g-4" *ngIf="colors.length>0">
+                            <div class="row g-4" *ngIf="colors!=0">
                                 <h5 class="dec-text-new pad-0" style="margin-top: 0px !important; ">Colors : {{this.selected_colorname}}</h5>
                                 
                                 <ngx-slick-carousel class="carousel"
@@ -204,7 +209,7 @@
                                 </div>
                             </div> -->
 
-                            <div  class="row g-4" *ngIf="tipping.length>0">
+                            <div  class="row g-4" *ngIf="tipping!=0">
                                 <div *ngIf="id==0 || id==2">
                                     <h5 class="dec-text-new pad-0" style="margin-top: 0px !important;">Colors:</h5>
                                     <ngx-slick-carousel class="carousel"
@@ -218,6 +223,7 @@
                                             <div class="container py-5 pc-Style-hero-colors-sizeList-adultSizes mt-0 pt-0 pb-3">
                                                 <div class="row row-cols-2 row-cols-lg-6 w-100">
                                                     <div  (click)="onTippingClick(item)">
+                                                        <!-- <div *ngIf="item.tipping_women_img==1"> -->
                                                         <img src="assets/img/tipping/{{item.tipping_img}}" class="" style="height: 51px;">
                                                         <div class="label-name">
                                                             {{item.Description}}
@@ -231,23 +237,65 @@
                                 </div>
                             </div>
 
-                            <div *ngIf="id==1 ||id==3">
+                            <div  class="row g-4" *ngIf="tippingWomen!=0">
+                                <div *ngIf="id==1 ||id==3">
+                                  
+                                    <h5 class="colors-pallete" style="margin-top: 0px !important;">Colors:</h5>
+                                    <ngx-slick-carousel class="carousel"
+                                    #slickModal="slick-carousel"
+                                    [config]="slideConfig" 
+                                    (init)="slickInit($event)"
+                                    (breakpoint)="breakpoint($event)"
+                                    (afterChange)="afterChange($event)"
+                                    (beforeChange)="beforeChange($event)">
+                                    <!-- <div ngxSlickItem *ngFor="let item of tipping" class="slide"> -->
+                                    <!-- <div  *ngFor="let item of tipping"> -->
+                                    <div ngxSlickItem *ngFor="let item of tippingWomen" class="slide">
+                                    <div class="container py-5 pc-Style-hero-colors-sizeList-adultSizes mt-0 pt-0 pb-3">
+                                        <div class="row row-cols-2 row-cols-lg-6 w-90">
+                                            <!-- <div (click)="onTippingWomenClick(item)" *ngIf="item.tipping_women_img==54"> -->
+                                                <div (click)="onTippingWomenClick(item)"> 
+                                                <img src="assets/img/tipping/{{item.tipping_img}}"  style="height: 51px;">
+                                                <div class="label-name">
+                                                    {{item.Description}}
+                                                    <!-- {{item.tipping_women_img}} -->
+                                                </div>
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                <!-- </div> -->
+                                </div>
+                            </ngx-slick-carousel>
+                                </div>
+                            </div>
+
+                            <!-- <div *ngIf="id==1 ||id==3">
                                   
                                 <h5 class="colors-pallete" style="margin-top: 0px !important;">Colors:</h5>
-                            
+                                <ngx-slick-carousel class="carousel"
+                                #slickModal="slick-carousel"
+                                [config]="slideConfig" 
+                                (init)="slickInit($event)"
+                                (breakpoint)="breakpoint($event)"
+                                (afterChange)="afterChange($event)"
+                                (beforeChange)="beforeChange($event)">
+                                <div ngxSlickItem *ngFor="let item of tipping" class="slide">
                                 <div class="container py-5 pc-Style-hero-colors-sizeList-adultSizes mt-0 pt-0 pb-3">
                                     <div class="row row-cols-2 row-cols-lg-6 w-90">
-                                        <div *ngFor="let item of tipping" (click)="onTippingWomenClick(item)">
+                                        <div (click)="onTippingWomenClick(item)">
                                             <img src="assets/img/tipping/{{item.tipping_img}}" class="" style="height: 51px;">
                                             <div class="label-name">
-                                                {{item.Description}}
+                                                {{item.Description}} -->
                                                 <!-- {{item.tipping_women_img}} -->
-                                            </div>
                                             <!-- </div> -->
-                                        </div>
+                                            <!-- </div> -->
+                                        <!-- </div>
                                     </div>
                                 </div>
                             </div>
+                        </ngx-slick-carousel>
+                            </div> -->
 
 
                             <div [hidden]="isMenDivHidden && isTippingDivHidden" class="modal-body"  *ngFor="let data of product">
