@@ -1,3 +1,10 @@
+<!-- 
+<div class="d-flex justify-content-center">
+    
+    <div class="spinner-border" role="status">
+        <span class="sr-only" id="loading"></span>
+    </div>
+</div> -->
 <!-- Page Header start-->
 <app-navbar></app-navbar>
 <!-- Page Header End -->
@@ -5,32 +12,62 @@
  <!-- Product Start -->
  <div class="container-xxl header_bs_mo">
     <!--breadcrumb start-->
-    <div class="container" >
-    <div class="row g-0 gx-5 align-items-end">
-        <nav aria-label="breadcrumb" class="breadcrumb px-2">
-            <ol class="breadcrumb" itemscope="" itemtype="http://schema.org/BreadcrumbList">
-                <li class="breadcrumb-item" itemprop="itemListElement" itemscope=""
-                    itemtype="http://schema.org/ListItem">
-                    <a itemprop="item" href=""><span itemprop="name" style="font-weight: bold;">HOME</span></a>
-                    <meta itemprop="position" content="1">
-                </li>
-                <li class="breadcrumb-item" itemprop="itemListElement" itemscope=""
-                    itemtype="http://schema.org/ListItem">
-                    <a itemprop="item" href="category">
-                        <span itemprop="name" style="font-weight: bold;">Category</span>
-                    </a>
-                    <meta itemprop="position" content="2">
-                </li>
-                <li class="breadcrumb-item" itemprop="itemListElement" itemscope=""
-                    itemtype="http://schema.org/ListItem">
-                    <a itemprop="item">
-                        <span itemprop="name" style="font-weight: bold; color: #ff6600;">{{CategoryName}}</span>
-                    </a>
-                </li>
-            </ol>
-        </nav>
-    </div>
-    </div>
+    <!-- <div *ngIf="id==0"> -->
+        <div class="container" >
+            <div class="row g-0 gx-5 align-items-end">
+                <nav aria-label="breadcrumb" class="breadcrumb px-2">
+                    <ol class="breadcrumb" itemscope="" itemtype="http://schema.org/BreadcrumbList">
+                        <li class="breadcrumb-item" itemprop="itemListElement" itemscope=""
+                            itemtype="http://schema.org/ListItem">
+                            <a itemprop="item" href=""><span itemprop="name" style="font-weight: bold;">HOME</span></a>
+                            <meta itemprop="position" content="1">
+                        </li>
+                        <li class="breadcrumb-item" itemprop="itemListElement" itemscope=""
+                            itemtype="http://schema.org/ListItem">
+                            <a itemprop="item" href="category">
+                                <span itemprop="name" style="font-weight: bold;">Category</span>
+                            </a>
+                            <meta itemprop="position" content="2">
+                        </li>
+                        <li class="breadcrumb-item" itemprop="itemListElement" itemscope=""
+                            itemtype="http://schema.org/ListItem">
+                            <a itemprop="item">
+                                <span itemprop="name" style="font-weight: bold; color: #ff6600;">{{CategoryName}}</span>
+                            </a>
+                        </li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    <!-- </div> -->
+    <!-- <div class="container">
+        <div *ngIf="id==1">
+            <div class="row g-0 gx-5 align-items-end">
+                <nav aria-label="breadcrumb" class="breadcrumb px-2">
+                    <ol class="breadcrumb" itemscope="" itemtype="http://schema.org/BreadcrumbList">
+                        <li class="breadcrumb-item" itemprop="itemListElement" itemscope=""
+                            itemtype="http://schema.org/ListItem">
+                            <a itemprop="item" href=""><span itemprop="name" style="font-weight: bold;">HOME</span></a>
+                            <meta itemprop="position" content="1">
+                        </li>
+                        <li class="breadcrumb-item" itemprop="itemListElement" itemscope=""
+                            itemtype="http://schema.org/ListItem">
+                            <a itemprop="item" href="brand">
+                                <span itemprop="name" style="font-weight: bold;">Brand</span>
+                            </a>
+                            <meta itemprop="position" content="2">
+                        </li>
+                        <li class="breadcrumb-item" itemprop="itemListElement" itemscope=""
+                            itemtype="http://schema.org/ListItem">
+                            <a itemprop="item">
+                                <span itemprop="name" style="font-weight: bold; color: #ff6600;">{{CategoryName}}</span>
+                            </a>
+                        </li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div> -->
     <!--breadcrumb- End -->
     <div class="container" >
         <div class="row g-0 gx-5 align-items-end">

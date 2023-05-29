@@ -1,5 +1,5 @@
 
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import { UserService } from 'src/app/Services/Api/User/user.service';
 import { SeoService } from 'src/app/Services/seo.service';
@@ -19,6 +19,7 @@ export class ProductsComponent implements OnInit {
   productSubCategoryList:any=[];
   getSubCategoryId:any=[];
   CategoryName :any;
+  // @Input() id:any; 
 
   constructor(private param :ActivatedRoute,
               private userService: UserService,
