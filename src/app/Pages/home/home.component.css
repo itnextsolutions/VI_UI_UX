@@ -64,7 +64,7 @@ height: 400px;
     /* height: 428px; */
     border: 1px solid #f1f1f1;
     border-radius: 15px;
-    /* max-height: 545px; */
+    cursor: pointer;
     width: 100%;
 }
 .announcement-bar {

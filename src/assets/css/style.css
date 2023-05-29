@@ -486,7 +486,6 @@ font-size: 39px;
 
 .product-item  a{
     overflow: hidden !important;
-    display: -webkit-box !important;
     -webkit-line-clamp: 1;
     line-clamp: 1;
     -webkit-box-orient: vertical;
