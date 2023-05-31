@@ -61,10 +61,21 @@
                 <div class="row g-4">
                     <div class="col-xl-3 col-lg-4 col-md-6  col-6 wow fadeInUp" data-wow-delay="0.1s" *ngFor ="let product of productList"  >
                         <div class="product-item pointer"  id ="tab-1" (click)="onClick(product)" >
-                            <div class="position-relative bg-light overflow-hidden" >
+                            <div class="position-relative bg-light overflow-hidden" *ngIf="product.Product_type==1">
+
+                                <img class="img-fluid w-100" src="assets/img/{{categoryFolderName}}/{{product.Product_FrontPhoto}}" alt="">
+                                <!-- <div class="bg-secondary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3"></div> -->
+                            </div>
+                            <div class="position-relative bg-light overflow-hidden" *ngIf="product.Product_type==2">
+
                                 <img class="img-fluid w-100" src="assets/img/{{categoryFolderName}}/{{product.Product_Photo}}" alt="">
                                 <!-- <div class="bg-secondary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3"></div> -->
                             </div>
+                            <!-- <div class="position-relative bg-light overflow-hidden" *ngIf="product.Product_type==3">
+
+                                <img class="img-fluid w-100" src="assets/img/{{categoryFolderName}}/{{product.Product_SidePhoto}}" alt="">
+                            </div> -->
+                            
                             <div class="text-center">
                                 <!-- {{product.SubCategory}} -->
                                 

@@ -17,7 +17,7 @@ export class SidebarComponent implements OnInit {
   }
   
   logOut= () => {
-    localStorage.removeItem("jwt");
+    localStorage.removeItem('token');
   }
 
   getMenuList()

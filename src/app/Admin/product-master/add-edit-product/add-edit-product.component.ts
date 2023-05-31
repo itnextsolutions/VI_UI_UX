@@ -459,7 +459,7 @@ export class AddEditProductComponent implements OnInit {
     SizeId: Array<any> = [];
     Image_Name: string = "";
     MenFront_Photo: string = "";
-    // MenSide_Photo: string = "";
+    Product_FrontPhoto: string = "";
     // MenBack_Photo: string = "";
     SizeChartForMen: string = "";
   
@@ -471,7 +471,7 @@ export class AddEditProductComponent implements OnInit {
   
   
     MenFrontImgFile: any;
-    // MenSideImgFile: any;
+    FrontImgFile: any;
     // MenBackImgFile: any;
     MenSizeChartImgFile: any;
   
@@ -487,7 +487,7 @@ export class AddEditProductComponent implements OnInit {
 
   menfronturl: any;
   // menbackurl: any;
-  // mensideurl: any;
+  frontphoto_url: any;
   mensizecharturl: any;
   womenfronturl: any;
   // womenbackurl: any;
@@ -536,7 +536,7 @@ export class AddEditProductComponent implements OnInit {
           this.ColorId = this.product.ColorId;
           this.SizeId =  this.product.SizeId;
           this.MenFront_Photo = this.product.Product_Photo;
-          // this.MenSide_Photo = this.product.Product_SidePhoto;
+          this.Product_FrontPhoto = this.product.Product_FrontPhoto;
           // this.MenBack_Photo = this.product.Product_BackPhoto;
           this.SizeChartForMen = this.product.SizeChartForMen;
           this.men_f_svgpath=this.product.men_f_svgpath;
@@ -632,6 +632,7 @@ export class AddEditProductComponent implements OnInit {
           formData.append('ColorId', this.selectedcolor);
           formData.append('SizeId', this.selectedsize);
           formData.append('MenFrontImgFile', this.MenFrontImgFile);
+          formData.append('FrontImgFile', this.FrontImgFile);
           // formData.append('MenSideImgFile', this.MenSideImgFile);
           // formData.append('MenBackImgFile', this.MenBackImgFile);
           formData.append('MenSizeChartImgFile', this.MenSizeChartImgFile);
@@ -670,7 +671,7 @@ export class AddEditProductComponent implements OnInit {
         formData.append('ColorId[]', this.selectedcolor);
         formData.append('SizeId[]', this.selectedsize);
         formData.append('MenFrontImgFile', this.MenFrontImgFile);
-        // formData.append('MenSideImgFile', this.MenSideImgFile);
+        formData.append('FrontImgFile', this.FrontImgFile);
         // formData.append('MenBackImgFile', this.MenBackImgFile);
         formData.append('MenSizeChartImgFile', this.MenSizeChartImgFile);
         formData.append('Men_f_svgpath', this.men_f_svgpath);
@@ -706,28 +707,28 @@ export class AddEditProductComponent implements OnInit {
 
   }
   
-  // onselectFile2(event: any,id: any) { //Angular 11, for stricter type
+  onselectFile2(event: any,id: any) { //Angular 11, for stricter type
 
    
-  //   var mimeType = event.target.files[0].type;
-  //   if (mimeType.match(/image\/*/) == null) {
-  //     this.msg = "Only images are supported";
-  //     return;
-  //   }
+    var mimeType = event.target.files[0].type;
+    if (mimeType.match(/image\/*/) == null) {
+      this.msg = "Only images are supported";
+      return;
+    }
 
-  //   var reader = new FileReader();
-  //   reader.readAsDataURL(event.target.files[0]);
-  //   if (id == 2) {
+    var reader = new FileReader();
+    reader.readAsDataURL(event.target.files[0]);
+    if (id == 2) {
 
-  //         reader.onload = (_event) => {
-  //           this.msg = "";
-  //           this.mensideurl = reader.result;
-  //         }
-  //         this.MenSideImgFile = <File>event.target.files[0];
-  //       }
+          reader.onload = (_event) => {
+            this.msg = "";
+            this.frontphoto_url = reader.result;
+          }
+          this.FrontImgFile = <File>event.target.files[0];
+        }
     
 
-  // }
+  }
 
   // onselectFile3(event: any,id: any) { //Angular 11, for stricter type
 

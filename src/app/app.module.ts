@@ -131,7 +131,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     JwtModule.forRoot({
       config: {
         tokenGetter: tokenGetter,
-        allowedDomains: ["localhost:44321"],
+        allowedDomains: [],
         disallowedRoutes: []
       }
     }),
@@ -147,10 +147,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 export class AppModule { }
 
+// export interface AuthenticatedResponse { 
+//   Token:string;
+// }
+
 export interface AuthenticatedResponse { 
-  Token:string;
+  token:string;
 }
 
 export function tokenGetter() { 
-  return localStorage.getItem("jwt"); 
+  return localStorage.getItem('token'); 
 }

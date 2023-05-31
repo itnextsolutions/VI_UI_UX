@@ -93,19 +93,29 @@ export class LoginComponent implements OnInit {
       password:this.password,
     
     };
-      this.service.Login(val).subscribe(res =>{
-        if(res == "Success"){
-          localStorage.setItem('jwt','true');
-          this.router.navigate(['admin/product-category']);    
-        }
-        else
-        {
+      // this.service.Login(val).subscribe(res =>{
+      //   if(res == "Success"){
+      //     localStorage.setItem('jwt','true');
+      //     this.router.navigate(['admin/product-category']);    
+      //   }
+      //   else
+      //   {
           
-          this.router.navigate(['admin/Login']);  
-          this.invalid_msg=res.toString();
-          //alert(res.toString());
-        }
-      })
+      //     this.router.navigate(['admin/Login']);  
+      //     this.invalid_msg=res.toString();
+      //     //alert(res.toString());
+      //   }
+      // })
+      this.service.Login(val).subscribe(
+        {next:(response:AuthenticatedResponse)=>{
+          const token=response.token;
+          console.log(token);
+          localStorage.setItem('token',token);
+          this.invalidLogin=false;
+          this.router.navigate(["admin/lookup-master"]);
+        },
+      error:(err:HttpErrorResponse)=>this.invalidLogin=true
+    })
     }
 
   }

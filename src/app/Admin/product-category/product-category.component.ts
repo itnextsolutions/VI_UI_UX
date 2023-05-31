@@ -16,7 +16,7 @@ export class ProductCategoryComponent implements OnInit {
 
   isUserAuthenticated()
   {
-    const token=localStorage.getItem("jwt");
+    const token=localStorage.getItem('token');
     if(token && !this.jwthelper.isTokenExpired(token))   
     {
       return true;

@@ -131,8 +131,12 @@
                         <defs/>
                         <path id="product-shape" [attr.d]="men_svg_path"  [ngStyle]="{ fill: bgColor }" />
                     </svg>
-    
-                    <img class="big_img" src="assets/img/{{this.productcategoryfolder}}/{{data.Product_Photo}}" >
+                    <div *ngIf="data.Product_type!=3">
+                        <img class="big_img" src="assets/img/{{this.productcategoryfolder}}/{{data.Product_Photo}}" >
+                    </div>
+                    <!-- <div *ngIf="data.Product_type==3">
+                        <img class="big_img" src="assets/img/{{this.productcategoryfolder}}/{{data.Product_SidePhoto}}" >
+                    </div> -->
                 </div>
             </div>
             
@@ -309,7 +313,7 @@
                             </div>
                             <div class="edit-btn-page" style="padding: 0px; margin-top: 0px !important;">
                                 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal1"
-                                    class="btn btn-link  fs-5 other_btn" >
+                                    class="btn btn-link  fs-5 other_btn" *ngIf="data.Product_Photo?.length">
                                     <i class="Small material-icons text-sm me-2">edit</i>CUSTOMIZE DESIGN
                                 </button>
                                 <button [hidden]="isMenDivHidden && isTippingDivHidden" *ngIf="data.SizeChartForMen?.length" type="button" class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#exampleModal"

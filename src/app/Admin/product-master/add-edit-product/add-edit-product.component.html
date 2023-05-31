@@ -347,7 +347,22 @@
           </div>
         </div>
       </div>
-  
+       <div class="col">
+        <label>Front Image :</label>
+        <div class="col-sm-10">
+          <div [innerHtml]='msg' *ngIf="msg" style="color: red;"></div>
+          <div><img [src]="frontphoto_url" *ngIf="frontphoto_url; else elseBlock" style="width: 200px;"></div>
+        
+          <p class="color">
+            <input type="file" (change)="onselectFile2($event,2)" id="inputMenSide_Photo"
+             >
+          </p>
+          <ng-template #elseBlock>
+            <img src="assets/img/{{Category_Name}}/{{Product_FrontPhoto}}">
+          </ng-template>
+        </div>
+       
+      </div>
       <br>
   
       <!-- --Men Specification-- -->

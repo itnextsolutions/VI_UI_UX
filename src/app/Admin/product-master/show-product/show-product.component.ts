@@ -131,7 +131,7 @@ totalNoOfPages() {
       ColorId:"",
       SizeId:"",
       Product_Photo:"",
-      // Product_SidePhoto:"",
+      Product_FrontPhoto:"",
       // Product_BackPhoto:"",
       SizeChartForMen:"",
       WomenProduct_Description:"",

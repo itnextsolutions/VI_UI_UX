@@ -41,9 +41,9 @@ export class AuthGuard implements CanActivate {
 
       checkLogin(url: string): true | UrlTree {
          console.log("Url: " + url)
-         let val = localStorage.getItem('jwt');
+         let val = localStorage.getItem('token');
 
-         if(val != null && val == 'true' ){
+         if(val != null){
             if(url == "admin/Login")
                this.router.parseUrl('/admin/product-category');
             else 
