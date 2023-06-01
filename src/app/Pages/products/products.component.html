@@ -59,8 +59,13 @@
         <div class="tab-content py-4">
             <div id="tab-1" class="tab-pane fade show p-0 active"  >
                 <div class="row g-4">
-                    <div class="col-xl-3 col-lg-4 col-md-6  col-6 wow fadeInUp" data-wow-delay="0.1s" *ngFor ="let product of productList"  >
+                    <div class="col-xl-3 col-lg-4 col-md-6  col-6 wow fadeInUp" data-wow-delay="0.1s" style="width: 33%;" *ngFor ="let product of productList"  >
                         <div class="product-item pointer"  id ="tab-1" (click)="onClick(product)" >
+                            <div class="pt-2 pl-0 pb-2">
+                                <a class="d-block h5 mb-0">{{product.Product_Title}}</a>
+                                <!-- <span class="text-primary me-1">{{data.productPrice|currency:"INR"}}</span>
+                                <span class="text-body text-decoration-line-through">$29.00</span> -->
+                            </div>
                             <div class="position-relative bg-light overflow-hidden" *ngIf="product.Product_type==1">
 
                                 <img class="img-fluid w-100" src="assets/img/{{categoryFolderName}}/{{product.Product_FrontPhoto}}" alt="">
@@ -80,12 +85,8 @@
                                 <!-- {{product.SubCategory}} -->
                                 
                             </div>
-                            <div class="d-flex border-top">
-                                <small class="w-100 text-center border-end py-2">
-                                    <a class="d-block h5 mb-2 pointer"  >{{product.Product_Title}}</a>
-                                     <!-- <a class="text-body pointer"  ><i class="fa fa-eye text-primary me-2"></i>View detail</a> -->
-                                </small>
-                            </div>
+                           
+                            
                         </div>
                     </div>
                 </div>
