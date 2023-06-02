@@ -111,7 +111,8 @@ totalNoOfPages() {
       Product_Photo:"",
       SizeChartForMen:"",
       WomenProduct_Photo:"",
-      SizeChartForWomen:""
+      SizeChartForWomen:"",
+      MRP:""
     }
     this.modalTitle = "Multi Product"; 
     this.activateMultiProCom = true; 
@@ -140,7 +141,8 @@ totalNoOfPages() {
       // WomenProductBack_Photo:"",
       SizeChartForWomen:"",
       men_f_svgpath:"",
-      women_f_svgpath:""
+      women_f_svgpath:"",
+      MRP:""
     }
     this.modalTitle = "Add Product";
     this.activateAddEditProCom = true;

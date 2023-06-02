@@ -496,6 +496,7 @@ export class AddEditProductComponent implements OnInit {
   msg = "";
   men_f_svgpath: any;
   women_f_svgpath: any;
+  MRP: string="";
 
   constructor(private service: SharedService, private formBuilder: UntypedFormBuilder) {
     this.form = this.formBuilder.group({
@@ -522,7 +523,8 @@ export class AddEditProductComponent implements OnInit {
             Product_Description: [""],
             WomenProduct_Description:[""],
             men_f_svgpath:[""],
-            women_f_svgpath:[""]
+            women_f_svgpath:[""],
+            MRP:[""]
           });
       
           
@@ -546,6 +548,7 @@ export class AddEditProductComponent implements OnInit {
           // this.WomenProductBack_Photo = this.product.WomenProductBack_Photo;
           this.women_f_svgpath=this.product.women_f_svgpath;
           this.SizeChartForWomen = this.product.SizeChartForWomen;
+          this.MRP=this.product.MRP;
           
           this.CategoryNameList();
           this.GetColorList();
@@ -633,6 +636,7 @@ export class AddEditProductComponent implements OnInit {
           formData.append('SizeId', this.selectedsize);
           formData.append('MenFrontImgFile', this.MenFrontImgFile);
           formData.append('FrontImgFile', this.FrontImgFile);
+          formData.append('MRP',this.MRP);
           // formData.append('MenSideImgFile', this.MenSideImgFile);
           // formData.append('MenBackImgFile', this.MenBackImgFile);
           formData.append('MenSizeChartImgFile', this.MenSizeChartImgFile);
@@ -672,6 +676,7 @@ export class AddEditProductComponent implements OnInit {
         formData.append('SizeId[]', this.selectedsize);
         formData.append('MenFrontImgFile', this.MenFrontImgFile);
         formData.append('FrontImgFile', this.FrontImgFile);
+        formData.append('MRP',this.MRP);
         // formData.append('MenBackImgFile', this.MenBackImgFile);
         formData.append('MenSizeChartImgFile', this.MenSizeChartImgFile);
         formData.append('Men_f_svgpath', this.men_f_svgpath);

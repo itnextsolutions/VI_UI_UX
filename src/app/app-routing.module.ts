@@ -39,7 +39,7 @@ const routes: Routes = [
   {path:'category', component: CategoryComponent }, 
   {path:'subcategory/:category_id/:subcategory_id', component: SubcategoryComponent },
   {path:'product-details',component:ProductDetailsComponent},
-  {path:'product-details/:categoryName/:subcategoryName/:id',component:ProductDetailsComponent},
+  {path:'product-details/:categoryName/:subcategoryName/:id/:isbrand',component:ProductDetailsComponent},
   {path:'products/:category_id/:categoryName',component:ProductsComponent},
   {path:'blog',component:BlogComponent},
   {path:'blog/:blog_Id',component:BlogContentComponent},

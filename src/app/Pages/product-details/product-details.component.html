@@ -182,7 +182,7 @@
                                     <div ngxSlickItem *ngFor="let data of colors" class="slide">
                                         <div class="container py-5 pc-Style-hero-colors-sizeList-adultSizes mt-0 pt-0 pb-3">
                                             <div class="row row-cols-2 row-cols-lg-6 w-100">
-                                            <!-- <div *ngFor="let data of colors">  -->
+                                         
                                                 <div class="label-name">{{data.ColorName}}</div>
                                                 <div class="colorbox">
                                                         <li class="color-box" rel="tooltip" (click)="onColorClick(data)"
@@ -190,9 +190,7 @@
                                                             data-create="false">
                                                         </li>
                                                     </div>
-                                                
-                                        <!-- </div> -->
-                                            </div>
+                                            </div>                        
                                         </div>
                                     </div>
                                 </ngx-slick-carousel>
@@ -311,6 +309,13 @@
                                 <div *ngIf="data.WomenProduct_Description.length>0"class="detail-pro-dec"[innerHTML]="data.WomenProduct_Description"></div>
                                 <!-- <p class="mb-4 color text-center">{{data.WomenProduct_Description}}</p> -->
                             </div>
+
+                            <div class="modal-body" *ngFor="let data of product">
+                                <h6 class="dec-text-new" *ngIf="data.MRP!=undefined && data.MRP!=0">M.R.P.: {{data.MRP}}</h6>
+                              
+                                <!-- <p class="mb-4 color text-center">{{data.WomenProduct_Description}}</p> -->
+                            </div>
+
                             <div class="edit-btn-page" style="padding: 0px; margin-top: 0px !important;">
                                 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal1"
                                     class="btn btn-link  fs-5 other_btn" *ngIf="data.Product_Photo?.length">
@@ -343,6 +348,7 @@
                         </div>
                     </div>
     
+                    <div *ngIf="data.Category_Id!=6 && data.Category_Id!=7 && data.Category_Id!=8 && data.Category_Id!=9">
                     <div *ngIf="(data.SizeChartForMen?.length || data.SizeChartForWoMen?.length)>0 "  class="row g-4">
                         <div class="col-lg-4 col-12  pad-0">
                             <h5 class="variationHead" style="padding: 0!important; ">Choose Category :</h5>
@@ -351,13 +357,14 @@
                     <div  class="row g-4">
                         <div class="col-lg-12 col-12  pad-0">
                             <div class="col-lg-12 col-12  pad-0">
-                                <div class="genderButtonBlock" id="genderVariations">	
+                                <div class="genderButtonBlock" id="genderVariations"> 
                                     <div *ngIf="(data.Product_Photo?.length)>0"  (click)="onClickmenPhoto()" class="genderButton" data-id="id_0" tabindex="0" data-title="Men" data-value="men">Men</div>	
                                     <div *ngIf="(data.WomenProduct_Photo?.length)>0" (click)="onClickWomenPhoto()" class="genderButton" data-id="id_1" tabindex="1" data-title="Women" data-value="women">Women</div>
                                 </div>
                             </div>
                         </div>
                         </div>
+                    </div>
                     </div>
                         
                     </div>
@@ -385,7 +392,11 @@
             <div class="col-xl-3 col-lg-4 col-md-6  col-6 wow fadeInUp" data-wow-delay="0.1s"
                 *ngFor="let simillarproduct of simillarProducts">
                 <div class="product-item pointer" id="tab-1" (click) ="onClick(simillarproduct)">
-                    <div class="position-relative bg-light overflow-hidden">
+                    <div class="position-relative bg-light overflow-hidden" *ngIf="simillarproduct.Product_type==1">
+                        <img class="img-fluid w-100"
+                            src="assets/img/{{this.categoryfolder}}/{{simillarproduct.Product_FrontPhoto}}" alt="">   
+                    </div>
+                    <div class="position-relative bg-light overflow-hidden" *ngIf="simillarproduct.Product_type==2">
                         <img class="img-fluid w-100"
                             src="assets/img/{{this.categoryfolder}}/{{simillarproduct.Product_Photo}}" alt="">   
                     </div>

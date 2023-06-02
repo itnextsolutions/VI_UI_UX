@@ -36,6 +36,14 @@
           </div>
         </div>
 
+        <div class="col-md-3 roundedTextBox mb-3">
+          <label>M.R.P. :</label>
+          <input type="text" [(ngModel)]="MRP" class="form-control mb-2" id="inputProduct_Title"
+            formControlName="MRP" placeholder="Enter the Price">
+          <!-- <div *ngIf="submitted && this.ProductForm.controls['Product_Title'].errors" class="text-danger">
+            <div *ngIf="this.ProductForm.controls['Product_Title'].errors.required">Product Name is required.</div>
+          </div> -->
+        </div>
 
         <div class="col-md-12 roundedTextBox mb-3">
         <label>Men Product Specification :</label>

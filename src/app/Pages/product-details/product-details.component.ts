@@ -32,7 +32,7 @@ export class ProductDetailsComponent implements OnInit {
   selected_colorname = '';
   //  menDesc: string = "";
   //  womenDesc: string = "";
-
+  // tipping:any=[];
   id:number=0; 
 
   slideConfig = {dots: true,
@@ -41,7 +41,7 @@ export class ProductDetailsComponent implements OnInit {
     slidesToScroll: 6,
     infinite: false,
     // column:6,
-    rows:3,
+    // rows:3,
     responsive: [
       {
         breakpoint: 1024,
@@ -91,6 +91,8 @@ export class ProductDetailsComponent implements OnInit {
     this.subcategoryName = this.param.snapshot.paramMap.get('subcategoryName');
     this.subcategoryName = this.subcategoryName.replace(/-/g, ' ').toUpperCase();
 
+    this.isbrand=this.param.snapshot.paramMap.get('isbrand');
+
     this.getProduct();
     this.getSimillarProduct();
     this.seoService.setCanonicalURL(window.location.href);
@@ -120,6 +122,12 @@ export class ProductDetailsComponent implements OnInit {
 
     this.userService.getColorListById(this.productId).subscribe(data => {
       this.colors = data;
+// this.color_count=this.colors.length;
+// if(this.color_count>=6)
+// {
+
+// }
+
     });
 
     this.userService.getSizeListById(this.productId).subscribe(data => {
@@ -215,8 +223,14 @@ export class ProductDetailsComponent implements OnInit {
   }
 
   onColorClick(data:any) {
-    this.bgColor = data.Description;
-    this.selected_colorname = data.ColorName;
+    if(data.Description!=null)
+    {
+      this.bgColor = data.Description;
+      this.selected_colorname = data.ColorName;
+    }
+    else{
+      this.bgColor = '#FFFFFF';
+    }
   }
 }
 

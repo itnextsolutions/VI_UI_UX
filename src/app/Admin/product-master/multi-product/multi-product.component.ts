@@ -75,6 +75,7 @@ export class MultiProductComponent implements OnInit {
   totalWomenImages: number=0;
   selectedWomenTipping: any=[];
   WomenTippingData: any;
+  MRP: string="";
 
 
   constructor(private service: SharedService, private formBuilder: UntypedFormBuilder) {
@@ -107,7 +108,7 @@ export class MultiProductComponent implements OnInit {
     // });
 
     this.Product_Id = this.multiProduct.Product_Id,
-      this.Category_Id = this.multiProduct.Category_Id;
+    this.Category_Id = this.multiProduct.Category_Id;
     this.SubCategory_Id = this.multiProduct.SubCategory_Id;
     this.Product_Title = this.multiProduct.Product_Title;
     this.Product_Description = this.multiProduct.Product_Description;
@@ -117,6 +118,7 @@ export class MultiProductComponent implements OnInit {
     this.SizeChartForMen = this.multiProduct.SizeChartForMen;
     this.WomenProduct_Photo = this.multiProduct.WomenProduct_Photo;
     this.SizeChartForWomen = this.multiProduct.SizeChartForWomen;
+    this.MRP=this.multiProduct.MRP;
     this.CategoryNameList();
     this.GetTippingImg();
     this.GetSizeList();
@@ -142,7 +144,8 @@ export class MultiProductComponent implements OnInit {
       // WomenProduct_Description:[""],
       SizeId: [""],
       Images: this.formBuilder.array([]),
-      WomenImages:this.formBuilder.array([])
+      WomenImages:this.formBuilder.array([]),
+      MRP:[""]
     });
   }
 
@@ -326,9 +329,10 @@ export class MultiProductComponent implements OnInit {
           formData.append('Product_Title', this.Product_Title);
           formData.append('Product_Description', this.Product_Description);
           formData.append('SizeId', this.selectedsize);
-          this.totaltipping=this.selectedMenTipping.length;
-          this.totalMenImages=this.selectedMenImages.length;
-          this.totalWomenImages=this.selectedWomenImages.length;
+          formData.append('MRP',this.MRP);
+          // this.totaltipping=this.selectedMenTipping.length;
+          // this.totalMenImages=this.selectedMenImages.length;
+          // this.totalWomenImages=this.selectedWomenImages.length;
           // if(this.totalWomenImages==this.totalMenImages)
           // {
           //   if(this.totaltipping==this.totalMenImages)
