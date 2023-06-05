@@ -65,6 +65,7 @@ import { SlickCarouselModule } from 'ngx-slick-carousel';
 import { MultiProductComponent } from './Admin/product-master/multi-product/multi-product.component';
 import { CustomHttpInterceptor } from 'src/http-interceptor';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CustomizeComponent } from './Pages/customize/customize.component';
 
 
 
@@ -117,7 +118,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AddEditFaqComponent,
     SidebarComponent,
     CustmizeDesignComponent,
-    MultiProductComponent
+    MultiProductComponent,
+    CustomizeComponent
   ],
   
   imports: [
