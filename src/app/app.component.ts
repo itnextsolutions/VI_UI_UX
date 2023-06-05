@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 // import {GetApiService} from './Services/Api/get-api.service';
 import { HttpClient } from '@angular/common/http';
+import { SpinnerService } from './spinner-service.service';
 
 @Component({
   selector: 'app-root',
@@ -11,7 +12,7 @@ export class AppComponent {
   title = 'Vastra';
   users:any;
 
-  constructor(private http:HttpClient)
+  constructor(public spinnerService: SpinnerService,private http:HttpClient)
   {
     
   }
@@ -19,4 +20,13 @@ export class AppComponent {
     
 
   }
+  onActivate() {
+    // window.scroll(0,0);
+ 
+    window.scroll({ 
+            top: 0, 
+            left:0, 
+            behavior: 'smooth' 
+     });
+}
 }
