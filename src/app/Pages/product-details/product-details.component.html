@@ -260,7 +260,7 @@
                         <defs/>
                         <path id="product-shape" [attr.d]="women_svgpath"  [ngStyle]="{ fill: bgColor }" />
                     </svg> -->
-                   <img class="big_img" src="assets/img/{{this.productcategoryfolder}}/{{data.WomenProduct_Photo}}" style="width:400px">
+                   <img class="big_img" src="assets/img/{{this.productcategoryfolder}}/{{data.WomenProduct_Photo}}">
                 </div>
             </div>
         </div>
@@ -329,7 +329,7 @@
                                                 <div class="row row-cols-2 row-cols-lg-6 w-100">
                                                     <div  (click)="onTippingClick(item)">
                                                         <!-- <div *ngIf="item.tipping_women_img==1"> -->
-                                                        <img src="assets/img/tipping/{{item.tipping_img}}" class="" style="height: 51px;">
+                                                        <img src="assets/img/tipping/{{item.tipping_img}}" class="" style="width: 42px;">
                                                         <div class="label-name">
                                                             {{item.Description}}
                                                         </div>
@@ -360,7 +360,7 @@
                                         <div class="row row-cols-2 row-cols-lg-6 w-90">
                                             <!-- <div (click)="onTippingWomenClick(item)" *ngIf="item.tipping_women_img==54"> -->
                                                 <div (click)="onTippingWomenClick(item)"> 
-                                                <img src="assets/img/tipping/{{item.tipping_img}}"  style="height: 51px;">
+                                                <img src="assets/img/tipping/{{item.tipping_img}}"  style="width: 42px;">
                                                 <div class="label-name">
                                                     {{item.Description}}
                                                     <!-- {{item.tipping_women_img}} -->

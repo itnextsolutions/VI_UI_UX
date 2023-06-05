@@ -44,7 +44,8 @@ export class NavbarComponent implements OnInit {
                 Category_Name:  element.Category_Name,
                 SubCategory:    element.SubCategory,
                 SubCategory_Id: element.SubCategory_Id,
-                Product_Id: element.Product_Id
+                Product_Id: element.Product_Id,
+                IsBrand:element.IsBrand
               }]
           })
         }
@@ -53,7 +54,8 @@ export class NavbarComponent implements OnInit {
               Category_Name:  element.Category_Name,
               SubCategory:    element.SubCategory,
               SubCategory_Id: element.SubCategory_Id,
-              Product_Id: element.Product_Id
+              Product_Id: element.Product_Id,
+              IsBrand:element.IsBrand
           });
         }
       });
@@ -74,7 +76,7 @@ export class NavbarComponent implements OnInit {
 }
 
   onSubCategoryClick(data: any, item: any){
-    this.router.navigate(['/product-details/', item.Category_Name, item.SubCategory, item.Product_Id]).then(() => {
+    this.router.navigate(['/product-details/', item.Category_Name, item.SubCategory, item.Product_Id,item.IsBrand]).then(() => {
       window.location.reload();
     });
 
