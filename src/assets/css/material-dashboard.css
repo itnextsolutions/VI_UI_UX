@@ -293,6 +293,7 @@
   a:hover {
     color: var(--bs-link-hover-color);
     text-decoration: none;
+    /* text-transform: uppercase; */
   }
   
   a:not([href]):not([class]),
@@ -2588,6 +2589,7 @@
   .table-hover>tbody>tr:hover>* {
     --bs-table-accent-bg: var(--bs-table-hover-bg);
     color: var(--bs-table-hover-color);
+    font-size: 0.85rem;
   }
   
   .table-primary {

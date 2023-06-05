@@ -478,6 +478,8 @@ font-size: 39px;
     transition: .5s;
     margin: 0 auto;
     display: block;
+    border-radius: 15px;
+    /* text-transform: capitalize; */
 }
 
 .product-item small a:hover {
@@ -489,6 +491,8 @@ font-size: 39px;
     -webkit-line-clamp: 1;
     line-clamp: 1;
     -webkit-box-orient: vertical;
+    text-transform: uppercase;
+    font-size: 0.85rem;
 }
 /*** Testimonial ***/
 .testimonial-carousel .owl-item .testimonial-item img {
