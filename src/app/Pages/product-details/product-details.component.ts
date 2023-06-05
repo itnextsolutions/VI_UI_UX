@@ -42,7 +42,7 @@ export class ProductDetailsComponent implements OnInit {
     slidesToScroll: 6,
     infinite: false,
     column:6,
-    // rows:3,
+    rows:3,
     responsive: [
       {
         breakpoint: 1024,
@@ -93,7 +93,7 @@ export class ProductDetailsComponent implements OnInit {
     this.subcategoryName = this.subcategoryName.replace(/-/g, ' ').toUpperCase();
 
     this.isbrand = this.param.snapshot.paramMap.get('isbrand');
-
+    this.bgColor = '#FFFFFF';
     this.getProduct();
     this.getSimillarProduct();
     this.seoService.setCanonicalURL(window.location.href);
@@ -152,7 +152,7 @@ export class ProductDetailsComponent implements OnInit {
   }
 
   onClick(product: any) {
-    this.router.navigate(['product-details/', product.Category_Name, product.SubCategory, product.Product_Id]).then(() => {
+    this.router.navigate(['product-details/', product.Category_Name, product.SubCategory, product.Product_Id,this.isbrand]).then(() => {
       window.location.reload();
     });
 

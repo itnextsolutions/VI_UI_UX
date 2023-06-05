@@ -77,7 +77,7 @@
 <!-- Custmize design  Model End -->
 
 <!--breadcrumb start-->
-<div class="container header_bs_mo">
+<!-- <div class="container header_bs_mo">
     <div class="container" >
         <div class="row g-0 gx-5 align-items-end">
             <nav aria-label="breadcrumb" class="breadcrumb">
@@ -103,7 +103,98 @@
             </ol>
         </nav>
     </div>
+    </div> -->
+    <div class="container header_bs_mo">
+        <div class="container" >
+            <div class="row g-0 gx-5 align-items-end">
+                <nav aria-label="breadcrumb" class="breadcrumb">
+    <div *ngIf="isbrand==0">
+        <ol class="breadcrumb" itemscope="" itemtype="http://schema.org/BreadcrumbList">
+            <li class="breadcrumb-item" itemprop="itemListElement" itemscope=""
+                itemtype="http://schema.org/ListItem">
+                <a itemprop="item" href=""><span itemprop="name" style="font-weight: bold;">HOME</span></a>
+                <meta itemprop="position" content="1">
+            </li>
+
+            <li class="breadcrumb-item" itemprop="itemListElement" itemscope=""
+                itemtype="http://schema.org/ListItem">
+                
+                    <a itemprop="item" href="category">
+                        <span itemprop="name" style="font-weight: bold;">{{categoryName}}</span>
+                    </a>
+                    <meta itemprop="position" content="2">
+                
+            </li>
+
+                <!-- <li class="breadcrumb-item" itemprop="itemListElement" itemscope=""
+                    itemtype="http://schema.org/ListItem">
+                    <div *ngIf="isbrand==1">
+                    <a itemprop="item" href="brand">
+                        <span itemprop="name" style="font-weight: bold;">{{categoryName}} /&nbsp;</span>
+                    </a>
+                    <meta itemprop="position" content="2">
+                </div>
+                </li>
+           -->
+
+            <li class="breadcrumb-item" itemprop="itemListElement" itemscope=""
+                itemtype="http://schema.org/ListItem">
+                <a itemprop="item">
+                    <span itemprop="name" style="font-weight: bold; color: #ff6600;"> {{subcategoryName}}</span>
+                </a>
+            </li>
+        </ol>
     </div>
+
+
+
+
+
+
+
+
+        <div *ngIf="isbrand==1">
+        <ol class="breadcrumb" itemscope="" itemtype="http://schema.org/BreadcrumbList">
+            <li class="breadcrumb-item" itemprop="itemListElement" itemscope=""
+                itemtype="http://schema.org/ListItem">
+                <a itemprop="item" href=""><span itemprop="name" style="font-weight: bold;">HOME</span></a>
+                <meta itemprop="position" content="1">
+            </li>
+
+            <!-- <li class="breadcrumb-item" itemprop="itemListElement" itemscope=""
+                itemtype="http://schema.org/ListItem">
+                <div *ngIf="isbrand==0">
+                    <a itemprop="item" href="category">
+                        <span itemprop="name" style="font-weight: bold;">{{categoryName}} /</span>
+                    </a>
+                    <meta itemprop="position" content="2">
+                </div>
+            </li> -->
+
+                <li class="breadcrumb-item" itemprop="itemListElement" itemscope=""
+                    itemtype="http://schema.org/ListItem">
+                   
+                    <a itemprop="item" href="brand">
+                        <span itemprop="name" style="font-weight: bold;">{{categoryName}}</span>
+                    </a>
+                    <meta itemprop="position" content="2">
+                
+                </li>
+          
+
+            <li class="breadcrumb-item" itemprop="itemListElement" itemscope=""
+                itemtype="http://schema.org/ListItem">
+                <a itemprop="item">
+                    <span itemprop="name" style="font-weight: bold; color: #ff6600;"> {{subcategoryName}}</span>
+                </a>
+            </li>
+        </ol>
+</div>
+</nav>
+</div>
+</div>
+
+
 
 <!--breadcrumb- End -->
 
@@ -153,10 +244,22 @@
 
             <div [hidden]="isWoMenDivHidden">
                 <div *ngFor="let data of product" class="mo-order-2">
-                    <svg id="product-svg" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg"    height="571" width="467">
+                    <svg class="lp-view" id="product-svg" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 467 571" height="571" width="467">
                         <defs/>
                         <path id="product-shape" [attr.d]="women_svgpath"  [ngStyle]="{ fill: bgColor }" />
-                        </svg>
+                    </svg>
+                    <svg class="mb-view"  id="product-svg" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 467 571" width="248" height="303">
+                        <defs/>
+                        <path id="product-shape" [attr.d]="women_svgpath"  [ngStyle]="{ fill: bgColor }" />
+                    </svg> 
+                    <svg class="mm-view"  id="product-svg" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 467 571" width="327" height="400">
+                        <defs/>
+                        <path id="product-shape" [attr.d]="women_svgpath"  [ngStyle]="{ fill: bgColor }" />
+                    </svg>
+                    <!-- <svg id="product-svg" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg"    height="571" width="467">
+                        <defs/>
+                        <path id="product-shape" [attr.d]="women_svgpath"  [ngStyle]="{ fill: bgColor }" />
+                    </svg> -->
                    <img class="big_img" src="assets/img/{{this.productcategoryfolder}}/{{data.WomenProduct_Photo}}" style="width:400px">
                 </div>
             </div>
@@ -311,7 +414,7 @@
                             </div>
 
                             <div class="modal-body" *ngFor="let data of product">
-                                <h6 class="dec-text-new" *ngIf="data.MRP!=undefined && data.MRP!=0">M.R.P.: ₹{{data.MRP}}</h6>
+                                <h6 class="dec-text-new" *ngIf="data.MRP!=undefined && data.MRP!=0">M.R.P.: ₹{{data.MRP}}/-</h6>
                               
                                 <!-- <p class="mb-4 color text-center">{{data.WomenProduct_Description}}</p> -->
                             </div>
