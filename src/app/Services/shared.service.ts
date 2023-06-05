@@ -19,12 +19,12 @@ getMenuList(): Observable < any[] > {
 }
 
 Login(val: any) {
-   return this.http.post(this.APIUrl + 'Login/login', val);
+   return this.http.post<AuthenticatedResponse>(this.APIUrl + 'Login/login', val);
 }
 
 // Login(val: any) {
-//   
-//    return this.http.post<AuthenticatedResponse>(this.APIUrl + 'Login/login', val);
+  
+//    return this.http.post(this.APIUrl + 'Login/login', val);
 // }
 //Product Category  Start
 getproductcategoryList(): Observable < any[] > {
