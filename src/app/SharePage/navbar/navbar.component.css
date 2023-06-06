@@ -136,7 +136,7 @@
   input[type=text]:focus {
     width: 300px;
   } */
-  
+
   .searchbar{
         margin-bottom: auto;
         margin-top: auto;
@@ -184,4 +184,53 @@
         border-radius: 50%;
         color: #282222;
         text-decoration: none;
-    }
+    } 
+   /* Dropdown Button */
+/* .dropbtn a  {
+    background-color: white;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+} */
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+    display: inline-block;
+    /* padding:4px 20px; */
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: black;
+    padding: 4px 20px;
+    text-decoration: none;
+    display: block;
+    height: 38px;
+    cursor: pointer;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+    background-color: white;
+}
+

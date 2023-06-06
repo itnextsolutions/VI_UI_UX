@@ -272,8 +272,8 @@
                         <div class="row g-4 mb-0 color bold align-items-center">
                             <h3 class=" product-name-new pt-4">{{data.Product_Title}}</h3>
 
-                            <div class="row g-4" *ngIf="colors!=0">
-                                <h5 class="dec-text-new pad-0" style="margin-top: 0px !important; ">Colors : {{this.selected_colorname}}</h5>
+                            <div class="row g-4 pad-0" *ngIf="colors!=0">
+                                <h5 class="dec-text-new" style="margin-top: 0px !important; ">Colors : {{this.selected_colorname}}</h5>
                                 
                                 <ngx-slick-carousel class="carousel"
                                     #slickModal="slick-carousel"
