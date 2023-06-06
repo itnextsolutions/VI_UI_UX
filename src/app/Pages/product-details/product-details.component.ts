@@ -94,6 +94,7 @@ export class ProductDetailsComponent implements OnInit {
 
     this.isbrand = this.param.snapshot.paramMap.get('isbrand');
     this.bgColor = '#FFFFFF';
+    this.selected_colorname = 'White';
     this.getProduct();
     this.getSimillarProduct();
     this.seoService.setCanonicalURL(window.location.href);
