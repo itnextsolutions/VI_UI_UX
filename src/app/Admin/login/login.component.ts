@@ -90,7 +90,7 @@ export class LoginComponent implements OnInit {
     if (this.loginForm.valid){
     var val = {
       username:this.username,
-      password:this.password,
+      password:this.password
     
     };
       // this.service.Login(val).subscribe(res =>{
@@ -112,7 +112,7 @@ export class LoginComponent implements OnInit {
           console.log(token);
           localStorage.setItem('token',token);
           this.invalidLogin=false;
-          this.router.navigate(["admin/lookup-master"]);
+          this.router.navigate(["admin/product-category"]);
         },
       error:(err:HttpErrorResponse)=>this.invalidLogin=true
     })
