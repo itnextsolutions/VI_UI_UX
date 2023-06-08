@@ -1,9 +1,14 @@
 .label-name{
   font-size: 11px;
     line-height: 11px;
+    height: 30px;
     /* text-align: center; */
     margin-top: 4px;
-    color: #525252;
+     width: 100%;
+    display: -webkit-box! important;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+     color: #525252;
     font-family: "Gilroy Medium", sans-serif;
 }
 
