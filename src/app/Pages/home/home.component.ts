@@ -30,13 +30,42 @@ export class HomeComponent implements OnInit {
     this.seoService.setCanonicalURL(window.location.href);
   }
 
-  customOptions: OwlOptions = {
+    // used for CustomerReviews
+  customReview: OwlOptions = {
     autoplay:true,
-    loop: true,
+    loop: false,
     mouseDrag: false,
     touchDrag: false,
     pullDrag: false,
-    dots: true,
+    dots: false,
+    margin:5,
+    autoWidth:true,
+    navText: ['', ''],
+    responsive: {
+      0: {
+        items: 1.2
+      },
+      400: {
+        items: 2
+      },
+      600: {
+        items: 3
+      },
+      1000: {
+        items: 3
+      }
+    }
+    
+  }
+
+   // used for blog
+  blogOptions: OwlOptions = {
+    autoplay:true,
+    loop: false,
+    mouseDrag: false,
+    touchDrag: false,
+    pullDrag: false,
+    dots: false,
     margin:5,
     autoWidth:true,
     navText: ['', ''],
@@ -90,9 +119,18 @@ export class HomeComponent implements OnInit {
 
   refreshblogList() 
   {
-    this.blogno = 3;
-    this.userService.getbloglist(this.blogno).subscribe(data =>{
-      this.blogList = data;
+    // this.blogno = 3;
+    this.userService.getbloglist().subscribe(data =>{
+      
+      if(data != undefined && data!=null){
+        this.blogList = data;
+        
+        if(this.blogList.length>3)
+        {
+        this.blogOptions.loop=true;
+        this.blogOptions.dots=true;
+        }
+       }
     });
   }
 
@@ -101,9 +139,15 @@ export class HomeComponent implements OnInit {
     
     this.userService.getCustomerReviews().subscribe(data =>{
 
-      if(data != undefined && data!=null){
+      if(data != undefined && data!=null)
+      {
          this.customerReview = data;
-        }
+         if(this.customerReview.length>3)
+         {
+          this.customReview.loop=true;
+          this.customReview.dots=true;
+         }
+      }
      });
   }
 

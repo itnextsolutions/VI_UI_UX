@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { UserService } from 'src/app/Services/Api/User/user.service';
 import { __values } from 'tslib';
 import { SeoService } from 'src/app/Services/seo.service';
+import { OwlOptions } from 'ngx-owl-carousel-o';
 
 @Component({
   selector: 'app-product-details',
@@ -36,13 +37,13 @@ export class ProductDetailsComponent implements OnInit {
   id: number = 0;
 
   slideConfig = {
-    dots: true,
+    dots: false,
     speed: 300,
     slidesToShow: 6,
     slidesToScroll: 6,
     infinite: false,
-    column:6,
-    rows:3,
+    column:0,
+    rows:0,
     responsive: [
       {
         breakpoint: 1024,
@@ -82,6 +83,35 @@ export class ProductDetailsComponent implements OnInit {
     ]
   }
 
+  // used for similar product
+ similarProducts: OwlOptions = {
+    autoplay:true,
+    loop: false,
+    mouseDrag: false,
+    touchDrag: false,
+    pullDrag: false,
+    dots: false,
+    margin:5,
+    autoWidth:true,
+    navText: ['', ''],
+    responsive: {
+      0: {
+        items: 1.2
+      },
+      400: {
+        items: 2
+      },
+      600: {
+        items: 3
+      },
+      1000: {
+        items: 3
+      }
+    }
+    
+  }
+
+
   ngOnInit(): void {
     this.productId = this.param.snapshot.paramMap.get('id');
     this.categoryName = this.param.snapshot.paramMap.get('categoryName');
@@ -104,7 +134,15 @@ export class ProductDetailsComponent implements OnInit {
   getSimillarProduct() {
 
     this.userService.getSimillarProduct(this.productId).subscribe(data => {
-      this.simillarProducts = data;
+      if(data!=null && data!=undefined)
+      {
+        this.simillarProducts = data;
+        if(this.simillarProducts.length>4)
+          {
+            this.similarProducts.loop=true;
+            this.similarProducts.dots=true;
+          }
+      }
       this.categoryfolder = this.categoryName.replace(/\s+/g, '-').toLowerCase();
     });
   }
@@ -122,19 +160,19 @@ export class ProductDetailsComponent implements OnInit {
       }
     });
 
-    this.userService.getColorListById(this.productId).subscribe(data => {
+    this.userService.getColorListById(this.productId).subscribe((data:any) => {debugger
       this.colors = data;
-      // this.color_count = this.colors.length;
-      // if (this.color_count >=18) {
-      //   if(this.color_count.slice(0,6))
-      //   {
-      //     this.slideConfig.rows=1;
-      //   }
-      //   if(this.color_count.slice(7,12))
-      //   {
-      //     this.slideConfig.rows=2;
-      //   }
-      // }
+      console.log(this.colors);
+      if (this.colors.length <18) {
+      if(this.colors.length>6 || this.colors.length<13)
+      {
+        this.slideConfig.rows=2;
+      }
+    }
+      if (this.colors.length >18) {
+        this.slideConfig.dots=true;
+        this.slideConfig.rows=3;
+      }
 
     });
 

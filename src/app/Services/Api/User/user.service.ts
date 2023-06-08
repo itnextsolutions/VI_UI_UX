@@ -7,10 +7,10 @@ import { Observable } from "rxjs";
 })
 
 export class UserService {
-  readonly APIUrl = "https://test.vastraindia.com/api/";
+  // readonly APIUrl = "https://test.vastraindia.com/api/";
 
 
-  // readonly APIUrl = "https://localhost:44365/api/";
+  readonly APIUrl = "https://localhost:44365/api/";
 
   constructor(private http: HttpClient) {}
 
@@ -46,10 +46,14 @@ export class UserService {
       return this.http.get < any > (this.APIUrl + 'Home/GetProductMenu');
     }
     
-    getbloglist(number: any): Observable < any[] > {
-      return this.http.get < any > (this.APIUrl + 'Home/GetBlog?number=' + number);
-    }
+    // getbloglist(number: any): Observable < any[] > {
+    //   return this.http.get < any > (this.APIUrl + 'Home/GetBlog?number=' + number);
+    // }
     
+    getbloglist(): Observable < any[] > {
+      return this.http.get < any > (this.APIUrl + 'Home/GetBlog');
+    }
+
     getallbloglist(blog_Id: any): Observable < any[] > {
       return this.http.get < any > (this.APIUrl + 'Home/GetAllBlogs?blog_Id=' + blog_Id);
     }

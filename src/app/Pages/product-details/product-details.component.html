@@ -1,5 +1,5 @@
 <div class="d-flex justify-content-center">
-    
+
     <div class="spinner-border" role="status">
         <span class="sr-only" id="loading"></span>
     </div>
@@ -24,10 +24,12 @@
             <div [hidden]="isWoMenDivHidden" class="modal-body text-center" *ngFor="let data of product">
                 <img src="assets/img/size_chart/{{data.SizeChartForWomen}}" class="" style="width:100%;">
             </div> -->
-            <div [hidden]="isMenDivHidden && isTippingDivHidden" class="modal-body text-center" *ngFor="let data of product">
+            <div [hidden]="isMenDivHidden && isTippingDivHidden" class="modal-body text-center"
+                *ngFor="let data of product">
                 <img src="assets/img/size_chart/{{data.SizeChartForMen}}" class="" style="width: 100%;">
             </div>
-            <div [hidden]="isWoMenDivHidden && isTippingWomenDivHidden" class="modal-body text-center" *ngFor="let data of product">
+            <div [hidden]="isWoMenDivHidden && isTippingWomenDivHidden" class="modal-body text-center"
+                *ngFor="let data of product">
                 <img src="assets/img/size_chart/{{data.SizeChartForWomen}}" class="" style="width:100%;">
             </div>
         </div>
@@ -57,22 +59,24 @@
 
 <!-- new -->
 
-   <!-- Modal effect 1 -->
-   <div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+<!-- Modal effect 1 -->
+<div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog customize-model-dialog" role="document">
-       <div class="modal-content">
-          <div class="modal-header">
-             <h5 class="modal-title" id="exampleModalLabel1">Customize Your Design</h5>
-             <button type="button" class="btn-close" (click)="closeClick()" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body customize-model-body">
-            <app-custmize-design [Product]="product" [id]="id" [image]="image" [image1]="image1" class="custumise-img-model">
-            </app-custmize-design>
-          </div>
-         
-       </div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel1">Customize Your Design</h5>
+                <button type="button" class="btn-close" (click)="closeClick()" data-bs-dismiss="modal"
+                    aria-label="Close"></button>
+            </div>
+            <div class="modal-body customize-model-body">
+                <app-custmize-design [Product]="product" [id]="id" [image]="image" [image1]="image1"
+                    class="custumise-img-model">
+                </app-custmize-design>
+            </div>
+
+        </div>
     </div>
- </div>
+</div>
 
 <!-- Custmize design  Model End -->
 
@@ -104,29 +108,29 @@
         </nav>
     </div>
     </div> -->
-    <div class="container header_bs_mo">
-        <div class="container" >
-            <div class="row g-0 gx-5 align-items-end">
-                <nav aria-label="breadcrumb" class="breadcrumb">
-    <div *ngIf="isbrand==0">
-        <ol class="breadcrumb" itemscope="" itemtype="http://schema.org/BreadcrumbList">
-            <li class="breadcrumb-item" itemprop="itemListElement" itemscope=""
-                itemtype="http://schema.org/ListItem">
-                <a itemprop="item" href=""><span itemprop="name" style="font-weight: bold;">HOME</span></a>
-                <meta itemprop="position" content="1">
-            </li>
+<div class="container header_bs_mo">
+    <div class="container">
+        <div class="row g-0 gx-5 align-items-end">
+            <nav aria-label="breadcrumb" class="breadcrumb">
+                <div *ngIf="isbrand==0">
+                    <ol class="breadcrumb" itemscope="" itemtype="http://schema.org/BreadcrumbList">
+                        <li class="breadcrumb-item" itemprop="itemListElement" itemscope=""
+                            itemtype="http://schema.org/ListItem">
+                            <a itemprop="item" href=""><span itemprop="name" style="font-weight: bold;">HOME</span></a>
+                            <meta itemprop="position" content="1">
+                        </li>
 
-            <li class="breadcrumb-item" itemprop="itemListElement" itemscope=""
-                itemtype="http://schema.org/ListItem">
-                
-                    <a itemprop="item" href="category">
-                        <span itemprop="name" style="font-weight: bold;">{{categoryName}}</span>
-                    </a>
-                    <meta itemprop="position" content="2">
-                
-            </li>
+                        <li class="breadcrumb-item" itemprop="itemListElement" itemscope=""
+                            itemtype="http://schema.org/ListItem">
 
-                <!-- <li class="breadcrumb-item" itemprop="itemListElement" itemscope=""
+                            <a itemprop="item" href="category">
+                                <span itemprop="name" style="font-weight: bold;">{{categoryName}}</span>
+                            </a>
+                            <meta itemprop="position" content="2">
+
+                        </li>
+
+                        <!-- <li class="breadcrumb-item" itemprop="itemListElement" itemscope=""
                     itemtype="http://schema.org/ListItem">
                     <div *ngIf="isbrand==1">
                     <a itemprop="item" href="brand">
@@ -137,14 +141,15 @@
                 </li>
            -->
 
-            <li class="breadcrumb-item" itemprop="itemListElement" itemscope=""
-                itemtype="http://schema.org/ListItem">
-                <a itemprop="item">
-                    <span itemprop="name" style="font-weight: bold; color: #ff6600;"> {{subcategoryName}}</span>
-                </a>
-            </li>
-        </ol>
-    </div>
+                        <li class="breadcrumb-item" itemprop="itemListElement" itemscope=""
+                            itemtype="http://schema.org/ListItem">
+                            <a itemprop="item">
+                                <span itemprop="name" style="font-weight: bold; color: #ff6600;">
+                                    {{subcategoryName}}</span>
+                            </a>
+                        </li>
+                    </ol>
+                </div>
 
 
 
@@ -153,15 +158,15 @@
 
 
 
-        <div *ngIf="isbrand==1">
-        <ol class="breadcrumb" itemscope="" itemtype="http://schema.org/BreadcrumbList">
-            <li class="breadcrumb-item" itemprop="itemListElement" itemscope=""
-                itemtype="http://schema.org/ListItem">
-                <a itemprop="item" href=""><span itemprop="name" style="font-weight: bold;">HOME</span></a>
-                <meta itemprop="position" content="1">
-            </li>
+                <div *ngIf="isbrand==1">
+                    <ol class="breadcrumb" itemscope="" itemtype="http://schema.org/BreadcrumbList">
+                        <li class="breadcrumb-item" itemprop="itemListElement" itemscope=""
+                            itemtype="http://schema.org/ListItem">
+                            <a itemprop="item" href=""><span itemprop="name" style="font-weight: bold;">HOME</span></a>
+                            <meta itemprop="position" content="1">
+                        </li>
 
-            <!-- <li class="breadcrumb-item" itemprop="itemListElement" itemscope=""
+                        <!-- <li class="breadcrumb-item" itemprop="itemListElement" itemscope=""
                 itemtype="http://schema.org/ListItem">
                 <div *ngIf="isbrand==0">
                     <a itemprop="item" href="category">
@@ -171,153 +176,242 @@
                 </div>
             </li> -->
 
-                <li class="breadcrumb-item" itemprop="itemListElement" itemscope=""
-                    itemtype="http://schema.org/ListItem">
-                   
-                    <a itemprop="item" href="brand">
-                        <span itemprop="name" style="font-weight: bold;">{{categoryName}}</span>
-                    </a>
-                    <meta itemprop="position" content="2">
-                
-                </li>
-          
+                        <li class="breadcrumb-item" itemprop="itemListElement" itemscope=""
+                            itemtype="http://schema.org/ListItem">
 
-            <li class="breadcrumb-item" itemprop="itemListElement" itemscope=""
-                itemtype="http://schema.org/ListItem">
-                <a itemprop="item">
-                    <span itemprop="name" style="font-weight: bold; color: #ff6600;"> {{subcategoryName}}</span>
-                </a>
-            </li>
-        </ol>
-</div>
-</nav>
-</div>
-</div>
+                            <a itemprop="item" href="brand">
+                                <span itemprop="name" style="font-weight: bold;">{{categoryName}}</span>
+                            </a>
+                            <meta itemprop="position" content="2">
+
+                        </li>
 
 
-
-<!--breadcrumb- End -->
-
-<!-- Product Details Start -->
-<section>
-    <div class="container-xxl py-4">
-        <div class="container">
-        <div class="row">
-        <div class="col-lg-6 col-12">
-            <div [hidden]="isMenDivHidden" >
-                <div *ngFor="let data of product" class="mo-order-2" style="height:auto;">
-                    <!-- <svg id="product-svg" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg"    height="571" width="467">
-                        <defs/>
-                        <path id="product-shape" [attr.d]="men_svg_path"  [ngStyle]="{ fill: bgColor }" />
-                    </svg> -->
-                    <svg class="lp-view" id="product-svg" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 467 571" height="571" width="467">
-                        <defs/>
-                        <path id="product-shape" [attr.d]="men_svg_path"  [ngStyle]="{ fill: bgColor }" />
-                    </svg>
-                    <svg class="mb-view"  id="product-svg" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 467 571" width="248" height="303">
-                        <defs/>
-                        <path id="product-shape" [attr.d]="men_svg_path"  [ngStyle]="{ fill: bgColor }" />
-                    </svg> 
-                    <svg class="mm-view"  id="product-svg" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 467 571" width="327" height="400">
-                        <defs/>
-                        <path id="product-shape" [attr.d]="men_svg_path"  [ngStyle]="{ fill: bgColor }" />
-                    </svg>
-                    <div *ngIf="data.Product_type!=3">
-                        <img class="big_img" src="assets/img/{{this.productcategoryfolder}}/{{data.Product_Photo}}" >
-                    </div>
-                    <!-- <div *ngIf="data.Product_type==3">
-                        <img class="big_img" src="assets/img/{{this.productcategoryfolder}}/{{data.Product_SidePhoto}}" >
-                    </div> -->
+                        <li class="breadcrumb-item" itemprop="itemListElement" itemscope=""
+                            itemtype="http://schema.org/ListItem">
+                            <a itemprop="item">
+                                <span itemprop="name" style="font-weight: bold; color: #ff6600;">
+                                    {{subcategoryName}}</span>
+                            </a>
+                        </li>
+                    </ol>
                 </div>
-            </div>
-            
-            <div [hidden]="isTippingDivHidden">
-                
-                <img class="big_img" src="assets/img/{{this.productcategoryfolder}}/{{this.image}}" height="571" width="467">
-             
-            </div>
-
-            <div [hidden]="isTippingWomenDivHidden">
-
-                <img class="big_img" src="assets/img/{{this.productcategoryfolder}}/{{this.image1}}" height="571" width="467">           
-            </div>
-
-            <div [hidden]="isWoMenDivHidden">
-                <div *ngFor="let data of product" class="mo-order-2">
-                    <svg class="lp-view" id="product-svg" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 467 571" height="571" width="467">
-                        <defs/>
-                        <path id="product-shape" [attr.d]="women_svgpath"  [ngStyle]="{ fill: bgColor }" />
-                    </svg>
-                    <svg class="mb-view"  id="product-svg" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 467 571" width="248" height="303">
-                        <defs/>
-                        <path id="product-shape" [attr.d]="women_svgpath"  [ngStyle]="{ fill: bgColor }" />
-                    </svg> 
-                    <svg class="mm-view"  id="product-svg" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 467 571" width="327" height="400">
-                        <defs/>
-                        <path id="product-shape" [attr.d]="women_svgpath"  [ngStyle]="{ fill: bgColor }" />
-                    </svg>
-                    <!-- <svg id="product-svg" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg"    height="571" width="467">
-                        <defs/>
-                        <path id="product-shape" [attr.d]="women_svgpath"  [ngStyle]="{ fill: bgColor }" />
-                    </svg> -->
-                   <img class="big_img" src="assets/img/{{this.productcategoryfolder}}/{{data.WomenProduct_Photo}}">
-                </div>
-            </div>
+            </nav>
         </div>
-    
-        <div class="col-lg-6 col-12 ">
-            <div class="row g-5 align-items-center" *ngFor="let data of product">
-                <div class="col-lg-6 w-100 p-0">
-                    <div class="pro-detail-page-top">
-                        <div class="row g-4 mb-0 color bold align-items-center">
-                            <h3 class=" product-name-new pt-4">{{data.Product_Title}}</h3>
+    </div>
 
-                            <div class="row g-4 pad-0" *ngIf="colors!=0">
-                                <h5 class="dec-text-new" style="margin-top: 0px !important; ">Colors : {{this.selected_colorname}}</h5>
-                                
-                                <ngx-slick-carousel class="carousel"
-                                    #slickModal="slick-carousel"
-                                    [config]="slideConfig" 
-                                    (init)="slickInit($event)"
-                                    (breakpoint)="breakpoint($event)"
-                                    (afterChange)="afterChange($event)"
-                                    (beforeChange)="beforeChange($event)">
-                                    <div ngxSlickItem *ngFor="let data of colors" class="slide">
-                                        <div class="container py-5 pc-Style-hero-colors-sizeList-adultSizes mt-0 pt-0 pb-3">
-                                            <div class="row row-cols-2 row-cols-lg-6 w-100">
-                                         
-                                                <div class="label-name">{{data.ColorName}}</div>
-                                                <div class="colorbox">
-                                                        <li class="color-box" rel="tooltip" (click)="onColorClick(data)"
-                                                            [ngStyle]="{'background-color':data.Description}" data-mobile=""
-                                                            data-create="false">
-                                                        </li>
-                                                    </div>
-                                            </div>                        
-                                        </div>
-                                    </div>
-                                </ngx-slick-carousel>
-                            </div>
 
-                            <!-- <div class="row g-4" *ngIf="tipping.length>0">
-                                <h5 class="colors-pallete" style="margin-top: 0px !important;">Colors:</h5>
-                                <div class="container py-5 pc-Style-hero-colors-sizeList-adultSizes mt-0 pt-0 pb-3">
-                                    <div class="row row-cols-2 row-cols-lg-6 w-90">
-                                        <div *ngFor="let item of tipping" (click)="onTippingClick(item)">
-                                             <img src="assets/img/tipping/{{item.tipping_img}}" class="" style="height: 51px;">
-                                            <div class="label-name">
-                                                {{item.Description}}
-                                            </div>
-                                            
-                                        </div>
-                                    </div>
+
+    <!--breadcrumb- End -->
+
+    <!-- Product Details Start -->
+    <section>
+        <div class="container-xxl py-4">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-12">
+                        <div [hidden]="isMenDivHidden">
+                            <div *ngFor="let data of product" class="mo-order-2" style="height:auto;">
+                                <!-- <svg id="product-svg" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg"    height="571" width="467">
+                                <defs/>
+                                <path id="product-shape" [attr.d]="men_svg_path"  [ngStyle]="{ fill: bgColor }" />
+                            </svg> -->
+                                <svg class="lp-view" id="product-svg" data-name="Layer 1"
+                                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 467 571" height="571" width="467">
+                                    <defs />
+                                    <path id="product-shape" [attr.d]="men_svg_path" [ngStyle]="{ fill: bgColor }" />
+                                </svg>
+                                <svg class="mb-view" id="product-svg" data-name="Layer 1"
+                                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 467 571" width="248" height="303">
+                                    <defs />
+                                    <path id="product-shape" [attr.d]="men_svg_path" [ngStyle]="{ fill: bgColor }" />
+                                </svg>
+                                <svg class="mm-view" id="product-svg" data-name="Layer 1"
+                                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 467 571" width="327" height="400">
+                                    <defs />
+                                    <path id="product-shape" [attr.d]="men_svg_path" [ngStyle]="{ fill: bgColor }" />
+                                </svg>
+                                <div *ngIf="data.Product_type!=3">
+                                    <img class="big_img"
+                                        src="assets/img/{{this.productcategoryfolder}}/{{data.Product_Photo}}">
                                 </div>
+                                <!-- <div *ngIf="data.Product_type==3">
+                                <img class="big_img" src="assets/img/{{this.productcategoryfolder}}/{{data.Product_SidePhoto}}" >
                             </div> -->
+                            </div>
+                        </div>
 
-                            <div  class="row g-4" *ngIf="tipping!=0">
-                                <div *ngIf="id==0 || id==2">
-                                    <h5 class="dec-text-new pad-0" style="margin-top: 0px !important;">Colors:</h5>
-                                    <ngx-slick-carousel class="carousel"
+                        <div [hidden]="isTippingDivHidden">
+
+                            <img class="big_img" src="assets/img/{{this.productcategoryfolder}}/{{this.image}}"
+                                height="571" width="467">
+
+                        </div>
+
+                        <div [hidden]="isTippingWomenDivHidden">
+
+                            <img class="big_img" src="assets/img/{{this.productcategoryfolder}}/{{this.image1}}"
+                                height="571" width="467">
+                        </div>
+
+                        <div [hidden]="isWoMenDivHidden">
+                            <div *ngFor="let data of product" class="mo-order-2">
+                                <svg class="lp-view" id="product-svg" data-name="Layer 1"
+                                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 467 571" height="571" width="467">
+                                    <defs />
+                                    <path id="product-shape" [attr.d]="women_svgpath" [ngStyle]="{ fill: bgColor }" />
+                                </svg>
+                                <svg class="mb-view" id="product-svg" data-name="Layer 1"
+                                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 467 571" width="248" height="303">
+                                    <defs />
+                                    <path id="product-shape" [attr.d]="women_svgpath" [ngStyle]="{ fill: bgColor }" />
+                                </svg>
+                                <svg class="mm-view" id="product-svg" data-name="Layer 1"
+                                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 467 571" width="327" height="400">
+                                    <defs />
+                                    <path id="product-shape" [attr.d]="women_svgpath" [ngStyle]="{ fill: bgColor }" />
+                                </svg>
+                                <!-- <svg id="product-svg" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg"    height="571" width="467">
+                                <defs/>
+                                <path id="product-shape" [attr.d]="women_svgpath"  [ngStyle]="{ fill: bgColor }" />
+                            </svg> -->
+                                <img class="big_img"
+                                    src="assets/img/{{this.productcategoryfolder}}/{{data.WomenProduct_Photo}}">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 col-12 ">
+                        <div class="row g-5 align-items-center" *ngFor="let data of product">
+                            <div class="col-lg-6 w-100 p-0">
+                                <div class="pro-detail-page-top">
+                                    <div class="row g-4 mb-0 color bold align-items-center">
+                                        <h3 class=" product-name-new pt-4">{{data.Product_Title}}</h3>
+
+                                        <div class="row g-4 pad-0" *ngIf="colors!=0">
+                                            <h5 class="dec-text-new" style="margin-top: 0px !important; ">Colors :
+                                                {{this.selected_colorname}}</h5>
+                                            <p class="color">
+                                                "There might be a slight variation of colour 
+                                                seen on the screen and may different from the 
+                                                original product."
+                                            </p>
+
+                                            <ngx-slick-carousel class="carousel" #slickModal="slick-carousel"
+                                                [config]="slideConfig" (init)="slickInit($event)"
+                                                (breakpoint)="breakpoint($event)" (afterChange)="afterChange($event)"
+                                                (beforeChange)="beforeChange($event)">
+                                                <div ngxSlickItem *ngFor="let data of colors" class="slide">
+                                                    <div
+                                                        class="container py-5 pc-Style-hero-colors-sizeList-adultSizes mt-0 pt-0 pb-3">
+                                                        <div class="row row-cols-2 row-cols-lg-6 w-100">
+
+                                                            <div class="label-name">{{data.ColorName}}</div>
+                                                            <div class="colorbox">
+                                                                <li class="color-box" rel="tooltip"
+                                                                    (click)="onColorClick(data)"
+                                                                    [ngStyle]="{'background-color':data.Description}"
+                                                                    data-mobile="" data-create="false">
+                                                                </li>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </ngx-slick-carousel>
+                                        </div>
+
+                                        <!-- <div class="row g-4" *ngIf="tipping.length>0">
+                                        <h5 class="colors-pallete" style="margin-top: 0px !important;">Colors:</h5>
+                                        <div class="container py-5 pc-Style-hero-colors-sizeList-adultSizes mt-0 pt-0 pb-3">
+                                            <div class="row row-cols-2 row-cols-lg-6 w-90">
+                                                <div *ngFor="let item of tipping" (click)="onTippingClick(item)">
+                                                    <img src="assets/img/tipping/{{item.tipping_img}}" class="" style="height: 51px;">
+                                                    <div class="label-name">
+                                                        {{item.Description}}
+                                                    </div>
+                                                    
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div> -->
+
+                                        <div class="row g-4" *ngIf="tipping!=0">
+                                            <div *ngIf="id==0 || id==2">
+                                                <h5 class="dec-text-new pad-0" style="margin-top: 0px !important;">
+                                                    Colors:</h5>
+                                                    <p class="color">
+                                                        "There might be a slight variation of colour 
+                                                        seen on the screen and may different from the 
+                                                        original product."
+                                                    </p>
+                                                <ngx-slick-carousel class="carousel" #slickModal="slick-carousel"
+                                                    [config]="slideConfig" (init)="slickInit($event)"
+                                                    (breakpoint)="breakpoint($event)"
+                                                    (afterChange)="afterChange($event)"
+                                                    (beforeChange)="beforeChange($event)">
+                                                    <div ngxSlickItem *ngFor="let item of tipping" class="slide">
+                                                        <div
+                                                            class="container py-5 pc-Style-hero-colors-sizeList-adultSizes mt-0 pt-0 pb-3">
+                                                            <div class="row row-cols-2 row-cols-lg-6 w-100">
+                                                                <div (click)="onTippingClick(item)">
+                                                                    <!-- <div *ngIf="item.tipping_women_img==1"> -->
+                                                                    <img src="assets/img/tipping/{{item.tipping_img}}"
+                                                                        class="" style="width: 42px;">
+                                                                    <div class="label-name">
+                                                                        {{item.Description}}
+                                                                    </div>
+                                                                    <!-- </div> -->
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </ngx-slick-carousel>
+                                            </div>
+                                        </div>
+
+                                        <div class="row g-4" *ngIf="tippingWomen!=0">
+                                            <div *ngIf="id==1 ||id==3">
+
+                                                <h5 class="colors-pallete" style="margin-top: 0px !important;">Colors:
+                                                </h5>
+                                                <p class="color">
+                                                    "There might be a slight variation of colour 
+                                                    seen on the screen and may different from the 
+                                                    original product."
+                                                </p>
+                                                <ngx-slick-carousel class="carousel" #slickModal="slick-carousel"
+                                                    [config]="slideConfig" (init)="slickInit($event)"
+                                                    (breakpoint)="breakpoint($event)"
+                                                    (afterChange)="afterChange($event)"
+                                                    (beforeChange)="beforeChange($event)">
+                                                    <!-- <div ngxSlickItem *ngFor="let item of tipping" class="slide"> -->
+                                                    <!-- <div  *ngFor="let item of tipping"> -->
+                                                    <div ngxSlickItem *ngFor="let item of tippingWomen" class="slide">
+                                                        <div
+                                                            class="container py-5 pc-Style-hero-colors-sizeList-adultSizes mt-0 pt-0 pb-3">
+                                                            <div class="row row-cols-2 row-cols-lg-6 w-90">
+                                                                <!-- <div (click)="onTippingWomenClick(item)" *ngIf="item.tipping_women_img==54"> -->
+                                                                <div (click)="onTippingWomenClick(item)">
+                                                                    <img src="assets/img/tipping/{{item.tipping_img}}"
+                                                                        style="width: 42px;">
+                                                                    <div class="label-name">
+                                                                        {{item.Description}}
+                                                                        <!-- {{item.tipping_women_img}} -->
+                                                                    </div>
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <!-- </div> -->
+                                                    </div>
+                                                </ngx-slick-carousel>
+                                            </div>
+                                        </div>
+
+                                        <!-- <div *ngIf="id==1 ||id==3">
+                                        
+                                        <h5 class="colors-pallete" style="margin-top: 0px !important;">Colors:</h5>
+                                        <ngx-slick-carousel class="carousel"
                                         #slickModal="slick-carousel"
                                         [config]="slideConfig" 
                                         (init)="slickInit($event)"
@@ -325,199 +419,169 @@
                                         (afterChange)="afterChange($event)"
                                         (beforeChange)="beforeChange($event)">
                                         <div ngxSlickItem *ngFor="let item of tipping" class="slide">
-                                            <div class="container py-5 pc-Style-hero-colors-sizeList-adultSizes mt-0 pt-0 pb-3">
-                                                <div class="row row-cols-2 row-cols-lg-6 w-100">
-                                                    <div  (click)="onTippingClick(item)">
-                                                        <!-- <div *ngIf="item.tipping_women_img==1"> -->
-                                                        <img src="assets/img/tipping/{{item.tipping_img}}" class="" style="width: 42px;">
-                                                        <div class="label-name">
-                                                            {{item.Description}}
-                                                        </div>
-                                                        <!-- </div> -->
+                                        <div class="container py-5 pc-Style-hero-colors-sizeList-adultSizes mt-0 pt-0 pb-3">
+                                            <div class="row row-cols-2 row-cols-lg-6 w-90">
+                                                <div (click)="onTippingWomenClick(item)">
+                                                    <img src="assets/img/tipping/{{item.tipping_img}}" class="" style="height: 51px;">
+                                                    <div class="label-name">
+                                                        {{item.Description}} -->
+                                        <!-- {{item.tipping_women_img}} -->
+                                        <!-- </div> -->
+                                        <!-- </div> -->
+                                        <!-- </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </ngx-slick-carousel>
+                                    </div> -->
+
+
+                                        <div [hidden]="isMenDivHidden && isTippingDivHidden" class="modal-body"
+                                            *ngFor="let data of product">
+                                            <h5 *ngIf="data.Product_Description.length>0" class="dec-text-new">Product
+                                                Description :</h5>
+                                            <div *ngIf="data.Product_Description.length>0" class="detail-pro-dec"
+                                                [innerHTML]="data.Product_Description"></div>
+                                        </div>
+                                        <div [hidden]="isWoMenDivHidden && isTippingWomenDivHidden" class="modal-body"
+                                            *ngFor="let data of product">
+                                            <h5 *ngIf="data.WomenProduct_Description.length>0" class="dec-text-new">
+                                                Product Description :</h5>
+                                            <div *ngIf="data.WomenProduct_Description.length>0" class="detail-pro-dec"
+                                                [innerHTML]="data.WomenProduct_Description"></div>
+                                            <!-- <p class="mb-4 color text-center">{{data.WomenProduct_Description}}</p> -->
+                                        </div>
+
+                                        <div class="modal-body" *ngFor="let data of product">
+                                            <h6 class="dec-text-new" *ngIf="data.MRP!=undefined && data.MRP!=0">M.R.P.:
+                                                ₹{{data.MRP}}/-</h6>
+
+                                            <!-- <p class="mb-4 color text-center">{{data.WomenProduct_Description}}</p> -->
+                                        </div>
+
+                                        <div class="edit-btn-page" style="padding: 0px; margin-top: 0px !important;">
+                                            <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                                data-bs-target="#exampleModal1" class="btn btn-link  fs-5 other_btn"
+                                                *ngIf="data.Product_Photo?.length">
+                                                <i class="Small material-icons text-sm me-2">edit</i>CUSTOMIZE DESIGN
+                                            </button>
+                                            <button [hidden]="isMenDivHidden && isTippingDivHidden"
+                                                *ngIf="data.SizeChartForMen?.length" type="button"
+                                                class="btn btn-primary " data-bs-toggle="modal"
+                                                data-bs-target="#exampleModal" class="btn btn-link  fs-5 other_btn">
+                                                <i class="large material-icons text-sm me-2">storage</i>SIZE CHART
+                                            </button>
+                                            <button [hidden]="isWoMenDivHidden && isTippingWomenDivHidden"
+                                                *ngIf="data.SizeChartForWomen?.length" type="button"
+                                                class="btn btn-primary " data-bs-toggle="modal"
+                                                data-bs-target="#exampleModal" class="btn btn-link  fs-5 other_btn">
+                                                <i class="Small material-icons text-sm me-2">storage</i>SIZE CHART
+                                            </button>
+
+                                        </div>
+                                    </div>
+
+                                    <div *ngIf="sizes.length>0" class="row g-4 d-flex">
+                                        <div class="col-lg-4 col-5 pad-0">
+                                            <h5 class=" dec-text-new pad-0">Sizes available in:</h5>
+                                        </div>
+                                        <div class="col-lg-6 col-6  pad-0">
+                                            <div class=" py-5 pc-Style-hero-colors-sizeList-adultSizes mt-0 pt-0 pb-3"
+                                                style="">
+                                                <div class="d-flex">
+                                                    <div class="" *ngFor="let data of sizes">
+                                                        <span class=" size pc-Style-hero-colors-sizeList-item in"
+                                                            style="margin: 10px;">{{data.Description}}</span>
+                                                        <span>|</span>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </ngx-slick-carousel>
-                                </div>
-                            </div>
+                                    </div>
 
-                            <div  class="row g-4" *ngIf="tippingWomen!=0">
-                                <div *ngIf="id==1 ||id==3">
-                                  
-                                    <h5 class="colors-pallete" style="margin-top: 0px !important;">Colors:</h5>
-                                    <ngx-slick-carousel class="carousel"
-                                    #slickModal="slick-carousel"
-                                    [config]="slideConfig" 
-                                    (init)="slickInit($event)"
-                                    (breakpoint)="breakpoint($event)"
-                                    (afterChange)="afterChange($event)"
-                                    (beforeChange)="beforeChange($event)">
-                                    <!-- <div ngxSlickItem *ngFor="let item of tipping" class="slide"> -->
-                                    <!-- <div  *ngFor="let item of tipping"> -->
-                                    <div ngxSlickItem *ngFor="let item of tippingWomen" class="slide">
-                                    <div class="container py-5 pc-Style-hero-colors-sizeList-adultSizes mt-0 pt-0 pb-3">
-                                        <div class="row row-cols-2 row-cols-lg-6 w-90">
-                                            <!-- <div (click)="onTippingWomenClick(item)" *ngIf="item.tipping_women_img==54"> -->
-                                                <div (click)="onTippingWomenClick(item)"> 
-                                                <img src="assets/img/tipping/{{item.tipping_img}}"  style="width: 42px;">
-                                                <div class="label-name">
-                                                    {{item.Description}}
-                                                    <!-- {{item.tipping_women_img}} -->
+                                    <div
+                                        *ngIf="data.Category_Id!=6 && data.Category_Id!=7 && data.Category_Id!=8 && data.Category_Id!=9">
+                                        <div *ngIf="(data.SizeChartForMen?.length || data.SizeChartForWoMen?.length)>0 "
+                                            class="row g-4">
+                                            <div class="col-lg-4 col-12  pad-0">
+                                                <h5 class="variationHead" style="padding: 0!important; ">Choose Category
+                                                    :</h5>
+                                            </div>
+                                        </div>
+                                        <div class="row g-4">
+                                            <div class="col-lg-12 col-12  pad-0">
+                                                <div class="col-lg-12 col-12  pad-0">
+                                                    <div class="genderButtonBlock" id="genderVariations">
+                                                        <div *ngIf="(data.Product_Photo?.length)>0"
+                                                            (click)="onClickmenPhoto()" class="genderButton"
+                                                            data-id="id_0" tabindex="0" data-title="Men"
+                                                            data-value="men">Men</div>
+                                                        <div *ngIf="(data.WomenProduct_Photo?.length)>0"
+                                                            (click)="onClickWomenPhoto()" class="genderButton"
+                                                            data-id="id_1" tabindex="1" data-title="Women"
+                                                            data-value="women">Women</div>
+                                                    </div>
                                                 </div>
-                                                
                                             </div>
                                         </div>
                                     </div>
-                                <!-- </div> -->
                                 </div>
-                            </ngx-slick-carousel>
-                                </div>
-                            </div>
 
-                            <!-- <div *ngIf="id==1 ||id==3">
-                                  
-                                <h5 class="colors-pallete" style="margin-top: 0px !important;">Colors:</h5>
-                                <ngx-slick-carousel class="carousel"
-                                #slickModal="slick-carousel"
-                                [config]="slideConfig" 
-                                (init)="slickInit($event)"
-                                (breakpoint)="breakpoint($event)"
-                                (afterChange)="afterChange($event)"
-                                (beforeChange)="beforeChange($event)">
-                                <div ngxSlickItem *ngFor="let item of tipping" class="slide">
-                                <div class="container py-5 pc-Style-hero-colors-sizeList-adultSizes mt-0 pt-0 pb-3">
-                                    <div class="row row-cols-2 row-cols-lg-6 w-90">
-                                        <div (click)="onTippingWomenClick(item)">
-                                            <img src="assets/img/tipping/{{item.tipping_img}}" class="" style="height: 51px;">
-                                            <div class="label-name">
-                                                {{item.Description}} -->
-                                                <!-- {{item.tipping_women_img}} -->
-                                            <!-- </div> -->
-                                            <!-- </div> -->
-                                        <!-- </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </ngx-slick-carousel>
-                            </div> -->
-
-
-                            <div [hidden]="isMenDivHidden && isTippingDivHidden" class="modal-body"  *ngFor="let data of product">
-                                <h5 *ngIf="data.Product_Description.length>0" class="dec-text-new">Product Description :</h5>
-                                <div  *ngIf="data.Product_Description.length>0" class="detail-pro-dec" [innerHTML]="data.Product_Description"></div>
-                            </div>
-                            <div [hidden]="isWoMenDivHidden && isTippingWomenDivHidden" class="modal-body" *ngFor="let data of product">
-                                <h5 *ngIf="data.WomenProduct_Description.length>0" class="dec-text-new">Product Description :</h5>
-                                <div *ngIf="data.WomenProduct_Description.length>0"class="detail-pro-dec"[innerHTML]="data.WomenProduct_Description"></div>
-                                <!-- <p class="mb-4 color text-center">{{data.WomenProduct_Description}}</p> -->
-                            </div>
-
-                            <div class="modal-body" *ngFor="let data of product">
-                                <h6 class="dec-text-new" *ngIf="data.MRP!=undefined && data.MRP!=0">M.R.P.: ₹{{data.MRP}}/-</h6>
-                              
-                                <!-- <p class="mb-4 color text-center">{{data.WomenProduct_Description}}</p> -->
-                            </div>
-
-                            <div class="edit-btn-page" style="padding: 0px; margin-top: 0px !important;">
-                                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal1"
-                                    class="btn btn-link  fs-5 other_btn" *ngIf="data.Product_Photo?.length">
-                                    <i class="Small material-icons text-sm me-2">edit</i>CUSTOMIZE DESIGN
-                                </button>
-                                <button [hidden]="isMenDivHidden && isTippingDivHidden" *ngIf="data.SizeChartForMen?.length" type="button" class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#exampleModal"
-                                class="btn btn-link  fs-5 other_btn" >
-                                <i class="large material-icons text-sm me-2">storage</i>SIZE CHART
-                                </button>
-                                <button [hidden]="isWoMenDivHidden && isTippingWomenDivHidden"  *ngIf="data.SizeChartForWomen?.length" type="button" class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#exampleModal"
-                                class="btn btn-link  fs-5 other_btn">
-                                    <i class="Small material-icons text-sm me-2">storage</i>SIZE CHART
-                                </button>
-                                
                             </div>
                         </div>
-    
-                    <div *ngIf="sizes.length>0" class="row g-4 d-flex">
-                        <div class="col-lg-4 col-5 pad-0">
-                            <h5 class=" dec-text-new pad-0">Sizes available in:</h5>
-                        </div>
-                        <div class="col-lg-6 col-6  pad-0">
-                            <div class=" py-5 pc-Style-hero-colors-sizeList-adultSizes mt-0 pt-0 pb-3"style="">
-                                <div class="d-flex">
-                                    <div class="" *ngFor="let data of sizes">
-                                        <span class=" size pc-Style-hero-colors-sizeList-item in" style="margin: 10px;">{{data.Description}}</span>  <span>|</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-    
-                    <div *ngIf="data.Category_Id!=6 && data.Category_Id!=7 && data.Category_Id!=8 && data.Category_Id!=9">
-                    <div *ngIf="(data.SizeChartForMen?.length || data.SizeChartForWoMen?.length)>0 "  class="row g-4">
-                        <div class="col-lg-4 col-12  pad-0">
-                            <h5 class="variationHead" style="padding: 0!important; ">Choose Category :</h5>
-                        </div>
-                    </div>
-                    <div  class="row g-4">
-                        <div class="col-lg-12 col-12  pad-0">
-                            <div class="col-lg-12 col-12  pad-0">
-                                <div class="genderButtonBlock" id="genderVariations"> 
-                                    <div *ngIf="(data.Product_Photo?.length)>0"  (click)="onClickmenPhoto()" class="genderButton" data-id="id_0" tabindex="0" data-title="Men" data-value="men">Men</div>	
-                                    <div *ngIf="(data.WomenProduct_Photo?.length)>0" (click)="onClickWomenPhoto()" class="genderButton" data-id="id_1" tabindex="1" data-title="Women" data-value="women">Women</div>
-                                </div>
-                            </div>
-                        </div>
-                        </div>
-                    </div>
-                    </div>
-                        
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    </div>
-</section>
-<!-- Product Details End -->
+    </section>
+    <!-- Product Details End -->
 
-<!-- Similar Products Start -->
-<div *ngIf="simillarProducts.length>0" class="container-xxl pt-7">
-    <div class="container">
+    <!-- Similar Products Start -->
+    <div *ngIf="simillarProducts.length>0" class="container-xxl pt-7">
+        <div class="container">
 
-        <div class="row g-0 gx-5 align-items-end">
-            <div class="col-lg-12">
-                <div class="section-header text-center mb-5 wow fadeInUp" data-wow-delay="0.1s">
-                    <h3 class="">Similar Product</h3>
+            <div class="row g-0 gx-5 align-items-end">
+                <div class="col-lg-12">
+                    <div class="section-header text-center mb-5 wow fadeInUp" data-wow-delay="0.1s">
+                        <h3 class="">Similar Product</h3>
+                    </div>
                 </div>
             </div>
-        </div>
-
-        <div class="row g-4">
-            <div class="col-xl-3 col-lg-4 col-md-6  col-6 wow fadeInUp" data-wow-delay="0.1s"
-                *ngFor="let simillarproduct of simillarProducts">
-                <div class="product-item pointer" id="tab-1" (click) ="onClick(simillarproduct)">
-                    <div class="pt-2">
-                        <a class="d-block h5 mb-2">{{simillarproduct.Product_Title}}</a>
-                    </div>
-                    <div class="position-relative  overflow-hidden" *ngIf="simillarproduct.Product_type==1">
-                        <img class="img-fluid w-100"
-                            src="assets/img/{{this.categoryfolder}}/{{simillarproduct.Product_FrontPhoto}}" alt="">   
-                    </div>
-                    <div class="position-relative overflow-hidden" *ngIf="simillarproduct.Product_type==2">
-                        <img class="img-fluid w-100"
-                            src="assets/img/{{this.categoryfolder}}/{{simillarproduct.Product_Photo}}" alt="">   
-                    </div>
-                    <!-- <div class="pt-2">
+            <owl-carousel-o [options]="similarProducts">
+                <ng-container *ngFor="let simillarproduct of simillarProducts">
+                    <ng-template carouselSlide [width]="270">
+                        <div class="row g-4">
+                            <div class="col-xl-3 w-90 col-lg-4 col-md-6  col-6 wow fadeInUp" data-wow-delay="0.1s">
+                                <div class="product-item pointer" id="tab-1" (click)="onClick(simillarproduct)">
+                                    <div class="pt-2">
+                                        <a class="d-block h5 mb-2">{{simillarproduct.Product_Title}}</a>
+                                    </div>
+                                    <div class="position-relative  overflow-hidden"
+                                        *ngIf="simillarproduct.Product_type==1">
+                                        <img class="img-fluid w-100"
+                                            src="assets/img/{{this.categoryfolder}}/{{simillarproduct.Product_FrontPhoto}}"
+                                            alt="">
+                                    </div>
+                                    <div class="position-relative overflow-hidden"
+                                        *ngIf="simillarproduct.Product_type==2">
+                                        <img class="img-fluid w-100"
+                                            src="assets/img/{{this.categoryfolder}}/{{simillarproduct.Product_Photo}}"
+                                            alt="">
+                                    </div>
+                                    <!-- <div class="pt-2">
                         <a class="d-block h5 mb-2">{{simillarproduct.Product_Title}}</a>
                     </div> -->
-                </div>
-            </div>
+                                </div>
+                            </div>
+                        </div>
+                    </ng-template>
+                </ng-container>
+            </owl-carousel-o>
         </div>
     </div>
-</div>
 </div>
 <!-- Similar Products End -->
 
 <!-- Page Footer start-->
 <app-footer></app-footer>
 <!-- Page Footer End -->
-
