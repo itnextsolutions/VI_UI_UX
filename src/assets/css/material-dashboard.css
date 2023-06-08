@@ -20545,6 +20545,7 @@
   
   .btn:not([class*="btn-outline-"]) {
     border: 0;
+    font-size: 12px;
   }
   
   .btn:active,

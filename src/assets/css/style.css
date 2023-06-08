@@ -478,7 +478,7 @@ font-size: 39px;
     transition: .5s;
     margin: 0 auto;
     display: block;
-    border-radius: 15px;
+    border-radius: 5px;
     /* text-transform: capitalize; */
 }
 
@@ -710,6 +710,7 @@ font-size: 39px;
 .categoryBox {
     padding: 0px !important;
     margin: 8px;
+    width: 31% !important;
 }
 
 .m_header {
@@ -736,6 +737,22 @@ font-size: 39px;
         font-size: 12px !important;
         font-weight: bold;
         padding: 0px !important;
+    }
+    .product-item a {
+        font-size: 0.60rem;
+        height: 24px;
+        line-height: 11px;
+        text-align: center;
+        overflow: hidden!important;
+        width: 100%;
+        display: -webkit-box! important;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+         word-wrap: break-word;
+    }
+    .categoryBox {
+        margin: 8px;
+        width: 44% !important;
     }
 }
 
