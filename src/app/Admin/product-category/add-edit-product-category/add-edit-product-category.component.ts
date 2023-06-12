@@ -65,13 +65,19 @@ export class AddEditProductCategoryComponent implements OnInit {
   }
 
   onSelectChange(e: any) {
-    let index = this.Is_Brand.indexOf(e.target.value);
-    if (index == -1) {
-      this.Is_Brand.push(e.target.value);
+    if (this.Is_Brand==true){
+      this.Is_Brand=1;
     }
-    else {
-      this.Is_Brand.splice(index, 1);
+    else{
+      this.Is_Brand=0
     }
+    // let index = this.Is_Brand.indexOf(e.target.value);
+    // if (index == -1) {
+    //   this.Is_Brand.push(e.target.value);
+    // }
+    // else {
+    //   this.Is_Brand.splice(index, 1);
+    // }
   }
 
   onClick(e: any) {

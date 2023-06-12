@@ -96,7 +96,7 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <tr *ngFor="let dataItem of notificationList; let i=index;">
+                    <tr *ngFor="let dataItem of notificationList |  paginate: { itemsPerPage: 10, currentPage: pageNo } let i=index;">
                       <td><div></div></td>
                     <td><div>{{i+1}}</div></td>
                       <td>
@@ -136,10 +136,11 @@
                   </tbody>
                 </table>
               </div>
+              <pagination-controls (pageChange)="pageNo = $event" class="float-right"></pagination-controls>
             </div>
           </div>
         </div>
-        <div class="container mw-100"> 
+        <!-- <div class="container mw-100"> 
           <div class="row">  
             <div class="col-md-3"> </div>  
             <div *ngIf="notificationList !=0" class="col-md-6">  
@@ -151,7 +152,7 @@
               </ul> 
             </div>  
           </div>   
-        </div> 
+        </div>  -->
       </div>
     </div>
   </main>

@@ -93,7 +93,7 @@
                       </tr>
                     </thead>
                     <tbody>
-                      <tr *ngFor="let dataItem of blogList; let i=index;">
+                      <tr *ngFor="let dataItem of blogList |  paginate: { itemsPerPage: 10, currentPage: pageNo } let i=index;">
                         <td><div></div></td>
                         <td>
                           <div>
@@ -126,7 +126,7 @@
                   </table>
                 </div>
               </div>
-              <div class="container mw-100"> 
+              <!-- <div class="container mw-100"> 
                 <div class="row">  
                   <div class="col-md-3"> </div>  
                   <div *ngIf="blogList !=0" class="col-md-6">  
@@ -136,12 +136,10 @@
                          style=" margin-right: 5px;;margin-top: 5px">{{page}}</a>  
                       </li>  
                     </ul>  
-                    <!-- <div style="text-align: center;">   
-                      Total page {{paginationService.exactPageList}}   
-                    </div>  -->
                   </div>  
                 </div>   
-              </div> 
+              </div>  -->
+              <pagination-controls (pageChange)="pageNo = $event" class="float-right"></pagination-controls>
             </div>
           </div>
         </div>
