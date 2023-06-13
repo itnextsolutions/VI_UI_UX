@@ -144,7 +144,9 @@ export class ProductDetailsComponent implements OnInit {
     navText: ['', ''],
     responsive: {
       0: {
-        items: 1.2
+        items: 1.2,
+        loop:true,
+        dots:true
       },
       400: {
         items: 2
