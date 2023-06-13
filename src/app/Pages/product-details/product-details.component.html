@@ -289,13 +289,13 @@
                                         <h3 class=" product-name-new pt-4">{{data.Product_Title}}</h3>
 
                                         <div class="row g-4 pad-0" *ngIf="colors!=0">
-                                            <h5 class="dec-text-new" style="margin-top: 0px !important; ">Colors :
-                                                {{this.selected_colorname}}</h5>
-                                            <p class="color">
-                                                "There might be a slight variation of colour 
-                                                seen on the screen and may different from the 
-                                                original product."
+                                            <p class="color my-0 mb-2 noteMsg">
+                                                * There might be a slight variation of colour
+                                                seen on the screen and may different from the
+                                                original product.
                                             </p>
+                                            <h5 class="dec-text-new">Colors :
+                                                {{this.selected_colorname}}</h5>
 
                                             <ngx-slick-carousel class="carousel" #slickModal="slick-carousel"
                                                 [config]="slideConfig" (init)="slickInit($event)"
@@ -304,15 +304,14 @@
                                                 <div ngxSlickItem *ngFor="let data of colors" class="slide">
                                                     <div
                                                         class="container py-5 pc-Style-hero-colors-sizeList-adultSizes mt-0 pt-0 pb-3">
-                                                        <div class="row row-cols-2 row-cols-lg-6 w-100">
-
-                                                            <div class="label-name">{{data.ColorName}}</div>
+                                                        <div class="row row-cols-1 row-cols-lg-6 w-100">
                                                             <div class="colorbox">
-                                                                <li class="color-box" rel="tooltip"
+                                                                <span class="color-box" rel="tooltip"
                                                                     (click)="onColorClick(data)"
                                                                     [ngStyle]="{'background-color':data.Description}"
                                                                     data-mobile="" data-create="false">
-                                                                </li>
+                                                                </span>
+                                                                <div class="label-name">{{data.ColorName}}</div>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -320,30 +319,17 @@
                                             </ngx-slick-carousel>
                                         </div>
 
-                                        <!-- <div class="row g-4" *ngIf="tipping.length>0">
-                                        <h5 class="colors-pallete" style="margin-top: 0px !important;">Colors:</h5>
-                                        <div class="container py-5 pc-Style-hero-colors-sizeList-adultSizes mt-0 pt-0 pb-3">
-                                            <div class="row row-cols-2 row-cols-lg-6 w-90">
-                                                <div *ngFor="let item of tipping" (click)="onTippingClick(item)">
-                                                    <img src="assets/img/tipping/{{item.tipping_img}}" class="" style="height: 51px;">
-                                                    <div class="label-name">
-                                                        {{item.Description}}
-                                                    </div>
-                                                    
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div> -->
+                                        <div class="row g-4 pad-0" *ngIf="tipping!=0">
+                                            <div *ngIf="id==0 || id==2" class="my-0">
 
-                                        <div class="row g-4" *ngIf="tipping!=0">
-                                            <div *ngIf="id==0 || id==2">
-                                                <h5 class="dec-text-new pad-0" style="margin-top: 0px !important;">
-                                                    Colors:</h5>
-                                                    <p class="color">
-                                                        "There might be a slight variation of colour 
-                                                        seen on the screen and may different from the 
-                                                        original product."
-                                                    </p>
+                                                <p class="color my-0 mb-2 noteMsg">
+                                                    * There might be a slight variation of colour
+                                                    seen on the screen and may different from the
+                                                    original product.
+                                                </p>
+
+                                                <h5 class="dec-text-new mb-4"> Colors:</h5>
+
                                                 <ngx-slick-carousel class="carousel" #slickModal="slick-carousel"
                                                     [config]="slideConfig" (init)="slickInit($event)"
                                                     (breakpoint)="breakpoint($event)"
@@ -352,20 +338,26 @@
                                                     <div ngxSlickItem *ngFor="let item of tipping" class="slide">
                                                         <div
                                                             class="container py-5 pc-Style-hero-colors-sizeList-adultSizes mt-0 pt-0 pb-3">
-                                                            <div class="row row-cols-2 row-cols-lg-6 w-100">
-                                                                <div (click)="onTippingClick(item)">
-                                                                    <!-- <div *ngIf="item.tipping_women_img==1"> -->
-                                                                    <img src="assets/img/tipping/{{item.tipping_img}}"
-                                                                        class="" style="width: 42px;">
-                                                                    <div class="label-name">
-                                                                        {{item.Description}}
+                                                            <div class="row row-cols-1 row-cols-lg-6 w-100">
+                                                                <div class="colorbox">
+                                                                    <div (click)="onTippingClick(item)">
+                                                                        <img src="assets/img/tipping/{{item.tipping_img}}"
+                                                                            class="" style="width: 35px;">
+                                                                        <div class="tipping-label-name">
+                                                                            {{item.Description}}
+                                                                        </div>
                                                                     </div>
-                                                                    <!-- </div> -->
                                                                 </div>
+                                                                <!-- <div class="colorbox" (click)="onTippingClick(item)">
+                                                                    <img src="assets/img/tipping/{{item.tipping_img}}"
+                                                                    class="" style="width: 30px;">
+                                                                    <div class="label-name">{{item.Description}}</div>
+                                                                </div> -->
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </ngx-slick-carousel>
+
                                             </div>
                                         </div>
 
@@ -374,10 +366,10 @@
 
                                                 <h5 class="colors-pallete" style="margin-top: 0px !important;">Colors:
                                                 </h5>
-                                                <p class="color">
-                                                    "There might be a slight variation of colour 
-                                                    seen on the screen and may different from the 
-                                                    original product."
+                                                <p class="color my-0 mb-2 noteMsg">
+                                                    * There might be a slight variation of colour
+                                                    seen on the screen and may different from the
+                                                    original product.
                                                 </p>
                                                 <ngx-slick-carousel class="carousel" #slickModal="slick-carousel"
                                                     [config]="slideConfig" (init)="slickInit($event)"
