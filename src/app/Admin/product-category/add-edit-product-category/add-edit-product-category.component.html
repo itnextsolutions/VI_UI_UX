@@ -55,9 +55,9 @@
         </div>
         <div class="col-md-12 roundedTextBox mb-3">
             <label>Is Brand :</label>
-            <div>
-                <input type="radio"  [(ngModel)]="Is_Brand" value="1"  class="mb-2" name="Is_Brand" id="inputCategory_Name" formControlName="Is_Brand" (change)="onSelectChange($event)">
-            </div> 
+            <!-- <div> -->
+                <input type="checkbox"  [(ngModel)]="Is_Brand" value="{{1}}"  class="mb-2" name="Is_Brand" id="inputCategory_Name" formControlName="Is_Brand" (change)="onSelectChange($event)">
+            <!-- </div>  -->
            
             <!-- <div *ngIf="submitted && formControl.Category_Name.errors" class="text-danger">
               <div *ngIf="formControl.Category_Name.errors.required">Category Name is required.</div>
@@ -80,7 +80,7 @@
             </div>
         </div>
     </div>
-      <br>
+      
       <div class="buttons">
           <button type="button" *ngIf="productcategory.Category_Id==0" class="btn btn-primary" (click)="addProductCategory()">Add</button>
           <button type="button" *ngIf="productcategory.Category_Id!=0" class="btn btn-primary" (click)="updateProductCategory()">Update</button>

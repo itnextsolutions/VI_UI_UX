@@ -621,19 +621,18 @@
       <div class="col-md-12 roundedTextBox mb-3">
         <label>Select Color :</label>
         <div class="container py-5">
-          <div class="row row-cols-2 row-cols-lg-5 mb-5">
+          <div class="row row-cols-2 row-cols-lg-5 mb-5 colourclass">
             <div class="col" *ngFor="let data of ColorData"  formControlName="ColorId"
               [(ngModel)]="ColorId" ngDefaultControl>
             <!-- <div class="col" *ngFor="let data of ColorData" 
               [(ngModel)]="ColorId" ngDefaultControl> -->
                 <label>
                   <input type="checkbox"  style.color="{{data.Description}}" value="{{data.Lookup_Details_Id}}"
-                    (change)="onSelectChange($event)" />
-              
-                    {{data.ColorName}}
-                   <li class="color-box" rel="tooltip" [ngStyle]="{'background-color':data.Description}" data-mobile=""
+                  (change)="onSelectChange($event)" />
+                       {{data.ColorName}}
+                   <li style="margin-left: 5px;" class="color-box" rel="tooltip" [ngStyle]="{'background-color':data.Description}" data-mobile=""
                     data-create="false">
-                  </li>
+                  </li>               
                 </label>
               
             </div>
@@ -657,7 +656,7 @@
       <div class="col-md-12 roundedTextBox mb-3">
         <label>Select Size :</label>
         <div class="container">
-          <div class="row g-4" style="width: 400px;">
+          <div class="row  row-cols-lg-7 g-4"style="width: 600px;">
             <!-- <div class="col" data-wow-delay="0.1s" *ngFor="let data of SizeData"  formControlName="SizeId"
               [(ngModel)]="SizeId" ngDefaultControl> -->
               <div class="col" data-wow-delay="0.1s" *ngFor="let data of SizeData" formControlName="SizeId"

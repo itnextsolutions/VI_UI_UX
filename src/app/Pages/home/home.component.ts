@@ -89,7 +89,6 @@ export class HomeComponent implements OnInit {
   refreshproductcategoryList() {
     this.userService.getproductcategoryList().subscribe(data =>{
       this.productcategoryList = data;
-// console.log(this.productcategoryList)
       if (this.productcategoryList != null) {
         this.productcategoryList.forEach((element:any) => {
           if (element.IsBrand ==0) {
@@ -120,6 +119,8 @@ export class HomeComponent implements OnInit {
   refreshblogList() 
   {
     // this.blogno = 3;
+    // this.userService.getbloglist(this.blogno).subscribe(data =>{
+    //   this.blogList = data;
     this.userService.getbloglist().subscribe(data =>{
       
       if(data != undefined && data!=null){

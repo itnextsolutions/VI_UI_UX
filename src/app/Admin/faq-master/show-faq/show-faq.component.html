@@ -94,7 +94,7 @@
                       </tr>
                     </thead>
                     <tbody>
-                      <tr *ngFor="let dataItem of faqList; let i=index;">
+                      <tr *ngFor="let dataItem of faqList |  paginate: { itemsPerPage: 10, currentPage: pageNo } let i=index;">
                         <td><div></div></td>
                       <td><div>
                         {{ (pageNo - 1) * faqPerPage + i +1 }}
@@ -123,10 +123,11 @@
                     </tbody>
                   </table>
                 </div>
+                <pagination-controls (pageChange)="pageNo = $event" class="text-center"></pagination-controls>
               </div>
             </div>
           </div>
-          <div class="container mw-100"> 
+          <!-- <div class="container mw-100"> 
             <div class="row">  
               <div class="col-md-3"> </div>  
               <div *ngIf="faqList !=0" class="col-md-6">  
@@ -138,7 +139,7 @@
                 </ul> 
               </div>  
             </div>   
-          </div> 
+          </div>  -->
         </div>
       </div>
     </main>

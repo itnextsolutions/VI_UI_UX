@@ -95,7 +95,7 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <tr *ngFor="let dataItem of SubcategoryList; let i =index;" >
+                    <tr *ngFor="let dataItem of SubcategoryList |  paginate: { itemsPerPage: 10, currentPage: pageNo } let i =index;" >
                       <td><div></div> </td>
                       <td>
                         <div>
@@ -120,7 +120,7 @@
                         <!-- <span class="badge badge-sm bg-gradient-success">Active</span> -->
                         <div *ngIf="dataItem.IsActive!=0; else elseBlock">
                           <span class="badge badge-sm bg-gradient-success">Active</span>
-                          </div>
+                        </div>
                         <ng-template #elseBlock>
                           <span class="badge badge-sm bg-gradient-success">DeActive</span></ng-template>
                       </td>
@@ -137,7 +137,7 @@
               </div>
             </div>
             <!-- Code by pagination -->    
-            <div class="container mw-100"> 
+            <!-- <div class="container mw-100"> 
               <div class="row">  
                   <div class="col-md-3"> </div>  
                      <div *ngIf="SubcategoryList !=0" class="col-md-6">  
@@ -147,12 +147,13 @@
                                   style=" margin-right: 5px;;margin-top: 5px">{{page}}</a>  
                             </li>  
                           </ul>  
-                        <!-- <div style="text-align: center;">   
+                        <div style="text-align: center;">   
                        Total page {{paginationService.exactPageList}}   
-                         </div>  -->
+                         </div> 
                      </div>  
                 </div>   
-             </div>
+             </div> -->
+             <pagination-controls (pageChange)="pageNo = $event" class="text-center"></pagination-controls>
           </div>
         </div>
       </div>

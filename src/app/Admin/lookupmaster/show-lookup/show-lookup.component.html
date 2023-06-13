@@ -97,7 +97,7 @@
                       </tr>
                     </thead>
                     <tbody>
-                      <tr *ngFor="let dataItem of lookupmasterList;let i =index;">
+                      <tr *ngFor="let dataItem of lookupmasterList |  paginate: { itemsPerPage: 10, currentPage: pageNo } let i =index;">
                         <td><div></div> </td>
                         <td>
                           <div class="d-flex px-2 py-1">
@@ -129,11 +129,12 @@
                     </tbody>
                   </table>
                 </div>
+                <pagination-controls (pageChange)="pageNo = $event" class="text-center"></pagination-controls>
               </div>
             </div>
           </div>
             <!-- Code by pagination -->    
-        <div class="container mw-100"> 
+        <!-- <div class="container mw-100"> 
           <div class="row">  
             <div class="col-md-3"> </div>  
             <div *ngIf="lookupmasterList !=0" class="col-md-6">  
@@ -143,12 +144,11 @@
                    style=" margin-right: 5px;;margin-top: 5px">{{page}}</a>  
                 </li>  
               </ul>  
-              <!-- <div style="text-align: center;">   
-                Total page {{paginationService.exactPageList}}   
-              </div>  -->
+              
             </div>  
           </div>   
-        </div> 
+        </div>  -->
+        
         </div>
         
         <footer class="footer py-4  ">

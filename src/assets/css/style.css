@@ -492,11 +492,15 @@ font-size: 39px;
 
 .product-item  a{
     overflow: hidden !important;
-    -webkit-line-clamp: 1;
+    -webkit-line-clamp: 2;
     line-clamp: 1;
     -webkit-box-orient: vertical;
     text-transform: uppercase;
     font-size: 0.85rem;
+    width: 100%;
+    display: -webkit-box! important;
+    word-wrap: break-word;
+
 }
 /*** Testimonial ***/
 .testimonial-carousel .owl-item .testimonial-item img {
@@ -732,6 +736,7 @@ font-size: 39px;
 .m-logo{
     width: 150px;
 }
+
 
 @media (min-width:320px) and (max-width: 768px) {
     .pad-mob {

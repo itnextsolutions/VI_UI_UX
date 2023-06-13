@@ -201,18 +201,7 @@ body .slick-next {
   color: #9b0a0a;
 }
 
-.tipping-label-name {
-  font-size: 11px;
-  line-height: 11px;
-  height: 36px;
-  margin: 8px 0px;
-  width: 100%;
-  display: -webkit-box!important;
-  /* -webkit-line-clamp: 2; */
-  -webkit-box-orient: vertical;
-  color: #525252;
-  font-family: Gilroy Medium,sans-serif;
-}
+
 
 @media (min-width: 320px) and (max-width: 374px) {
   .lp-view {
@@ -250,17 +239,10 @@ body .slick-next {
     padding: 0 23px !important
   }
 
-  .color-box {
-
-    padding: 0 15px 0 10px;
-    margin: 20px -29px !important
-  }
-
-  .label-name {
-    margin-left: -27px;
-    margin-top: -19px;
-    height:10px;
-  }
+.color-box {
+   
+  padding: 0 15px 0 10px;
+  margin: 20px -29px !important
 
   
 }

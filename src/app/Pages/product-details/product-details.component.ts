@@ -36,6 +36,54 @@ export class ProductDetailsComponent implements OnInit {
   // tipping:any=[];
   id: number = 0;
 
+  // slideConfig = {
+  //   dots: false,
+  //   speed: 300,
+  //   slidesToShow: 6,
+  //   slidesToScroll: 6,
+  //   infinite: false,
+  //   column:0,
+  //   rows:0,
+  //   responsive: [
+  //     {
+  //       breakpoint: 1024,
+  //       settings: {
+  //         slidesToShow: 3,
+  //         slidesToScroll: 3,
+  //         infinite: true,
+  //         dots: true,
+  //         rows: 3,
+  //       }
+  //     },
+  //     {
+  //       breakpoint: 600,
+  //       settings: {
+  //         slidesToShow: 3,
+  //         slidesToScroll: 3,
+  //         rows: 3,
+  //       }
+  //     },
+
+  //     {
+  //       breakpoint: 480,
+  //       settings: {
+  //         slidesToShow: 4,
+  //         slidesToScroll: 4,
+  //         rows: 3,
+  //       }
+  //     },
+  //     {
+  //       breakpoint: 380,
+  //       settings: {
+  //         slidesToShow: 3,
+  //         slidesToScroll: 3,
+  //         rows: 3,
+  //       }
+  //     }
+  //   ]
+  // }
+
+  // Used for Colors data
   slideConfig = {
     dots: true,
     speed: 300,
@@ -107,7 +155,9 @@ export class ProductDetailsComponent implements OnInit {
     navText: ['', ''],
     responsive: {
       0: {
-        items: 1.2
+        items: 1.2,
+        loop:true,
+        dots:true
       },
       400: {
         items: 2
@@ -168,9 +218,20 @@ export class ProductDetailsComponent implements OnInit {
         })
       }
     });
-   
-    this.userService.getColorListById(this.productId).subscribe((data: any) => {
+
+    this.userService.getColorListById(this.productId).subscribe((data:any) => {debugger
       this.colors = data;
+      console.log(this.colors);
+      if (this.colors.length <18) {
+      if(this.colors.length>6 || this.colors.length<13)
+      {
+        this.slideConfig.rows=2;
+      }
+    }
+      if (this.colors.length >18) {
+        this.slideConfig.dots=true;
+        this.slideConfig.rows=3;
+      }
 
       if (this.colors.length <=12) { this.slideConfig.rows = 1; }
       else if (this.colors.length <= 36) { this.slideConfig.rows = 2; }

@@ -66,7 +66,8 @@ import { MultiProductComponent } from './Admin/product-master/multi-product/mult
 import { CustomHttpInterceptor } from 'src/http-interceptor';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CustomizeComponent } from './Pages/customize/customize.component';
-
+import { TokenInterceptor } from './Interceptor/token.interceptor';
+import {NgxPaginationModule} from 'ngx-pagination';
 
 
 @NgModule({
@@ -130,6 +131,7 @@ import { CustomizeComponent } from './Pages/customize/customize.component';
     CarouselModule,
     SlickCarouselModule,
     BrowserAnimationsModule,
+    NgxPaginationModule,
     JwtModule.forRoot({
       config: {
         tokenGetter: tokenGetter,
@@ -142,6 +144,11 @@ import { CustomizeComponent } from './Pages/customize/customize.component';
   providers: [SharedService, DataService,AuthGuard,{
     provide: HTTP_INTERCEPTORS,
     useClass: CustomHttpInterceptor,
+    multi: true
+  } ,
+  {
+    provide: HTTP_INTERCEPTORS,
+    useClass: TokenInterceptor,
     multi: true
   } ],
   bootstrap: [AppComponent]

@@ -18,8 +18,9 @@ export class AddEditProductCategoryComponent implements OnInit {
   Category_Description: string ="";
   Category_Photo: string ="";
   selectedFile:any;
-  Is_Brand:any;
+  Is_Brand:string="";
   IsChecked:boolean=false;
+  IsBrand:boolean=false;
  
   url: any; 
 	msg = "";
@@ -36,7 +37,7 @@ export class AddEditProductCategoryComponent implements OnInit {
     this.Category_Id = this.productcategory.Category_Id;
     this.Category_Name = this.productcategory.Category_Name;
     this.Category_Description = this.productcategory.Category_Description;
-    this.Is_Brand=this.productcategory.Is_Brand;
+    this.Is_Brand=this.productcategory.IsBrand;
     this.Category_Photo = this.productcategory.Category_Photo;
   }
 
@@ -64,14 +65,20 @@ export class AddEditProductCategoryComponent implements OnInit {
     }
   }
 
-  onSelectChange(e: any) {
-    let index = this.Is_Brand.indexOf(e.target.value);
-    if (index == -1) {
-      this.Is_Brand.push(e.target.value);
+  onSelectChange(e: any) {debugger
+    if (this.IsBrand==true){
+      this.Is_Brand="1";
     }
-    else {
-      this.Is_Brand.splice(index, 1);
+    else{
+      this.Is_Brand="0";
     }
+    // let index = this.Is_Brand.indexOf(e.target.value);
+    // if (index == -1) {
+    //   this.Is_Brand.push(e.target.value);
+    // }
+    // else {
+    //   this.Is_Brand.splice(index, 1);
+    // }
   }
 
   onClick(e: any) {
@@ -80,7 +87,7 @@ export class AddEditProductCategoryComponent implements OnInit {
 
   updateProductCategory(){
     this.submitted = true;
-    // if (this.Pro_CatForm.valid){
+    if (this.Pro_CatForm.valid){
       let formData = new FormData()
       formData.append('Category_Id', this.Category_Id);
       formData.append('Category_Name', this.Category_Name);
@@ -102,7 +109,7 @@ export class AddEditProductCategoryComponent implements OnInit {
       this.service.updateProductcategory(formData).subscribe(res =>{
         alert(res.toString());
     })
-  // }
+  }
   }
 	
 	//selectFile(event) { //Angular 8
