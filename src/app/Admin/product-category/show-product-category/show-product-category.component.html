@@ -112,7 +112,7 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <tr *ngFor="let dataItem of productcategoryList; let i =index;">
+                    <tr *ngFor="let dataItem of productcategoryList |  paginate: { itemsPerPage: 10, currentPage: pageNo } let i =index;">
                       <td><div></div> </td>
                       <td>
                         <div>
@@ -121,7 +121,12 @@
                       </td>
                       <td>
                         <div>
+                          <div *ngIf="dataItem.IsBrand==0;">
                           <img src="assets/img/category/{{dataItem.Category_Photo}}" class="avatar avatar-sm me-3 border-radius-lg" alt="user1">
+                          </div>
+                          <div *ngIf="dataItem.IsBrand==1;">
+                            <img src="assets/img/brand/{{dataItem.Category_Photo}}" class="avatar avatar-sm me-3 border-radius-lg" alt="user1">
+                          </div>
                         </div>
                       </td>
                       <td>
@@ -154,7 +159,7 @@
               </div>
             </div>
                <!-- Code by pagination -->    
-        <div class="container mw-100"> 
+        <!-- <div class="container mw-100"> 
           <div class="row">  
             <div class="col-md-3"> </div>  
             <div *ngIf="productcategoryList !=0" class="col-md-6">  
@@ -164,12 +169,11 @@
                    style=" margin-right: 5px;;margin-top: 5px">{{page}}</a>  
                 </li>  
               </ul>  
-              <!-- <div style="text-align: center;">   
-                Total page {{paginationService.exactPageList}}   
-              </div>  -->
+              
             </div>  
           </div>   
-        </div>
+        </div> -->
+        <pagination-controls (pageChange)="pageNo = $event" class="text-center"></pagination-controls>
        </div>
         </div>
       </div>

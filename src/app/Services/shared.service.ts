@@ -13,6 +13,9 @@ export class SharedService {
   // readonly APIUrl = "https://localhost:44365/api/";
   constructor(private http: HttpClient) {}
 
+  gettoken(){
+    return localStorage.getItem('token');
+  }
 //Menu Binding
 getMenuList(): Observable < any[] > {
   return this.http.get< any > (this.APIUrl + 'Home/GetMenuList');

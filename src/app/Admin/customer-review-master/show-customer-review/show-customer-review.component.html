@@ -97,7 +97,7 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <tr *ngFor="let dataItem of CustomerReviewList; let i=index;">
+                    <tr *ngFor="let dataItem of CustomerReviewList |  paginate: { itemsPerPage: 10, currentPage: pageNo } let i=index;">
                       <td><div></div></td>
                       <td><div>{{i+1}}</div></td>
                       <td><div><img src="assets/img/client_reviews/{{dataItem.Client_Photo}}" class="avatar avatar-lg me-3 border-radius-lg" alt="user1"></div></td>
@@ -139,11 +139,12 @@
                   </tbody>
                 </table>
               </div>
+              <pagination-controls (pageChange)="pageNo = $event" class="text-center"></pagination-controls>
             </div>
           </div>
         </div>
          <!-- Code by pagination -->    
-        <div class="container mw-100"> 
+        <!-- <div class="container mw-100"> 
           <div class="row">  
             <div class="col-md-3"> </div>  
             <div *ngIf="CustomerReviewList !=0" class="col-md-6">  
@@ -153,13 +154,11 @@
                    style=" margin-right: 5px;;margin-top: 5px">{{page}}</a>  
                 </li>  
               </ul>  
-              <!-- <div style="text-align: center;">   
-                Total page {{paginationService.exactPageList}}   
-              </div>  -->
+          
             </div>  
           </div>   
-        </div> 
-      </div>
+        </div>  -->
+         </div>
     </div>
   </main>
  
