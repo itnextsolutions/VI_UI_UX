@@ -1,0 +1,12 @@
+.colourclass{
+    text-align: center;
+    align-items: center;
+   
+    
+}
+
+.grid-container {
+    display: grid;
+    grid-template-rows: 1fr;
+
+  }

@@ -168,7 +168,7 @@
 
 
 <!-- Product Start -->
-<div *ngIf="categoryList.length > 0" class="container-xxl py-5">
+<div *ngIf="categoryList.length > 0" class="container-xxl py-5" id="product">
     <div class="container">
         <div class="row g-0 gx-5 align-items-end">
             <div class="col-lg-7">
@@ -303,11 +303,11 @@ background-size: cover;">
             <owl-carousel-o [options]="blogOptions">
                 <ng-container  *ngFor="let data of blogList">
                     <ng-template carouselSlide [width]="375">
-            <div class="col-lg-4 col-md-6 wow w-90 fadeInUp" data-wow-delay="0.1s">
+            <div class="col-lg-4 col-md-6 wow w-90 fadeInUp" (click)="onClick(data)" data-wow-delay="0.1s">
 
                 <img class="img-fluid" src="assets/img/blog/{{data.Image_Name}}">
                 <div class="bg-light p-4">
-                    <a class="d-block h5 lh-base mb-2 me-3 blog-heading" (click)="onClick(data)">{{data.Blog_Title}}</a>
+                    <a class="d-block h5 lh-base mb-2 me-3 blog-heading" >{{data.Blog_Title}}</a>
                     <div class="text-muted border-top pt-2">
                         <small class="me-3"><i class="fa fa-clock text-primary me-2"></i>{{data.Updated_Date | date}}</small>
                         <small class="me-3 read-more" (click)="onClick(data)">Read More...</small>

@@ -31,7 +31,7 @@
             </div>
         </div>
         <div class="col-md-12 roundedTextBox mb-3">
-            <label>ButtonUrl :</label>
+            <label>Button Url :</label>
             <input type="text"  [(ngModel)]="ButtonUrl" class="form-control mb-2" id="inputButtonUrl" formControlName="ButtonUrl" placeholder="Enter Button Url">        
                <div *ngIf="submitted && formControl.ButtonUrl.errors" class="text-danger">
               <div *ngIf="formControl.ButtonUrl.errors.required">To Date is required.</div>
@@ -39,7 +39,6 @@
         </div>
       
     </div>
-      <br>
       <div class="buttons">
           <button type="button" *ngIf="notification.NotificationId==0" class="btn btn-primary" (click)="addNotification()">Add</button>
           <button type="button" *ngIf="notification.NotificationId!=0" class="btn btn-primary" (click)="updateNotification()">Update</button>
