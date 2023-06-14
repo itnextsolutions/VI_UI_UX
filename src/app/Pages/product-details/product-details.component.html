@@ -5,6 +5,7 @@
     </div>
 </div>
 <!-- Page Header start-->
+
 <app-navbar></app-navbar>
 <!-- Page Header End -->
 
@@ -529,12 +530,13 @@
     <!-- Product Details End -->
 
     <!-- Similar Products Start -->
-    <div *ngIf="simillarProducts.length>0" class="container-xxl pt-7">
+    <!-- <div *ngIf="simillarProducts.length>3" class="container-xxl pt-7"> -->
+        <div *ngIf="simillarProducts.length>0" class="container-xxl pt-7">
         <div class="container">
 
             <div class="row g-0 gx-5 align-items-end">
                 <div class="col-lg-12">
-                    <div class="section-header text-center mb-5 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="section-header text-center mb-3 wow fadeInUp" data-wow-delay="0.1s">
                         <h3 class="">Similar Product</h3>
                     </div>
                 </div>
@@ -571,7 +573,71 @@
             </owl-carousel-o>
         </div>
     </div>
+
+    
+
+
+    <!-- <div class="container-xxl header_bs_mo_Similar" *ngIf="simillarProducts.length>0 && simillarProducts.length<4">
+        <div class="container" >
+            <div class="row g-0 gx-5 align-items-end">
+                <div class="col-lg-12">
+                    <div class="section-header text-center mb-5 wow fadeInUp" data-wow-delay="0.1s">
+                        <h3>Similar Product</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-content">
+                <div id="tab-1" class="tab-pane fade show p-0 active">
+                    <div class="row g-4 ">
+                    <div class="col-xl-3 col-lg-4 col-md-6  col-6 wow fadeInUp categoryBox" data-wow-delay="0.1s"
+                            *ngFor="let simillarproduct of simillarProducts">
+                            <div *ngIf="simillarProducts.length==1">
+                            <div class="product-item1 w-100" id="tab-1" (click)="onClick(simillarproduct)">
+                                <div class="pt-2 pl-0 pb-2 text-center">
+                                    <a class="d-block h5 mb-2">{{simillarproduct.Product_Title}}</a>
+                                </div>
+                                <div class="productbox position-relative  overflow-hidden"  *ngIf="simillarproduct.Product_type==1">
+                                    <img class="img-fluid" src="assets/img/{{this.categoryfolder}}/{{simillarproduct.Product_FrontPhoto}}" alt="">
+                                </div>
+                                <div class="productbox position-relative  overflow-hidden"  *ngIf="simillarproduct.Product_type==2">
+                                    <img class="img-fluid" src="assets/img/{{this.categoryfolder}}/{{simillarproduct.Product_Photo}}" alt="">
+                                </div>
+                            </div>
+                            </div>
+                            <div *ngIf="simillarProducts.length==2">
+                                <div class="product-item2 w-100"  id="tab-1" (click)="onClick(simillarproduct)">
+                                    <div class="pt-2 pl-0 pb-2 text-center">
+                                        <a class="d-block h5 mb-2">{{simillarproduct.Product_Title}}</a>
+                                    </div>
+                                    <div class="productbox position-relative overflow-hidden"  *ngIf="simillarproduct.Product_type==1">
+                                        <img class="img-fluid" src="assets/img/{{this.categoryfolder}}/{{simillarproduct.Product_FrontPhoto}}" alt="">
+                                    </div>
+                                    <div class="productbox position-relative overflow-hidden"  *ngIf="simillarproduct.Product_type==2">
+                                        <img class="img-fluid" src="assets/img/{{this.categoryfolder}}/{{simillarproduct.Product_Photo}}" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div *ngIf="simillarProducts.length==3">
+                                <div class="product-item3 w-100" id="tab-1" (click)="onClick(simillarproduct)">
+                                    <div class="pt-2 pl-0 pb-2 text-center">
+                                        <a class="d-block h5 mb-2">{{simillarproduct.Product_Title}}</a>
+                                    </div>
+                                    <div class="productbox position-relative overflow-hidden"  *ngIf="simillarproduct.Product_type==1">
+                                        <img class="img-fluid" src="assets/img/{{this.categoryfolder}}/{{simillarproduct.Product_FrontPhoto}}" alt="">
+                                    </div>
+                                    <div class="productbox position-relative overflow-hidden"  *ngIf="simillarproduct.Product_type==2">
+                                        <img class="img-fluid" src="assets/img/{{this.categoryfolder}}/{{simillarproduct.Product_Photo}}" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
 </div>
+
 <!-- Similar Products End -->
 
 <!-- Page Footer start-->
