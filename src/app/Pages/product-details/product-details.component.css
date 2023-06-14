@@ -78,6 +78,21 @@
   z-index: 1;
 }
 
+.label-name-similar a {
+  
+
+     font-size: 14px;
+        height: 40px;
+        line-height: 20px;
+        text-align: center;
+        overflow: hidden!important;
+        width: 100%;
+        display: -webkit-box! important;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+         word-wrap: break-word;
+}
+
 
 .colors {
   display: flex;
