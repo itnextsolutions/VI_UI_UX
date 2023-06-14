@@ -13,6 +13,24 @@
     font-family: "Gilroy Medium", sans-serif;
     word-wrap: normal;
 }
+.tipping-label-name {
+  font-size: 11px;
+    line-height: 11px;
+    height: 22px;
+    position: relative;
+    margin-top: 8px;
+    margin-left: 0px;
+    width: 100%;
+    display: -webkit-box ! important;
+    /* -webkit-line-clamp: 1; */
+    -webkit-box-orient: vertical;
+    color: #525252;
+    font-family: "Gilroy Medium", sans-serif;
+    word-wrap: normal;
+    /* margin-top: 8px;
+    margin-left: 0px; */
+    
+}
 
 .product-item1{
   /* position: relative; */
@@ -38,11 +56,6 @@
   margin-right: auto;
 }
 
-.colorbox {
-  /* height: 51px;
-  margin-top: 10px; */
-}
-
 .color-box {
   width: 38px;
   height: 38px;
@@ -53,6 +66,9 @@
   border: 1px solid #f3f2f2;
   position: relative;
   border-radius: 4px;
+}
+.color-box-tipping {
+  margin-left: -22px;
 }
 
 #product-svg {
@@ -76,6 +92,7 @@
   height: auto;
   z-index: 1;
 }
+
 
 .colors {
   display: flex;
