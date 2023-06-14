@@ -31,7 +31,7 @@ export class AddEditProductCategoryComponent implements OnInit {
     this.Pro_CatForm = this.formBuilder.group({
       Category_Name: ["", [Validators.required]],
       Category_Description: ["",[ Validators.required]],
-      Category_Photo: ["",[ Validators.required]],
+      // Category_Photo: ["",[ Validators.required]],
       Is_Brand:[""]
     });
     this.Category_Id = this.productcategory.Category_Id;

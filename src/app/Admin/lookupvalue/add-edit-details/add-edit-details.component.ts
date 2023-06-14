@@ -130,9 +130,10 @@ export class AddEditDetailsComponent implements OnInit {
 
   ngOnInit(): void {
     this.LookupValueForm = this.formBuilder.group({
-      Lookup_Id: ["", [Validators.required]],
+      // Lookup_Id: ["", [Validators.required]],
+      Lookup_Id: [""],
       Description: ["",[ Validators.required]]
-      // tipping_img: ["",[ Validators.required]]
+      // tipping_img: [""]
    });
 
     this.Lookup_Details_Id = this.lookupdetail.Lookup_Details_Id;

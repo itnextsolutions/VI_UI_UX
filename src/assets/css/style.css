@@ -152,9 +152,14 @@
     text-transform: uppercase;
 }
 
+.header_bs_mo_Similar{
+    padding-top: 3rem !important;
+    padding-bottom: 1rem !important;
+}
+
 .header_bs_mo {
     padding-top: 15rem !important;
-    padding-bottom: 5rem !important;
+    padding-bottom: 2rem !important;
 }
 
 
