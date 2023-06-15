@@ -160,7 +160,7 @@
 //   SubCatList: any = [];
 
 //   onOptionsSelected(id: any) {
-//     //console.log("the selected value is " + id);
+//     //("the selected value is " + id);
 
 //     this.service.GetSubCatByCatid(id).subscribe(data => {
 //       this.SubCatList = data;
@@ -593,7 +593,7 @@ export class AddEditProductComponent implements OnInit {
   SubCatList: any = [];
 
   onOptionsSelected(id: any) {
-    //console.log("the selected value is " + id);
+    //("the selected value is " + id);
 
     this.service.GetSubCatByCatid(id).subscribe(data => {
       this.SubCatList = data;
@@ -654,7 +654,7 @@ export class AddEditProductComponent implements OnInit {
           //   alert(response.res.toString());
           //   const filePaths = response.filePaths; 
             
-          //   console.log(filePaths); 
+          //   (filePaths); 
           // },
           // (error) => {
           //   console.error(error); 

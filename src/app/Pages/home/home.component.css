@@ -296,6 +296,7 @@ height: 400px;
         overflow: hidden;
         text-overflow: ellipsis;
         display: -webkit-box! important;
+        margin-left: 0rem! important;
     }
 
 }
@@ -315,7 +316,7 @@ height: 400px;
     .testimonial .cust-name {
         font-size: 14px;
         line-height: 1;
-        letter-spacing: 0.5px;
+        letter-spacing: -0.5px;
     }
     .testi-review p {
         overflow-y: scroll !important;
