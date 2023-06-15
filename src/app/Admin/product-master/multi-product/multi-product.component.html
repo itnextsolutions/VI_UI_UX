@@ -2,7 +2,7 @@
     <form class="blog" [formGroup]="ProductForm">
   
       <div class="row">
-        <div class="col-md-12 roundedTextBox mb-3">
+        <div class="col-md-12 roundedTextBox mb-0">
           <label>Select Category :</label>
           <select  id="inputCategory_Id"  name="Category_Name" [(ngModel)]="Category_Id" class="form-control" formControlName="Category_Id" #mySelect
             (change)='onOptionsSelected(mySelect.value)'>
@@ -16,7 +16,7 @@
         </div>
 
 
-        <div class="col-md-12 roundedTextBox mb-3">
+        <div class="col-md-12 roundedTextBox mb-0">
           <label>Select Sub Category :</label>
           <select [(ngModel)]="SubCategory_Id"   name="SubCategory" class="form-control" formControlName="SubCategory_Id">
             <option value="0" disabled selected>Select Sub Category</option>
@@ -27,7 +27,7 @@
             <div *ngIf="formControl['SubCategory_Id'].errors.required">Sub Category is required</div>
           </div>
         </div>
-        <div class="col-md-12 roundedTextBox mb-3">
+        <div class="col-md-12 roundedTextBox mb-0">
           <label>Product Name :</label>
           <input type="text" [(ngModel)]="Product_Title" class="form-control mb-2" id="inputProduct_Title"
             formControlName="Product_Title" placeholder="Enter Product Name">
@@ -36,7 +36,7 @@
           </div>
         </div>
 
-        <div class="col-md-3 roundedTextBox mb-3">
+        <div class="col-md-3 roundedTextBox mb-0">
           <label>MRP :</label>
           <input type="text" [(ngModel)]="MRP" class="form-control mb-2" id="inputProduct_Title"
             formControlName="MRP" placeholder="Enter the Price">
@@ -44,10 +44,12 @@
             <div *ngIf="this.ProductForm.controls['Product_Title'].errors.required">Product Name is required.</div>
           </div> -->
         </div>
-
-        <div class="col-md-12 roundedTextBox mb-3">
-        <label>Men Product Specification :<a input type="button" class="btn list-tag" href="https://www.textfixer.com/html/html-list-generator.php">HTML</a></label>
         
+        <div class="col-md-12 roundedTextBox mb-0">
+         
+          <hr style="height:5px;border-width:0;color:gray;background-color:gray">
+        <label>Men Product Specification :<a input type="button" class="btn list-tag" href="https://www.textfixer.com/html/html-list-generator.php">HTML</a></label>
+           
         <!-- <input type="text"  [(ngModel)]="Description" class="form-control mb-2" id="inputDescription" formControlName="Description"> -->
         
         <textarea rows="4" cols="43" type="text" [(ngModel)]="Product_Description" class="form-control mb-2"
@@ -62,17 +64,8 @@
 
       </div>
 
-      
-
-
-
-
-  
-      <br>
-
-
       <div class="container py-5">
-        <div class="row row-cols-2 row-cols-lg-3 mb-5">
+        <div class="row row-cols-2 row-cols-lg-3 mb-3">
           <div class="col">
             <label>Men Front Image :</label>
             <div class="col-sm-10">
@@ -115,10 +108,10 @@
 
         </div>
       </div>
-
+      <hr style="height:5px;border-width:0;color:gray;background-color:gray">
 
       <div class="container py-5">
-        <div class="row row-cols-2 row-cols-lg-3 mb-5">
+        <div class="row row-cols-2 row-cols-lg-3 mb-0">
           <div class="col">
             <label>Women Front Image :</label>
             <div class="col-sm-10">
@@ -387,7 +380,7 @@
         <tr>  
           <th colspan="2">Add Multiple Men Images:</th>  
           <th width="250px">
-            <button type="button" (click)="addImages()" class="btn">Add</button>
+            <button type="button" (click)="addImages()" class="btn"><i class="material-icons text-sm me-2">add</i>Add</button>
           </th>  
         </tr>  
         
@@ -429,7 +422,7 @@
         <!-- <div class="form-group  col-md-4 roundedTextBox mb-3"> -->
 
         <td>
-
+        
         <label>Men Front Image :</label>
         <div class="col-sm-10">
           <div [innerHtml]='msg' *ngIf="msg" style="color: red;"></div>
@@ -459,18 +452,20 @@
         <!-- </div> -->
 
         <td>  
-          <button (click)="removeImages(i)" class="btn btn-link">Remove</button>  
+          <button (click)="removeImages(i)" class="btn btn-link"><i class="material-icons text-sm me-2">delete</i>Remove</button>  
       </td>
     
       </tr>
       </table>
       
+      
+      <!-- Frmarray Women Section -->
 
       <table class="table table-bordered" formArrayName="WomenImages">
         <tr>  
           <th colspan="2">Add Multiple Women Images:</th>  
           <th width="250px">
-            <button type="button" (click)="addWomenImages()" class="btn">Add</button>
+            <button type="button" (click)="addWomenImages()" class="btn"><i class="material-icons text-sm me-2">add</i>Add</button>
           </th>  
         </tr>  
         
@@ -537,7 +532,7 @@
         
 
         <td>  
-          <button (click)="removeWomenImages(i)" class="btn btn-link">Remove</button>  
+          <button (click)="removeWomenImages(i)" class="btn btn-link"><i class="material-icons text-sm me-2">delete</i>Remove</button>  
       </td>
     
       </tr>
@@ -556,7 +551,7 @@
       <div class="col-md-12 roundedTextBox mb-3">
         <label>Select Size :</label>
         <div class="container">
-          <div class="row g-4" style="width: 400px;">
+          <div class="row g-4" style="width: 600px;">
             <div class="col" data-wow-delay="0.1s" *ngFor="let data of SizeData"  formControlName="SizeId"
               [(ngModel)]="SizeId" ngDefaultControl>
               <label>
@@ -578,7 +573,7 @@
   
       <div class="buttons">
         <button type="button" (click)="multiProductDetails()" *ngIf="multiProduct.Product_Id==0"
-          class="btn btn-success">Add</button>
+          class="btn btn-primary">Add</button>
         <!-- <button type="button" (click)="updateProductDetails()" *ngIf="product.Product_Id!=0"
           class="btn btn-primary">Update</button> -->
       </div>
