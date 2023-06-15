@@ -315,7 +315,7 @@
     <form class="blog" [formGroup]="ProductForm">
   
       <div class="row">
-        <div class="col-md-12 roundedTextBox mb-3">
+        <div class="col-md-12 roundedTextBox mb-0">
           <label>Select Category :</label>
           <select  id="inputCategory_Id"  name="Category_Name" [(ngModel)]="Category_Id" class="form-control" formControlName="Category_Id" #mySelect
             (change)='onOptionsSelected(mySelect.value)'>
@@ -327,7 +327,7 @@
             <div *ngIf="this.ProductForm.controls['Category_Id'].errors.required">Category is required.</div>
           </div>
         </div>
-        <div class="col-md-12 roundedTextBox mb-3">
+        <div class="col-md-12 roundedTextBox mb-0">
           <label>Select Sub Category :</label>
           <select [(ngModel)]="SubCategory_Id"   name="SubCategory" class="form-control" formControlName="SubCategory_Id">
             <option value="0" disabled selected>Select Sub Category</option>
@@ -338,7 +338,7 @@
             <div *ngIf="this.ProductForm.controls['SubCategory_Id'].errors.required">Sub Category is required</div>
           </div>
         </div>
-        <div class="col-md-12 roundedTextBox mb-3">
+        <div class="col-md-12 roundedTextBox mb-0">
           <label>Product Name :</label>
           <input type="text" [(ngModel)]="Product_Title" class="form-control mb-2" id="inputProduct_Title"
             formControlName="Product_Title" placeholder="Enter Product Name">
@@ -346,7 +346,7 @@
             <div *ngIf="this.ProductForm.controls['Product_Title'].errors.required">Product Name is required.</div>
           </div>
         </div>
-        <div class="col-md-3 roundedTextBox mb-3">
+        <div class="col-md-3 roundedTextBox mb-0">
           <label>MRP :</label>
           <input type="text" [(ngModel)]="MRP" class="form-control mb-2" id="inputProduct_Title"
             formControlName="MRP" placeholder="Enter the Price">
@@ -382,8 +382,7 @@
         </a>
         <div class="dropdown-menu fade-up m-0">
           <a href="#" class="dropdown-item"> -->
-  
-  
+                                          
             <div class="col-md-12 roundedTextBox mb-3">
               <label>Men Product Specification :</label>
               <!-- <input type="text"  [(ngModel)]="Description" class="form-control mb-2" id="inputDescription" formControlName="Description" placeholder="Enter Product Description"> -->
@@ -399,7 +398,7 @@
             </div>
   
             <div class="container py-5">
-              <div class="row row-cols-2 row-cols-lg-3 mb-5">
+              <div class="row row-cols-2 row-cols-lg-3 mb-3">
                 <div class="col">
                   <label>Men Front Image :</label>
                   <div class="col-sm-10">
@@ -507,7 +506,7 @@
           <a href="#" class="dropdown-item"> -->
   
   
-            <div class="col-md-12 roundedTextBox mb-3">
+            <div class="col-md-12 roundedTextBox mb-0">
               <label>Women Product Specification :</label>
               <textarea rows="4" cols="43" type="text" [(ngModel)]="WomenProduct_Description" class="form-control mb-2"
                 id="inputWomenProduct_Description" formControlName="WomenProduct_Description"
@@ -521,7 +520,7 @@
             </div>
   
             <div class="container py-5">
-              <div class="row row-cols-2 row-cols-lg-3 mb-5">
+              <div class="row row-cols-2 row-cols-lg-3 mb-3">
                 <div class="col">
                   <label>Women Front Image :</label>
                   <div class="col-sm-10">
@@ -595,19 +594,20 @@
               </div>
             </div>
 
-            <div class="col-md-12 roundedTextBox mb-3">
+            <div class="col-md-12 roundedTextBox mb-0">
               <label>Women SVG Path:</label>
               <!-- <input type="text"  [(ngModel)]="Description" class="form-control mb-2" id="inputDescription" formControlName="Description" placeholder="Enter Product Description"> -->
               <textarea rows="4" cols="43" type="text" [(ngModel)]="women_f_svgpath" class="form-control mb-2"
                  formControlName="women_f_svgpath"
                 placeholder="Enter SVG Path"></textarea>
+              </div>
                 <!-- <textarea rows="4" cols="43" type="text" [(ngModel)]="women_f_svgpath" class="form-control mb-2"
                
                placeholder="Enter SVG Path"></textarea> -->
               <!-- <div *ngIf="submitted && formControl.Description.errors" class="text-danger">
                 <div *ngIf="formControl.Description.errors.required">SVG Path is required.</div>
               </div> -->
-            </div>
+           
   
           <!-- </a>
         </div>
@@ -618,7 +618,7 @@
   
      
   
-      <div class="col-md-12 roundedTextBox mb-3">
+      <div class="col-md-12 roundedTextBox mb-0">
         <label>Select Color :</label>
         <div class="container py-5">
           <div class="row row-cols-2 row-cols-lg-5 mb-5 colourclass">
@@ -630,18 +630,20 @@
                   <input type="checkbox"  style.color="{{data.Description}}" value="{{data.Lookup_Details_Id}}"
                   (change)="onSelectChange($event)" />
                        {{data.ColorName}}
-                   <li style="margin-left: 5px;" class="color-box" rel="tooltip" [ngStyle]="{'background-color':data.Description}" data-mobile=""
+                   <li style="margin-left: 5px;" class="color-box-product" rel="tooltip" [ngStyle]="{'background-color':data.Description}" data-mobile=""
                     data-create="false">
                   </li>               
                 </label>
+
               
             </div>
           </div>
         </div>
+      </div>
         <!-- <div *ngIf="submitted && formControl.ColorId.errors" class="text-danger">
                 <div *ngIf="formControl.ColorId.errors.required">Product Color is required.</div>
               </div> -->
-      </div>
+     
   
   
       <!-- --Size-- -->
@@ -653,7 +655,7 @@
           <div class="dropdown-menu fade-up m-0">
               <a href="#" class="dropdown-item"> -->
   
-      <div class="col-md-12 roundedTextBox mb-3">
+      <div class="col-md-12 roundedTextBox mb-0">
         <label>Select Size :</label>
         <div class="container">
           <div class="row  row-cols-lg-7 g-4"style="width: 600px;">
