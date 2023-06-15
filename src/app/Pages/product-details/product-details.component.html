@@ -290,10 +290,16 @@
                                         <h3 class=" product-name-new pt-4">{{data.Product_Title}}</h3>
 
                                         <div class="row g-4 pad-0" *ngIf="colors!=0">
-                                            <p class="color my-0 mb-2 noteMsg">
+                                            <p *ngIf="data.Category_Id!=7 && data.Category_Id!=8" class="color my-0 mb-2 noteMsg">
+                                                <!-- for color and tipping -->
                                                 * There might be a slight variation of colour
                                                 seen on the screen and may different from the
                                                 original product.
+                                            </p>
+                                            <p *ngIf="data.Category_Id==7 || data.Category_Id==8" class="color my-0 mb-2 noteMsg">
+                                                <!-- for bag and umbrellas -->
+                                                *Explore our wide range of umbrellas 
+                                                by simply clicking on the following boxes to discover the different types we offer.
                                             </p>
                                             <h5 class="dec-text-new">Colors :
                                                 {{this.selected_colorname}}</h5>
@@ -323,10 +329,16 @@
                                         <div class="row g-4 pad-0" *ngIf="tipping!=0">
                                             <div *ngIf="id==0 || id==2" class="my-0">
 
-                                                <p class="color my-0 mb-2 noteMsg">
+                                                <p *ngIf="data.Category_Id!=7 && data.Category_Id!=8" class="color my-0 mb-2 noteMsg">
+                                                   <!-- for color and tipping -->
                                                     * There might be a slight variation of colour
                                                     seen on the screen and may different from the
                                                     original product.
+                                                </p>
+                                                <p *ngIf="data.Category_Id==7 || data.Category_Id==8" class="color my-0 mb-2 noteMsg">
+                                                     <!-- for bag and umbrellas -->
+                                                    *Explore our wide range of umbrellas 
+                                                    by simply clicking on the following boxes to discover the different types we offer.
                                                 </p>
 
                                                 <h5 class="dec-text-new mb-4"> Colors:</h5>
@@ -367,10 +379,16 @@
 
                                                 <h5 class="colors-pallete" style="margin-top: 0px !important;">Colors:
                                                 </h5>
-                                                <p class="color my-0 mb-2 noteMsg">
+                                                <p *ngIf="data.Category_Id!=7 && data.Category_Id!=8" class="color my-0 mb-2 noteMsg">
+                                                    <!-- for color and tipping -->
                                                     * There might be a slight variation of colour
                                                     seen on the screen and may different from the
                                                     original product.
+                                                </p>
+                                                <p *ngIf="data.Category_Id==7 || data.Category_Id==8" class="color my-0 mb-2 noteMsg">
+                                                    <!-- for bag and umbrellas -->
+                                                    *Explore our wide range of umbrellas 
+                                                    by simply clicking on the following boxes to discover the different types we offer.
                                                 </p>
                                                 <ngx-slick-carousel class="carousel" #slickModal="slick-carousel"
                                                     [config]="slideConfig" (init)="slickInit($event)"
@@ -530,8 +548,8 @@
     <!-- Product Details End -->
 
     <!-- Similar Products Start -->
-    <!-- <div *ngIf="simillarProducts.length>3" class="container-xxl pt-7"> -->
-        <div *ngIf="simillarProducts.length>0" class="container-xxl pt-7">
+    <div *ngIf="simillarProducts.length>4" class="container-xxl pt-7">
+        <!-- <div *ngIf="simillarProducts.length>0" class="container-xxl pt-7"> -->
         <div class="container">
 
             <div class="row g-0 gx-5 align-items-end">
@@ -548,7 +566,8 @@
                             <div class="col-xl-3 w-90 col-lg-4 col-md-6  col-6 wow fadeInUp" data-wow-delay="0.1s">
                                 <div class=" label-name-similar  pointer" id="tab-1" (click)="onClick(simillarproduct)">
                                     <div class="pt-2 ">
-                                        <a class="d-block h5 mb-2">{{simillarproduct.Product_Title}}</a>
+                                        <!-- <a class="d-block h5 mb-2">{{simillarproduct.Product_Title}}</a> -->
+                                        <a class="d-block h5">{{simillarproduct.Product_Title}}</a>
                                     </div>
                                     <div class="position-relative  overflow-hidden"
                                         *ngIf="simillarproduct.Product_type==1">
@@ -574,14 +593,14 @@
         </div>
     </div>
 
-    
+
 
 
     <!-- <div class="container-xxl header_bs_mo_Similar" *ngIf="simillarProducts.length>0 && simillarProducts.length<4">
-        <div class="container" >
+        <div class="container">
             <div class="row g-0 gx-5 align-items-end">
                 <div class="col-lg-12">
-                    <div class="section-header text-center mb-5 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="section-header text-center mb-3 wow fadeInUp" data-wow-delay="0.1s">
                         <h3>Similar Product</h3>
                     </div>
                 </div>
@@ -589,44 +608,72 @@
             <div class="tab-content">
                 <div id="tab-1" class="tab-pane fade show p-0 active">
                     <div class="row g-4 ">
-                    <div class="col-xl-3 col-lg-4 col-md-6  col-6 wow fadeInUp categoryBox" data-wow-delay="0.1s"
+                        <div class="col-xl-3 col-lg-3 col-md-6  col-6 wow fadeInUp categoryBox" data-wow-delay="0.1s"
                             *ngFor="let simillarproduct of simillarProducts">
                             <div *ngIf="simillarProducts.length==1">
-                            <div class="product-item1 w-100" id="tab-1" (click)="onClick(simillarproduct)">
-                                <div class="pt-2 pl-0 pb-2 text-center">
-                                    <a class="d-block h5 mb-2">{{simillarproduct.Product_Title}}</a>
+                                <div class="product-item-1 label-name-similar w-100" id="tab-1"
+                                    (click)="onClick(simillarproduct)">
+                                    <div class="pt-2 pl-0 pb-2 text-center">
+                                        
+                                        <a class="d-block h5">
+                                            {{simillarproduct.Product_Title}}
+                                        </a>
+                                    </div>
+                                    <div class="productbox position-relative  overflow-hidden"
+                                        *ngIf="simillarproduct.Product_type==1">
+                                        <img class="img-fluid"
+                                            src="assets/img/{{this.categoryfolder}}/{{simillarproduct.Product_FrontPhoto}}"
+                                            alt="">
+                                    </div>
+                                    <div class="productbox position-relative  overflow-hidden"
+                                        *ngIf="simillarproduct.Product_type==2">
+                                        <img class="img-fluid"
+                                            src="assets/img/{{this.categoryfolder}}/{{simillarproduct.Product_Photo}}"
+                                            alt="">
+                                    </div>
                                 </div>
-                                <div class="productbox position-relative  overflow-hidden"  *ngIf="simillarproduct.Product_type==1">
-                                    <img class="img-fluid" src="assets/img/{{this.categoryfolder}}/{{simillarproduct.Product_FrontPhoto}}" alt="">
-                                </div>
-                                <div class="productbox position-relative  overflow-hidden"  *ngIf="simillarproduct.Product_type==2">
-                                    <img class="img-fluid" src="assets/img/{{this.categoryfolder}}/{{simillarproduct.Product_Photo}}" alt="">
-                                </div>
-                            </div>
                             </div>
                             <div *ngIf="simillarProducts.length==2">
-                                <div class="product-item2 w-100"  id="tab-1" (click)="onClick(simillarproduct)">
+                                <div class="product-item-2 label-name-similar w-100" id="tab-1"
+                                    (click)="onClick(simillarproduct)">
                                     <div class="pt-2 pl-0 pb-2 text-center">
-                                        <a class="d-block h5 mb-2">{{simillarproduct.Product_Title}}</a>
+                                      
+                                        <a class="d-block h5">
+                                            {{simillarproduct.Product_Title}}</a>
                                     </div>
-                                    <div class="productbox position-relative overflow-hidden"  *ngIf="simillarproduct.Product_type==1">
-                                        <img class="img-fluid" src="assets/img/{{this.categoryfolder}}/{{simillarproduct.Product_FrontPhoto}}" alt="">
+                                    <div class="productbox position-relative overflow-hidden"
+                                        *ngIf="simillarproduct.Product_type==1">
+                                        <img class="img-fluid"
+                                            src="assets/img/{{this.categoryfolder}}/{{simillarproduct.Product_FrontPhoto}}"
+                                            alt="">
                                     </div>
-                                    <div class="productbox position-relative overflow-hidden"  *ngIf="simillarproduct.Product_type==2">
-                                        <img class="img-fluid" src="assets/img/{{this.categoryfolder}}/{{simillarproduct.Product_Photo}}" alt="">
+                                    <div class="productbox position-relative overflow-hidden"
+                                        *ngIf="simillarproduct.Product_type==2">
+                                        <img class="img-fluid"
+                                            src="assets/img/{{this.categoryfolder}}/{{simillarproduct.Product_Photo}}"
+                                            alt="">
                                     </div>
                                 </div>
                             </div>
                             <div *ngIf="simillarProducts.length==3">
-                                <div class="product-item3 w-100" id="tab-1" (click)="onClick(simillarproduct)">
+                                <div class="product-item-3 label-name-similar label-name-similar w-100" id="tab-1"
+                                    (click)="onClick(simillarproduct)">
                                     <div class="pt-2 pl-0 pb-2 text-center">
-                                        <a class="d-block h5 mb-2">{{simillarproduct.Product_Title}}</a>
+                                     
+                                        <a class="d-block h5">
+                                            {{simillarproduct.Product_Title}}</a>
                                     </div>
-                                    <div class="productbox position-relative overflow-hidden"  *ngIf="simillarproduct.Product_type==1">
-                                        <img class="img-fluid" src="assets/img/{{this.categoryfolder}}/{{simillarproduct.Product_FrontPhoto}}" alt="">
+                                    <div class="productbox position-relative overflow-hidden"
+                                        *ngIf="simillarproduct.Product_type==1">
+                                        <img class="img-fluid"
+                                            src="assets/img/{{this.categoryfolder}}/{{simillarproduct.Product_FrontPhoto}}"
+                                            alt="">
                                     </div>
-                                    <div class="productbox position-relative overflow-hidden"  *ngIf="simillarproduct.Product_type==2">
-                                        <img class="img-fluid" src="assets/img/{{this.categoryfolder}}/{{simillarproduct.Product_Photo}}" alt="">
+                                    <div class="productbox position-relative overflow-hidden"
+                                        *ngIf="simillarproduct.Product_type==2">
+                                        <img class="img-fluid"
+                                            src="assets/img/{{this.categoryfolder}}/{{simillarproduct.Product_Photo}}"
+                                            alt="">
                                     </div>
                                 </div>
                             </div>
@@ -636,6 +683,45 @@
             </div>
         </div>
     </div> -->
+
+    <section class="container-xxl pt-5 pb-3" *ngIf="simillarProducts.length < 5 && simillarProducts.length > 0">
+        <div class="container">
+            <div class="row g-0 gx-5 align-items-end">
+                <div class="col-lg-12">
+                    <div class="section-header text-center mb-3 wow fadeInUp" data-wow-delay="0.1s">
+                        <h3 class="">Similar Product</h3>
+                    </div>
+                </div>
+            </div>
+          
+            <div class="row justify-content-md-center">
+                <div class="col-lg-3 col-md-6" *ngFor="let simillarproduct of simillarProducts">
+                    <div class="label-name-similar w-100" id="tab-1"
+                                    (click)="onClick(simillarproduct)">
+                                    <div class="pt-2 pl-0 pb-2 text-center">
+                                    
+                                        <a class="d-block h5">
+                                            {{simillarproduct.Product_Title}}
+                                        </a>
+                                    </div>
+                                    <div class="productbox position-relative  overflow-hidden"
+                                        *ngIf="simillarproduct.Product_type==1">
+                                        <img class="img-fluid"
+                                            src="assets/img/{{this.categoryfolder}}/{{simillarproduct.Product_FrontPhoto}}"
+                                            alt="">
+                                    </div>
+                                    <div class="productbox position-relative  overflow-hidden"
+                                        *ngIf="simillarproduct.Product_type==2">
+                                        <img class="img-fluid"
+                                            src="assets/img/{{this.categoryfolder}}/{{simillarproduct.Product_Photo}}"
+                                            alt="">
+                                    </div>
+                                </div>
+                </div>
+            </div>
+        </div>
+        
+    </section>
 </div>
 
 <!-- Similar Products End -->

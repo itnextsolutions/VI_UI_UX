@@ -32,12 +32,12 @@ export class AddEditProductCategoryComponent implements OnInit {
       Category_Name: ["", [Validators.required]],
       Category_Description: ["",[ Validators.required]],
       // Category_Photo: ["",[ Validators.required]],
-      Is_Brand:[""]
+      IsBrand:[""]
     });
     this.Category_Id = this.productcategory.Category_Id;
     this.Category_Name = this.productcategory.Category_Name;
     this.Category_Description = this.productcategory.Category_Description;
-    this.Is_Brand=this.productcategory.IsBrand;
+    this.IsBrand=this.productcategory.IsBrand;
     this.Category_Photo = this.productcategory.Category_Photo;
   }
 
