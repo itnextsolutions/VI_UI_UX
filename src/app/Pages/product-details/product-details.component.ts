@@ -90,7 +90,6 @@ export class ProductDetailsComponent implements OnInit {
     slidesToShow: 6,
     slidesToScroll: 6,
     infinite: false,
-    column: 0,
     rows: 0,
     responsive: [
       {
@@ -99,7 +98,7 @@ export class ProductDetailsComponent implements OnInit {
           slidesToShow: 6,
           slidesToScroll: 6,
           dots: true,
-          rows: 3,
+          rows: 3
         }
       },
       {
@@ -108,7 +107,7 @@ export class ProductDetailsComponent implements OnInit {
           slidesToShow: 3,
           slidesToScroll: 3,
           dots: true,
-          rows: 3,
+          rows: 3
         }
       },
 
@@ -118,7 +117,7 @@ export class ProductDetailsComponent implements OnInit {
           slidesToShow: 5,
           slidesToScroll: 5,
           dots: true,
-          rows: 3,
+          rows: 3
         }
       },
       {
@@ -127,7 +126,7 @@ export class ProductDetailsComponent implements OnInit {
           slidesToShow: 4,
           slidesToScroll: 4,
           dots: true,
-          rows: 3,
+          rows: 3
         }
       },
       {
@@ -136,7 +135,7 @@ export class ProductDetailsComponent implements OnInit {
           slidesToShow: 3,
           slidesToScroll: 3,
           dots: true,
-          rows: 3,
+          rows: 3
         }
       }
     ]
@@ -219,7 +218,7 @@ export class ProductDetailsComponent implements OnInit {
       }
     });
 
-    this.userService.getColorListById(this.productId).subscribe((data:any) => {debugger
+    this.userService.getColorListById(this.productId).subscribe((data:any) => {
       this.colors = data;
       console.log(this.colors);
       if (this.colors.length <18) {
@@ -237,6 +236,108 @@ export class ProductDetailsComponent implements OnInit {
       else if (this.colors.length <= 36) { this.slideConfig.rows = 2; }
       else if (this.colors.length <= 54) { this.slideConfig.rows = 3; }
       else this.slideConfig.rows = 0;
+
+
+      if (this.colors.length <=5) { this.slideConfig.responsive=[
+        {
+          breakpoint: 1024,
+          settings: {
+            slidesToShow: 6,
+            slidesToScroll: 6,
+            dots: true,
+            rows: 0
+          }
+        },
+        {
+          breakpoint: 600,
+          settings: {
+            slidesToShow: 3,
+            slidesToScroll: 3,
+            dots: true,
+            rows: 0
+          }
+        },
+  
+        {
+          breakpoint: 480,
+          settings: {
+            slidesToShow: 5,
+            slidesToScroll: 5,
+            dots: true,
+            rows: 0
+          }
+        },
+        {
+          breakpoint: 370,
+          settings: {
+            slidesToShow: 3,
+            slidesToScroll: 3,
+            dots: true,
+            rows: 0
+          }
+        },
+        {
+          breakpoint: 320,
+          settings: {
+            slidesToShow: 3,
+            slidesToScroll: 3,
+            dots: true,
+            rows:0
+          }
+        }
+      ] }
+else if (this.colors.length > 5 && this.colors.length <= 12) { this.slideConfig.responsive=[
+        {
+          breakpoint: 1024,
+          settings: {
+            slidesToShow: 6,
+            slidesToScroll: 6,
+            dots: true,
+            rows: 2
+          }
+        },
+        {
+          breakpoint: 600,
+          settings: {
+            slidesToShow: 3,
+            slidesToScroll: 3,
+            dots: true,
+            rows: 2
+          }
+        },
+  
+        {
+          breakpoint: 480,
+          settings: {
+            slidesToShow: 5,
+            slidesToScroll: 5,
+            dots: true,
+            rows: 2
+          }
+        },
+        {
+          breakpoint: 370,
+          settings: {
+            slidesToShow: 3,
+            slidesToScroll: 3,
+            dots: true,
+            rows: 2
+          }
+        },
+        {
+          breakpoint: 320,
+          settings: {
+            slidesToShow: 3,
+            slidesToScroll: 3,
+            dots: true,
+            rows:2
+          }
+        }
+      ] }
+
+      // else if (this.colors.length <= 36) { this.slideConfig.rows = 2; }
+      // else if (this.colors.length <= 54) { this.slideConfig.rows = 3; }
+      // else this.slideConfig.rows = 0;
     });
 
     this.userService.getSizeListById(this.productId).subscribe(data => {
