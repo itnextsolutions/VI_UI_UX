@@ -16,7 +16,7 @@
 .tipping-label-name {
   font-size: 11px;
     line-height: 11px;
-    height: 22px;
+    height: 32px;
     position: relative;
     margin-top: 8px;
     margin-left: 0px;
@@ -27,6 +27,7 @@
     color: #525252;
     font-family: "Gilroy Medium", sans-serif;
     word-wrap: normal;
+    
     /* margin-top: 8px;
     margin-left: 0px; */
     
@@ -272,6 +273,7 @@ body .slick-next {
 
   .big_img {
     width: 100% !important;
+    height: auto;
   }
 
   .pro-small-img li img {
@@ -369,6 +371,7 @@ body .slick-next {
 
   .big_img {
     width: 100% !important;
+    height: auto;
   }
 
   .pro-small-img li img {
@@ -532,6 +535,7 @@ body .slick-next {
 
   .big_img {
     width: 248px !important;
+    height: auto;
   }
 
   .modal.show .customize-model-dialog {
@@ -552,6 +556,7 @@ body .slick-next {
 
   .big_img {
     width: 327px !important;
+    height: auto;
   }
 
   .mb-view {
@@ -584,6 +589,7 @@ body .slick-next {
   .product-item-3 {
       margin-left: 0px;
 } */
+
   .tag {
       position: absolute;
       left: 0;

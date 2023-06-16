@@ -696,6 +696,7 @@
   .img-fluid {
     max-width: 100%;
     height: auto;
+    border-radius: 10px;
   }
 
   .img-small {
@@ -5615,7 +5616,7 @@
   .breadcrumb {
     --bs-breadcrumb-padding-x: 1rem;
     --bs-breadcrumb-padding-y: 0.5rem;
-    --bs-breadcrumb-margin-bottom: 1rem;
+    /* --bs-breadcrumb-margin-bottom: 1rem; */
     /* --bs-breadcrumb-bg: #f0f2f5; */
     --bs-breadcrumb-border-radius: 0.375rem;
     --bs-breadcrumb-divider-color: #6c757d;
