@@ -351,7 +351,7 @@ body .slick-next {
 }
   .color-box {
     padding: 0 15px 0 10px;
-    margin: 20px -48px !important;
+    margin: 20px -40px !important;
   }
 
   .dec-text-new {
@@ -382,7 +382,7 @@ body .slick-next {
   }
 
   .label-name {
-    margin-left: -47px;
+    margin-left: -37px;
     height: 7px;
     margin-top: -23px;
   }
