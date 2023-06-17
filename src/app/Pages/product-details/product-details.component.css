@@ -246,7 +246,7 @@ body .slick-next {
 }
 
 .noteMsg {
-  font-size: 12px;
+  font-size: 14px;
   color: #9b0a0a;
 }
 
@@ -267,6 +267,11 @@ body .slick-next {
       color: #525252;
       font-family: "Gilroy Medium", sans-serif;
       word-wrap: normal;
+  }
+  /* vishal */
+  .noteMsg {
+    font-size: 12px;
+    color: #9b0a0a;
   }
   .lp-view {
     display: none;
@@ -337,6 +342,11 @@ body .slick-next {
       word-wrap: normal;
   }
 
+ /* vishal */
+ .noteMsg {
+  font-size: 12px;
+  color: #9b0a0a;
+}
   .slick-slider {
     right: -4px;
   }
@@ -406,6 +416,11 @@ body .slick-next {
       word-wrap: normal;
   }
   /* vishal */
+  .noteMsg {
+    font-size: 12px;
+    color: #9b0a0a;
+  }
+  /* vishal */
   .slick-list-color{
     /* position: relative; */
     /* overflow: hidden; */
@@ -472,6 +487,11 @@ body .slick-next {
 }
 
 @media (min-width:601px) and (max-width: 768px) {
+   /* vishal */
+   .noteMsg {
+    font-size: 12px;
+    color: #9b0a0a;
+  }
   /* vishal */
   .slick-list-color{
     /* position: relative; */
@@ -514,6 +534,11 @@ body .slick-next {
 }
 
 @media (min-width:769px) and (max-width: 1024px) {
+   /* vishal */
+   .noteMsg {
+    font-size: 12px;
+    color: #9b0a0a;
+  }
   .pro-detail-page-top {
     padding: 0 0 0 50px !important;
   }
