@@ -253,6 +253,21 @@ body .slick-next {
 
 
 @media (min-width: 320px) and (max-width: 374px) {
+  .label-name {
+    font-size: 11px;
+      line-height: 11px;
+      height: 22px;
+      position: relative;
+      margin-top: -14px;
+      margin-left: -36px;
+      width: 100%;
+      display: -webkit-box ! important;
+      /* -webkit-line-clamp: 2; */
+      -webkit-box-orient: vertical;
+      color: #525252;
+      font-family: "Gilroy Medium", sans-serif;
+      word-wrap: normal;
+  }
   .lp-view {
     display: none;
   }
@@ -299,13 +314,28 @@ body .slick-next {
 .color-box {
    
   padding: 0 15px 0 10px;
-  margin: 20px -29px !important
+  margin: 20px -36px !important
 
   
 }
 }
 
 @media (min-width: 375px) and (max-width: 424px) {
+  .label-name {
+    font-size: 11px;
+      line-height: 11px;
+      height: 22px;
+      position: relative;
+      margin-top: -14px;
+      margin-left: -36px;
+      width: 100%;
+      display: -webkit-box ! important;
+      /* -webkit-line-clamp: 2; */
+      -webkit-box-orient: vertical;
+      color: #525252;
+      font-family: "Gilroy Medium", sans-serif;
+      word-wrap: normal;
+  }
 
   .slick-slider {
     right: -4px;
@@ -321,7 +351,7 @@ body .slick-next {
 }
   .color-box {
     padding: 0 15px 0 10px;
-    margin: 20px -35px !important;
+    margin: 20px -48px !important;
   }
 
   .dec-text-new {
@@ -352,7 +382,7 @@ body .slick-next {
   }
 
   .label-name {
-    margin-left: -34px;
+    margin-left: -47px;
     height: 7px;
     margin-top: -23px;
   }
@@ -360,6 +390,21 @@ body .slick-next {
 }
 
 @media (min-width:425px) and (max-width: 600px) {
+  .label-name {
+    font-size: 11px;
+      line-height: 11px;
+      height: 22px;
+      position: relative;
+      margin-top: -14px;
+      margin-left: -34px;
+      width: 100%;
+      display: -webkit-box ! important;
+      /* -webkit-line-clamp: 2; */
+      -webkit-box-orient: vertical;
+      color: #525252;
+      font-family: "Gilroy Medium", sans-serif;
+      word-wrap: normal;
+  }
   /* vishal */
   .slick-list-color{
     /* position: relative; */
@@ -376,7 +421,7 @@ body .slick-next {
 
   .color-box {
     padding: 0 15px 0 10px;
-    margin: 23px -32px !important;
+    margin: 23px -35px !important;
   }
 
   .dec-text-new {
@@ -419,7 +464,7 @@ body .slick-next {
     order: 1 !important;
   }
   .label-name {
-    margin-left: -29px;
+    margin-left: -37px;
     height: 7px;
     margin-top: -21px;
   }
