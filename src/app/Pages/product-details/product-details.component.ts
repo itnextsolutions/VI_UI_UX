@@ -238,7 +238,7 @@ export class ProductDetailsComponent implements OnInit {
       else this.slideConfig.rows = 0;
 
 
-      if (this.colors.length <=5) { this.slideConfig.responsive=[
+      if (this.colors.length <=6) { this.slideConfig.responsive=[
         {
           breakpoint: 1024,
           settings: {
@@ -286,7 +286,7 @@ export class ProductDetailsComponent implements OnInit {
           }
         }
       ] }
-else if (this.colors.length > 5 && this.colors.length <= 12) { this.slideConfig.responsive=[
+else if (this.colors.length > 6 && this.colors.length <= 12) { this.slideConfig.responsive=[
         {
           breakpoint: 1024,
           settings: {
