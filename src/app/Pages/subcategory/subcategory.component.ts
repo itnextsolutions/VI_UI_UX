@@ -52,7 +52,7 @@ export class SubcategoryComponent implements OnInit {
     onClick(product: any){
       this.productcategory = this.productcategory.replace(/\s+/g, '-').toLowerCase();
       this.productsubcategory =  this.productsubcategory.replace(/\s+/g, '-').toLowerCase();
-      this.router.navigate(['product-details/', this.productcategory, this.productsubcategory, product.Product_Id]);
+      this.router.navigate(['product-details/', this.productcategory, this.productsubcategory, product.Product_Id,product.IsBrand]);
     }
   
 }

@@ -12,6 +12,9 @@ export class CustmizeDesignComponent implements OnInit {
   @Input() id:number=0; 
   @Input() image:any;
   @Input() image1:any;
+  @Input() bgColor:any;
+  @Input() men_svg_path:any;
+  @Input() women_svgpath:any;
   frontimage=false;
   sideimage = true;
   backimage = true;

@@ -63,14 +63,14 @@
 <!-- Modal effect 1 -->
 <div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog customize-model-dialog" role="document">
-        <div class="modal-content">
+        <div class="modal-content customize">
             <div class="modal-header">
                 <h5 class="modal-title" id="exampleModalLabel1">Customize Your Design</h5>
                 <button type="button" class="btn-close" (click)="closeClick()" data-bs-dismiss="modal"
                     aria-label="Close"></button>
             </div>
             <div class="modal-body customize-model-body">
-                <app-custmize-design [Product]="product" [id]="id" [image]="image" [image1]="image1"
+                <app-custmize-design [Product]="product" [id]="id" [image]="image" [bgColor]="bgColor" [men_svg_path]="men_svg_path" [women_svgpath]="women_svgpath" [image1]="image1"
                     class="custumise-img-model">
                 </app-custmize-design>
             </div>

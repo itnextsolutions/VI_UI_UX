@@ -46,6 +46,6 @@ export class SearchresultComponent implements OnInit {
     
     this.productcategory = product.Category_Name.replace(/\s+/g, '-').toLowerCase();
     this.productsubcategory =  product.SubCategory.replace(/\s+/g, '-').toLowerCase();
-    this.router.navigate(['product-details/', this.productcategory, this.productsubcategory, product.Product_Id]);
+    this.router.navigate(['product-details/', this.productcategory, this.productsubcategory, product.Product_Id,product.IsBrand]);
   }
 }

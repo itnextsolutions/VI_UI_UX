@@ -6,27 +6,73 @@
         </div>
         <div *ngIf="id==0">
             <div [hidden]="frontimage">
-
+                <svg class="lp-view" id="product-svg" data-name="Layer 1"
+                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 467 571" height="571" width="467">
+                <defs />
+                <path id="product-shape" [attr.d]="men_svg_path" [ngStyle]="{ fill: bgColor}" />
+            </svg>
+            <svg class="mb-view" id="product-svg" data-name="Layer 1"
+                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 467 571" width="248" height="303">
+                <defs />
+                <path id="product-shape" [attr.d]="men_svg_path" [ngStyle]="{ fill: bgColor }" />
+            </svg>
+            <svg class="mm-view" id="product-svg" data-name="Layer 1"
+                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 467 571" width="327" height="400">
+                <defs />
+                <path id="product-shape" [attr.d]="men_svg_path" [ngStyle]="{ fill: bgColor }" />
+            </svg>
                 <body *ngFor="let data of Product">
-                    <img src="assets/img/{{this.productcategoryfolder}}/{{data.Product_Photo}}" style="width: 100%; ">
+                    <img src="assets/img/{{this.productcategoryfolder}}/{{data.Product_Photo}}" style="width: 467px; height: 571px; " [ngStyle]="{ fill: bgColor }" >
                 </body>
             </div>
         </div>
 
         <div *ngIf="id==1">
             <div [hidden]="frontimage">
-
+                <svg class="lp-view" id="product-svg" data-name="Layer 1"
+                                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 467 571" height="571" width="467">
+                                    <defs />
+                                    <path id="product-shape" [attr.d]="women_svgpath" [ngStyle]="{ fill: bgColor }" />
+                                </svg>
+                                <svg class="mb-view" id="product-svg" data-name="Layer 1"
+                                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 467 571" width="248" height="303">
+                                    <defs />
+                                    <path id="product-shape" [attr.d]="women_svgpath" [ngStyle]="{ fill: bgColor }" />
+                                </svg>
+                                <svg class="mm-view" id="product-svg" data-name="Layer 1"
+                                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 467 571" width="327" height="400">
+                                    <defs />
+                                    <path id="product-shape" [attr.d]="women_svgpath" [ngStyle]="{ fill: bgColor }" />
+                                </svg>
                 <body *ngFor="let data of Product">
-                    <img src="assets/img/{{this.productcategoryfolder}}/{{data.WomenProduct_Photo}}" style="width: 100%; ">
+                    <img src="assets/img/{{this.productcategoryfolder}}/{{data.WomenProduct_Photo}}" style="width: 467px; height: 571px; ">
                 </body>
             </div>
         </div>
+
+        <!-- <div *ngIf="id==2">
+            <div [hidden]="frontimage">
+
+                <body *ngFor="let data of Product"> c
+                    <img src="assets/img/{{this.productcategoryfolder}}/{{this.image}}" style="width: 100%;">
+                </body> c
+            </div>
+        </div>
+
+        <div *ngIf="id==3">
+            <div [hidden]="frontimage">
+
+                <body *ngFor="let data of Product"> c
+                    <img src="assets/img/{{this.productcategoryfolder}}/{{this.image1}}" style="width: 100%; height: 450px;">
+                </body> c
+            </div>
+        </div> -->
 
         <div *ngIf="id==2">
             <div [hidden]="frontimage">
 
                 <!-- <body *ngFor="let data of Product"> -->
-                    <img src="assets/img/{{this.productcategoryfolder}}/{{this.image}}" style="width: 100%;">
+                    <img src="assets/img/{{this.productcategoryfolder}}/{{this.image}}" style="width: 467px; height: 571px; ">
                 <!-- </body> -->
             </div>
         </div>
@@ -35,7 +81,7 @@
             <div [hidden]="frontimage">
 
                 <!-- <body *ngFor="let data of Product"> -->
-                    <img src="assets/img/{{this.productcategoryfolder}}/{{this.image1}}" style="width: 100%; height: 450px;">
+                    <img src="assets/img/{{this.productcategoryfolder}}/{{this.image1}}" style="width: 467px; height: 571px; ">
                 <!-- </body> -->
             </div>
         </div>
@@ -56,9 +102,15 @@
             </button>
         </div> -->
 
-        <div id="drawingArea" class="drawing-area">
+        <!-- <div id="drawingArea" class="drawing-area">
             <div class="canvas-container">
                 <canvas id="tshirt-canvas" width="200" height="300"></canvas>
+            </div>
+        </div> -->
+
+        <div id="drawingArea" class="drawing-area">
+            <div class="canvas-container">
+                <canvas id="tshirt-canvas" width="467" height="571"></canvas>
             </div>
         </div>
     </div>

@@ -13,6 +13,11 @@
     font-family: "Gilroy Medium", sans-serif;
     word-wrap: normal;
 }
+/* change vishal */
+.customize{
+  width:125%;
+  height: 750px;
+}
 .tipping-label-name {
   font-size: 11px;
     line-height: 11px;
