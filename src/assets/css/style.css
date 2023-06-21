@@ -29,6 +29,7 @@
 
 .slick-slide img {
     border-radius: 5px;
+    /* margin-left: -31px; */
 }
 
 .my-6 {
@@ -502,6 +503,7 @@ font-size: 39px;
     width: 100%;
     display: -webkit-box! important;
     word-wrap: break-word;
+    height: 35px;
 
 }
 /*** Testimonial ***/
