@@ -271,8 +271,11 @@ body .slick-next {
       -webkit-box-orient: vertical;
       color: #525252;
       font-family: "Gilroy Medium", sans-serif;
-      word-wrap: normal;
-  }
+      word-wrap: normal; 
+    }  
+  .label-name-similar a {
+      -webkit-line-clamp: 1;
+      line-height: 55px};
   /* vishal */
   .noteMsg {
     font-size: 12px;
@@ -346,6 +349,9 @@ body .slick-next {
       font-family: "Gilroy Medium", sans-serif;
       word-wrap: normal;
   }
+  .label-name-similar a {
+    -webkit-line-clamp: 1;
+    line-height: 55px};
 
  /* vishal */
  .noteMsg {
@@ -420,6 +426,10 @@ body .slick-next {
       font-family: "Gilroy Medium", sans-serif;
       word-wrap: normal;
   }
+  .label-name-similar a {
+    -webkit-line-clamp: 1;
+    line-height: 55px};
+
   /* vishal */
   .noteMsg {
     font-size: 12px;
