@@ -279,6 +279,15 @@ body .slick-next {
       font-family: "Gilroy Medium", sans-serif;
       word-wrap: normal;
   }
+  .tipping-box{
+    margin-left: -10px;
+  }
+    .tipping-label-name {
+      margin-left: 0px !important;
+    }
+  .label-name-similar a {
+        -webkit-line-clamp: 1;
+        line-height: 55px};
   /* vishal */
   .noteMsg {
     font-size: 12px;
@@ -447,6 +456,9 @@ body .slick-next {
     font-family: "Gilroy Medium", sans-serif;
     word-wrap: normal;
   }
+  .label-name-similar a {
+    -webkit-line-clamp: 1;
+    line-height: 55px};
   /* vishal */
   .noteMsg {
     font-size: 12px;
