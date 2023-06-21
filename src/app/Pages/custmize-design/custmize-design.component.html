@@ -22,7 +22,7 @@
                 <path id="product-shape" [attr.d]="men_svg_path" [ngStyle]="{ fill: bgColor }" />
             </svg>
                 <body *ngFor="let data of Product">
-                    <img src="assets/img/{{this.productcategoryfolder}}/{{data.Product_Photo}}" style="width: 467px; height: 571px; " [ngStyle]="{ fill: bgColor }" >
+                    <img src="assets/img/{{this.productcategoryfolder}}/{{data.Product_Photo}}" class="big_img">
                 </body>
             </div>
         </div>
@@ -45,7 +45,7 @@
                                     <path id="product-shape" [attr.d]="women_svgpath" [ngStyle]="{ fill: bgColor }" />
                                 </svg>
                 <body *ngFor="let data of Product">
-                    <img src="assets/img/{{this.productcategoryfolder}}/{{data.WomenProduct_Photo}}" style="width: 467px; height: 571px; ">
+                    <img src="assets/img/{{this.productcategoryfolder}}/{{data.WomenProduct_Photo}}" class="big_img" >
                 </body>
             </div>
         </div>
@@ -72,7 +72,7 @@
             <div [hidden]="frontimage">
 
                 <!-- <body *ngFor="let data of Product"> -->
-                    <img src="assets/img/{{this.productcategoryfolder}}/{{this.image}}" style="width: 467px; height: 571px; ">
+                    <img src="assets/img/{{this.productcategoryfolder}}/{{this.image}}" class="big_img" >
                 <!-- </body> -->
             </div>
         </div>
@@ -81,7 +81,7 @@
             <div [hidden]="frontimage">
 
                 <!-- <body *ngFor="let data of Product"> -->
-                    <img src="assets/img/{{this.productcategoryfolder}}/{{this.image1}}" style="width: 467px; height: 571px; ">
+                    <img src="assets/img/{{this.productcategoryfolder}}/{{this.image1}}" class="big_img" >
                 <!-- </body> -->
             </div>
         </div>
@@ -111,6 +111,9 @@
         <div id="drawingArea" class="drawing-area">
             <div class="canvas-container">
                 <canvas id="tshirt-canvas" width="467" height="571"></canvas>
+                <!-- <canvas class="lp-view" id="tshirt-canvas" width="467" height="571" ></canvas>
+                <canvas class="mb-view" id="tshirt-canvas" width="247" height="303" ></canvas>
+                <canvas class="mm-view" id="tshirt-canvas" width="247" height="303" ></canvas> -->
             </div>
         </div>
     </div>
