@@ -358,7 +358,7 @@
                                                         <div
                                                             class="container py-5 pc-Style-hero-colors-sizeList-adultSizes mt-0 pt-0 pb-3">
                                                             <div class="row row-cols-1 row-cols-lg-6 w-100">
-                                                                <div class="colorbox">
+                                                                <div class="tipping-box">
                                                                     <div (click)="onTippingClick(item)">
                                                                         <img src="assets/img/tipping/{{item.tipping_img}}"
                                                                             class="" style="width: 35px;">
@@ -411,12 +411,14 @@
                                                             class="container py-5 pc-Style-hero-colors-sizeList-adultSizes mt-0 pt-0 pb-3">
                                                             <div class="row row-cols-2 row-cols-lg-6 w-90">
                                                                 <!-- <div (click)="onTippingWomenClick(item)" *ngIf="item.tipping_women_img==54"> -->
-                                                                <div (click)="onTippingWomenClick(item)">
+                                                                    <div class="tipping-box">
+                                                                    <div (click)="onTippingWomenClick(item)">
                                                                     <img src="assets/img/tipping/{{item.tipping_img}}"
-                                                                        style="width: 42px;">
-                                                                    <div class="label-name">
+                                                                        style="width: 35px;">
+                                                                    <div class="tipping-label-name">
                                                                         {{item.Description}}
                                                                         <!-- {{item.tipping_women_img}} -->
+                                                                    </div>
                                                                     </div>
 
                                                                 </div>
