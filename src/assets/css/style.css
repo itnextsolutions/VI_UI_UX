@@ -485,7 +485,7 @@ font-size: 39px;
     transition: .5s;
     margin: 0 auto;
     display: block;
-    border-radius: 5px;
+    border-radius: 10px;
     /* text-transform: capitalize; */
 }
 
