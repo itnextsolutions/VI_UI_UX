@@ -10,6 +10,8 @@
     -webkit-box-orient: vertical;
      word-wrap: break-word;
      max-width: 23.4em;
+     padding-left: 1px;
+    padding-right: 5px;
 }
 
 
