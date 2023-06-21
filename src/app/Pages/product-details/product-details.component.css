@@ -287,7 +287,8 @@ body .slick-next {
     }
   .label-name-similar a {
         -webkit-line-clamp: 1;
-        line-height: 55px};
+        line-height: 55px;
+      }
   /* vishal */
   .noteMsg {
     font-size: 12px;
@@ -369,7 +370,7 @@ body .slick-next {
   }
   .label-name-similar a {
     -webkit-line-clamp: 1;
-    line-height: 55px};
+    line-height: 55px;}
 
   /* vishal */
   .noteMsg {
@@ -458,7 +459,7 @@ body .slick-next {
   }
   .label-name-similar a {
     -webkit-line-clamp: 1;
-    line-height: 55px};
+    line-height: 55px;}
   /* vishal */
   .noteMsg {
     font-size: 12px;
