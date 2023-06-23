@@ -125,8 +125,8 @@
 }
 
 .navbar .dropdown-toggle::after {
-    border: none;
-    content: "\f107";
+    /* border: none; */
+    /* content: "\f107"; */
     font-family: "Gilroy Bold", Sans-serif;
     font-weight: 900;
     vertical-align: middle;
@@ -652,13 +652,13 @@ font-size: 39px;
     }
     .services-block-three-new h4 {
         color: #6f6f6f;
-        font-size: 14px;
+        font-size: 12px;
         margin-bottom: 10px;
         font-weight: 600;
         overflow: hidden!important;
         width: 100%;
         display: -webkit-box! important;
-       -webkit-line-clamp: 2;
+       -webkit-line-clamp: 3;
        -webkit-box-orient: vertical;
         word-wrap: break-word;
     }

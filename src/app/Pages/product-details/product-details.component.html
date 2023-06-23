@@ -212,33 +212,36 @@
                 <div class="row">
                     <div class="col-lg-6 col-12">
                         <div [hidden]="isMenDivHidden">
-                            <div *ngFor="let data of product" class="mo-order-2" style="height:auto;">
+                            <div *ngFor="let data of product"  class="mo-order-2" style="height:auto;">
                                 <!-- <svg id="product-svg" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg"    height="571" width="467">
                                 <defs/>
                                 <path id="product-shape" [attr.d]="men_svg_path"  [ngStyle]="{ fill: bgColor }" />
                             </svg> -->
-                                <svg class="lp-view" id="product-svg" data-name="Layer 1"
-                                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 467 571" height="571" width="467">
-                                    <defs />
-                                    <path id="product-shape" [attr.d]="men_svg_path" [ngStyle]="{ fill: bgColor }" />
-                                </svg>
-                                <svg class="mb-view" id="product-svg" data-name="Layer 1"
-                                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 467 571" width="248" height="303">
-                                    <defs />
-                                    <path id="product-shape" [attr.d]="men_svg_path" [ngStyle]="{ fill: bgColor }" />
-                                </svg>
-                                <svg class="mm-view" id="product-svg" data-name="Layer 1"
-                                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 467 571" width="327" height="400">
-                                    <defs />
-                                    <path id="product-shape" [attr.d]="men_svg_path" [ngStyle]="{ fill: bgColor }" />
-                                </svg>
+                                <div *ngIf="men_svg_path.length>0">
+                                    <svg class="lp-view" id="product-svg" data-name="Layer 1"
+                                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 467 571" height="571" width="467">
+                                        <defs />
+                                        <path id="product-shape" [attr.d]="men_svg_path" [ngStyle]="{ fill: bgColor }" />
+                                    </svg>
+                                    <svg class="mb-view" id="product-svg" data-name="Layer 1"
+                                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 467 571" width="248" height="303">
+                                        <defs />
+                                        <path id="product-shape" [attr.d]="men_svg_path" [ngStyle]="{ fill: bgColor }" />
+                                    </svg>
+                                    <svg class="mm-view" id="product-svg" data-name="Layer 1"
+                                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 467 571" width="327" height="400">
+                                        <defs />
+                                        <path id="product-shape" [attr.d]="men_svg_path" [ngStyle]="{ fill: bgColor }" />
+                                    </svg>
+                                </div>
                                 <div *ngIf="data.Product_type!=3">
                                     <img class="big_img"
                                         src="assets/img/{{this.productcategoryfolder}}/{{data.Product_Photo}}">
                                 </div>
-                                <!-- <div *ngIf="data.Product_type==3">
-                                <img class="big_img" src="assets/img/{{this.productcategoryfolder}}/{{data.Product_SidePhoto}}" >
-                            </div> -->
+                            
+                                        <!-- <div *ngIf="data.Product_type==3">
+                                        <img class="big_img" src="assets/img/{{this.productcategoryfolder}}/{{data.Product_SidePhoto}}" >
+                                    </div> -->
                             </div>
                         </div>
 
@@ -257,25 +260,27 @@
 
                         <div [hidden]="isWoMenDivHidden">
                             <div *ngFor="let data of product" class="mo-order-2">
-                                <svg class="lp-view" id="product-svg" data-name="Layer 1"
-                                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 467 571" height="571" width="467">
-                                    <defs />
-                                    <path id="product-shape" [attr.d]="women_svgpath" [ngStyle]="{ fill: bgColor }" />
-                                </svg>
-                                <svg class="mb-view" id="product-svg" data-name="Layer 1"
-                                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 467 571" width="248" height="303">
-                                    <defs />
-                                    <path id="product-shape" [attr.d]="women_svgpath" [ngStyle]="{ fill: bgColor }" />
-                                </svg>
-                                <svg class="mm-view" id="product-svg" data-name="Layer 1"
-                                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 467 571" width="327" height="400">
-                                    <defs />
-                                    <path id="product-shape" [attr.d]="women_svgpath" [ngStyle]="{ fill: bgColor }" />
-                                </svg>
-                                <!-- <svg id="product-svg" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg"    height="571" width="467">
-                                <defs/>
-                                <path id="product-shape" [attr.d]="women_svgpath"  [ngStyle]="{ fill: bgColor }" />
-                            </svg> -->
+                                <div *ngIf="women_svgpath.length>0">
+                                    <svg class="lp-view" id="product-svg" data-name="Layer 1"
+                                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 467 571" height="571" width="467">
+                                        <defs />
+                                        <path id="product-shape" [attr.d]="women_svgpath" [ngStyle]="{ fill: bgColor }" />
+                                    </svg>
+                                    <svg class="mb-view" id="product-svg" data-name="Layer 1"
+                                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 467 571" width="248" height="303">
+                                        <defs />
+                                        <path id="product-shape" [attr.d]="women_svgpath" [ngStyle]="{ fill: bgColor }" />
+                                    </svg>
+                                    <svg class="mm-view" id="product-svg" data-name="Layer 1"
+                                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 467 571" width="327" height="400">
+                                        <defs />
+                                        <path id="product-shape" [attr.d]="women_svgpath" [ngStyle]="{ fill: bgColor }" />
+                                    </svg>
+                                        <!-- <svg id="product-svg" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg"    height="571" width="467">
+                                        <defs/>
+                                        <path id="product-shape" [attr.d]="women_svgpath"  [ngStyle]="{ fill: bgColor }" />
+                                    </svg> -->
+                                </div>
                                 <img class="big_img"
                                     src="assets/img/{{this.productcategoryfolder}}/{{data.WomenProduct_Photo}}">
                             </div>
@@ -308,9 +313,12 @@
                                                 {{this.selected_colorname}}</h5>
 
                                             <ngx-slick-carousel class="carousel" #slickModal="slick-carousel"
+                                                [config]="slideConfig"
+                                               >
+                                               <!-- <ngx-slick-carousel class="carousel" #slickModal="slick-carousel"
                                                 [config]="slideConfig" (init)="slickInit($event)"
                                                 (breakpoint)="breakpoint($event)" (afterChange)="afterChange($event)"
-                                                (beforeChange)="beforeChange($event)">
+                                                (beforeChange)="beforeChange($event)"> -->
                                                 <div ngxSlickItem *ngFor="let data of colors" class="slide">
                                                     <div
                                                         class="container py-5 pc-Style-hero-colors-sizeList-adultSizes mt-0 pt-0 pb-3">
@@ -350,10 +358,13 @@
                                                 <h5 class="dec-text-new mb-4"> Colors:</h5>
 
                                                 <ngx-slick-carousel class="carousel" #slickModal="slick-carousel"
-                                                    [config]="slideConfig" (init)="slickInit($event)"
+                                                    [config]="tippingslideConfig" 
+                                                 >
+                                                 <!-- <ngx-slick-carousel class="carousel" #slickModal="slick-carousel"
+                                                    [config]="tippingslideConfig" (init)="slickInit($event)"
                                                     (breakpoint)="breakpoint($event)"
                                                     (afterChange)="afterChange($event)"
-                                                    (beforeChange)="beforeChange($event)">
+                                                    (beforeChange)="beforeChange($event)"> -->
                                                     <div ngxSlickItem *ngFor="let item of tipping" class="slide">
                                                         <div
                                                             class="container py-5 pc-Style-hero-colors-sizeList-adultSizes mt-0 pt-0 pb-3">
@@ -400,10 +411,13 @@
                                                     by simply clicking on the following boxes to discover the different types we offer.
                                                 </p>
                                                 <ngx-slick-carousel class="carousel" #slickModal="slick-carousel"
-                                                    [config]="slideConfig" (init)="slickInit($event)"
+                                                    [config]="tippingWomenslideConfig" 
+                                                   >
+                                                   <!-- <ngx-slick-carousel class="carousel" #slickModal="slick-carousel"
+                                                    [config]="tippingWomenslideConfig" (init)="slickInit($event)"
                                                     (breakpoint)="breakpoint($event)"
                                                     (afterChange)="afterChange($event)"
-                                                    (beforeChange)="beforeChange($event)">
+                                                    (beforeChange)="beforeChange($event)"> -->
                                                     <!-- <div ngxSlickItem *ngFor="let item of tipping" class="slide"> -->
                                                     <!-- <div  *ngFor="let item of tipping"> -->
                                                     <div ngxSlickItem *ngFor="let item of tippingWomen" class="slide">

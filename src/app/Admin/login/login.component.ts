@@ -109,7 +109,7 @@ export class LoginComponent implements OnInit {
       this.service.Login(val).subscribe(
         {next:(response:AuthenticatedResponse)=>{
           const token=response.token;
-          console.log(token);
+         
           localStorage.setItem('token',token);
           this.invalidLogin=false;
           this.router.navigate(["admin/product-category"]);
@@ -121,10 +121,10 @@ export class LoginComponent implements OnInit {
   }
 
   // onLogin(): void {
-  //   // console.log(this.loginForm.value);
+  //  
   //   this.submitted = true;
   //   if (this.loginForm.valid) {
-  //     console.log(this.loginForm.value);
+  //    
   //     localStorage.setItem("user-Data", JSON.stringify(this.loginForm.value));
   //     this.router.navigate(["/"]);
   //   }

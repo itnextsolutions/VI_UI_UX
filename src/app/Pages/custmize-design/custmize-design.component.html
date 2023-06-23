@@ -6,6 +6,7 @@
         </div>
         <div *ngIf="id==0">
             <div [hidden]="frontimage">
+                <div *ngIf="men_svg_path">
                 <svg class="lp-view" id="product-svg" data-name="Layer 1"
                 xmlns="http://www.w3.org/2000/svg" viewBox="0 0 467 571" height="571" width="467">
                 <defs />
@@ -21,6 +22,7 @@
                 <defs />
                 <path id="product-shape" [attr.d]="men_svg_path" [ngStyle]="{ fill: bgColor }" />
             </svg>
+        </div>
                 <body *ngFor="let data of Product">
                     <img src="assets/img/{{this.productcategoryfolder}}/{{data.Product_Photo}}" class="big_img">
                 </body>
@@ -29,6 +31,7 @@
 
         <div *ngIf="id==1">
             <div [hidden]="frontimage">
+                <div *ngIf="women_svgpath">  
                 <svg class="lp-view" id="product-svg" data-name="Layer 1"
                                     xmlns="http://www.w3.org/2000/svg" viewBox="0 0 467 571" height="571" width="467">
                                     <defs />
@@ -44,6 +47,7 @@
                                     <defs />
                                     <path id="product-shape" [attr.d]="women_svgpath" [ngStyle]="{ fill: bgColor }" />
                                 </svg>
+                </div>
                 <body *ngFor="let data of Product">
                     <img src="assets/img/{{this.productcategoryfolder}}/{{data.WomenProduct_Photo}}" class="big_img" >
                 </body>
