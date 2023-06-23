@@ -18,16 +18,19 @@
 }
 
 @media (min-width:320px) and (max-width: 768px) {
+    
     .mo-text{
       white-space: inherit;
 
     }
     .dropdown-toggle::after {
-        display: none;
+        display: inline;
         margin-left: 0.255em;
+        position: absolute;
+        bottom: 18px;
     }
 
     .dropdown-menu{
-        position: inherit !important;
+        position: absolute !important;
     }
 }

@@ -1,17 +1,21 @@
+ul {
+  padding-right: 5rem;
+}
+
 .label-name {
   font-size: 11px;
-    line-height: 11px;
-    height: 22px;
-    position: relative;
-    margin-top: -14px;
-    margin-left: -23px;
-    width: 100%;
-    display: -webkit-box ! important;
-    /* -webkit-line-clamp: 2; */
-    -webkit-box-orient: vertical;
-    color: #525252;
-    font-family: "Gilroy Medium", sans-serif;
-    word-wrap: normal;
+  line-height: 11px;
+  height: 22px;
+  position: relative;
+  margin-top: -14px;
+  margin-left: -23px;
+  width: 100%;
+  display: -webkit-box ! important;
+  /* -webkit-line-clamp: 2; */
+  -webkit-box-orient: vertical;
+  color: #525252;
+  font-family: "Gilroy Medium", sans-serif;
+  word-wrap: normal;
 }
 /* change vishal */
 .customize {
@@ -39,22 +43,6 @@
 
 }
 
-/* .header_bs_mo_Similar{
-  padding-top: 3rem !important;
-  padding-bottom: 1rem !important;
-}
-.product-item-1{
-  margin-left: 350px;
-}
-
-.product-item-2{
-  margin-left: 185px;
-}
-
-.product-item-3{
-  margin-left:  20px;
-} */
-
 .slick-track {
   position: relative;
   left: 0;
@@ -79,6 +67,7 @@
 .color-box-tipping {
   margin-left: -22px;
 }
+
 
 #product-svg {
   position: absolute;
@@ -266,29 +255,29 @@ body .slick-next {
 @media (min-width: 320px) and (max-width: 374px) {
   .label-name {
     font-size: 11px;
-      line-height: 11px;
-      height: 22px;
-      position: relative;
-      margin-top: -14px;
-      margin-left: -36px;
-      width: 100%;
-      display: -webkit-box ! important;
-      /* -webkit-line-clamp: 2; */
-      -webkit-box-orient: vertical;
-      color: #525252;
-      font-family: "Gilroy Medium", sans-serif;
-      word-wrap: normal;
+    line-height: 11px;
+    height: 22px;
+    position: relative;
+    margin-top: -14px;
+    margin-left: -36px;
+    width: 100%;
+    display: -webkit-box ! important;
+    /* -webkit-line-clamp: 2; */
+    -webkit-box-orient: vertical;
+    color: #525252;
+    font-family: "Gilroy Medium", sans-serif;
+    word-wrap: normal;
   }
   .tipping-box{
     margin-left: -10px;
   }
-    .tipping-label-name {
-      margin-left: 0px !important;
-    }
+  .tipping-label-name {
+    margin-left: 0px !important;
+  }
   .label-name-similar a {
-        -webkit-line-clamp: 1;
-        line-height: 55px;
-      }
+    -webkit-line-clamp: 1;
+    line-height: 55px;
+  }
   /* vishal */
   .noteMsg {
     font-size: 12px;
@@ -346,8 +335,8 @@ body .slick-next {
     margin: 20px -36px !important
   }
 
-  .customize{
-    width:100%;
+  .customize {
+    width: 100%;
     height: 485px;
   }
 }
@@ -532,7 +521,7 @@ body .slick-next {
   }
 
   .customize{
-    width:87%;
+    width: 87%;
     margin:25px;
     height: 550px;
   }
@@ -586,9 +575,10 @@ body .slick-next {
   .dec-text-new {
     margin-bottom: 15px;
   }
-.customize{
-  margin-left: -60px;
-}
+
+  .customize {
+    margin-left: -60px;
+  }
 }
 
 @media (min-width:769px) and (max-width: 1024px) {
