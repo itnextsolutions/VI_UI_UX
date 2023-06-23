@@ -114,7 +114,8 @@
 
         <div id="drawingArea" class="drawing-area">
             <div class="canvas-container">
-                <canvas id="tshirt-canvas" width="467" height="571"></canvas>
+                <canvas id="tshirt-canvas" [attr.width]="canvaswidth" [attr.height]="canvasheight" ></canvas>
+                <!-- <canvas id="tshirt-canvas" width="canvaswidth" height="571"></canvas> -->
                 <!-- <canvas class="lp-view" id="tshirt-canvas" width="467" height="571" ></canvas>
                 <canvas class="mb-view" id="tshirt-canvas" width="247" height="303" ></canvas>
                 <canvas class="mm-view" id="tshirt-canvas" width="247" height="303" ></canvas> -->

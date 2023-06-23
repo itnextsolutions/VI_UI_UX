@@ -1,5 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, HostListener } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { $$ } from 'protractor';
 import { UserService } from 'src/app/Services/Api/User/user.service';
 
 @Component({
@@ -32,13 +33,27 @@ export class CustmizeDesignComponent implements OnInit {
 
   imageSrc = '';
   messageText = '';
+  canvaswidth :number=0;
+  canvasheight :number=0;
+  public getscreenwidth: any;
 
   constructor(private userService: UserService, private param: ActivatedRoute ){ }
   ngOnInit(): void {
+    this.getscreenwidth = window.innerWidth;
+
+    if (this.getscreenwidth >= 1280) {this.canvaswidth = 467; this.canvasheight=571; }
+    if (this.getscreenwidth >= 320 && this.getscreenwidth <= 375) {this.canvaswidth = 247; this.canvasheight=303; }
+    if (this.getscreenwidth >= 375 && this.getscreenwidth <= 425) {this.canvaswidth = 327; this.canvasheight=400; }
+
+
     this.categoryName = this.param.snapshot.paramMap.get('categoryName');
     this.productcategoryfolder = this.categoryName.replace(/\s+/g, '-').toLowerCase();
   }
   
+  @HostListener('window:resize', ['$event'])
+
+
+
 
   onClickFrontPhoto() {
   this.productcategoryfolder = this.categoryName.replace(/\s+/g, '-').toLowerCase();
