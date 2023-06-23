@@ -215,7 +215,7 @@ export class MultiProductComponent implements OnInit {
       // (this.ProductForm.get('Images') as FormArray).push(control);
        this.Images.push( this.MenFrontImgFile);
 
-       console.log(this.Images)
+    
     }
   }
 
@@ -364,7 +364,7 @@ export class MultiProductComponent implements OnInit {
 
           })
         }
-          // console.log(this.ProductForm.value); 
+          
       }
 
 
@@ -393,7 +393,7 @@ export class MultiProductComponent implements OnInit {
 //       });
 //       addModel.Images = imageArray;
 
-//       console.log(addModel);
+//      
 
 // }
 

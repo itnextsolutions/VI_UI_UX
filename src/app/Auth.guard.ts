@@ -25,7 +25,7 @@ export class AuthGuard implements CanActivate {
       
       // checkLogin(url: string): true | UrlTree {
       //       
-      //       console.log("Url: " + url)
+      //      
       //       let token = localStorage.getItem('jwt');
    
       //       if(token && !this.jwtHelper.isTokenExpired(token)){
@@ -40,7 +40,7 @@ export class AuthGuard implements CanActivate {
 
 
       checkLogin(url: string): true | UrlTree {
-         console.log("Url: " + url)
+    
          let val = localStorage.getItem('token');
 
          if(val != null){

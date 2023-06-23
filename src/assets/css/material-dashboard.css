@@ -1712,7 +1712,8 @@
   
     .col-lg-2 {
       flex: 0 0 auto;
-      width: 17.5%;
+      /* width: 16.66%; */
+      width: 20%;
     }
   
     .col-lg-3 {

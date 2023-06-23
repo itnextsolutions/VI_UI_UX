@@ -29,8 +29,8 @@ public submitted = false;
       message: ["", [Validators.required,Validators.minLength(3)]]
     });
     
-    this.email=this.Contact.email;
-    this.message=this.Contact.message;
+    // this.email=this.Contact.email;
+    // this.message=this.Contact.message;
   }
 
   get formControl() {

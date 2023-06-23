@@ -45,10 +45,10 @@ export class ContactComponent {
       message: ["", [Validators.required,Validators.minLength(3)]]
     });
 
-    this.name=this.Contact.name;
-    this.email=this.Contact.email;
-    this.subject=this.Contact.subject;
-    this.message=this.Contact.message;
+    // this.name=this.Contact.name;
+    // this.email=this.Contact.email;
+    // this.subject=this.Contact.subject;
+    // this.message=this.Contact.message;
     this.seoService.setCanonicalURL(window.location.href);
   }
 
@@ -82,7 +82,7 @@ export class ContactComponent {
   // 
   //   this.userService.sendContactUsEmail(this.userForm).subscribe(res =>{
   //      Swal.fire(res.toString()),
-  //   console.log(this.userForm.value);
+  //  
   //   })
   // }
 

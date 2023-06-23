@@ -25,6 +25,12 @@
     margin-right: 10px;
 }
 
+.img-logo{
+    width: 30px;
+    height: 30px;
+    margin:5px;
+    border-radius: 5px;
+}
 .footer .btn.btn-link:hover {
     color: var(--light);
     letter-spacing: 1px;
