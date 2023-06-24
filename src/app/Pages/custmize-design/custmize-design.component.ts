@@ -40,19 +40,32 @@ export class CustmizeDesignComponent implements OnInit {
   constructor(private userService: UserService, private param: ActivatedRoute ){ }
   ngOnInit(): void {
     this.getscreenwidth = window.innerWidth;
-
-    if (this.getscreenwidth >= 1280) {this.canvaswidth = 467; this.canvasheight=571; }
-    if (this.getscreenwidth >= 320 && this.getscreenwidth <= 375) {this.canvaswidth = 247; this.canvasheight=303; }
-    if (this.getscreenwidth >= 375 && this.getscreenwidth <= 425) {this.canvaswidth = 327; this.canvasheight=400; }
-
-
+    this.getCanvasSize();
     this.categoryName = this.param.snapshot.paramMap.get('categoryName');
     this.productcategoryfolder = this.categoryName.replace(/\s+/g, '-').toLowerCase();
   }
   
   @HostListener('window:resize', ['$event'])
 
-
+  // getCanvasSize() {
+  //   if (this.getscreenwidth >= 1280) {this.canvaswidth = 467; this.canvasheight=571; }
+  //   if (this.getscreenwidth <= 320 && this.getscreenwidth <= 375) {this.canvaswidth = 247; this.canvasheight=303; }
+  //   if (this.getscreenwidth >= 375 && this.getscreenwidth <= 425) {this.canvaswidth = 327; this.canvasheight=400; }
+  // }
+  getCanvasSize() {
+    if (this.getscreenwidth >= 1280) 
+    {
+      this.canvaswidth = 467; this.canvasheight=571; 
+    }
+    else if (this.getscreenwidth <= 320 && this.getscreenwidth <= 375) 
+    {
+      this.canvaswidth = 247; this.canvasheight=303; 
+    }
+    else if (this.getscreenwidth >= 375 && this.getscreenwidth <= 425) 
+    {
+      this.canvaswidth = 327; this.canvasheight=400; 
+    }
+  }
 
 
   onClickFrontPhoto() {

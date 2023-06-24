@@ -1,8 +1,10 @@
 <div class="col-lg-7 ">
     <div id="tshirt-div">
         <div class="row pb-2">
-            <div class=" col-lg-6 col-12"> <span for="tshirt-custompicture">Upload Your Design : </span></div>
-            <div class="col-lg-4 col-12"><input type="file" id="tshirt-custompicture" /></div>
+            <!-- <div class=" col-lg-6 col-12"> -->
+                 <!-- <span for="tshirt-custompicture">Upload Your Design : </span> -->
+                <!-- </div> -->
+            <div class="col-lg-4 col-12"><input type="file" id="tshirt-custompicture" (click)="getCanvasSize()" /></div>
         </div>
         <div *ngIf="id==0">
             <div [hidden]="frontimage">

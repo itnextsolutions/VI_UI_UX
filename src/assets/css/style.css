@@ -487,6 +487,7 @@ font-size: 39px;
     display: block;
     border-radius: 10px;
     cursor: pointer;
+    border: 1px solid #ccc9c9;
     /* text-transform: capitalize; */
 }
 

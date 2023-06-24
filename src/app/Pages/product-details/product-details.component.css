@@ -153,6 +153,7 @@ ul li img {
   float: left;
   margin: top 20px;
   margin-left: 10px;
+  border: 1px solid #ccc9c9;
 }
 
 #id_0 :hover {
@@ -181,6 +182,7 @@ ul li img {
   float: left;
   margin-top: 0px;
   margin-left: 0px;
+  border: 1px solid #ccc9c9;
 }
 
 .slick-list {
@@ -314,6 +316,7 @@ body .slick-next {
   .big_img {
     width: 100% !important;
     height: auto;
+    border: 1px solid #ccc9c9;
   }
 
   .pro-small-img li img {
@@ -491,6 +494,7 @@ body .slick-next {
   .big_img {
     width: 100% !important;
     height: auto;
+    border: 1px solid #ccc9c9;
   }
 
   .pro-small-img li img {
@@ -512,6 +516,7 @@ body .slick-next {
 
   .big_img {
     order: 1 !important;
+    border: 1px solid #ccc9c9;
   }
 
   .label-name {
@@ -681,6 +686,7 @@ body .slick-next {
   flex: 1 1 auto;
   padding: var(--bs-modal-padding);
   height: 610px !important;
+  margin: 0px 50px;
 }
 
 .modal.show .customize-model-dialog {
@@ -706,6 +712,7 @@ body .slick-next {
   .big_img {
     width: 248px !important;
     height: auto;
+    border: 1px solid #ccc9c9;
   }
 
   .modal.show .customize-model-dialog {
@@ -726,8 +733,9 @@ body .slick-next {
   }
 
   .big_img {
-    width: 327px !important;
+    width: 300px !important;
     height: auto;
+    border: 1px solid #ccc9c9;
   }
 
   .mb-view {

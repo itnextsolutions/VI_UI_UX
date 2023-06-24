@@ -3,6 +3,7 @@
     <div class="top-bar row gx-0 align-items-center d-lg-flex bg-white">
         <div class="col-lg-8 col-md-4  text-start"></div>
         <div class="col-lg-4 col-md-8 d-xl-block header-top">
+            
             <!-- <small class="topbarsmall"><i class="fa fa-envelope me-2"></i>shailesh.vastra@gmail.com</small> -->
             <small class="topbarsmall"><i class="fa fa-envelope me-2"></i>hello@vastraindia.com</small>
             <small class="ms-4 topbarsmall"></small>
@@ -45,8 +46,9 @@
     </nav>
     <div *ngIf="Notification.length > 0" class="announcement-bar">
         <div class="page-width" *ngFor="let data of Notification">
+            <marquee scrolldelay="100" behavior="loop" direction="left" onmouseover="this.stop();" onmouseout="this.start();">
             <span>{{data.NotificationTitle}}<a href="{{data.ButtonUrl}}" class="btn-browse">&nbsp;{{data.ButtonText}}</a></span>
-        </div>
+        </marquee></div>
     </div>
     <nav class="navbar navbar-expand-lg navbar-light py-lg-0 px-lg-12 wow fadeIn" data-wow-delay="0.1s" style="padding: 0px;">
         <div class="container-fluid navbar-collapse " id="">
