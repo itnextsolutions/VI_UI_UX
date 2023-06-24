@@ -702,6 +702,7 @@ body .slick-next {
 @media (min-width: 320px) and (max-width: 374px) {
   .customize-model-body {
     height: auto !important;
+    margin: 0px;
   }
 
   .lp-view {
@@ -728,6 +729,7 @@ body .slick-next {
 @media (min-width:375px) and (max-width: 600px) {
   .customize-model-body {
     height: auto !important;
+    margin: 0px;
   }
 
   .modal.show .customize-model-dialog {
