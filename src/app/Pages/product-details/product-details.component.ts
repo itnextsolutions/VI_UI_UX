@@ -646,7 +646,7 @@ export class ProductDetailsComponent implements OnInit {
       }
     });
 
-    this.userService.getTipingListById(this.productId).subscribe(data => {debugger
+    this.userService.getTipingListById(this.productId).subscribe(data => {
      if(data!=null && data!=undefined){
       this.tipping = data;
       if (this.tipping.length <=6) { this.tippingslideConfig= {

@@ -65,7 +65,7 @@ export class AddEditProductCategoryComponent implements OnInit {
     }
   }
 
-  onSelectChange(e: any) {debugger
+  onSelectChange(e: any) {
     if (this.IsBrand==true){
       this.Is_Brand="1";
     }
