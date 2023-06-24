@@ -7,6 +7,8 @@
     width: 25px;
     height: 25px;
     margin:5px;
+    border-radius: 5px;
+    border: 1px solid #dbd6d6;
 }
 @media (min-width: 320px) and (max-width: 425px) 
 {
