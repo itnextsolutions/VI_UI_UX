@@ -1,4 +1,7 @@
-
+.text-bolder-a{
+    font-weight: 700;
+    font-size: 16px;
+}
 .container {
     width: 1200px;
 }
@@ -41,6 +44,9 @@
     }
 }
 @media (min-width: 320px) and (max-width: 600px) {
+    .text-bolder-a{
+        font-size: 12px;
+    }
     .product-item {
         /* border: 1px solid #e9e6e6; */
         /* border-top: 3px solid #df0a0a; */

@@ -1,5 +1,9 @@
-
-
+.img-fluid-a{
+max-width: 100%;
+height: auto;
+/* border-radius: 10px; */
+cursor: pointer;
+}
 .blog-heading{
     height: 67px;
     text-overflow: ellipsis;

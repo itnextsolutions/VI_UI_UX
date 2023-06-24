@@ -1,7 +1,10 @@
 ul {
   padding-right: 1px !important;
 }
-
+.mrp_class{
+  margin-top:0px ;
+  margin-bottom: 15px;
+}
 .label-name {
   font-size: 11px;
   line-height: 11px;
