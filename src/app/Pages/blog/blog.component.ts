@@ -21,7 +21,7 @@ export class BlogComponent implements OnInit {
   }
 
   refreshblogList() {
-    this.blogno=3;
+    // this.blogno=3;
     this.userService.getallbloglist(this.blogno).subscribe(data =>{
       this.blogList = data;
     });
