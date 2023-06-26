@@ -611,7 +611,7 @@ font-size: 39px;
   .services-block-three-new i {
       font-size: 32px;
   }
-  .services-block-three-new>a {
+  .services-block-three-new>div {
       display: block;
       border: 2px solid #d5d5d5;
       border-radius: 4px;
@@ -626,7 +626,7 @@ font-size: 39px;
       height: 132px;
   }
 
-  .services-block-three-new>a:before {
+  .services-block-three-new>div:before {
     display: block;
     content: "";
     width: 9%;
@@ -639,7 +639,7 @@ font-size: 39px;
     transition: all 0.5s ease 0s;
     -webkit-transition: all 0.5s ease 0s;
     }
-    .services-block-three-new>a:after {
+    .services-block-three-new>div:after {
         display: block;
         content: "";
         width: 9%;

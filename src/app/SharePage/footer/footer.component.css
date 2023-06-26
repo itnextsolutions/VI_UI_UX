@@ -3,7 +3,9 @@
     color: #fff;
     font-size: 1rem;
 }
-
+a{
+    color: white !important;;
+}
 .footer .btn.btn-link {
     display: block;
     margin-bottom: 5px;

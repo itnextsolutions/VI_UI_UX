@@ -11,10 +11,7 @@
           <add-edit-blog [blog]="blog" *ngIf="activateAddEditBlog">
           </add-edit-blog>
         </div>
-        <!-- <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
-        </div> -->
+        
       </div>
     </div>
   </div>
@@ -126,19 +123,6 @@
                   </table>
                 </div>
               </div>
-              <!-- <div class="container mw-100"> 
-                <div class="row">  
-                  <div class="col-md-3"> </div>  
-                  <div *ngIf="blogList !=0" class="col-md-6">  
-                    <ul class="pagination justify-content-center">  
-                      <li *ngFor="let page of pageField;let i=index" class="page-item"> 
-                        <a (click)="showBlogPageNumber(page,i)" [ngClass]="pageNumber[i] ? 'pageColor':'page-link'"    
-                         style=" margin-right: 5px;;margin-top: 5px">{{page}}</a>  
-                      </li>  
-                    </ul>  
-                  </div>  
-                </div>   
-              </div>  -->
               <pagination-controls (pageChange)="pageNo = $event" class="text-center"></pagination-controls>
             </div>
           </div>

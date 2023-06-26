@@ -61,7 +61,7 @@ export class CustmizeDesignComponent implements OnInit {
     {
       this.canvaswidth = 247; this.canvasheight=303; 
     }
-    else if (this.getscreenwidth >= 375 && this.getscreenwidth <= 425) 
+    else  (this.getscreenwidth >= 375 && this.getscreenwidth <= 425) 
     {
       this.canvaswidth = 327; this.canvasheight=400; 
     }

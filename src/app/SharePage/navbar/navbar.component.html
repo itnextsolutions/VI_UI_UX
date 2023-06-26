@@ -5,10 +5,10 @@
         <div class="col-lg-4 col-md-8 d-xl-block header-top">
             
             <!-- <small class="topbarsmall"><i class="fa fa-envelope me-2"></i>shailesh.vastra@gmail.com</small> -->
-            <small class="topbarsmall"><i class="fa fa-envelope me-2"></i>hello@vastraindia.com</small>
+            <small class="topbarsmall"><a  _ngcontent-lgr-c66="" target="_blank" href="https://mail.google.com/"><i class="fa fa-envelope me-2"></i>hello@vastraindia.com</a></small>
             <small class="ms-4 topbarsmall"></small>
             <!-- <small class="topbarsmall"><i class="fa fa-phone me-2"></i>9820146569</small> -->
-            <small class="topbarsmall"><i class="fa fa-phone me-2"></i>+91 8356-959009</small>
+            <small class="topbarsmall"><i class="fa fa-phone-alt me-2"></i>+91 8356-959009</small>
         </div>
     </div>
 
@@ -27,7 +27,7 @@
         </div>
         <div class="col-lg-4 col-md-12 col-12 px-2">
             <div class="input-div mar-0" >
-                <form action="/a/search" method="get" class="" role="" >
+                <form action="/a/search" method="get" class="" role="" (keyup.enter)="onSearch()">
                     <button type="submit" class="text-link site-header__search-btn" (click)="onSearch()"  style="background: none;border: 0;">
                         <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-search" viewBox="0 0 54 54"><defs><style>.cls-1{fill: none;stroke: #000;stroke-miterlimit: 10;stroke-width: 2px
                                     }

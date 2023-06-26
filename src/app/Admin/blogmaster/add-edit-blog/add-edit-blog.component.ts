@@ -57,14 +57,6 @@ export class AddEditBlogComponent implements OnInit {
       formData.append('Blog_Topic', this.Blog_Topic);
       formData.append('Blog_Content', this.Blog_Content);
       formData.append('formFile', this.selectedFile);
-      
-    // var val = {
-    //   Blog_Id:this.Blog_Id,
-    //   Blog_Title:this.Blog_Title,
-    //   Blog_Topic:this.Blog_Topic,
-    //   Blog_Content:this.Blog_Content,
-    //   Image_Name:this.Image_Name.replace(/.*[\/\\]/, '')
-    // };
       this.service.addblog(formData).subscribe(res =>{
         alert(res.toString());
       })
@@ -74,13 +66,6 @@ export class AddEditBlogComponent implements OnInit {
   updateBlog(){
     this.submitted = true;
     if (this.blogForm.valid){
-    // var val = {
-    //   Blog_Id:this.Blog_Id,
-    //   Blog_Title:this.Blog_Title,
-    //   Blog_Topic:this.Blog_Topic,
-    //   Blog_Content:this.Blog_Content,
-    //   Image_Name:this.Image_Name.replace(/.*[\/\\]/, '')
-    // };
     let formData = new FormData()
     formData.append('Blog_Id', this.Blog_Id);
     formData.append('Blog_Title', this.Blog_Title);
