@@ -59,13 +59,7 @@ export class AddEditSubcategoryComponent implements OnInit {
     
     this.submitted = true;
     if (this.Pro_SubCatForm.valid){
-    // var val = {
-    //   // SubCategory_Id:this.SubCategory_Id,
-    //   Category_Id:this.Category_Id,
-    //   Sub_Cat_Name:this.Sub_Cat_Name
-    //   // SubCategory:this.Sub_Cat_Name,
-    //   // Sub_Cat_Photo:this.Sub_Cat_Photo.replace(/.*[\/\\]/, '')
-    // };
+   
     let formData = new FormData()
     // formData.append('SubCategory_Id', this.SubCategory_Id);
         formData.append('Category_Id', this.Category_Id);
@@ -82,13 +76,7 @@ export class AddEditSubcategoryComponent implements OnInit {
     
     this.submitted = true;
     if (this.Pro_SubCatForm.valid){
-    // var val = {
-    //   Id : this.Id,
-    //   // SubCategory_Id : this.SubCategory_Id,
-    //   Category_Id:this.Category_Id,
-    //   Sub_Cat_Name:this.Sub_Cat_Name,
-    //   // Sub_Cat_Photo:this.Sub_Cat_Photo.replace(/.*[\/\\]/, '')
-    // };
+   
     let formData = new FormData()
     formData.append('SubCategory_Id', this.SubCategory_Id);
         formData.append('Category_Id', this.Category_Id);

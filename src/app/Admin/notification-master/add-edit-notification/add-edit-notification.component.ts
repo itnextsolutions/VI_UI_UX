@@ -37,8 +37,8 @@ export class AddEditNotificationComponent implements OnInit {
       NotificationTitle: ["", [Validators.required]],
       FromDate: ["",[ Validators.required]],
       ToDate: ["",[ Validators.required]],
-      ButtonText: ["",[ Validators.required]],
-      ButtonUrl: ["",[ Validators.required]],
+      ButtonText: [""],
+      ButtonUrl: [""],
     });
 
     this.NotificationId = this.notification.NotificationId;

@@ -5,10 +5,10 @@
         <div class="col-lg-4 col-md-8 d-xl-block header-top">
             
             <!-- <small class="topbarsmall"><i class="fa fa-envelope me-2"></i>shailesh.vastra@gmail.com</small> -->
-            <small class="topbarsmall"><a  _ngcontent-lgr-c66="" target="_blank" href="https://mail.google.com/"><i class="fa fa-envelope me-2"></i>hello@vastraindia.com</a></small>
+            <small class="topbarsmall"><a target="_blank" href="mailto:hello@vastraindia.com"><i class="fa fa-envelope me-2"></i>hello@vastraindia.com</a></small>
             <small class="ms-4 topbarsmall"></small>
             <!-- <small class="topbarsmall"><i class="fa fa-phone me-2"></i>9820146569</small> -->
-            <small class="topbarsmall"><i class="fa fa-phone-alt me-2"></i>+91 8356-959009</small>
+            <small class="topbarsmall"><a href="tel:8356959009"><i class="fa fa-phone-alt me-2"></i>+91 8356-959009</a></small>
         </div>
     </div>
 
@@ -73,10 +73,11 @@
         <div class="col-lg-8 col-md-4  text-start"></div>
         <div class="col-lg-4 col-md-8 d-xl-block header-top">
             <!-- <small class="topbarsmall"><i class="fa fa-envelope me-2"></i>shailesh.vastra@gmail.com</small> -->
-            <small class="topbarsmall"><i class="fa fa-envelope me-2"></i>hello@vastraindia.com</small>
+            <small class="topbarsmall md-4"><a href=''><i class="fa fa-home me-2"></i></a></small>
+            <small class="topbarsmall"><a href="mailto:hello@vastraindia.com"><i class="fa fa-envelope me-2"></i>hello@vastraindia.com</a></small>
             <small class="ms-4 topbarsmall"></small>
             <!-- <small class="topbarsmall"><i class="fa fa-phone me-2"></i>9820146569</small> -->
-            <small class="topbarsmall"><i class="fa fa-phone me-2"></i>+91 8356-959009</small>
+            <small class="topbarsmall"><a href="tel:8356959009"><i class="fa fa-phone-alt me-2"></i>+91 8356-959009</a></small>
         </div>
     </div>
     <div class="col-lg-4 col-md-6 col-12 d-xl-block text-center">
@@ -86,7 +87,7 @@
     </div>
     <div *ngIf="Notification.length > 0" class="announcement-bar-mobile mobile">
         <marquee scrolldelay="200" behavior="loop" direction="left"><div class="page-width" *ngFor="let data of Notification">
-                <span>{{data.NotificationTitle}}<a href="{{data.ButtonUrl}}" class="btn-browse">&nbsp;{{data.ButtonText}}</a></span>
+                <span class="Notification">{{data.NotificationTitle}}<a href="{{data.ButtonUrl}}" class="btn-browse">&nbsp;{{data.ButtonText}}</a></span>
             </div></marquee>
     </div>
     <nav *ngIf="categorySubcategory" class="navbar navbar-expand-lg navbar-light py-lg-0 px-lg-12 wow fadeIn" data-wow-delay="0.1s" style="padding: 0px;">

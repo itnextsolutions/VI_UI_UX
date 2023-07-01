@@ -9,8 +9,9 @@ import { AuthenticatedResponse } from '../app.module';
 })
 
 export class SharedService {
-  readonly APIUrl = "https://test.vastraindia.com/api/";
-  // readonly APIUrl = "https://localhost:44365/api/";
+  //readonly APIUrl = "http://localhost:96/api/";
+ //readonly APIUrl = "https://localhost:44365/api/";
+ readonly APIUrl ="https://test.vastraindia.com/api/";
   constructor(private http: HttpClient) {}
 
   gettoken(){
@@ -41,11 +42,15 @@ addProductcategory(val: any) {
     return this.http.post(this.APIUrl + 'Product/InsertCategory', val);
 }
 updateProductcategory(val: any) {
-    return this.http.put(this.APIUrl + 'Product/UpdateCategory', val);
+    return this.http.post(this.APIUrl + 'Product/UpdateCategory', val);
 }
-deleteProductcategory(category_id: any) {
-    return this.http.delete(this.APIUrl + 'Product/DeleteCategory?id=' + category_id);
+
+
+public deleteProductcategory(category_id : any){
+  
+  return this.http.post(this.APIUrl + 'Product/DeleteCategory',category_id)
 }
+
 //Product Category  End
 
 // Look Up Master API's start
@@ -56,10 +61,10 @@ addLookupMaster(val: any) {
   return this.http.post(this.APIUrl + 'Lookup/InsertLookupMaster', val);
 }
 updateLookupMaster(val: any) {
-  return this.http.put(this.APIUrl + 'Lookup/UpdateLookupMaster', val);
+  return this.http.post(this.APIUrl + 'Lookup/UpdateLookupMaster', val);
 }
 deleteLookupMaster(Lookup_Id: any) {
-  return this.http.delete(this.APIUrl + 'Lookup/DeleteLookupMaster?id=' + Lookup_Id);
+  return this.http.post(this.APIUrl + 'Lookup/DeleteLookupMaster' , Lookup_Id);
 }
 // Look Up Master API's End
 
@@ -73,11 +78,11 @@ addLookupDetails(val: any) {
 }
 
 updateLookupDetails(val: any) {
-  return this.http.put(this.APIUrl + 'Lookup/UpdateLookupDetails', val);
+  return this.http.post(this.APIUrl + 'Lookup/UpdateLookupDetails', val);
 }
 
 deleteLookupDetails(Lookup_Details_Id: any) {
-  return this.http.delete(this.APIUrl + 'Lookup/DeleteLookupDetails?id=' + Lookup_Details_Id);
+  return this.http.post(this.APIUrl + 'Lookup/DeleteLookupDetails' ,Lookup_Details_Id);
 }
 
 GetLookupNameDropDown(): Observable < any[] > {
@@ -99,11 +104,11 @@ multiProductDetails(formData: any) {
 }
 
 updateProductDetails(val: any) {
-return this.http.put(this.APIUrl + 'Product/UpdateProduct', val);
+return this.http.post(this.APIUrl + 'Product/UpdateProduct', val);
 }
 
 deleteProductDetails(Product_Id: any) {
-return this.http.delete(this.APIUrl + 'Product/DeleteProduct?id=' + Product_Id);
+return this.http.post(this.APIUrl + 'Product/DeleteProduct' , Product_Id);
 }
 
 GetProductCatDropDown(): Observable < any[] > {
@@ -137,11 +142,11 @@ return this.http.post(this.APIUrl + 'Blog/InsertBlog', val);
 }
 
 updateBlog(val: any) {
-return this.http.put(this.APIUrl + 'Blog/UpdateBlog', val);
+return this.http.post(this.APIUrl + 'Blog/UpdateBlog', val);
 }
 
 deleteBlog(Blog_Id: any) {
-return this.http.delete(this.APIUrl + 'Blog/Delete?id=' + Blog_Id);
+return this.http.post(this.APIUrl + 'Blog/Delete' , Blog_Id);
 }
 //Blog End
 
@@ -153,11 +158,11 @@ addCustomerReview(val: any) {
 return this.http.post(this.APIUrl + 'Customer/InsertCustomerReview', val);
 }
 updateCustomerReview(val: any) {
-return this.http.put(this.APIUrl + 'Customer/UpdateCustomerReview', val);
+return this.http.post(this.APIUrl + 'Customer/UpdateCustomerReview', val);
 }
 
 deleteCustReview(Customer_Review_Id: any) {
-return this.http.delete(this.APIUrl + 'Customer/DeleteCustomerReview?id=' + Customer_Review_Id);
+return this.http.post(this.APIUrl + 'Customer/DeleteCustomerReview' , Customer_Review_Id);
 }
 //Customer Review End
 
@@ -172,12 +177,12 @@ return this.http.post(this.APIUrl + 'Product/InsertSubCategory', formData);
 }
 
 updateSubProductcategory(val: any) {
-return this.http.put(this.APIUrl + 'Product/UpdateSubCategory', val);
+return this.http.post(this.APIUrl + 'Product/UpdateSubCategory', val);
 }
 
 
 deleteSubProductcategory(Id: any) {
-return this.http.delete(this.APIUrl + 'Product/DeleteSubCategory?id=' + Id);
+return this.http.post(this.APIUrl + 'Product/DeleteSubCategory' , Id);
 }
 
 GetProductCatDropDownList(): Observable < any[] > {
@@ -201,10 +206,10 @@ addNotification(val: any) {
 return this.http.post(this.APIUrl + 'Notification/InsertNotification', val);
 }
 updateNotification(val: any) {
-return this.http.put(this.APIUrl + 'Notification/UpdateNotification', val);
+return this.http.post(this.APIUrl + 'Notification/UpdateNotification', val);
 }
 deleteNotification(NotificationId: any) {
-return this.http.delete(this.APIUrl + 'Notification/DeleteNotification?id=' + NotificationId);
+return this.http.post(this.APIUrl + 'Notification/DeleteNotification' , NotificationId);
 }
 //Notfication  End
 
@@ -313,10 +318,10 @@ GetNotificationCount(): Observable <any> {
   }
 
    updateFaq(val: any) {
-    return this.http.put(this.APIUrl + 'Faq/UpdateFaq', val);
+    return this.http.post(this.APIUrl + 'Faq/UpdateFaq', val);
   }
 
    deleteFaq(Id: any) {
-    return this.http.delete(this.APIUrl + 'Faq/Delete?id=' + Id);
+    return this.http.post(this.APIUrl + 'Faq/Delete' , Id);
   }
   }

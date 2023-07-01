@@ -2,28 +2,28 @@
     <form class="blog" [formGroup]="blogForm" >
       <div class="row">
         <div class="col-md-12 roundedTextBox mb-3">
-            <label>Blog Title : </label>
+            <label>Blog Title* : </label>
             <input type="text"  [(ngModel)]="Blog_Title" class="form-control mb-2" id="inputBlog_Title" formControlName="Blog_Title" placeholder="Enter Blog Title">
             <div *ngIf="submitted && formControl.Blog_Title.errors" class="text-danger">
               <div *ngIf="formControl.Blog_Title.errors.required">Blog Title is required.</div>
             </div>
         </div>
         <div class="col-md-12 roundedTextBox mb-3">
-          <label>Blog Topic :</label>
+          <label>Blog Topic* :</label>
           <input type="text"  [(ngModel)]="Blog_Topic" class="form-control mb-2" id="inputBlog_Topic" formControlName="Blog_Topic" placeholder="Enter Blog Topic">
           <div *ngIf="submitted && formControl.Blog_Topic.errors" class="text-danger">
             <div *ngIf="formControl.Blog_Topic.errors.required">Blog  Topic is required.</div>
           </div>
         </div>
         <div class="col-md-12 roundedTextBox mb-3">
-            <label>Blog Content :</label>
+            <label>Blog Content* :<a input type="button" class="btn list-tag" target="_blank" href="https://www.textfixer.com/html/html-list-generator.php">HTML</a></label>
             <textarea rows="8" cols="43" type="text"  [(ngModel)]="Blog_Content" class="form-control mb-2" id="inputBlog_Content" formControlName="Blog_Content" placeholder="Enter Blog Content"></textarea>
             <div *ngIf="submitted && formControl.Blog_Content.errors" class="text-danger">
               <div *ngIf="formControl.Blog_Content.errors.required">Blog Content is required.</div>
             </div>
         </div>
         <div class="col-md-12 roundedTextBox mb-3">
-            <label>Blog Photo :</label>
+            <label>Blog Photo* :</label>
             <div class="col-sm-10">
                
                 <div [innerHtml]='msg' *ngIf="msg" style="color: red;"></div>

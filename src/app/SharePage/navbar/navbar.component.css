@@ -6,7 +6,7 @@
 }
 
 .announcement-bar {
-    font-size: 13.45px;
+    font-size: 15px !important;
     position: relative;
     text-align: center;
     background-color: #0f0f0f;

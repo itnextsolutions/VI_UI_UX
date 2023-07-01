@@ -32,7 +32,7 @@ export class AddEditCustomerReviewComponent implements OnInit {
 
     this.reviewForm = this.formBuilder.group({
       Client_Name: ["", [Validators.required]],
-      Profession: ["",[ Validators.required]],
+      Profession: [""],
       Review: ["",[ Validators.required]],
       Client_Photo: ["",[ Validators.required]],
       Rating: ["",[ Validators.required]],

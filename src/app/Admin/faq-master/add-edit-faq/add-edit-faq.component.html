@@ -5,14 +5,14 @@
     <form class="faq" [formGroup]="FAQForm" >
       <div class="row">
         <div class="col-md-12 roundedTextBox mb-3">
-            <label>Question</label>
+            <label>Question*</label>
             <input type="text"  [(ngModel)]="Question" class="form-control mb-2" id="inputQuestion" formControlName="Question" placeholder="Enter Question">
             <div *ngIf="submitted && formControl.Question.errors" class="text-danger">
               <div *ngIf="formControl.Question.errors.required">Question is required.</div>
             </div>
         </div>
         <div class="col-md-12 roundedTextBox mb-3">
-          <label>Answer</label>
+          <label>Answer*</label>
           <input type="text" [(ngModel)]="Answer" class="form-control mb-2" id="inputAnswer" formControlName="Answer" placeholder="Enter Answer">
           <div *ngIf="submitted && formControl.Answer.errors" class="text-danger">
             <div *ngIf="formControl.Answer.errors.required">Answer is required.</div>

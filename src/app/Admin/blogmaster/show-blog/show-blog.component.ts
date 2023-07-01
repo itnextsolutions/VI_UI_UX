@@ -118,7 +118,7 @@ totalNoOfPages() {
     if(confirm('Are you sure??')){
       this.sharedService.deleteBlog(item).subscribe(data =>{
         alert(data.toString());
-        this.refreshBlogList();
+      this.getAllBlog();
       })
     }
   }

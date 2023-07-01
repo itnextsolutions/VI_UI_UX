@@ -1,11 +1,4 @@
-<!-- 
-     <div class="col-md-12 roundedTextBox mb-3">
-      <label>Category Name :</label>
-      <input type="text"  [(ngModel)]="Category_Name" class="form-control mb-2" id="inputCategory_Name" formControlName="Category_Name" placeholder="Enter Category Name">
-      <div *ngIf="submitted && formControl.Category_Name.errors" class="text-danger">
-        <div *ngIf="formControl.Category_Name.errors.required">Category Name is required.</div>
-      </div>
-  </div> -->
+
 <div class="Pro_SubCat-form">
     <form class="blog" [formGroup]="Pro_SubCatForm">
       <div class="row">
@@ -17,11 +10,6 @@
                   {{web.Category_Name}}
               </option>
           </select>
-        <!-- <select ng-model="Category_Id" ng-options="web.Category_Name for web in CategoryName track by web.Category_Id">
-        </select> -->
-          <!-- <div *ngIf="submitted && formControl.Category_Id.errors" class="text-danger">
-            <div *ngIf="formControl.Category_Id.errors.required">Category Name is required.</div>
-          </div> -->
        </div>
         <div class="col-md-12 roundedTextBox mb-3">
           <label>Sub Category Name :</label>
@@ -30,19 +18,7 @@
             <div *ngIf="formControl.Sub_Cat_Name.errors.required">Sub Category Name is required.</div>
           </div>
         </div>
-        <!-- <div class="col-md-12 roundedTextBox mb-3">
-            <label>Category Photo</label>
-            <div class="col-sm-10">
-                <div [innerHtml]='msg' *ngIf="msg" style="color: red;"></div>
-                <div><img [src]="url" *ngIf="url"></div>
-                <p>
-                    <input type="file"  [(ngModel)]="Sub_Cat_Photo"  id="inputSub_Cat_Photo" formControlName="Sub_Cat_Photo">
-                </p>
-            </div>
-            <div *ngIf="submitted && formControl.Sub_Cat_Photo.errors" class="text-danger">
-              <div *ngIf="formControl.Sub_Cat_Photo.errors.required">Sub Category Photo is required.</div>
-            </div>
-        </div> -->
+        
     </div>
       
       <div class="buttons">

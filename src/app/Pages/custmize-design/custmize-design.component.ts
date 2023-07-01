@@ -47,23 +47,21 @@ export class CustmizeDesignComponent implements OnInit {
   
   @HostListener('window:resize', ['$event'])
 
-  // getCanvasSize() {
-  //   if (this.getscreenwidth >= 1280) {this.canvaswidth = 467; this.canvasheight=571; }
-  //   if (this.getscreenwidth <= 320 && this.getscreenwidth <= 375) {this.canvaswidth = 247; this.canvasheight=303; }
-  //   if (this.getscreenwidth >= 375 && this.getscreenwidth <= 425) {this.canvaswidth = 327; this.canvasheight=400; }
-  // }
+  
   getCanvasSize() {
-    if (this.getscreenwidth >= 1280) 
+    // this.getscreenwidth = window.innerWidth;
+    // if (this.getscreenwidth >= 1280) 
+    if (this.getscreenwidth >= 1024) 
     {
-      this.canvaswidth = 467; this.canvasheight=571; 
+      this.canvaswidth = 467; this.canvasheight = 571; 
     }
-    else if (this.getscreenwidth <= 320 && this.getscreenwidth <= 375) 
+    else if (this.getscreenwidth >= 320 && this.getscreenwidth <= 374) 
     {
-      this.canvaswidth = 247; this.canvasheight=303; 
+      this.canvaswidth = 247; this.canvasheight = 303; 
     }
-    else  (this.getscreenwidth >= 375 && this.getscreenwidth <= 425) 
+    else (this.getscreenwidth >= 375 && this.getscreenwidth <= 425) 
     {
-      this.canvaswidth = 327; this.canvasheight=400; 
+      this.canvaswidth = 327; this.canvasheight = 400; 
     }
   }
 

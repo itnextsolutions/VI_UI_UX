@@ -101,11 +101,6 @@ export class AddEditProductCategoryComponent implements OnInit {
       {
         formData.append('IsBrand','0')
       }
-    // var val = {Category_Id:this.Category_Id,
-    //   Category_Name:this.Category_Name,
-    //   Category_Description:this.Category_Description,
-    //   Category_Photo:this.Category_Photo,
-    // };
       this.service.updateProductcategory(formData).subscribe(res =>{
         alert(res.toString());
     })
