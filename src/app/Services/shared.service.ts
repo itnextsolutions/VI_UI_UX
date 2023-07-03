@@ -22,14 +22,14 @@ getMenuList(): Observable < any[] > {
   return this.http.get< any > (this.APIUrl + 'Home/GetMenuList');
 }
 
-Login(val: any) {
-   return this.http.post<AuthenticatedResponse>(this.APIUrl + 'Login/login', val);
-}
-
 // Login(val: any) {
-  
-//    return this.http.post(this.APIUrl + 'Login/login', val);
+//    return this.http.post<AuthenticatedResponse>(this.APIUrl + 'Login/login', val);
 // }
+
+Login(val: any) {
+  
+   return this.http.post(this.APIUrl + 'Login/login', val);
+}
 //Product Category  Start
 getproductcategoryList(): Observable < any[] > {
     return this.http.get < any > (this.APIUrl + 'Product/GetCategory');

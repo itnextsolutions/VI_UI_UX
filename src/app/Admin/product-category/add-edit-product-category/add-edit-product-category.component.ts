@@ -48,11 +48,6 @@ export class AddEditProductCategoryComponent implements OnInit {
     
     this.submitted = true;
     if (this.Pro_CatForm.valid){
-    // var val = {Category_Id:this.Category_Id,
-    //   Category_Name:this.Category_Name,
-    //   Category_Description:this.Category_Description,
-    //   formFile:this.selectedFile
-    // };
     let formData = new FormData()
     formData.append('Category_Name', this.Category_Name);
     formData.append('Category_Description', this.Category_Description);
@@ -72,13 +67,6 @@ export class AddEditProductCategoryComponent implements OnInit {
     else{
       this.Is_Brand="0";
     }
-    // let index = this.Is_Brand.indexOf(e.target.value);
-    // if (index == -1) {
-    //   this.Is_Brand.push(e.target.value);
-    // }
-    // else {
-    //   this.Is_Brand.splice(index, 1);
-    // }
   }
 
   onClick(e: any) {

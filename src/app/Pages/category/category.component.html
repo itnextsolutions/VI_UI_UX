@@ -15,8 +15,6 @@
             <div class="col-lg-7">
                 <div class="section-header text-start mb-5 wow fadeInUp" data-wow-delay="0.1s">
                     <h1 class="display-5 mb-3">Product Categories</h1>
-                    <!-- <p>Tempor ut dolore lorem kasd vero ipsum sit eirmod sit. Ipsum diam justo sed rebum vero dolor duo.
-                    </p> -->
                 </div>
             </div>
         </div>
@@ -28,15 +26,10 @@
                         <div class="product-item" id="tab-1" (click) ="onCategoryClick(data)">
                             <div class="pt-2 pl-0 pb-2">
                                 <a class="d-block h5 mb-0" routerLink ="../products/{{data.Category_Id}}" >{{data.Category_Name}}</a>
-                                <!-- <span class="text-primary me-1">{{data.productPrice|currency:"INR"}}</span>
-                                <span class="text-body text-decoration-line-through">$29.00</span> -->
-                            </div>
+                                </div>
                             <div class="productbox position-relative overflow-hidden">
                                 <img class="img-fluid" src="assets/img/category/{{data.Category_Photo}} " alt="{{data.Category_Photo}}"> 
-                                <!-- <div
-                                    class="bg-secondary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">
-                                    New</div> -->
-                            </div>
+                                </div>
                         </div>
                     </div>
                 </div>

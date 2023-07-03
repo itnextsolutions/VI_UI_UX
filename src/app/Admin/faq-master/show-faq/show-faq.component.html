@@ -11,10 +11,6 @@
           <add-edit-faq [faq]="faq" *ngIf="activateAddEditFaqCom">
           </add-edit-faq>
         </div>
-        <!-- <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
-        </div> -->
       </div>
     </div>
   </div>
@@ -45,21 +41,11 @@
           </nav>
           <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
             <div class="ms-md-auto pe-md-3 d-flex align-items-center">
-              <!-- <div class="input-group input-group-outline">
-                <label class="form-label">Type here...</label>
-                <input type="text" class="form-control">
-              </div> -->
             </div>
             <ul class="navbar-nav  justify-content-end">
               <li class="nav-item d-flex align-items-center">
                 <a class="btn btn-outline-primary btn-sm mb-0 me-3" target="_blank" href="#">Vastra India</a>
               </li>
-              <!-- <li class="nav-item d-flex align-items-center">
-                <a href="../pages/sign-in.html" class="nav-link text-body font-weight-bold px-0">
-                  <i class="fa fa-user me-sm-1"></i>
-                  <span class="d-sm-inline d-none">Log Out</span>
-                </a>
-              </li> -->
             </ul>
           </div>
         </div>
@@ -127,19 +113,6 @@
               </div>
             </div>
           </div>
-          <!-- <div class="container mw-100"> 
-            <div class="row">  
-              <div class="col-md-3"> </div>  
-              <div *ngIf="faqList !=0" class="col-md-6">  
-                <ul class="pagination justify-content-center">  
-                  <li *ngFor="let page of pageField;let i=index" class="page-item"> 
-                    <a (click)="showFaqByPageNumber(page,i)" [ngClass]="pageNumber[i] ? 'pageColor':'page-link'"    
-                     style=" margin-right: 5px;;margin-top: 5px">{{page}}</a>  
-                  </li>  
-                </ul> 
-              </div>  
-            </div>   
-          </div>  -->
         </div>
       </div>
     </main>

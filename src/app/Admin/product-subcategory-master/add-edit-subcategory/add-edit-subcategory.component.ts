@@ -88,8 +88,7 @@ export class AddEditSubcategoryComponent implements OnInit {
   }
 
   
-	//selectFile(event) { //Angular 8
-	selectFile(event: any) { //Angular 11, for stricter type
+	selectFile(event: any) { 
 		if(!event.target.files[0] || event.target.files[0].length == 0) {
 			this.msg = 'You must select an image';
 			return;

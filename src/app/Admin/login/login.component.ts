@@ -45,17 +45,6 @@ export class LoginComponent implements OnInit {
     this.invalid_msg="";
   }
   
-  // ngOnInit(): void {
-  //   this.loginForm = this.formBuilder.group({
-  //     email: ["", [Validators.email, Validators.required]],
-  //     password: [
-  //       "",
-  //       [
-  //         Validators.required
-  //       ]
-  //     ]
-  //   });
-  // }
 
   get formControl() {
     return this.loginForm.controls;
@@ -63,28 +52,7 @@ export class LoginComponent implements OnInit {
 
   invalidLogin:boolean=true;
 
-  // CheckLogin(){
-  //   
-  //   this.submitted = true;
-  //   if (this.loginForm.valid){
-  //   var val = {
-  //     username:this.username,
-  //     password:this.password,
-    
-  //   };
-  //   this.service.Login(val).subscribe({
-  //     next: (response: AuthenticatedResponse) => {
-  //       const token = response.Token;
-  //       localStorage.setItem("jwt", token); 
-  //       this.invalidLogin = false; 
-  //       this.router.navigate(["admin/product-category"]);
-  //     },
-  //     error: (err: HttpErrorResponse) => this.invalidLogin = true
-      
-  //   })
-  // }
 
-   
   CheckLogin(){
     this.submitted = true;
     if (this.loginForm.valid){
@@ -93,43 +61,38 @@ export class LoginComponent implements OnInit {
       password:this.password
     
     };
-      // this.service.Login(val).subscribe(res =>{
-      //   if(res == "Success"){
-      //     localStorage.setItem('jwt','true');
-      //     this.router.navigate(['admin/product-category']);    
-      //   }
-      //   else
-      //   {
-          
-      //     this.router.navigate(['admin/Login']);  
-      //     this.invalid_msg=res.toString();
-      //     //alert(res.toString());
-      //   }
-      // })
-      this.service.Login(val).subscribe(
-        {next:(response:AuthenticatedResponse)=>{
-          const token=response.token;
+      this.service.Login(val).subscribe((res:any) =>{
+        if(res.message == "Success"){
+          // localStorage.setItem('jwt','true');
+          // this.router.navigate(['admin/product-category']); 
+          const token=res.token;
          
           localStorage.setItem('token',token);
           this.invalidLogin=false;
-          this.router.navigate(["admin/product-category"]);
-        },
-      error:(err:HttpErrorResponse)=>this.invalidLogin=true
-    })
+          this.router.navigate(["admin/product-category"]);   
+        }
+        else
+        {
+          
+          this.router.navigate(['admin/Login']);  
+          this.invalid_msg=res.toString();
+          //alert(res.toString());
+        }
+      })
+    //   this.service.Login(val).subscribe(
+    //     {next:(response:AuthenticatedResponse)=>{
+    //       const token=response.token;
+         
+    //       localStorage.setItem('token',token);
+    //       this.invalidLogin=false;
+    //       this.router.navigate(["admin/product-category"]);
+    //     },
+    //   error:(err:HttpErrorResponse)=>this.invalidLogin=true
+    // })
     }
 
   }
 
-  // onLogin(): void {
-  //  
-  //   this.submitted = true;
-  //   if (this.loginForm.valid) {
-  //    
-  //     localStorage.setItem("user-Data", JSON.stringify(this.loginForm.value));
-  //     this.router.navigate(["/"]);
-  //   }
-  // }
 
-  
 }
 

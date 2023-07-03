@@ -86,28 +86,9 @@ export class MultiProductComponent implements OnInit {
   }
 
 
-
-  // get formControl() {
-  //   return this.ProductForm.controls;
-  // }
-
-
   ngOnInit(): void {
 
-    // this.ProductForm = this.formBuilder.group({
-    //   Category_Id: ["", [Validators.required]],
-    //   SubCategory_Id: ["", [Validators.required]],
-    //   Product_Title: ["", [Validators.required]],
-    //   Image_Name: ["", [Validators.required]],
-    //   // TipingId: ["", [Validators.required]],
-    //   SizeId: ["", [Validators.required]],
-    //   //i: ["", [Validators.required]],
-    //   Product_Description: ["", [Validators.required]],
-
-    //   Images: this.formBuilder.array([])
-    // });
-
-    this.Product_Id = this.multiProduct.Product_Id,
+   this.Product_Id = this.multiProduct.Product_Id,
     this.Category_Id = this.multiProduct.Category_Id;
     this.SubCategory_Id = this.multiProduct.SubCategory_Id;
     this.Product_Title = this.multiProduct.Product_Title;
@@ -134,14 +115,7 @@ export class MultiProductComponent implements OnInit {
       Category_Id: ["", [Validators.required]],
       SubCategory_Id: ["", [Validators.required]],
       Product_Title: ["", [Validators.required]],
-      // Image_Name: ["", [Validators.required]],
-      // TipingId: ["", [Validators.required]],
-      // SizeId: ["", [Validators.required]],
-      // selectedsize: ["", [Validators.required]],
-      //i: ["", [Validators.required]],
-      // Product_Description: ["", [Validators.required]],
       Product_Description: [""],
-      // WomenProduct_Description:[""],
       SizeId: [""],
       Images: this.formBuilder.array([]),
       WomenImages:this.formBuilder.array([]),
@@ -162,14 +136,12 @@ export class MultiProductComponent implements OnInit {
     return this.formBuilder.group({
       TipingId: "",
       MenFrontImgFile:  "",
-      // WomenFrontImgFile: ""
     })
   }
 
   womenImages(): FormGroup {
     return this.formBuilder.group({
       TipingWomenId: "",
-      // MenFrontImgFile:  "",
       WomenFrontImgFile: ""
     })
   }
@@ -184,10 +156,6 @@ export class MultiProductComponent implements OnInit {
   }
 
 
-  // addImages() {
-  // const items = <FormArray>this.ProductForm.controls["Images"];
-  //   items.push(this.newQuantity());
-  // }
 
   removeImages(i: number) {
     this.Images.removeAt(i);
@@ -197,10 +165,7 @@ export class MultiProductComponent implements OnInit {
     this.WomenImages.removeAt(i);
   }
 
-  // removeImages(i:number) {
-  //   const items = <FormArray>this.ProductForm.controls["Images"];
-  //   items.removeAt(i);
-  // }
+ 
 
   get formControl() {
     return this.ProductForm.controls;
@@ -280,12 +245,6 @@ export class MultiProductComponent implements OnInit {
 
 
 
-  // onSelectChange(event: any) {
-  //   for (var i = 0; i < event.target.value.length; i++) {
-  //     this.Select.push(event.target.value[i]);
-  //   }
-  // }
-
 
   onSelectSizeChange(e: any) {
     let index = this.selectedsize.indexOf(e.target.value);
@@ -298,27 +257,6 @@ export class MultiProductComponent implements OnInit {
     
   }
 
-  // multiProductDetails() {
-  //   const formArray = this.ProductForm.get('Images') as FormArray;
-  //   const formData = new FormData();
-  //         formData.append('Category_Id', this.Category_Id);
-  //         formData.append('SubCategory_Id', this.SubCategory_Id);
-  //         formData.append('Product_Title', this.Product_Title);
-  //         formData.append('Product_Description', this.Product_Description);
-  //         formData.append('SizeId', this.selectedsize);
-  //   for (let i = 0; i < formArray.length; i++) {
-  //     const file = formArray.at(i).value;
-  //     const fieldName = this.ProductForm.get(['Images',i, 'TipingId'])?.value;
-  //     formData.append('MenFrontImgFiles', file, file.name);
-  //     formData.append('TipingId', fieldName);
-  //   }
-  
-
-  //   this.service.multiProductDetails(formData).subscribe(res => {
-  //               alert(res.toString());
-  //   })
-  // }
- 
 
   multiProductDetails() {
     this.submitted = true;
@@ -330,13 +268,6 @@ export class MultiProductComponent implements OnInit {
           formData.append('Product_Description', this.Product_Description);
           formData.append('SizeId', this.selectedsize);
           formData.append('MRP',this.MRP);
-          // this.totaltipping=this.selectedMenTipping.length;
-          // this.totalMenImages=this.selectedMenImages.length;
-          // this.totalWomenImages=this.selectedWomenImages.length;
-          // if(this.totalWomenImages==this.totalMenImages)
-          // {
-          //   if(this.totaltipping==this.totalMenImages)
-          //   {
             for (let i = 0; i < this.selectedMenTipping.length; i++) {
               formData.append('TipingId', this.selectedMenTipping[i]);
             }
@@ -352,9 +283,6 @@ export class MultiProductComponent implements OnInit {
             for (let i = 0; i < this.selectedWomenImages.length; i++) {
               formData.append('WomenImgFiles', this.selectedWomenImages[i]);
             }
-          // }
-          // }
-
           formData.append('MenFrontImgFile', this.MenFrontImgFile);
           formData.append('MenSizeChartImgFile', this.MenSizeChartImgFile);
           formData.append('WomenFrontImgFile', this.WomenFrontImgFile);
@@ -367,49 +295,6 @@ export class MultiProductComponent implements OnInit {
           
       }
 
-
-  
-
-
-//   multiProductDetails() {
-//     
-
-//     let addModel = {} as MultiProduct;
-//     addModel.Category_Id = this.formControl.Category_Id.value;
-//     addModel.SubCategory_Id = this.formControl.SubCategory_Id.value;
-//     addModel.Product_Title = this.formControl.Product_Title.value;
-//     addModel.SizeId = this.selectedsize;
-    
-    
-//     const imageItems = this.ProductForm.get('Images')?.value;
-//     let imageArray: any[] = [];
-
-//       imageItems.forEach((element: { TipingId: any; MenFrontImgFile: any; WomenFrontImgFile: any; }) => {
-//         let imageMode = {} as ImageMode;
-//         imageMode.TipingId = element.TipingId;
-//         imageMode.MenFrontImgFile = element.MenFrontImgFile["File"];
-//         imageMode.WomenFrontImgFile = element.WomenFrontImgFile.File;
-//         imageArray.push(imageMode);
-//       });
-//       addModel.Images = imageArray;
-
-//      
-
-// }
-
-  // onselectFile1(event: any) {
-  //   for (var i = 0; i < event.target.files.length; i++) {
-  //     this.selectedMenImages.push(event.target.files[i]);
-  //   }
-  // }
-
-  // onselectFile3(event: any) {
-  //   for (var i = 0; i < event.target.files.length; i++) {
-  //     this.Select.push(event.target.files[i]);
-  //   }
-  // }
-
- 
 
   onMultiMenFile(event: any) { 
    
@@ -424,11 +309,8 @@ export class MultiProductComponent implements OnInit {
 
     var reader = new FileReader();
     reader.readAsDataURL(event.target.files[0]);
-    
-    //  if (this.i==id) {
       reader.onload = (_event) => {
         this.msg = "";
-        // this.menfronturl = reader.result;
       }
       this.MenImgFile = <File>event.target.files[0];
     // }
@@ -491,10 +373,9 @@ export class MultiProductComponent implements OnInit {
 
     var reader = new FileReader();
     reader.readAsDataURL(event.target.files[0]);
-    // if (event) {
+
       reader.onload = (_event) => {
         this.msg = "";
-        // this.womenfronturl = reader.result;
       }
       this.WomenImgFile = <File>event.target.files[0];
     // }

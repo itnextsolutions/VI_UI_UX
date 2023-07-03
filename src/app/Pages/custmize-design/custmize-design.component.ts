@@ -39,7 +39,7 @@ export class CustmizeDesignComponent implements OnInit {
 
   constructor(private userService: UserService, private param: ActivatedRoute ){ }
   ngOnInit(): void {
-    this.getscreenwidth = window.innerWidth;
+    // this.getscreenwidth = window.innerWidth;
     this.getCanvasSize();
     this.categoryName = this.param.snapshot.paramMap.get('categoryName');
     this.productcategoryfolder = this.categoryName.replace(/\s+/g, '-').toLowerCase();
@@ -49,7 +49,7 @@ export class CustmizeDesignComponent implements OnInit {
 
   
   getCanvasSize() {
-    // this.getscreenwidth = window.innerWidth;
+    this.getscreenwidth = window.innerWidth;
     // if (this.getscreenwidth >= 1280) 
     if (this.getscreenwidth >= 1024) 
     {
@@ -59,7 +59,7 @@ export class CustmizeDesignComponent implements OnInit {
     {
       this.canvaswidth = 247; this.canvasheight = 303; 
     }
-    else (this.getscreenwidth >= 375 && this.getscreenwidth <= 425) 
+    else if (this.getscreenwidth >= 375 && this.getscreenwidth <= 425) 
     {
       this.canvaswidth = 327; this.canvasheight = 400; 
     }

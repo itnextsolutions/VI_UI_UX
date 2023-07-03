@@ -307,24 +307,6 @@ export class ProductDetailsComponent implements OnInit {
     this.userService.getColorListById(this.productId).subscribe((data:any) => {
       if(data!=null && data!=undefined){
       this.colors = data;
-   
-    //   if (this.colors.length <18) {
-    //   if(this.colors.length>6 || this.colors.length<13)
-    //   {
-    //     this.slideConfig.rows=2;
-    //   }
-    // }
-    //   if (this.colors.length >18) {
-    //     this.slideConfig.dots=true;
-    //     this.slideConfig.rows=3;
-    //   }
-
-      // if (this.colors.length <=12) { this.slideConfig.rows = 1; }
-      // else if (this.colors.length <= 36) { this.slideConfig.rows = 2; }
-      // else if (this.colors.length <= 54) { this.slideConfig.rows = 3; }
-      // else this.slideConfig.rows = 0;
-
-
       if (this.colors.length <=6) { this.slideConfig= {
         dots: true,
         speed: 20,
@@ -1346,15 +1328,6 @@ export class ProductDetailsComponent implements OnInit {
   }
 
   onTippingWomenClick(item: any) {
-
-    // this.isMenDivHidden = true;
-    // this.isWoMenDivHidden = true;
-    // this.isTippingDivHidden=true;
-    // this.isTippingWomenDivHidden=false;
-    // this.image1=item.tipping_women_img;
-    // this.id=3;
-    // this.productcategoryfolder = this.categoryName.replace(/\s+/g, '-').toLowerCase();
-
     this.isMenDivHidden = true;
     this.isWoMenDivHidden = true;
     this.isTippingDivHidden = true;

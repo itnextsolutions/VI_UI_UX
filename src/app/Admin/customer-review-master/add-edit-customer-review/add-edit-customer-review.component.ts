@@ -59,13 +59,6 @@ export class AddEditCustomerReviewComponent implements OnInit {
       formData.append('Review', this.Review);
       formData.append('Rating', this.Rating);
       formData.append('formFile', this.selectedFile);
-    // var val = {
-    //   Client_Name:this.Client_Name,
-    //   Profession:this.Profession,
-    //   Review:this.Review,
-    //   Client_Photo:this.Client_Photo.replace(/.*[\/\\]/, ''),
-    //   Rating:this.Rating,
-    // };
       this.service.addCustomerReview(formData).subscribe(res =>{
         alert(res.toString());
       })
@@ -75,14 +68,6 @@ export class AddEditCustomerReviewComponent implements OnInit {
   updateCust_Review(){
     this.submitted = true;
     if (this.reviewForm.valid){
-    // var val = {
-    //   Customer_Review_Id:this.Customer_Review_Id,
-    //   Client_Name:this.Client_Name,
-    //   Profession:this.Profession,
-    //   Review:this.Review,
-    //   Client_Photo:this.Client_Photo.replace(/.*[\/\\]/, ''),
-    //   Rating:this.Rating,
-    // };
     let formData = new FormData()
     formData.append('Customer_Review_Id', this.Customer_Review_Id);
     formData.append('Client_Name', this.Client_Name);
@@ -96,8 +81,8 @@ export class AddEditCustomerReviewComponent implements OnInit {
   }
   }
 
-	//selectFile(event) { //Angular 8
-	onselectFile(event: any) { //Angular 11, for stricter type
+	
+	onselectFile(event: any) { 
 		if(!event.target.files[0] || event.target.files[0].length == 0) {
 			this.msg = 'You must select an image';
 			return;

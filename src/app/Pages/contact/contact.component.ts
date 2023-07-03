@@ -24,12 +24,6 @@ export class ContactComponent {
   subject: string ="";
   message: string ="";
 	msg = "";
-  // formData= {
-  //   name:'',
-  //   email: '',
-  //   subject: '',
-  //   message: ''
-  // };
 
   
   constructor(private http: HttpClient,private userService: UserService,private formBuilder:FormBuilder, private seoService: SeoService) {}
@@ -44,11 +38,6 @@ export class ContactComponent {
       subject: ["", [Validators.required,Validators.minLength(5)]],
       message: ["", [Validators.required,Validators.minLength(3)]]
     });
-
-    // this.name=this.Contact.name;
-    // this.email=this.Contact.email;
-    // this.subject=this.Contact.subject;
-    // this.message=this.Contact.message;
     this.seoService.setCanonicalURL(window.location.href);
   }
 
@@ -72,25 +61,5 @@ export class ContactComponent {
     })
 
   }  
-
-  // get f(){
-  //   return this.userForm.controls;
-  // }
-  
-  // submit()
-  // {
-  // 
-  //   this.userService.sendContactUsEmail(this.userForm).subscribe(res =>{
-  //      Swal.fire(res.toString()),
-  //  
-  //   })
-  // }
-
-  }
-
-  
-
-  
-
-
+ }
 }

@@ -1,57 +1,3 @@
-<!-- <div class="LookupValueForm-form">
-  <form class="LookupValue" [formGroup]="LookupValueForm">
-      <div class="row">
-        <div class="col-md-12 roundedTextBox mb-3">
-            <label>Select Lookup Name:</label>
-            <select id="inputLookup_Id" name="Lookup_Name" [(ngModel)]="Lookup_Id" class="form-control" formControlName="Lookup_Id">
-              <option value="0" disabled selected>Select</option>
-              <option *ngFor="let web of LookupName"  [value]="web.Lookup_Id"> {{web.Lookup_Name}}</option>  
-          </select>
-          <div *ngIf="submitted && formControl.Lookup_Id.errors" class="text-danger">
-            <div *ngIf="formControl.Lookup_Id.errors.required">Lookup Name is required.</div>
-          </div>
-       </div>
-        <div class="col-md-12 roundedTextBox mb-3">
-          <label>Lookup Value</label>
-          <input type="text"  [(ngModel)]="Description" class="form-control mb-2" id="inputDescription" formControlName="Description" placeholder="Enter the Description Name">
-          <ng-container *ngIf="Lookup_Id == '1'">
-            <div class="col-sm-10">
-                <input  type="color" [(ngModel)]="Description"   id="inputDescription" formControlName="Description" >
-            </div>
-           </ng-container>
-          <div *ngIf="submitted && formControl.Description.errors" class="text-danger">
-            <div *ngIf="formControl.Description.errors.required">Lookup Value is required.</div>
-          </div>
-        </div>
-        <ng-container *ngIf="Lookup_Id == '3'">
-        <div class="col-md-12 roundedTextBox mb-3">
-            
-            <div class="col-sm-10">
-              <div [innerHtml]='msg' *ngIf="msg" style="color: red;"></div>
-              <div><img [src]="url" *ngIf="url; else elseBlock"></div>
-              <p class="color">
-                  <input type="file"  [(ngModel)]="tipping_img" (change)="onselectFile($event)"   id="inputCategory_Photo">
-              </p>
-              <ng-template #elseBlock>
-                  <img src="assets/img/tipping/{{tipping_img}}">
-              </ng-template>
-          </div>
-            
-            <div *ngIf="submitted && formControl.Category_Photo.errors" class="text-danger">
-              <div *ngIf="formControl.Category_Photo.errors.required">Category Photo is required.</div>
-            </div>
-          </div>
-        </ng-container>
-      </div>
-      
-      <div class="buttons ">
-          <button type="button" *ngIf="lookupdetail.Lookup_Details_Id==0" class="btn btn-primary" (click)="addLookupDetails()">Add</button>
-          <button type="button" *ngIf="lookupdetail.Lookup_Details_Id!=0" class="btn btn-primary" (click)="updateLookupDetails()">Update</button>
-        </div>
-  </form>
-</div>  -->
-
-
 <div class="LookupValueForm-form">
   <form class="LookupValue" [formGroup]="LookupValueForm">
       <div class="row">
@@ -61,9 +7,6 @@
               <option value="0" disabled selected>Select</option>
               <option *ngFor="let web of LookupName"  [value]="web.Lookup_Id"> {{web.Lookup_Name}}</option>  
           </select>
-          <!-- <div *ngIf="submitted && formControl.Lookup_Id.errors" class="text-danger">
-            <div *ngIf="formControl.Lookup_Id.errors.required">Lookup Name is required.</div>
-          </div> -->
        </div>
         <div class="col-md-12 roundedTextBox mb-3">
           <label>Lookup Value</label>
@@ -84,18 +27,12 @@
               <div [innerHtml]='msg' *ngIf="msg" style="color: red;"></div>
               <div><img [src]="url" *ngIf="url; else elseBlock"></div>
               <p class="color">
-                  <!-- <input type="file"  [(ngModel)]="tipping_img" (change)="onselectFile($event)"   id="inputCategory_Photo" formControlName="tipping_img">
-                   -->
-                   <input type="file"   (change)="onselectFile($event)"   id="inputCategory_Photo">
+                <input type="file"   (change)="onselectFile($event)"   id="inputCategory_Photo">
               </p>
               <ng-template #elseBlock>
                   <img src="assets/img/tipping/{{tipping_img}}">
               </ng-template>
           </div>
-            
-            <!-- <div *ngIf="submitted && formControl.Category_Photo.errors" class="text-danger">
-              <div *ngIf="formControl.Category_Photo.errors.required">Category Photo is required.</div>
-            </div> -->
           </div>
         </ng-container>
       </div>

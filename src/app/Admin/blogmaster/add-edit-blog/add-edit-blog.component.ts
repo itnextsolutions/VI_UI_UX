@@ -34,7 +34,8 @@ export class AddEditBlogComponent implements OnInit {
       Blog_Title: ["", [Validators.required]],
      Blog_Content: ["",[ Validators.required]],
       Blog_Topic: ["",[ Validators.required]],
-      Image_Name: ["",[ Validators.required]],
+      Image_Name: [""]
+      // Image_Name: ["",[ Validators.required]]
     });
 
     this.Blog_Id = this.blog.Blog_Id;
@@ -71,15 +72,22 @@ export class AddEditBlogComponent implements OnInit {
     formData.append('Blog_Title', this.Blog_Title);
     formData.append('Blog_Topic', this.Blog_Topic);
     formData.append('Blog_Content', this.Blog_Content);
+    if(this.selectedFile==""){
+    if(this.Image_Name!=null){
+      formData.append('update_imageName', this.Image_Name);
+    }
+  }
+    if(this.selectedFile!=null && this.selectedFile!=""){
     formData.append('formFile', this.selectedFile);
+    }
       this.service.updateBlog(formData).subscribe(res =>{
         alert(res.toString());
     })
   }
   }
 
-	//selectFile(event) { //Angular 8
-	onselectFile(event: any) { //Angular 11, for stricter type
+	
+	onselectFile(event: any) {
 		if(!event.target.files[0] || event.target.files[0].length == 0) {
 			this.msg = 'You must select an image';
 			return;

@@ -1,4 +1,3 @@
-
 <div class="notification-form">
     <form class="blog" [formGroup]="NotificationForm" >
       <div class="row">
@@ -26,17 +25,11 @@
         <div class="col-md-12 roundedTextBox mb-3">
             <label>Button Text :</label>
             <input type="text"  [(ngModel)]="ButtonText" class="form-control mb-2" id="inputButtonText" formControlName="ButtonText" placeholder="Enter Button Text">        
-               <!-- <div *ngIf="submitted && formControl.ButtonText.errors" class="text-danger">
-              <div *ngIf="formControl.ButtonText.errors.required">Button Text is required.</div>
-            </div> -->
-        </div>
+              </div>
         <div class="col-md-12 roundedTextBox mb-3">
             <label>Button Url :</label>
             <input type="text"  [(ngModel)]="ButtonUrl" class="form-control mb-2" id="inputButtonUrl" formControlName="ButtonUrl" placeholder="Enter Button Url">        
-               <!-- <div *ngIf="submitted && formControl.ButtonUrl.errors" class="text-danger">
-              <div *ngIf="formControl.ButtonUrl.errors.required">Button Url is required.</div>
-            </div> -->
-        </div>
+              </div>
       
     </div>
       <div class="buttons">

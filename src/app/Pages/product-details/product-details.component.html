@@ -39,24 +39,6 @@
 <!-- Size Chart Model End -->
 
 <!-- Custmize design  Model start -->
-<!-- <div class="modal fade" id="exampleModal11" tabindex="-1" aria-labelledby="exampleModalLabel1" aria-hidden="true"
-    style="margin-top:5px;">
-    <div class="modal-dialog">
-        <div class="modal-content" style="width: 500px; height: 700px; margin: 0 auto;">
-            <div class="modal-header" style="width: 500px;">
-                <h5 class="modal-title" id="exampleModalLabel1">Customize Your Design</h5>
-                <button type="button" class="btn-close" (click)="closeClick()" data-bs-dismiss="modal"
-                    aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <app-custmize-design [Product]="product" [id]="id" [image]="image">
-                </app-custmize-design>
-            </div>
-        </div>
-    </div>
-</div> -->
-
-
 
 <!-- new -->
 
@@ -82,33 +64,7 @@
 <!-- Custmize design  Model End -->
 
 <!--breadcrumb start-->
-<!-- <div class="container header_bs_mo">
-    <div class="container" >
-        <div class="row g-0 gx-5 align-items-end">
-            <nav aria-label="breadcrumb" class="breadcrumb">
-            <ol class="breadcrumb" itemscope="" itemtype="http://schema.org/BreadcrumbList">
-                <li class="breadcrumb-item" itemprop="itemListElement" itemscope=""
-                    itemtype="http://schema.org/ListItem">
-                    <a itemprop="item" href=""><span itemprop="name" style="font-weight: bold;">HOME</span></a>
-                    <meta itemprop="position" content="1">
-                </li>
-                <li class="breadcrumb-item" itemprop="itemListElement" itemscope=""
-                    itemtype="http://schema.org/ListItem">
-                    <a itemprop="item" href="category">
-                        <span itemprop="name" style="font-weight: bold;">{{categoryName}}</span>
-                    </a>
-                    <meta itemprop="position" content="2">
-                </li>
-                <li class="breadcrumb-item" itemprop="itemListElement" itemscope=""
-                    itemtype="http://schema.org/ListItem">
-                    <a itemprop="item">
-                        <span itemprop="name" style="font-weight: bold; color: #ff6600;">{{subcategoryName}}</span>
-                    </a>
-                </li>
-            </ol>
-        </nav>
-    </div>
-    </div> -->
+
 <div class="container header_bs_mo">
     <div class="container">
         <div class="row g-0 gx-5 align-items-end">
@@ -130,18 +86,6 @@
                             <meta itemprop="position" content="2">
 
                         </li>
-
-                        <!-- <li class="breadcrumb-item" itemprop="itemListElement" itemscope=""
-                    itemtype="http://schema.org/ListItem">
-                    <div *ngIf="isbrand==1">
-                    <a itemprop="item" href="brand">
-                        <span itemprop="name" style="font-weight: bold;">{{categoryName}} /&nbsp;</span>
-                    </a>
-                    <meta itemprop="position" content="2">
-                </div>
-                </li>
-           -->
-
                         <li class="breadcrumb-item" itemprop="itemListElement" itemscope=""
                             itemtype="http://schema.org/ListItem">
                             <a itemprop="item">
@@ -152,13 +96,6 @@
                     </ol>
                 </div>
 
-
-
-
-
-
-
-
                 <div *ngIf="isbrand==1">
                     <ol class="breadcrumb" itemscope="" itemtype="http://schema.org/BreadcrumbList">
                         <li class="breadcrumb-item" itemprop="itemListElement" itemscope=""
@@ -166,16 +103,6 @@
                             <a itemprop="item" href=""><span itemprop="name" style="font-weight: bold;">HOME</span></a>
                             <meta itemprop="position" content="1">
                         </li>
-
-                        <!-- <li class="breadcrumb-item" itemprop="itemListElement" itemscope=""
-                itemtype="http://schema.org/ListItem">
-                <div *ngIf="isbrand==0">
-                    <a itemprop="item" href="category">
-                        <span itemprop="name" style="font-weight: bold;">{{categoryName}} /</span>
-                    </a>
-                    <meta itemprop="position" content="2">
-                </div>
-            </li> -->
 
                         <li class="breadcrumb-item" itemprop="itemListElement" itemscope=""
                             itemtype="http://schema.org/ListItem">
@@ -213,13 +140,9 @@
                     <div class="col-lg-6 col-12">
                         <div [hidden]="isMenDivHidden">
                             <div *ngFor="let data of product"  class="mo-order-2" style="height:auto;">
-                                <!-- <svg id="product-svg" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg"    height="571" width="467">
-                                <defs/>
-                                <path id="product-shape" [attr.d]="men_svg_path"  [ngStyle]="{ fill: bgColor }" />
-                            </svg> -->
                                 <div *ngIf="men_svg_path.length>0">
                                     <svg class="lp-view" id="product-svg" data-name="Layer 1"
-                                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 467 571" height="574" width="469">
+                                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 467 571" height="572" width="468">
                                         <defs />
                                         <path id="product-shape" [attr.d]="men_svg_path" [ngStyle]="{ fill: bgColor }" />
                                     </svg>
@@ -238,10 +161,6 @@
                                     <img class="big_img"
                                         src="assets/img/{{this.productcategoryfolder}}/{{data.Product_Photo}}">
                                 </div>
-                            
-                                        <!-- <div *ngIf="data.Product_type==3">
-                                        <img class="big_img" src="assets/img/{{this.productcategoryfolder}}/{{data.Product_SidePhoto}}" >
-                                    </div> -->
                             </div>
                         </div>
 
@@ -276,10 +195,6 @@
                                         <defs />
                                         <path id="product-shape" [attr.d]="women_svgpath" [ngStyle]="{ fill: bgColor }" />
                                     </svg>
-                                        <!-- <svg id="product-svg" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg"    height="571" width="467">
-                                        <defs/>
-                                        <path id="product-shape" [attr.d]="women_svgpath"  [ngStyle]="{ fill: bgColor }" />
-                                    </svg> -->
                                 </div>
                                 <img class="big_img"
                                     src="assets/img/{{this.productcategoryfolder}}/{{data.WomenProduct_Photo}}">
@@ -315,10 +230,6 @@
                                             <ngx-slick-carousel class="carousel" #slickModal="slick-carousel"
                                                 [config]="slideConfig"
                                                >
-                                               <!-- <ngx-slick-carousel class="carousel" #slickModal="slick-carousel"
-                                                [config]="slideConfig" (init)="slickInit($event)"
-                                                (breakpoint)="breakpoint($event)" (afterChange)="afterChange($event)"
-                                                (beforeChange)="beforeChange($event)"> -->
                                                 <div ngxSlickItem *ngFor="let data of colors" class="slide">
                                                     <div
                                                         class="container py-5 pc-Style-hero-colors-sizeList-adultSizes mt-0 pt-0 pb-3">
@@ -360,11 +271,6 @@
                                                 <ngx-slick-carousel class="carousel" #slickModal="slick-carousel"
                                                     [config]="tippingslideConfig" 
                                                  >
-                                                 <!-- <ngx-slick-carousel class="carousel" #slickModal="slick-carousel"
-                                                    [config]="tippingslideConfig" (init)="slickInit($event)"
-                                                    (breakpoint)="breakpoint($event)"
-                                                    (afterChange)="afterChange($event)"
-                                                    (beforeChange)="beforeChange($event)"> -->
                                                     <div ngxSlickItem *ngFor="let item of tipping" class="slide">
                                                         <div
                                                             class="container py-5 pc-Style-hero-colors-sizeList-adultSizes mt-0 pt-0 pb-3">
@@ -378,11 +284,6 @@
                                                                         </div>
                                                                     </div>
                                                                 </div>
-                                                                <!-- <div class="colorbox" (click)="onTippingClick(item)">
-                                                                    <img src="assets/img/tipping/{{item.tipping_img}}"
-                                                                    class="" style="width: 30px;">
-                                                                    <div class="label-name">{{item.Description}}</div>
-                                                                </div> -->
                                                             </div>
                                                         </div>
                                                     </div>
@@ -413,13 +314,7 @@
                                                 <ngx-slick-carousel class="carousel" #slickModal="slick-carousel"
                                                     [config]="tippingWomenslideConfig" 
                                                    >
-                                                   <!-- <ngx-slick-carousel class="carousel" #slickModal="slick-carousel"
-                                                    [config]="tippingWomenslideConfig" (init)="slickInit($event)"
-                                                    (breakpoint)="breakpoint($event)"
-                                                    (afterChange)="afterChange($event)"
-                                                    (beforeChange)="beforeChange($event)"> -->
-                                                    <!-- <div ngxSlickItem *ngFor="let item of tipping" class="slide"> -->
-                                                    <!-- <div  *ngFor="let item of tipping"> -->
+                                                   
                                                     <div ngxSlickItem *ngFor="let item of tippingWomen" class="slide">
                                                         <div
                                                             class="container py-5 pc-Style-hero-colors-sizeList-adultSizes mt-0 pt-0 pb-3">
@@ -444,33 +339,7 @@
                                             </div>
                                         </div>
 
-                                        <!-- <div *ngIf="id==1 ||id==3">
-                                        
-                                        <h5 class="colors-pallete" style="margin-top: 0px !important;">Colors:</h5>
-                                        <ngx-slick-carousel class="carousel"
-                                        #slickModal="slick-carousel"
-                                        [config]="slideConfig" 
-                                        (init)="slickInit($event)"
-                                        (breakpoint)="breakpoint($event)"
-                                        (afterChange)="afterChange($event)"
-                                        (beforeChange)="beforeChange($event)">
-                                        <div ngxSlickItem *ngFor="let item of tipping" class="slide">
-                                        <div class="container py-5 pc-Style-hero-colors-sizeList-adultSizes mt-0 pt-0 pb-3">
-                                            <div class="row row-cols-2 row-cols-lg-6 w-90">
-                                                <div (click)="onTippingWomenClick(item)">
-                                                    <img src="assets/img/tipping/{{item.tipping_img}}" class="" style="height: 51px;">
-                                                    <div class="label-name">
-                                                        {{item.Description}} -->
-                                        <!-- {{item.tipping_women_img}} -->
-                                        <!-- </div> -->
-                                        <!-- </div> -->
-                                        <!-- </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </ngx-slick-carousel>
-                                    </div> -->
-
+                                      
 
                                         <div [hidden]="isMenDivHidden && isTippingDivHidden" class="modal-body"
                                             *ngFor="let data of product">
@@ -606,9 +475,6 @@
                                             src="assets/img/{{this.categoryfolder}}/{{simillarproduct.Product_Photo}}"
                                             alt="">
                                     </div>
-                                    <!-- <div class="pt-2">
-                        <a class="d-block h5 mb-2">{{simillarproduct.Product_Title}}</a>
-                    </div> -->
                                 </div>
                             </div>
                         </div>
@@ -620,94 +486,6 @@
 
 
 
-
-    <!-- <div class="container-xxl header_bs_mo_Similar" *ngIf="simillarProducts.length>0 && simillarProducts.length<4">
-        <div class="container">
-            <div class="row g-0 gx-5 align-items-end">
-                <div class="col-lg-12">
-                    <div class="section-header text-center mb-3 wow fadeInUp" data-wow-delay="0.1s">
-                        <h3>Similar Product</h3>
-                    </div>
-                </div>
-            </div>
-            <div class="tab-content">
-                <div id="tab-1" class="tab-pane fade show p-0 active">
-                    <div class="row g-4 ">
-                        <div class="col-xl-3 col-lg-3 col-md-6  col-6 wow fadeInUp categoryBox" data-wow-delay="0.1s"
-                            *ngFor="let simillarproduct of simillarProducts">
-                            <div *ngIf="simillarProducts.length==1">
-                                <div class="product-item-1 label-name-similar w-100" id="tab-1"
-                                    (click)="onClick(simillarproduct)">
-                                    <div class="pt-2 pl-0 pb-2 text-center">
-                                        
-                                        <a class="d-block h5">
-                                            {{simillarproduct.Product_Title}}
-                                        </a>
-                                    </div>
-                                    <div class="productbox position-relative  overflow-hidden"
-                                        *ngIf="simillarproduct.Product_type==1">
-                                        <img class="img-fluid"
-                                            src="assets/img/{{this.categoryfolder}}/{{simillarproduct.Product_FrontPhoto}}"
-                                            alt="">
-                                    </div>
-                                    <div class="productbox position-relative  overflow-hidden"
-                                        *ngIf="simillarproduct.Product_type==2">
-                                        <img class="img-fluid"
-                                            src="assets/img/{{this.categoryfolder}}/{{simillarproduct.Product_Photo}}"
-                                            alt="">
-                                    </div>
-                                </div>
-                            </div>
-                            <div *ngIf="simillarProducts.length==2">
-                                <div class="product-item-2 label-name-similar w-100" id="tab-1"
-                                    (click)="onClick(simillarproduct)">
-                                    <div class="pt-2 pl-0 pb-2 text-center">
-                                      
-                                        <a class="d-block h5">
-                                            {{simillarproduct.Product_Title}}</a>
-                                    </div>
-                                    <div class="productbox position-relative overflow-hidden"
-                                        *ngIf="simillarproduct.Product_type==1">
-                                        <img class="img-fluid"
-                                            src="assets/img/{{this.categoryfolder}}/{{simillarproduct.Product_FrontPhoto}}"
-                                            alt="">
-                                    </div>
-                                    <div class="productbox position-relative overflow-hidden"
-                                        *ngIf="simillarproduct.Product_type==2">
-                                        <img class="img-fluid"
-                                            src="assets/img/{{this.categoryfolder}}/{{simillarproduct.Product_Photo}}"
-                                            alt="">
-                                    </div>
-                                </div>
-                            </div>
-                            <div *ngIf="simillarProducts.length==3">
-                                <div class="product-item-3 label-name-similar label-name-similar w-100" id="tab-1"
-                                    (click)="onClick(simillarproduct)">
-                                    <div class="pt-2 pl-0 pb-2 text-center">
-                                     
-                                        <a class="d-block h5">
-                                            {{simillarproduct.Product_Title}}</a>
-                                    </div>
-                                    <div class="productbox position-relative overflow-hidden"
-                                        *ngIf="simillarproduct.Product_type==1">
-                                        <img class="img-fluid"
-                                            src="assets/img/{{this.categoryfolder}}/{{simillarproduct.Product_FrontPhoto}}"
-                                            alt="">
-                                    </div>
-                                    <div class="productbox position-relative overflow-hidden"
-                                        *ngIf="simillarproduct.Product_type==2">
-                                        <img class="img-fluid"
-                                            src="assets/img/{{this.categoryfolder}}/{{simillarproduct.Product_Photo}}"
-                                            alt="">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> -->
 
     <section class="container-xxl pt-5 pb-3" *ngIf="simillarProducts.length < 5 && simillarProducts.length > 0">
         <div class="container">
