@@ -33,6 +33,10 @@ a{
     margin:5px;
     border-radius: 5px;
 }
+.img-logo-wp{
+    width: 20px;
+    height: 20px;
+}
 .footer .btn.btn-link:hover {
     color: var(--light);
     letter-spacing: 1px;
