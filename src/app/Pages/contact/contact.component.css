@@ -10,6 +10,13 @@
     border-radius: 5px;
     border: 1px solid #dbd6d6;
 }
+.img-logo-gb{
+    width: 30px;
+    height: 30px;
+    /* margin:5px; */
+    border-radius: 5px;
+}
+
 @media (min-width: 320px) and (max-width: 425px) 
 {
     .map_iframe{
