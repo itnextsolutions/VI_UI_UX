@@ -117,7 +117,17 @@ export class AddEditDetailsComponent implements OnInit {
       formData.append('Lookup_Id', this.Lookup_Id);
       formData.append('Description', this.Description);
       formData.append('ColorName', this.ColorName);
-      formData.append('formFile', this.selectedFile);
+
+      if(this.selectedFile==undefined){
+        if(this.tipping_img!=null){
+          formData.append('update_imageName', this.tipping_img);
+        }
+      }
+        if(this.selectedFile!=null && this.selectedFile!=""){
+        formData.append('formFile', this.selectedFile);
+        }
+
+      // formData.append('formFile', this.selectedFile);
       this.service.updateLookupDetails(formData).subscribe(res =>{
         alert(res.toString());
       })

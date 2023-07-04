@@ -21,7 +21,7 @@ export class AddEditBlogComponent implements OnInit {
   Blog_Content: string ="";
   Blog_Topic: string ="";
   Image_Name: string="";
-  selectedFile :any ="";
+  selectedFile :any;
   url: any; 
 	msg = "";
 
@@ -72,7 +72,7 @@ export class AddEditBlogComponent implements OnInit {
     formData.append('Blog_Title', this.Blog_Title);
     formData.append('Blog_Topic', this.Blog_Topic);
     formData.append('Blog_Content', this.Blog_Content);
-    if(this.selectedFile==""){
+    if(this.selectedFile==undefined){
     if(this.Image_Name!=null){
       formData.append('update_imageName', this.Image_Name);
     }

@@ -34,7 +34,8 @@ export class AddEditCustomerReviewComponent implements OnInit {
       Client_Name: ["", [Validators.required]],
       Profession: [""],
       Review: ["",[ Validators.required]],
-      Client_Photo: ["",[ Validators.required]],
+      // Client_Photo: ["",[ Validators.required]],
+      Client_Photo: [""],
       Rating: ["",[ Validators.required]],
     });
 
@@ -50,7 +51,7 @@ export class AddEditCustomerReviewComponent implements OnInit {
     return this.reviewForm.controls;
   }
 
-  addCust_Review(){
+  addCust_Review(){debugger
     this.submitted = true;
     if (this.reviewForm.valid){
       let formData = new FormData()
@@ -65,7 +66,7 @@ export class AddEditCustomerReviewComponent implements OnInit {
     }
   }
 
-  updateCust_Review(){
+  updateCust_Review(){debugger
     this.submitted = true;
     if (this.reviewForm.valid){
     let formData = new FormData()
@@ -74,7 +75,14 @@ export class AddEditCustomerReviewComponent implements OnInit {
     formData.append('Profession', this.Profession);
     formData.append('Review', this.Review);   
     formData.append('Rating', this.Rating);
-    formData.append('formFile', this.selectedFile);
+    if(this.selectedFile==undefined){
+      if(this.Client_Photo!=null){
+        formData.append('update_imageName', this.Client_Photo);
+      }
+    }
+      if(this.selectedFile!=null && this.selectedFile!=""){
+      formData.append('formFile', this.selectedFile);
+      }
       this.service.updateCustomerReview(formData).subscribe(res =>{
         alert(res.toString());
     })
@@ -82,7 +90,7 @@ export class AddEditCustomerReviewComponent implements OnInit {
   }
 
 	
-	onselectFile(event: any) { 
+	onselectFile_customer(event: any) { 
 		if(!event.target.files[0] || event.target.files[0].length == 0) {
 			this.msg = 'You must select an image';
 			return;
