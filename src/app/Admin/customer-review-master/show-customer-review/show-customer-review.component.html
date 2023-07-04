@@ -118,8 +118,11 @@
                       <td class="text-center">
                         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-link"
                           (click)="EditCust_Review(dataItem)"><i class="material-icons text-sm me-2">edit</i>Edit</button>
-                          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-link"
-                          (click)="deleteClick(dataItem.Customer_Review_Id)"><i class="material-icons text-sm me-2">delete</i>Delete</button>
+                          <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-link"
+                          (click)="deleteClick(dataItem.Customer_Review_Id)"><i class="material-icons text-sm me-2">delete</i>Delete</button> -->
+
+                          <button type="button" class="btn btn-link" (click)="deleteClick(dataItem.Customer_Review_Id)"><i class="material-icons text-sm me-2">delete</i>Delete</button>
+                        
                       </td>
                     </tr>
                   </tbody>

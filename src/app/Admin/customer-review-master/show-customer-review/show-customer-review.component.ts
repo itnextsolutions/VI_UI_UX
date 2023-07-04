@@ -29,7 +29,7 @@ export class ShowCustomerReviewComponent implements OnInit {
   constructor(private sharedService: SharedService ,public paginationService: PaginationService) { }
 
   ngOnInit(): void {
-    //this.refreshCust_ReviewList();
+    // this.refreshCust_ReviewList();
     this.getAllReview();
   }
 
@@ -111,10 +111,7 @@ getAllCustReviewCount() {
     this.modalTitle = "Update Client Review";
   }
 
-  closeClick(){
-    this.activateAddEditCustReviewCom=false;
-    this.getAllReview();
-  }
+ 
 
 
   deleteClick(item: any){
@@ -124,5 +121,9 @@ getAllCustReviewCount() {
         this.getAllReview();
       })
     }
+  }
+  closeClick(){
+    this.activateAddEditCustReviewCom=false;
+    this.getAllReview();
   }
 }

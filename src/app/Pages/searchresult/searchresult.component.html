@@ -6,7 +6,8 @@
  <div class="container-xxl header_bs_mo">
     <div class="container" >
         <p style="color: #000; font-weight: 500;">Your search for : {{SearchText}}</p>
-                <div class="row g-4"*ngIf="SearchResult.length>0;else elseblock">
+                <!-- <div class="row g-4"*ngIf="SearchResult.length>0;else elseblock"> -->
+                    <div class="row g-4"*ngIf="SearchResult">
                     <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s" *ngFor ="let product of SearchResult"  >
                         <div class="product-item"  id ="tab-1" (click)="onClick(product)" >
                             <div class="position-relative  overflow-hidden" >
@@ -21,11 +22,14 @@
                         </div>
                     </div>
                 </div>
-                <ng-template #elseblock>
-                    <p class="color my-0 mb-2 noteMsg">
+                <!-- <ng-template #elseblock> -->
+                    <div *ngIf="SearchResult.length==0">
+
+                    <p class="color mt-2 my-0 mb-2 noteMsg">
                         Note:- ( "No any results found" )
                     </p>
-                  </ng-template>
+                    </div>
+                  <!-- </ng-template> -->
             </div>
         </div> 
 <!-- Product Search End --> 
