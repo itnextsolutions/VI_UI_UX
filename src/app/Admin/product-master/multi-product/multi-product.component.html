@@ -65,12 +65,14 @@
              
               <!-- <div><img [src]="url" *ngIf="url"></div> -->
               
-              <div><img [src]="menfronturl" *ngIf="menfronturl else elseBlock" style="width: 200px;"></div>
+              <div><img [src]="menfronturl" *ngIf="menfronturl else elseBlock" style="width: 100px;height: 150px;"></div>
               <p class="color">
                 <input type="file" (change)="onselectFile1($event,1)">
               </p>
               <ng-template #elseBlock>
-                <img src="assets/img/{{Category_Name}}/{{MenFront_Photo}}">
+                <div *ngIf="MenFront_Photo">
+                  <img src="assets/img/{{Category_Name}}/{{MenFront_Photo}}" style="width: 100px;height: 150px;">
+                </div>
               </ng-template>
             </div>
           </div>
@@ -81,13 +83,15 @@
             <label>Size Chart For Men :</label>
             <div class="col-sm-10">
               <div [innerHtml]='msg' *ngIf="msg" style="color: red;"></div>
-              <div><img [src]="mensizecharturl" *ngIf="mensizecharturl; else elseBlock" style="width: 200px;"></div>
+              <div><img [src]="mensizecharturl" *ngIf="mensizecharturl; else elseBlock" style="width: 100px;height: 150px;"></div>
               <p class="color">
                 <input type="file" (change)="onselectFile2($event,2)" id="inputSizeChartForMen"
                 >
               </p>
               <ng-template #elseBlock>
-                <img src="assets/img/{{Category_Name}}/{{SizeChartForMen}}">
+                <div *ngIf="SizeChartForMen">
+                  <img src="assets/img/{{Category_Name}}/{{SizeChartForMen}}" style="width: 100px;height: 150px;">
+                </div>
               </ng-template>
             </div>
           </div>
@@ -102,13 +106,15 @@
             <label>Women Front Image :</label>
             <div class="col-sm-10">
               <div [innerHtml]='msg' *ngIf="msg" style="color: red;"></div>
-              <div><img [src]="womenfronturl" *ngIf="womenfronturl; else elseBlock" style="width: 200px;"></div>
+              <div><img [src]="womenfronturl" *ngIf="womenfronturl; else elseBlock" style="width: 100px;height: 150px;"></div>
               <p class="color">
                 <input type="file" (change)="onselectFile3($event,3)" id="inputWomenProduct_Photo"
                   >
               </p>
               <ng-template #elseBlock>
-                <img src="assets/img/{{Category_Name}}/{{WomenProduct_Photo}}">
+                <div *ngIf="WomenProduct_Photo">
+                <img src="assets/img/{{Category_Name}}/{{WomenProduct_Photo}}" style="width: 100px;height: 150px;">
+              </div>
             </ng-template>
             </div>
           </div>
@@ -118,13 +124,15 @@
             <label>Size Chart For Women</label>
             <div class="col-sm-10">
               <div [innerHtml]='msg' *ngIf="msg" style="color: red;"></div>
-              <div><img [src]="womensizecharturl" *ngIf="womensizecharturl; else elseBlock" style="width: 200px;"></div>
+              <div><img [src]="womensizecharturl" *ngIf="womensizecharturl; else elseBlock" style="width: 100px;height: 150px;"></div>
               <p class="color">
                 <input type="file" (change)="onselectFile4($event,4)" id="inputSizeChartForWomen"
                   >
               </p>
               <ng-template #elseBlock>
-                <img src="assets/img/{{Category_Name}}/{{SizeChartForWomen}}">
+                <div *ngIf="SizeChartForWomen">
+                  <img src="assets/img/{{Category_Name}}/{{SizeChartForWomen}}" style="width: 100px;height: 150px;">
+                </div>
               </ng-template>
             </div>
           </div>

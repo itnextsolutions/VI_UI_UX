@@ -29,10 +29,12 @@
                 <div [innerHtml]='msg' *ngIf="msg" style="color: red;"></div>
                 <div><img [src]="url" *ngIf="url; else elseBlock" style="width: 100px; height: 150px;"></div>
                 <p class="color">
-                    <input type="file"  [(ngModel)]="Image_Name"  (change)="onselectFile($event)"  id="inputImage_Name" formControlName="Image_Name">
+                    <input type="file"   (change)="onselectFile($event)">
                 </p>
                 <ng-template #elseBlock>
-                    <img src="assets/img/blog/{{Image_Name}}">
+                  <div *ngIf="Image_Name">
+                    <img src="assets/img/blog/{{Image_Name}}" style="width: 100px; height: 150px;">
+                  </div>
                 </ng-template>
             </div>
             <!-- <div *ngIf="submitted && formControl.Image_Name.errors" class="text-danger">

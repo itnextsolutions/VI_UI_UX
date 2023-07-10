@@ -33,8 +33,8 @@ export class AddEditBlogComponent implements OnInit {
     this.blogForm = this.formBuilder.group({
       Blog_Title: ["", [Validators.required]],
      Blog_Content: ["",[ Validators.required]],
-      Blog_Topic: ["",[ Validators.required]],
-      Image_Name: [""]
+      Blog_Topic: ["",[ Validators.required]]
+      // Image_Name: [""]
       // Image_Name: ["",[ Validators.required]]
     });
 

@@ -20,7 +20,7 @@ export class ShowProductCategoryComponent implements OnInit {
   
   pageField :any= []; 
   exactPageList: any; 
-  paginationData: any; ;
+  paginationData: any;
   ProductCategoryPerPage: any = 10; 
   totalProductCategory: any ; 
   totalProductCategoryCount: any;

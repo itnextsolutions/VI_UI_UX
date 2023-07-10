@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { SharedService } from "src/app/Services/shared.service";
 // import { FormGroup, FormControl, Validators} from '@angular/forms';
-import { UntypedFormBuilder, UntypedFormGroup, FormArray, UntypedFormControl, Validators } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, FormArray, UntypedFormControl, Validators, FormControl } from '@angular/forms';
 import { resolve } from 'dns';
 import { timeStamp } from 'console';
 import { GetColorName } from 'hex-color-to-color-name';
@@ -15,7 +15,6 @@ import { GetColorName } from 'hex-color-to-color-name';
 export class AddEditProductComponent implements OnInit {
 
   form = new UntypedFormGroup({
-    // ColorData: new UntypedFormControl('', Validators.required),
   });
 
   public ProductForm = new UntypedFormGroup({
@@ -28,59 +27,54 @@ export class AddEditProductComponent implements OnInit {
   SizeData: Array<any> = [];
   selectedcolor: any = [];
   selectedsize: any = [];
-  //i: any = [];
-  //colorName: any = [];
 
   @Input() product: any;
-    Product_Id: string = "";
-    Category_Id: string = "";
-    Category_Name: string = "";
-    SubCategory_Id: string = "";
-    SubCategory: string = "";
-    Product_Title: string = "";
-    Product_Description: string = "";
-    ColorId: Array<any> = [];
-    SizeId: Array<any> = [];
-    Image_Name: string = "";
-    MenFront_Photo: string = "";
-    Product_FrontPhoto: string = "";
-    // MenBack_Photo: string = "";
-    SizeChartForMen: string = "";
-  
-    WomenProduct_Description: string = "";
-    WomenProduct_Photo: string = "";
-    // WomenProductSide_Photo: string = "";
-    // WomenProductBack_Photo: string = "";
-    SizeChartForWomen: string = "";
-  
-  
-    MenFrontImgFile: any;
-    FrontImgFile: any;
-    // MenBackImgFile: any;
-    MenSizeChartImgFile: any;
-  
-    WomenFrontImgFile: any;
-    // WomenSideImgFile: any;
-    // WomenBackImgFile: any;
-    WomenSizeChartImgFile: any;
-  
+  Product_Id: string = "";
+  Category_Id: string = "";
+  Category_Name: string = "";
+  SubCategory_Id: string = "";
+  SubCategory: string = "";
+  Product_Title: string = "";
+  Product_Description: string = "";
+  ColorId: any = [];
+  SizeId: any = [];
+  Image_Name: string = "";
+  MenFront_Photo: string = "";
+  Product_FrontPhoto: string = "";
+  SizeChartForMen: string = "";
 
+  WomenProduct_Description: string = "";
+  WomenProduct_Photo: string = "";
+  SizeChartForWomen: string = "";
+
+
+  MenFrontImgFile: any;
+  FrontImgFile: any;
+  MenSizeChartImgFile: any;
+
+  WomenFrontImgFile: any;
+  WomenSizeChartImgFile: any;
+
+  selectedColorIds: any = [];
 
   @Input() ColorIdList: any;
   Color_CodeId: Array<any> = [];
 
   menfronturl: any;
-  // menbackurl: any;
   frontphoto_url: any;
   mensizecharturl: any;
   womenfronturl: any;
-  // womenbackurl: any;
-  // womensideurl: any;
   womensizecharturl: any;
   msg = "";
   men_f_svgpath: any;
   women_f_svgpath: any;
-  MRP: string="";
+  MRP: string = "";
+  productcategoryfolder: string = "";
+
+  array = [];
+  selectedColorArray: any;
+  checkboxArray: any;
+  Color: any=[];
 
   constructor(private service: SharedService, private formBuilder: UntypedFormBuilder) {
     this.form = this.formBuilder.group({
@@ -91,50 +85,56 @@ export class AddEditProductComponent implements OnInit {
   ngOnInit(): void {
 
     this.ProductForm = this.formBuilder.group({
-            Category_Id: ["", [Validators.required]],
-            SubCategory_Id: ["", [Validators.required]],
-            Product_Title: ["", [Validators.required]],
-            ColorId: [""],
-            SizeId: [""],
-            Product_Description: [""],
-            WomenProduct_Description:[""],
-            men_f_svgpath:[""],
-            women_f_svgpath:[""],
-            MRP:[""]
-          });
-      
-          
-          this.Product_Id = this.product.Product_Id,
-          this.Category_Id = this.product.Category_Id;
-          this.SubCategory_Id = this.product.SubCategory_Id;
-          this.Product_Title = this.product.Product_Title;
-          this.Product_Description = this.product.Product_Description;
-          this.Image_Name = this.product.Category_Photo;
-         // this.ColorId = this.product.ColorId;
-          this.ColorId = this.product.ColorId;
-          this.SizeId =  this.product.SizeId;
-          this.MenFront_Photo = this.product.Product_Photo;
-          this.Product_FrontPhoto = this.product.Product_FrontPhoto;
-          // this.MenBack_Photo = this.product.Product_BackPhoto;
-          this.SizeChartForMen = this.product.SizeChartForMen;
-          this.men_f_svgpath=this.product.men_f_svgpath;
-          this.WomenProduct_Description = this.product.WomenProduct_Description;
-          this.WomenProduct_Photo = this.product.WomenProduct_Photo;
-          // this.WomenProductSide_Photo = this.product.WomenProductSide_Photo;
-          // this.WomenProductBack_Photo = this.product.WomenProductBack_Photo;
-          this.women_f_svgpath=this.product.women_f_svgpath;
-          this.SizeChartForWomen = this.product.SizeChartForWomen;
-          this.MRP=this.product.MRP;
-          
-          this.CategoryNameList();
-          this.GetColorList();
-          this.GetSizeList();
-          //this.SubCatLists();
-  }
+      Category_Id: ["", [Validators.required]],
+      SubCategory_Id: ["", [Validators.required]],
+      Product_Title: ["", [Validators.required]],
+      ColorId: [""],
+      SizeId: [""],
+      Product_Description: [""],
+      WomenProduct_Description: [""],
+      men_f_svgpath: [""],
+      women_f_svgpath: [""],
+      MRP: [""]
+    });
 
-  // get formControl() {
-  //   return this.ProductForm.controls;
-  // }
+
+    this.Product_Id = this.product.Product_Id,
+      this.Category_Id = this.product.Category_Id;
+    this.SubCategory_Id = this.product.SubCategory_Id;
+    this.Category_Name = this.product.Category_Name;
+    this.Category_Name = this.Category_Name.replace(/-/g, ' ').toUpperCase();
+    this.productcategoryfolder = this.Category_Name.replace(/\s+/g, '-').toLowerCase();
+    this.Product_Title = this.product.Product_Title;
+    this.Product_Description = this.product.Product_Description;
+    this.Image_Name = this.product.Category_Photo;
+    //this.ColorId = this.product.ColorId;
+    this.Color=this.product.ColorId;
+    if(this.Color.length>0){
+    this.ColorId = this.Color.split(",").map(Number);}
+    //  this.array = this.ColorId.split(',');
+    this.SizeId = this.product.SizeId;
+    this.MenFront_Photo = this.product.Product_Photo;
+    this.Product_FrontPhoto = this.product.Product_FrontPhoto;
+    this.SizeChartForMen = this.product.SizeChartForMen;
+    this.men_f_svgpath = this.product.men_f_svgpath;
+    this.WomenProduct_Description = this.product.WomenProduct_Description;
+    this.WomenProduct_Photo = this.product.WomenProduct_Photo;
+    this.women_f_svgpath = this.product.women_f_svgpath;
+    this.SizeChartForWomen = this.product.SizeChartForWomen;
+    this.MRP = this.product.MRP;
+
+    this.CategoryNameList();
+    this.GetColorList();
+    this.GetSizeList();
+    //  this.array.forEach((element:any) => { 
+    //   this.ColorData.find((data:any)=>{
+    //   if(data.Lookup_Details_Id==element){
+    //     this.ColorData.push(data.Lookup_Details_Id)
+    //   }
+    // })
+    // })
+
+  }
 
   CategoryNameList() {
 
@@ -150,9 +150,17 @@ export class AddEditProductComponent implements OnInit {
 
 
   GetColorList() {
-    this.service.GetColor().subscribe((data:any) =>{
+    this.service.GetColor().subscribe((data: any) => {
       this.ColorData = data;
-    }) 
+
+      // this.ColorData.forEach((color) => {
+      //   //color.selected = this.array.includes(color.Lookup_Details_Id);
+      // });
+
+      // const colorControls = this.ColorData.map((color) => new FormControl(color.selected));
+
+      // this.ProductForm.setControl('ColorId', new FormArray(colorControls));
+    })
   }
 
 
@@ -165,7 +173,6 @@ export class AddEditProductComponent implements OnInit {
   SubCatList: any = [];
 
   onOptionsSelected(id: any) {
-    //("the selected value is " + id);
 
     this.service.GetSubCatByCatid(id).subscribe(data => {
       this.SubCatList = data;
@@ -181,6 +188,17 @@ export class AddEditProductComponent implements OnInit {
       this.selectedcolor.splice(index, 1);
     }
   }
+
+
+
+  // onSelectChange(e: any) {
+  //   let index = this.ColorId.indexOf(e.target.value);
+    
+  //     this.ColorId.push(e.target.value);
+    
+  // }
+
+  
 
   onSelectSizeChange(e: any) {
     let index = this.selectedsize.indexOf(e.target.value);
@@ -198,75 +216,117 @@ export class AddEditProductComponent implements OnInit {
 
   addProductDetails() {
     this.submitted = true;
-    if (this.ProductForm.valid){
-          let formData = new FormData()
-          formData.append('Category_Id', this.Category_Id);
-          formData.append('SubCategory_Id', this.SubCategory_Id);
-          formData.append('Product_Title', this.Product_Title);
-          formData.append('Product_Description', this.Product_Description);
-          formData.append('ColorId', this.selectedcolor);
-          formData.append('SizeId', this.selectedsize);
-          formData.append('MenFrontImgFile', this.MenFrontImgFile);
-          formData.append('FrontImgFile', this.FrontImgFile);
-          formData.append('MRP',this.MRP);
-          // formData.append('MenSideImgFile', this.MenSideImgFile);
-          // formData.append('MenBackImgFile', this.MenBackImgFile);
-          formData.append('MenSizeChartImgFile', this.MenSizeChartImgFile);
-          formData.append('Men_f_svgpath', this.men_f_svgpath);
-          formData.append('WomenProduct_Description', this.WomenProduct_Description);
-          formData.append('WomenFrontImgFile', this.WomenFrontImgFile);
-          // formData.append('WomenBackImgFile', this.WomenBackImgFile);
-          // formData.append('WomenSideImgFile', this.WomenSideImgFile);
-          formData.append('WomenSizeChartImgFile', this.WomenSizeChartImgFile);
-          formData.append('Women_f_svgpath', this.women_f_svgpath);
-          this.service.addProductDetails(formData).subscribe(res => {
-            alert(res.toString());
-          }
-          // (response:any) => {
-          //   alert(response.res.toString());
-          //   const filePaths = response.filePaths; 
-            
-          //   (filePaths); 
-          // },
-          // (error) => {
-          //   console.error(error); 
-          // }
-          )
-        }
+    if (this.ProductForm.valid) {
+      let formData = new FormData()
+      formData.append('Category_Id', this.Category_Id);
+      formData.append('SubCategory_Id', this.SubCategory_Id);
+      formData.append('Product_Title', this.Product_Title);
+      formData.append('Product_Description', this.Product_Description);
+      formData.append('ColorId', this.selectedcolor);
+      formData.append('SizeId', this.selectedsize);
+      formData.append('MenFrontImgFile', this.MenFrontImgFile);
+      formData.append('FrontImgFile', this.FrontImgFile);
+      formData.append('MRP', this.MRP);
+      formData.append('MenSizeChartImgFile', this.MenSizeChartImgFile);
+      formData.append('Men_f_svgpath', this.men_f_svgpath);
+      formData.append('WomenProduct_Description', this.WomenProduct_Description);
+      formData.append('WomenFrontImgFile', this.WomenFrontImgFile);
+      formData.append('WomenSizeChartImgFile', this.WomenSizeChartImgFile);
+      formData.append('Women_f_svgpath', this.women_f_svgpath);
+      this.service.addProductDetails(formData).subscribe(res => {
+        alert(res.toString());
       }
-    
-      updateProductDetails() {
-        // this.submitted = true;
-        // if (this.ProductForm.valid){
-        let formData = new FormData()
-        formData.append('Product_Id', this.Product_Id);
-        formData.append('Category_Id', this.Category_Id);
-        formData.append('SubCategory_Id', this.SubCategory_Id);
-        formData.append('Product_Title', this.Product_Title);
-        formData.append('Product_Description', this.Product_Description);
-        formData.append('ColorId[]', this.selectedcolor);
-        formData.append('SizeId[]', this.selectedsize);
-        formData.append('MenFrontImgFile', this.MenFrontImgFile);
-        formData.append('FrontImgFile', this.FrontImgFile);
-        formData.append('MRP',this.MRP);
-        // formData.append('MenBackImgFile', this.MenBackImgFile);
-        formData.append('MenSizeChartImgFile', this.MenSizeChartImgFile);
-        formData.append('Men_f_svgpath', this.men_f_svgpath);
-        formData.append('WomenProduct_Description', this.WomenProduct_Description);
-        formData.append('WomenFrontImgFile', this.WomenFrontImgFile);
-        // formData.append('WomenBackImgFile', this.WomenBackImgFile);
-        // formData.append('WomenSideImgFile', this.WomenSideImgFile);
-        formData.append('WomenSizeChartImgFile', this.WomenSizeChartImgFile);
-        formData.append('Women_f_svgpath', this.women_f_svgpath);
-        this.service.updateProductDetails(formData).subscribe(res => {
-          alert(res.toString());
-        })
-      // }
+      )
+    }
+  }
+
+  updateProductDetails() {
+    // this.submitted = true;
+    // if (this.ProductForm.valid){
+    let formData = new FormData()
+    formData.append('Product_Id', this.Product_Id);
+    formData.append('Category_Id', this.Category_Id);
+    formData.append('SubCategory_Id', this.SubCategory_Id);
+    formData.append('Product_Title', this.Product_Title);
+    formData.append('Product_Description', this.Product_Description);
+
+    if(this.selectedcolor==0 && this.ColorId.length>0){
+      formData.append('ColorId', this.ColorId);
+    }
+    // if (this.ColorId.length > 0) {
+    //   formData.append('ColorId', this.ColorId);
+    // }
+    if (this.selectedcolor.length > 0) {
+      formData.append('ColorId', this.selectedcolor);
+    }
+
+    if (this.selectedsize == 0 && this.SizeId.length > 0) {
+      formData.append('SizeId', this.SizeId);
+    }
+    if (this.selectedsize.length > 0) {
+      formData.append('SizeId', this.selectedsize);
+    }
+
+    if (this.MenFrontImgFile != null) {
+      formData.append('MenFrontImgFile', this.MenFrontImgFile);
+    }
+    if (this.MenFrontImgFile == null) {
+      if (this.MenFront_Photo != null && this.MenFront_Photo != "") {
+        formData.append('updateMenFrontImgFile', this.MenFront_Photo);
       }
+    }
+
+    if (this.FrontImgFile != null) {
+      formData.append('FrontImgFile', this.FrontImgFile);
+    }
+    if (this.FrontImgFile == null) {
+      if (this.Product_FrontPhoto != null && this.Product_FrontPhoto != "") {
+        formData.append('updateFrontImgFile', this.Product_FrontPhoto);
+      }
+    }
+
+    formData.append('MRP', this.MRP);
+
+    if (this.MenSizeChartImgFile != null) {
+      formData.append('MenSizeChartImgFile', this.MenSizeChartImgFile);
+    }
+    if (this.MenSizeChartImgFile == null) {
+      if (this.SizeChartForMen != null && this.SizeChartForMen != "") {
+        formData.append('updateMenSizeChartImgFile', this.SizeChartForMen);
+      }
+    }
+
+    formData.append('Men_f_svgpath', this.men_f_svgpath);
+    formData.append('WomenProduct_Description', this.WomenProduct_Description);
+
+    if (this.WomenFrontImgFile != null) {
+      formData.append('WomenFrontImgFile', this.WomenFrontImgFile);
+    }
+    if (this.WomenFrontImgFile == null) {
+      if (this.WomenProduct_Photo != null && this.WomenProduct_Photo != "") {
+        formData.append('updateWomenFrontImgFile', this.WomenProduct_Photo);
+      }
+    }
+
+    if (this.WomenSizeChartImgFile != null) {
+      formData.append('WomenSizeChartImgFile', this.WomenSizeChartImgFile);
+    }
+    if (this.WomenSizeChartImgFile == null) {
+      if (this.SizeChartForWomen != null && this.SizeChartForWomen != "") {
+        formData.append('updateWomenSizeChartImgFile', this.SizeChartForWomen);
+      }
+    }
+
+    formData.append('Women_f_svgpath', this.women_f_svgpath);
+    this.service.updateProductDetails(formData).subscribe(res => {
+      alert(res.toString());
+    })
+    // }
+  }
 
 
 
-  onselectFile1(event: any,id: any) { 
+  onselectFile1(event: any, id: any) {
     var mimeType = event.target.files[0].type;
     if (mimeType.match(/image\/*/) == null) {
       this.msg = "Only images are supported";
@@ -275,16 +335,16 @@ export class AddEditProductComponent implements OnInit {
 
     var reader = new FileReader();
     reader.readAsDataURL(event.target.files[0]);
-   
-  reader.onload = (e : any) => {
-        this.msg = "";
-        this.menfronturl = reader.result;
-        this.MenFrontImgFile = <File>event.target.files[0];
+
+    reader.onload = (e: any) => {
+      this.msg = "";
+      this.menfronturl = reader.result;
+      this.MenFrontImgFile = <File>event.target.files[0];
     }
 
   }
-  
-  onselectFile2(event: any,id: any) { 
+
+  onselectFile2(event: any, id: any) {
     var mimeType = event.target.files[0].type;
     if (mimeType.match(/image\/*/) == null) {
       this.msg = "Only images are supported";
@@ -295,18 +355,18 @@ export class AddEditProductComponent implements OnInit {
     reader.readAsDataURL(event.target.files[0]);
     if (id == 2) {
 
-          reader.onload = (_event) => {
-            this.msg = "";
-            this.frontphoto_url = reader.result;
-          }
-          this.FrontImgFile = <File>event.target.files[0];
-        }
-    
+      reader.onload = (_event) => {
+        this.msg = "";
+        this.frontphoto_url = reader.result;
+      }
+      this.FrontImgFile = <File>event.target.files[0];
+    }
+
 
   }
 
-  onselectFile4(event: any,id: any) { 
-   
+  onselectFile4(event: any, id: any) {
+
     var mimeType = event.target.files[0].type;
     if (mimeType.match(/image\/*/) == null) {
       this.msg = "Only images are supported";
@@ -325,7 +385,7 @@ export class AddEditProductComponent implements OnInit {
 
   }
 
-  onselectFile5(event: any,id: any) { 
+  onselectFile5(event: any, id: any) {
     var mimeType = event.target.files[0].type;
     if (mimeType.match(/image\/*/) == null) {
       this.msg = "Only images are supported";
@@ -344,7 +404,7 @@ export class AddEditProductComponent implements OnInit {
 
   }
 
-  onselectFile8(event: any,id: any) {
+  onselectFile8(event: any, id: any) {
     var mimeType = event.target.files[0].type;
     if (mimeType.match(/image\/*/) == null) {
       this.msg = "Only images are supported";

@@ -35,10 +35,14 @@
               </p>
               <ng-template #elseBlock>
                 <div *ngIf="productcategory.IsBrand==0">
-                <img src="assets/img/category/{{Category_Photo}}">
+                  <div *ngIf="Category_Photo">
+                    <img src="assets/img/category/{{Category_Photo}}" style="width: 100px;height: 150px;">
+                  </div>
                 </div>
                 <div *ngIf="productcategory.IsBrand==1">
-                    <img src="assets/img/brand/{{Category_Photo}}"> 
+                  <div *ngIf="Category_Photo">
+                    <img src="assets/img/brand/{{Category_Photo}}" style="width: 100px;height: 150px;">
+                  </div>
                 </div>
               </ng-template>
             </div>

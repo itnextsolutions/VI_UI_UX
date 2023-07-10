@@ -35,8 +35,8 @@ export class ContactComponent {
       // Lookup_Name: ["", [Validators.required]],
       name: ["", [Validators.required,Validators.minLength(2)]],
       email: ["", [Validators.required,Validators.email,Validators.pattern(this.emailPattern)]],
-      subject: ["", [Validators.required,Validators.minLength(5)]],
-      message: ["", [Validators.required,Validators.minLength(3)]]
+      subject: ["", [Validators.required]],
+      message: ["", [Validators.required]]
     });
     this.seoService.setCanonicalURL(window.location.href);
   }

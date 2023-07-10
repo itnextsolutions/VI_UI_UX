@@ -28,7 +28,9 @@
                     <input type="file" (change)="onselectFile_customer($event)" id="inputClient_Photo">
                 </p>
                 <ng-template #elseBlock>
-                    <img src="assets\img\client_reviews/{{Client_Photo}}">
+                  <div *ngIf="Client_Photo">
+                    <img src="assets\img\client_reviews/{{Client_Photo}}" style="width: 100px; height: 150px;">
+                  </div>
                 </ng-template>
             </div>
             <!-- <div *ngIf="submitted && formControl.Client_Photo.errors" class="text-danger">

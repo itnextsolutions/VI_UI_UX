@@ -1,7 +1,7 @@
 <div class="d-flex justify-content-center">
 
     <div class="spinner-border" role="status">
-        <span class="sr-only" id="loading"></span>
+        <span class="sr-only"></span>
     </div>
 </div>
 
@@ -88,7 +88,7 @@
 
 
 <!-- Product Start -->
-<div *ngIf="categoryList.length > 0" class="container-xxl py-5" id="product">
+<div *ngIf="categoryList.length > 0" class="container-xxl py-5">
     <div class="container">
         <div class="row g-0 gx-5 align-items-end">
             <div class="col-lg-7">
@@ -100,11 +100,11 @@
             </div>
         </div>
         <div class="tab-content">
-            <div id="tab-1" class="tab-pane fade show p-0 active">
+            <div class="tab-pane fade show p-0 active">
                 <div class="row g-4">
                     <div class="col-xl-3 col-lg-6 col-md-6  col-12 wow fadeInUp Product_Category_item"
                         data-wow-delay="0.1s" *ngFor="let data of categoryList.slice(0,6)">
-                        <div class="product-item pointer" id="tab-1" (click)="onCategoryClick(data)">
+                        <div class="product-item pointer" (click)="onCategoryClick(data)">
                             <div class="">
                                 <img class="img-fluid pro-img-hw" src="assets/img/category/{{data.Category_Photo}}"
                                     alt="">
@@ -139,7 +139,7 @@
 
         </div>
         <div class="tab-content">
-            <div id="tab-1" class="tab-pane fade show p-0 active">
+            <div  class="tab-pane fade show p-0 active">
                 <div class="row g-4">
                     <div class="col-xl-3 col-lg-6 col-md-6  col-12 wow fadeInUp Brand-item" data-wow-delay="0.1s"
                         *ngFor="let item of brandList.slice(0,6)">

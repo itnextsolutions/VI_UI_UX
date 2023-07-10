@@ -74,9 +74,9 @@
                       <tr>
                         <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2"></th>
                         <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">No.</th>
+                        <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Action</th>
                         <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Blog Title</th>
                         <!-- <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Blog Content</th> -->
-                        <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Action</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -87,7 +87,13 @@
                             {{i+1}}
                           </div>
                         </td>
-                      
+
+                        <td class="text-center">
+                          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-link"
+                            (click)="EditBlog(dataItem)"><i class="material-icons text-sm me-2">edit</i></button>
+                          <button type="button" class="btn btn-link" (click)="deleteClick(dataItem.Blog_Id)"><i class="material-icons text-sm me-2">delete</i></button>
+                        </td>
+
                         <td>
                           <div class="d-flex px-2 py-1">
                             <div class="d-flex flex-column justify-content-center">
@@ -95,11 +101,7 @@
                             </div>
                           </div>
                         </td>
-                        <td class="text-center">
-                          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-link"
-                            (click)="EditBlog(dataItem)"><i class="material-icons text-sm me-2">edit</i>Edit</button>
-                          <button type="button" class="btn btn-link" (click)="deleteClick(dataItem.Blog_Id)"><i class="material-icons text-sm me-2">delete</i>Delete</button>
-                        </td>
+                        
                         
                       </tr>
                     </tbody>

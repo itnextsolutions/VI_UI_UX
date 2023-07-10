@@ -57,7 +57,9 @@ export class ProductsComponent implements OnInit {
   }
 
   onClick(product: any){
-    this.router.navigate(['product-details/', product.Category_Name, product.SubCategory, product.Product_Id,product.IsBrand]);
+    this.router.navigate(['product-details/', product.Category_Name, product.SubCategory, product.Product_Id,product.IsBrand]).then(() => {
+      window.location.reload();
+    });
   }
   
 }

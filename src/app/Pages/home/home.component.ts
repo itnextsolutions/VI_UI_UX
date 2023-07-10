@@ -118,9 +118,6 @@ export class HomeComponent implements OnInit {
 
   refreshblogList() 
   {
-    // this.blogno = 3;
-    // this.userService.getbloglist(this.blogno).subscribe(data =>{
-    //   this.blogList = data;
     this.userService.getbloglist().subscribe(data =>{
       
       if(data != undefined && data!=null){

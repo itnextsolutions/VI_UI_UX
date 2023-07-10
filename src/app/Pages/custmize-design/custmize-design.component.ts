@@ -41,6 +41,9 @@ export class CustmizeDesignComponent implements OnInit {
   ngOnInit(): void {
     // this.getscreenwidth = window.innerWidth;
     this.getCanvasSize();
+    // if(this.men_svg_path!=null&& this.men_svg_path!=undefined){
+    // this.men_svg_path=this.men_svg_path;
+    // }
     this.categoryName = this.param.snapshot.paramMap.get('categoryName');
     this.productcategoryfolder = this.categoryName.replace(/\s+/g, '-').toLowerCase();
   }

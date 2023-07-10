@@ -80,10 +80,18 @@ export class AddEditProductCategoryComponent implements OnInit {
       formData.append('Category_Id', this.Category_Id);
       formData.append('Category_Name', this.Category_Name);
       formData.append('Category_Description', this.Category_Description);
-      formData.append('formFile', this.selectedFile);
-      if(this.Is_Brand!=null && this.Is_Brand!=undefined)
+      // formData.append('formFile', this.selectedFile);
+      if(this.selectedFile==undefined){
+        if(this.Category_Photo!=null){
+          formData.append('update_imageName', this.Category_Photo);
+        }
+      }
+        if(this.selectedFile!=null && this.selectedFile!=""){
+        formData.append('formFile', this.selectedFile);
+        }
+      if(this.IsBrand!=null && this.IsBrand==true)
       {
-        formData.append('IsBrand',this.Is_Brand)
+        formData.append('IsBrand','1')
       }
       else
       {
