@@ -18,7 +18,8 @@ export class ProductsComponent implements OnInit {
   categoryFolderName:any;
   productSubCategoryList:any=[];
   getSubCategoryId:any=[];
-  CategoryName :any;
+  categoryName :any;
+  subCategoryName :any;
   // @Input() id:any; 
 
   constructor(private param :ActivatedRoute,
@@ -41,8 +42,8 @@ export class ProductsComponent implements OnInit {
 
   getProductByCategory(){
     this.getCategoryId = this.param.snapshot.paramMap.get('category_id');
-    this.CategoryName = this.param.snapshot.paramMap.get('categoryName');
-    this.categoryFolderName = this.CategoryName.replace(/\s+/g, '-').toLowerCase();
+    this.categoryName = this.param.snapshot.paramMap.get('categoryName');
+    this.categoryFolderName = this.categoryName.replace(/\s+/g, '-').toLowerCase();
    
     this.userService.getProductByCategoryId(this.getCategoryId).subscribe(data =>{
       this.productList = data;
@@ -57,7 +58,8 @@ export class ProductsComponent implements OnInit {
   }
 
   onClick(product: any){
-    this.router.navigate(['product-details/', product.Category_Name, product.SubCategory, product.Product_Id,product.IsBrand]).then(() => {
+    this.subCategoryName = product.SubCategory.replace(/\s+/g, '-').toLowerCase();
+    this.router.navigate(['product-details/', this.categoryFolderName, this.subCategoryName, product.Product_Id,product.IsBrand]).then(() => {
       window.location.reload();
     });
   }

@@ -45,7 +45,7 @@
         <div class="col-md-12 roundedTextBox mb-0">
          
           <hr style="height:5px;border-width:0;color:gray;background-color:gray">
-        <label>Men Product Specification :<a input type="button" class="btn list-tag" href="https://www.textfixer.com/html/html-list-generator.php">HTML</a></label>
+        <label> Product Specification :<a input type="button" class="btn list-tag" href="https://www.textfixer.com/html/html-list-generator.php">HTML</a></label>
            
         <!-- <input type="text"  [(ngModel)]="Description" class="form-control mb-2" id="inputDescription" formControlName="Description"> -->
         
@@ -57,7 +57,7 @@
       </div>
 
       <div class="container py-5">
-        <div class="row row-cols-2 row-cols-lg-3 mb-3">
+        <div class="row row-cols-2 row-cols-lg-2 mb-3">
           <div class="col">
             <label>Men Front Image :</label>
             <div class="col-sm-10">
@@ -66,7 +66,7 @@
               <!-- <div><img [src]="url" *ngIf="url"></div> -->
               
               <div><img [src]="menfronturl" *ngIf="menfronturl else elseBlock" style="width: 100px;height: 150px;"></div>
-              <p class="color">
+              <p >
                 <input type="file" (change)="onselectFile1($event,1)">
               </p>
               <ng-template #elseBlock>
@@ -84,7 +84,7 @@
             <div class="col-sm-10">
               <div [innerHtml]='msg' *ngIf="msg" style="color: red;"></div>
               <div><img [src]="mensizecharturl" *ngIf="mensizecharturl; else elseBlock" style="width: 100px;height: 150px;"></div>
-              <p class="color">
+              <p >
                 <input type="file" (change)="onselectFile2($event,2)" id="inputSizeChartForMen"
                 >
               </p>
@@ -101,13 +101,13 @@
       <hr style="height:5px;border-width:0;color:gray;background-color:gray">
 
       <div class="container py-5">
-        <div class="row row-cols-2 row-cols-lg-3 mb-0">
+        <div class="row row-cols-2 row-cols-lg-2 mb-0">
           <div class="col">
             <label>Women Front Image :</label>
             <div class="col-sm-10">
               <div [innerHtml]='msg' *ngIf="msg" style="color: red;"></div>
               <div><img [src]="womenfronturl" *ngIf="womenfronturl; else elseBlock" style="width: 100px;height: 150px;"></div>
-              <p class="color">
+              <p >
                 <input type="file" (change)="onselectFile3($event,3)" id="inputWomenProduct_Photo"
                   >
               </p>
@@ -125,7 +125,7 @@
             <div class="col-sm-10">
               <div [innerHtml]='msg' *ngIf="msg" style="color: red;"></div>
               <div><img [src]="womensizecharturl" *ngIf="womensizecharturl; else elseBlock" style="width: 100px;height: 150px;"></div>
-              <p class="color">
+              <p >
                 <input type="file" (change)="onselectFile4($event,4)" id="inputSizeChartForWomen"
                   >
               </p>
@@ -171,7 +171,7 @@
         <label>Men Front Image :</label>
         <div class="col-sm-10">
           <div [innerHtml]='msg' *ngIf="msg" style="color: red;"></div>
-          <p class="color">
+          <p >
             <input type="file" (change)="onMultiMenFile($event)" id="inputMenFront_Photo" formControlName="MenFrontImgFile">
 
             <!-- <input type="file"  id="inputMenFront_Photo" formControlName="MenFrontImgFile"  (change)="onselectFile1($event)"> -->
@@ -220,7 +220,7 @@
                   <label>Women Front Image :</label>
                   <div class="col-sm-10">
                     <div [innerHtml]='msg' *ngIf="msg" style="color: red;"></div>
-                    <p class="color">
+                    <p >
                       <input type="file" (change)="onMultiWomenFile($event)" id="inputWomenProduct_Photo"  formControlName="WomenFrontImgFile">
                     </p>
                     <ng-template #elseBlock>

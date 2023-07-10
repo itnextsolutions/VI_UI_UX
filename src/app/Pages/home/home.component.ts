@@ -20,6 +20,8 @@ export class HomeComponent implements OnInit {
   modalTitle:any;
   productcategory:any;
   blogno:any=0;  
+  categoryName : any;
+  blogTitle: any;
 //  public id:any;
   constructor(private userService: UserService, private router : Router, private seoService: SeoService,public spinnerService:SpinnerService) { }
 
@@ -150,17 +152,20 @@ export class HomeComponent implements OnInit {
   }
 
   onCategoryClick(data: any){
-    this.router.navigate(['products/',data.Category_Id,data.Category_Name]);
+    this.categoryName = data.Category_Name.replace(/\s+/g, '-').toLowerCase();
+    this.router.navigate(['products/',data.Category_Id,this.categoryName]);
     // this.id=0;
   }
 
   onBrandClick(item: any){
-    this.router.navigate(['products/',item.Category_Id,item.Category_Name]);
+    this.categoryName = item.Category_Name.replace(/\s+/g, '-').toLowerCase();
+    this.router.navigate(['products/',item.Category_Id,this.categoryName]);
     // this.id=1;
   }
 
   onClick(data: any){
-    this.router.navigate(['blog/', data.Blog_Id]);
+    this.blogTitle = data.Blog_Title.replace(/\s+/g, '-').toLowerCase();
+    this.router.navigate(['blog/', data.Blog_Id,this.blogTitle]);
   }
 
 }
