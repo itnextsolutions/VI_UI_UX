@@ -74,7 +74,13 @@ export class AddEditProductComponent implements OnInit {
   array = [];
   selectedColorArray: any;
   checkboxArray: any;
-  Color: any=[];
+  Color: any = [];
+  Color_string: any;
+  Product_Id1: number = 0;
+  Size: any = [];
+  SizeId_num: any;
+  Size_string: any;
+  allcolor: any = [];
 
   constructor(private service: SharedService, private formBuilder: UntypedFormBuilder) {
     this.form = this.formBuilder.group({
@@ -99,8 +105,10 @@ export class AddEditProductComponent implements OnInit {
 
 
     this.Product_Id = this.product.Product_Id,
+      this.Product_Id1 = parseInt(this.Product_Id, 10),
       this.Category_Id = this.product.Category_Id;
     this.SubCategory_Id = this.product.SubCategory_Id;
+    this.SubCategory = this.product.SubCategory;
     this.Category_Name = this.product.Category_Name;
     this.Category_Name = this.Category_Name.replace(/-/g, ' ').toUpperCase();
     this.productcategoryfolder = this.Category_Name.replace(/\s+/g, '-').toLowerCase();
@@ -108,11 +116,15 @@ export class AddEditProductComponent implements OnInit {
     this.Product_Description = this.product.Product_Description;
     this.Image_Name = this.product.Category_Photo;
     //this.ColorId = this.product.ColorId;
-    this.Color=this.product.ColorId;
-    if(this.Color.length>0){
-    this.ColorId = this.Color.split(",").map(Number);}
+    this.Color = this.product.ColorId;
+    if (this.Color.length > 0) {
+      this.ColorId = this.Color.split(",").map(Number);
+    }
     //  this.array = this.ColorId.split(',');
-    this.SizeId = this.product.SizeId;
+    this.Size = this.product.SizeId;
+    if (this.Size.length > 0) {
+      this.SizeId = this.Size.split(",").map(Number);
+    }
     this.MenFront_Photo = this.product.Product_Photo;
     this.Product_FrontPhoto = this.product.Product_FrontPhoto;
     this.SizeChartForMen = this.product.SizeChartForMen;
@@ -179,26 +191,42 @@ export class AddEditProductComponent implements OnInit {
     });
   }
 
+
+
   onSelectChange(e: any) {
-    let index = this.selectedcolor.indexOf(e.target.value);
-    if (index == -1) {
-      this.selectedcolor.push(e.target.value);
+    this.ColorId;
+
+    if(this.allcolor.length==0){
+      this.allcolor = this.ColorId.map(String);
+    }
+
+    let index1 = this.allcolor.indexOf(e.target.value);
+    if (index1 == -1) {
+      this.allcolor.push(e.target.value);
     }
     else {
-      this.selectedcolor.splice(index, 1);
+      this.allcolor.splice(index1, 1);
     }
+    this.allcolor;
+
+    // let index = this.selectedcolor.indexOf(e.target.value);
+    // if (index == -1) {
+    //   this.selectedcolor.push(e.target.value);
+    // }
+    // else {
+    //   this.selectedcolor.splice(index, 1);
+    // }
+
+
+    // this.selectedcolor.push(this.ColorId);
+    // if(this.ColorId!=null){
+    // this.clr=(this.selectedcolor.map(Number));
+    // this.Color=[...this.ColorId,...this.clr];
+    // this.Color_string=this.Color.map(String);
+    // }
+    // this.ColorId.push(this.selectedcolor.map(Number));
   }
 
-
-
-  // onSelectChange(e: any) {
-  //   let index = this.ColorId.indexOf(e.target.value);
-    
-  //     this.ColorId.push(e.target.value);
-    
-  // }
-
-  
 
   onSelectSizeChange(e: any) {
     let index = this.selectedsize.indexOf(e.target.value);
@@ -208,6 +236,14 @@ export class AddEditProductComponent implements OnInit {
     else {
       this.selectedsize.splice(index, 1);
     }
+
+    if (this.SizeId != null) {
+      this.SizeId;
+      this.SizeId_num = (this.selectedcolor.map(Number));
+      this.SizeId_num;
+      this.Size = [...this.SizeId, ...this.SizeId_num];
+      this.Size_string = this.Size.map(String);
+    }
   }
 
 
@@ -215,6 +251,7 @@ export class AddEditProductComponent implements OnInit {
 
 
   addProductDetails() {
+    
     this.submitted = true;
     if (this.ProductForm.valid) {
       let formData = new FormData()
@@ -241,6 +278,7 @@ export class AddEditProductComponent implements OnInit {
   }
 
   updateProductDetails() {
+    
     // this.submitted = true;
     // if (this.ProductForm.valid){
     let formData = new FormData()
@@ -250,8 +288,8 @@ export class AddEditProductComponent implements OnInit {
     formData.append('Product_Title', this.Product_Title);
     formData.append('Product_Description', this.Product_Description);
 
-    if(this.selectedcolor==0 && this.ColorId.length>0){
-      formData.append('ColorId', this.ColorId);
+    if (this.Color_string.length > 0) {
+      formData.append('ColorId', this.Color_string);
     }
     // if (this.ColorId.length > 0) {
     //   formData.append('ColorId', this.ColorId);
@@ -260,8 +298,8 @@ export class AddEditProductComponent implements OnInit {
       formData.append('ColorId', this.selectedcolor);
     }
 
-    if (this.selectedsize == 0 && this.SizeId.length > 0) {
-      formData.append('SizeId', this.SizeId);
+    if (this.Size_string.length > 0) {
+      formData.append('SizeId', this.Size_string);
     }
     if (this.selectedsize.length > 0) {
       formData.append('SizeId', this.selectedsize);

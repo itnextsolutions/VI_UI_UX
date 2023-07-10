@@ -3,6 +3,8 @@
 
     <div class="row">
 
+<div *ngIf="Product_Id1==0">
+
 
       <div class="col-md-12 roundedTextBox mb-0 ">
         <label>Select Category :</label>
@@ -32,6 +34,7 @@
           <div *ngIf="this.ProductForm.controls['SubCategory_Id'].errors.required">Sub Category is required</div>
         </div>
       </div>
+    </div>
       <div class="col-md-12 roundedTextBox mb-0">
         <label>Product Name :</label>
         <input type="text" [(ngModel)]="Product_Title" class="form-control mb-2" id="inputProduct_Title"
@@ -53,7 +56,7 @@
         <div><img [src]="frontphoto_url" *ngIf="frontphoto_url; else elseBlock" style="width: 100px;height: 150px;">
         </div>
 
-        <p class="color">
+        <p>
           <input type="file" (change)="onselectFile2($event,2)" id="inputMenSide_Photo">
         </p>
         <ng-template #elseBlock>
@@ -78,14 +81,14 @@
     </div>
 
     <div class="container py-5">
-      <div class="row row-cols-2 row-cols-lg-3 mb-3">
+      <div class="row row-cols-2 row-cols-lg-2 mb-3">
         <div class="col">
           <label>Men Front Image :</label>
           <div class="col-sm-10">
             <div [innerHtml]='msg' *ngIf="msg" style="color: red;"></div>
 
             <div><img [src]="menfronturl" *ngIf="menfronturl else elseBlock_men" style="width: 100px;height: 150px;"></div>
-            <p class="color">
+            <p>
               <input type="file" (change)="onselectFile1($event,1)" id="inputMenFront_Photo">
             </p>
             <ng-template #elseBlock_men>
@@ -102,7 +105,7 @@
             <div [innerHtml]='msg' *ngIf="msg" style="color: red;"></div>
             <div><img [src]="mensizecharturl" *ngIf="mensizecharturl; else elseBlock_menSize"
                 style="width: 100px;height: 150px;"></div>
-            <p class="color">
+            <p>
               <input type="file" (change)="onselectFile4($event,4)" id="inputSizeChartForMen">
             </p>
             <ng-template #elseBlock_menSize>
@@ -138,14 +141,14 @@
     </div>
 
     <div class="container py-5">
-      <div class="row row-cols-2 row-cols-lg-3 mb-3">
+      <div class="row row-cols-2 row-cols-lg-2 mb-3">
         <div class="col">
           <label>Women Front Image :</label>
           <div class="col-sm-10">
             <div [innerHtml]='msg' *ngIf="msg" style="color: red;"></div>
             <div><img [src]="womenfronturl" *ngIf="womenfronturl; else elseBlock_women" style="width: 100px;height: 150px;">
             </div>
-            <p class="color">
+            <p>
               <input type="file" (change)="onselectFile5($event,5)" id="inputWomenProduct_Photo">
             </p>
             <ng-template #elseBlock_women>
@@ -163,7 +166,7 @@
             <div [innerHtml]='msg' *ngIf="msg" style="color: red;"></div>
             <div><img [src]="womensizecharturl" *ngIf="womensizecharturl; else elseBlock_womenSize"
                 style="width: 100px;height: 150px;"></div>
-            <p class="color">
+            <p>
               <input type="file" (change)="onselectFile8($event,8)" id="inputSizeChartForWomen">
             </p>
             <ng-template #elseBlock_womenSize>
@@ -214,11 +217,11 @@
       <label><b>Select Color :</b></label>
       <div class="container py-5">
         <div class="row row-cols-2 row-cols-lg-5 mb-1 colourclass">
-          <div class="col" *ngFor="let data of ColorData" formControlName="ColorId" [(ngModel)]="ColorId"
+          <div class="col" *ngFor="let data of ColorData" formControlName="ColorId" 
             ngDefaultControl>
             <label>
               <input type="checkbox" style.color="{{data.Description}}" value="{{data.Lookup_Details_Id}}"
-              [checked]="ColorId.includes(data.Lookup_Details_Id)"/>
+              [checked]="ColorId.includes(data.Lookup_Details_Id)" (change)="onSelectChange($event)"/>
               {{data.ColorName}}
               <li style="margin-left: 5px;" class="color-box-product" rel="tooltip"
                 [ngStyle]="{'background-color':data.Description}" data-mobile="" data-create="false">
@@ -234,7 +237,7 @@
     <!-- --Size-- -->
 
 
-    <div class="col-md-12 roundedTextBox mb-0">
+    <!-- <div class="col-md-12 roundedTextBox mb-0">
       <label><b>Select Size :</b></label>
       <div class="container">
         <div class="row  row-cols-lg-7 g-4" style="width: 600px;">
@@ -243,6 +246,22 @@
             <label>
               <input type="checkbox" style.color="{{data.Description}}" value="{{data.Lookup_Details_Id}}"
                 (change)="onSelectSizeChange($event)" />
+              {{data.Description}}
+            </label>
+          </div>
+        </div>
+      </div>
+    </div> -->
+
+    <div class="col-md-12 roundedTextBox mb-0">
+      <label><b>Select Size :</b></label>
+      <div class="container">
+        <div class="row  row-cols-lg-7 g-4" style="width: 600px;">
+          <div class="col" data-wow-delay="0.1s" *ngFor="let data of SizeData" formControlName="SizeId"
+            [(ngModel)]="SizeId" ngDefaultControl>
+            <label>
+              <input type="checkbox" style.color="{{data.Description}}" value="{{+data.Lookup_Details_Id}}"
+              [checked]="SizeId.includes(data.Lookup_Details_Id)" (change)="onSelectSizeChange($event)" />
               {{data.Description}}
             </label>
           </div>
