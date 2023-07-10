@@ -12,7 +12,7 @@ export class BlogContentComponent implements OnInit {
   blogList:any= [];
   blogContent:any= [];
   getBlogId:any;
-
+  blogTitle: any;
   constructor(private param :ActivatedRoute, private userService: UserService, private router: Router, private seoService: SeoService) { }
 
   ngOnInit(): void {
@@ -39,7 +39,8 @@ export class BlogContentComponent implements OnInit {
    }
   
    onClick(blog: any){
-    this.router.navigate(['blog/', blog.Blog_Id]).then(() => {
+    this.blogTitle = blog.Blog_Title.replace(/\s+/g, '-').toLowerCase();
+    this.router.navigate(['blog/', blog.Blog_Id,this.blogTitle ]).then(() => {
       window.location.reload();
     });
   }

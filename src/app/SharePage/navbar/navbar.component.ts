@@ -16,7 +16,8 @@ export class NavbarComponent implements OnInit {
   searchdata: any = [];
   search: any;
   Notification: any = [];
-
+  categoryName: any;
+  subCategoryName: any;
   constructor(private userService: UserService, private router :Router) { }
 
   ngOnInit(): void {
@@ -76,7 +77,9 @@ export class NavbarComponent implements OnInit {
 }
 
   onSubCategoryClick(data: any, item: any){
-    this.router.navigate(['/product-details/', item.Category_Name, item.SubCategory, item.Product_Id,item.IsBrand]).then(() => {
+    this.categoryName = item.Category_Name.replace(/\s+/g, '-').toLowerCase();
+    this.subCategoryName = item.SubCategory.replace(/\s+/g, '-').toLowerCase();
+    this.router.navigate(['/product-details/', this.categoryName, this.subCategoryName, item.Product_Id,item.IsBrand]).then(() => {
       window.location.reload();
     });
 

@@ -27,11 +27,11 @@
             </div> -->
             <div [hidden]="isMenDivHidden && isTippingDivHidden" class="modal-body text-center"
                 *ngFor="let data of product">
-                <img src="assets/img/size_chart/{{data.SizeChartForMen}}" class="" style="width: 100%;">
+                <img src="assets/img/size_chart/{{data.SizeChartForMen}}" alt="{{data.SizeChartForMen}}" class="" style="width: 100%;">
             </div>
             <div [hidden]="isWoMenDivHidden && isTippingWomenDivHidden" class="modal-body text-center"
                 *ngFor="let data of product">
-                <img src="assets/img/size_chart/{{data.SizeChartForWomen}}" class="" style="width:100%;">
+                <img src="assets/img/size_chart/{{data.SizeChartForWomen}}" alt="{{data.SizeChartForWomen}}" class="" style="width:100%;">
             </div>
         </div>
     </div>
@@ -158,7 +158,7 @@
                                     </svg>
                                 </div>
                                 <div *ngIf="data.Product_type!=3">
-                                    <img class="big_img"
+                                    <img class="big_img" alt="{{data.Product_Photo}}"
                                         src="assets/img/{{this.productcategoryfolder}}/{{data.Product_Photo}}">
                                 </div>
                             </div>
@@ -166,14 +166,14 @@
 
                         <div [hidden]="isTippingDivHidden">
 
-                            <img class="big_img" src="assets/img/{{this.productcategoryfolder}}/{{this.image}}"
+                            <img class="big_img" alt="{{this.image}}" src="assets/img/{{this.productcategoryfolder}}/{{this.image}}"
                                 height="571" width="467">
 
                         </div>
 
                         <div [hidden]="isTippingWomenDivHidden">
 
-                            <img class="big_img" src="assets/img/{{this.productcategoryfolder}}/{{this.image1}}"
+                            <img class="big_img" alt="{{this.image1}}" src="assets/img/{{this.productcategoryfolder}}/{{this.image1}}"
                                 height="571" width="467">
                         </div>
 
@@ -196,7 +196,7 @@
                                         <path id="product-shape" [attr.d]="women_svgpath" [ngStyle]="{ fill: bgColor }" />
                                     </svg>
                                 </div>
-                                <img class="big_img"
+                                <img class="big_img" alt="{{data.WomenProduct_Photo}}"
                                     src="assets/img/{{this.productcategoryfolder}}/{{data.WomenProduct_Photo}}">
                             </div>
                         </div>
@@ -465,13 +465,13 @@
                                     </div>
                                     <div class="position-relative  overflow-hidden"
                                         *ngIf="simillarproduct.Product_type==1">
-                                        <img class="img-fluid w-100"
+                                        <img class="img-fluid w-100" alt="{{simillarproduct.Product_FrontPhoto}}"
                                             src="assets/img/{{this.categoryfolder}}/{{simillarproduct.Product_FrontPhoto}}"
                                             alt="">
                                     </div>
                                     <div class="position-relative overflow-hidden"
                                         *ngIf="simillarproduct.Product_type==2">
-                                        <img class="img-fluid w-100"
+                                        <img class="img-fluid w-100" alt="{{simillarproduct.Product_Photo}}"
                                             src="assets/img/{{this.categoryfolder}}/{{simillarproduct.Product_Photo}}"
                                             alt="">
                                     </div>
@@ -511,13 +511,13 @@
                                         *ngIf="simillarproduct.Product_type==1">
                                         <img class="img-fluid"
                                             src="assets/img/{{this.categoryfolder}}/{{simillarproduct.Product_FrontPhoto}}"
-                                            alt="">
+                                            alt="{{simillarproduct.Product_FrontPhoto}}">
                                     </div>
                                     <div class="productbox position-relative  overflow-hidden"
                                         *ngIf="simillarproduct.Product_type==2">
                                         <img class="img-fluid"
                                             src="assets/img/{{this.categoryfolder}}/{{simillarproduct.Product_Photo}}"
-                                            alt="">
+                                            alt="{{simillarproduct.Product_Photo}}">
                                     </div>
                                 </div>
                 </div>

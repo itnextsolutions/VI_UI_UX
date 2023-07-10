@@ -12,6 +12,7 @@ export class BlogComponent implements OnInit {
 
   blogList:any = [];
   blogno:any=0;
+  blogTitle: any;
 
   constructor(private userService: UserService, private router: Router, private seoService: SeoService) { }
 
@@ -28,7 +29,8 @@ export class BlogComponent implements OnInit {
   }
 
   onClick(data: any){
-      this.router.navigate(['blog/', data.Blog_Id]).then(() => {
+      this.blogTitle = data.Blog_Title.replace(/\s+/g, '-').toLowerCase();
+      this.router.navigate(['blog/', data.Blog_Id,this.blogTitle ]).then(() => {
       window.location.reload();
     });
   }

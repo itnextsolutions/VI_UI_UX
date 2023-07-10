@@ -13,6 +13,7 @@ export class CategoryComponent implements OnInit {
   IsBrand: any = 0;
   allcategoryList:any = [];
   productcategory:any;
+  categoryName: any;
 
   constructor(private param: ActivatedRoute, private userService: UserService, private router: Router, private seoService: SeoService) { }
 
@@ -30,8 +31,8 @@ export class CategoryComponent implements OnInit {
   }
 
   onCategoryClick(data: any){
-    
-    this.router.navigate(['products/',data.Category_Id,data.Category_Name]);
+    this.categoryName = data.Category_Name.replace(/\s+/g, '-').toLowerCase();
+    this.router.navigate(['products/',data.Category_Id,this.categoryName]);
   }
 
   }
