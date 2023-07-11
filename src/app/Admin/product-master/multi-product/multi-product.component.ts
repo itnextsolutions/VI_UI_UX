@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { FormArray, FormBuilder, FormGroup, UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
+import { FormArray, FormBuilder, FormControl, FormGroup, UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { SharedService } from 'src/app/Services/shared.service';
 
 @Component({
@@ -135,14 +135,14 @@ export class MultiProductComponent implements OnInit {
   newQuantity(): FormGroup {
     return this.formBuilder.group({
       TipingId: "",
-      MenFrontImgFile:  "",
+      MenFrontImgFile:  [null]
     })
   }
 
   womenImages(): FormGroup {
     return this.formBuilder.group({
       TipingWomenId: "",
-      WomenFrontImgFile: ""
+      WomenFrontImgFile: [null]
     })
   }
 
@@ -159,6 +159,8 @@ export class MultiProductComponent implements OnInit {
 
   removeImages(i: number) {
     this.Images.removeAt(i);
+  //   this.selectedMenTipping[i] = null;
+  // this.selectedMenImages[i] = null;
   }
 
   removeWomenImages(i: number) {
@@ -229,8 +231,66 @@ export class MultiProductComponent implements OnInit {
    
   }
 
-  onWOmenTippingChange(e: any) {
-    
+  onDropdownOrFileChange(event: any, index: number, controlName: string) {
+    const itemsFormArray = this.ProductForm.get('Images') as FormArray;
+    const control = itemsFormArray.at(index).get(controlName);
+  if(control){
+    if (controlName === 'MenFrontImgFile') {
+
+        const files = event.target.files;
+        if (files.length > 0) {
+          const file = files[0];
+          this.selectedMenImages[index] = file;
+        }
+
+
+
+      // this.selectedMenImages[index] = event.target.files[0];
+
+    } else {
+      control.patchValue(event.target.value);
+      const dropdownValue = itemsFormArray.at(index).get('TipingId')?.value;
+      this.selectedMenTipping[index] = event.target.value;
+    }
+    // this.selectedMenImages.push(control.value);
+    // const dropdownValue = itemsFormArray.at(index).get('TipingId')?.value;
+    // const fileValue = itemsFormArray.at(index).get('MenFrontImgFile')?.value;
+    // this.selectedMenTipping.push(dropdownValue);
+  }
+  }
+
+
+  onDropdownOrFileChange_women(event: any, index: number, controlName: string) {
+    const itemsFormArray = this.ProductForm.get('WomenImages') as FormArray;
+    const control = itemsFormArray.at(index).get(controlName);
+  if(control){
+    if (controlName === 'WomenFrontImgFile') {
+
+        const files = event.target.files;
+        if (files.length > 0) {
+          const file = files[0];
+          this.selectedWomenImages[index] = file;
+        }
+
+
+
+      // this.selectedMenImages[index] = event.target.files[0];
+
+    } else {
+      control.patchValue(event.target.value);
+      const dropdownValue = itemsFormArray.at(index).get('TipingWomenId')?.value;
+      this.selectedWomenTipping[index] = event.target.value;
+    }
+    // this.selectedMenImages.push(control.value);
+    // const dropdownValue = itemsFormArray.at(index).get('TipingId')?.value;
+    // const fileValue = itemsFormArray.at(index).get('MenFrontImgFile')?.value;
+    // this.selectedMenTipping.push(dropdownValue);
+  }
+  }
+
+  onWOmenTippingChange(e: any,i:number) {
+    i;
+    if(i=this.selectedWomenTipping){
     let index = this.selectedWomenTipping.indexOf(e.target.value);
     if (index == -1) {
       this.selectedWomenTipping.push(e.target.value);
@@ -239,7 +299,7 @@ export class MultiProductComponent implements OnInit {
     else {
       this.selectedWomenTipping.splice(index, 1);
     }
-  
+    }
    
   }
 

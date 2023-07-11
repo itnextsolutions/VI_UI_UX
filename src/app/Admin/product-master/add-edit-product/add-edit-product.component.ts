@@ -81,6 +81,7 @@ export class AddEditProductComponent implements OnInit {
   SizeId_num: any;
   Size_string: any;
   allcolor: any = [];
+  allSize: any=[];
 
   constructor(private service: SharedService, private formBuilder: UntypedFormBuilder) {
     this.form = this.formBuilder.group({
@@ -229,21 +230,33 @@ export class AddEditProductComponent implements OnInit {
 
 
   onSelectSizeChange(e: any) {
-    let index = this.selectedsize.indexOf(e.target.value);
-    if (index == -1) {
-      this.selectedsize.push(e.target.value);
+    // this.SizeId;
+    if(this.allSize.length==0){
+      this.allSize = this.SizeId.map(String);
+    }
+    let index1 = this.allSize.indexOf(e.target.value);
+    if (index1 == -1) {
+      this.allSize.push(e.target.value);
     }
     else {
-      this.selectedsize.splice(index, 1);
+      this.allSize.splice(index1, 1);
     }
+    this.allSize;
+    // let index = this.selectedsize.indexOf(e.target.value);
+    // if (index == -1) {
+    //   this.selectedsize.push(e.target.value);
+    // }
+    // else {
+    //   this.selectedsize.splice(index, 1);
+    // }
 
-    if (this.SizeId != null) {
-      this.SizeId;
-      this.SizeId_num = (this.selectedcolor.map(Number));
-      this.SizeId_num;
-      this.Size = [...this.SizeId, ...this.SizeId_num];
-      this.Size_string = this.Size.map(String);
-    }
+    // if (this.SizeId != null) {
+    //   this.SizeId;
+    //   this.SizeId_num = (this.selectedcolor.map(Number));
+    //   this.SizeId_num;
+    //   this.Size = [...this.SizeId, ...this.SizeId_num];
+    //   this.Size_string = this.Size.map(String);
+    // }
   }
 
 
@@ -288,21 +301,35 @@ export class AddEditProductComponent implements OnInit {
     formData.append('Product_Title', this.Product_Title);
     formData.append('Product_Description', this.Product_Description);
 
-    if (this.Color_string.length > 0) {
-      formData.append('ColorId', this.Color_string);
-    }
-    // if (this.ColorId.length > 0) {
-    //   formData.append('ColorId', this.ColorId);
-    // }
-    if (this.selectedcolor.length > 0) {
-      formData.append('ColorId', this.selectedcolor);
-    }
 
-    if (this.Size_string.length > 0) {
-      formData.append('SizeId', this.Size_string);
+    if (this.allcolor!=undefined){
+      formData.append('ColorId', this.allcolor);
     }
-    if (this.selectedsize.length > 0) {
-      formData.append('SizeId', this.selectedsize);
+    // if (this.allcolor.length > 0) {
+    //   formData.append('ColorId', this.allcolor);
+    // }
+    // if (this.Color_string.length > 0) {
+    //   formData.append('ColorId', this.Color_string);
+    // }
+    // // if (this.ColorId.length > 0) {
+    // //   formData.append('ColorId', this.ColorId);
+    // // }
+    // if (this.selectedcolor.length > 0) {
+    //   formData.append('ColorId', this.selectedcolor);
+    // }
+
+    // if (this.Size_string.length > 0) {
+    //   formData.append('SizeId', this.Size_string);
+    // }
+    // if (this.selectedsize.length > 0) {
+    //   formData.append('SizeId', this.selectedsize);
+    // }
+
+    // if (this.allSize.length > 0) {
+    //   formData.append('SizeId', this.allSize);
+    // }
+    if (this.allSize!=undefined){
+      formData.append('SizeId', this.allSize);
     }
 
     if (this.MenFrontImgFile != null) {

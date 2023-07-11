@@ -11,7 +11,7 @@
        
         <select id="inputCategory_Id " name="Category_Name" [(ngModel)]="Category_Id" class="form-control "
           formControlName="Category_Id" #mySelect (change)='onOptionsSelected(mySelect.value)'>
-          <option  value="0" disabled selected>Select Category</option>
+          <option  value="" disabled selected>Select Category</option>
           <option  *ngFor="let web of CategoryName" [value]="web.Category_Id">{{web.Category_Name}}</option>
 
         </select>
@@ -26,7 +26,7 @@
       <div class="col-md-12 roundedTextBox mb-0">
         <label>Select Sub Category :</label>
         <select [(ngModel)]="SubCategory_Id" name="SubCategory" class="form-control" formControlName="SubCategory_Id">
-          <option value="0" disabled selected>Select Sub Category</option>
+          <option value="" disabled selected>Select Sub Category</option>
           <option *ngFor="let web of SubCatList" [value]="web.SubCategory_Id">{{web.SubCategory}}</option>
 
         </select>
@@ -253,14 +253,29 @@
       </div>
     </div> -->
 
-    <div class="col-md-12 roundedTextBox mb-0">
+    <div class="col-md-12 roundedTextBox mb-0 sizewidth_length">
       <label><b>Select Size :</b></label>
       <div class="container">
-        <div class="row  row-cols-lg-7 g-4" style="width: 600px;">
+        <div class="row  row-cols-lg-7 g-4">
           <div class="col" data-wow-delay="0.1s" *ngFor="let data of SizeData" formControlName="SizeId"
-            [(ngModel)]="SizeId" ngDefaultControl>
+            ngDefaultControl>
             <label>
-              <input type="checkbox" style.color="{{data.Description}}" value="{{+data.Lookup_Details_Id}}"
+              <input type="checkbox" style.color="{{data.Description}}" value="{{data.Lookup_Details_Id}}"
+              [checked]="SizeId.includes(data.Lookup_Details_Id)" (change)="onSelectSizeChange($event)" />
+              {{data.Description}}
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+        <div class="col-2 roundedTextBox mb-0 sizewidth_length_mobile">
+          <label><b>Select Size :</b></label>
+          <div class="container">
+        <div class="row  row-cols-lg-3 g-4">
+          <div class="col" data-wow-delay="0.1s" *ngFor="let data of SizeData" formControlName="SizeId"
+            ngDefaultControl>
+            <label>
+              <input type="checkbox" style.color="{{data.Description}}" value="{{data.Lookup_Details_Id}}"
               [checked]="SizeId.includes(data.Lookup_Details_Id)" (change)="onSelectSizeChange($event)" />
               {{data.Description}}
             </label>

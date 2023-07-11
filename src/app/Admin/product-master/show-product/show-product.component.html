@@ -90,10 +90,10 @@
                       <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2"></th>
                       <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">No.</th>
                       <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Action</th>
-                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Photo</th>
                       <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Product Name </th>
                       <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Category</th>
                       <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Sub Category</th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Photo</th>
                       <!-- <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Status</th> -->
                     </tr>
                   </thead>
@@ -121,15 +121,6 @@
                       <td>
                         <div class="d-flex px-2 py-1">
                           <div class="d-flex flex-column justify-content-center">
-                            <!-- <img src="assets/img/{{productcategoryfolder}}/{{dataItem.Product_Photo}}" class="avatar avatar-lg me-3 border-radius-lg" alt="user1"> -->
-                            <h6 class="mb-0 text-sm">{{dataItem.Product_Photo}}</h6>
-                          </div>
-                        </div>
-                      </td>
-                      
-                      <td>
-                        <div class="d-flex px-2 py-1">
-                          <div class="d-flex flex-column justify-content-center">
                             <h6 class="mb-0 text-sm">{{dataItem.Product_Title}}</h6>
                           </div>
                         </div>
@@ -150,6 +141,16 @@
                           </div>
                         </div>
                       </td>
+
+                      <td>
+                        <div class="d-flex px-2 py-1">
+                          <div class="d-flex flex-column justify-content-center">
+                            <!-- <img src="assets/img/{{productcategoryfolder}}/{{dataItem.Product_Photo}}" class="avatar avatar-lg me-3 border-radius-lg" alt="user1"> -->
+                            <h6 class="mb-0 text-sm">{{dataItem.Product_Photo}}</h6>
+                          </div>
+                        </div>
+                      </td>
+                      
                     </tr>
                   </tbody>
                 </table>

@@ -4,7 +4,12 @@
 
 
 }
-
+.sizewidth_length_mobile{
+  display: none;
+}
+.sizewidth_length{
+  width: 600px;
+}
 .grid-container {
   display: grid;
   grid-template-rows: 1fr;
@@ -34,4 +39,14 @@
   margin-left: 5px;
   margin-bottom: 0px;
   line-height: initial;
+}
+
+@media (min-width: 320px) and (max-width: 850px){
+  .sizewidth_length{
+    display: none;
+  }
+  .sizewidth_length_mobile{
+    display: inline;
+    width:600px;
+  }
 }

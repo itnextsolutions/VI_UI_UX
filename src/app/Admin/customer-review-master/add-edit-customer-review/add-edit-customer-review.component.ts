@@ -51,7 +51,7 @@ export class AddEditCustomerReviewComponent implements OnInit {
     return this.reviewForm.controls;
   }
 
-  addCust_Review(){debugger
+  addCust_Review(){
     this.submitted = true;
     if (this.reviewForm.valid){
       let formData = new FormData()
@@ -66,7 +66,7 @@ export class AddEditCustomerReviewComponent implements OnInit {
     }
   }
 
-  updateCust_Review(){debugger
+  updateCust_Review(){
     this.submitted = true;
     if (this.reviewForm.valid){
     let formData = new FormData()

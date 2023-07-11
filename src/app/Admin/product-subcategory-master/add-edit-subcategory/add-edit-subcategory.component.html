@@ -5,7 +5,7 @@
         <div class="col-md-12 roundedTextBox mb-2">
           <label>Category Name :</label>
             <select [(ngModel)]="Category_Id" id="inputCategory_Id" class="form-control" formControlName="Category_Id" >
-              <option value="0" disabled selected>Select Category</option>   
+              <option value="" disabled selected>Select Category</option>   
               <option *ngFor="let web of CategoryName" value="{{web.Category_Id}}"> 
                   {{web.Category_Name}}
               </option>

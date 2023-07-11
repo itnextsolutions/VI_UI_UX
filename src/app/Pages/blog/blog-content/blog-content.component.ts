@@ -13,10 +13,11 @@ export class BlogContentComponent implements OnInit {
   blogContent:any= [];
   getBlogId:any;
   blogTitle: any;
+  Imagepath: string="";
   constructor(private param :ActivatedRoute, private userService: UserService, private router: Router, private seoService: SeoService) { }
 
   ngOnInit(): void {
-    
+    this.Imagepath=this.userService.ImgUrl;
     this.getBlogId = this.param.snapshot.paramMap.get('blog_Id');
     this.getBlogContent();
     this.refreshblogList();

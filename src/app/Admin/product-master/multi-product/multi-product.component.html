@@ -6,7 +6,7 @@
           <label>Select Category :</label>
           <select  id="inputCategory_Id"  name="Category_Name" [(ngModel)]="Category_Id" class="form-control" formControlName="Category_Id" #mySelect
             (change)='onOptionsSelected(mySelect.value)'>
-            <option value="0" disabled selected>Select Category</option>
+            <option value="" disabled selected>Select Category</option>
             <option *ngFor="let web of CategoryName" [value]="web.Category_Id">{{web.Category_Name}}</option> 
             
           </select>
@@ -19,7 +19,7 @@
         <div class="col-md-12 roundedTextBox mb-0">
           <label>Select Sub Category :</label>
           <select [(ngModel)]="SubCategory_Id"   name="SubCategory" class="form-control" formControlName="SubCategory_Id">
-            <option value="0" disabled selected>Select Sub Category</option>
+            <option value="" disabled selected>Select Sub Category</option>
             <option *ngFor="let web of SubCatList" [value]="web.SubCategory_Id" >{{web.SubCategory}}</option>
              
           </select>
@@ -143,8 +143,7 @@
       
       <!-- --Men Specification-- -->
       
-     
-      <table class="table table-bordered" formArrayName="Images">
+      <!-- <table class="table table-bordered" formArrayName="Images">
         <tr>  
           <th colspan="2">Add Multiple Men Images:</th>  
           <th width="250px">
@@ -160,7 +159,6 @@
            <option value="0" disabled selected>Select Color</option>
             <option *ngFor="let web of TippingData" [value]="web.Lookup_Details_Id">
               {{web.Description}}
-              <!-- <div class="color-box"><img src="assets/img/tipping/{{web.tipping_img}}"></div> -->
             </option> 
             
           </select>
@@ -173,6 +171,50 @@
           <div [innerHtml]='msg' *ngIf="msg" style="color: red;"></div>
           <p >
             <input type="file" (change)="onMultiMenFile($event)" id="inputMenFront_Photo" formControlName="MenFrontImgFile">
+</p>
+          <ng-template #elseBlock>
+            <img src="assets/img/{{Category_Name}}/{{MenFront_Photo}}">
+          </ng-template>
+        </div>
+       </td>
+
+        <td>  
+          <button (click)="removeImages(i)" class="btn btn-link"><i class="material-icons text-sm me-2">delete</i>Remove</button>  
+      </td>
+    
+      </tr>
+      </table>      -->
+
+
+      <table class="table table-bordered" formArrayName="Images">
+        <tr>  
+          <th colspan="2">Add Multiple Men Images:</th>  
+          <th width="250px">
+            <button type="button" (click)="addImages()" class="btn"><i class="material-icons text-sm me-2">add</i>Add</button>
+          </th>  
+        </tr> 
+          <tr *ngFor="let control of Images.controls; let i=index" [formGroupName]="i">
+          <td>
+
+          <label>Select Color :</label>
+          <select  id="inputCategory_Id"  name="Description"  class="form-control" formControlName="TipingId"
+           (change)="onDropdownOrFileChange($event, i, 'TipingId')">
+           <option value="" disabled selected>Select Color</option>
+            <option *ngFor="let web of TippingData" [value]="web.Lookup_Details_Id">
+              {{web.Description}}
+              <!-- <div class="color-box"><img src="assets/img/tipping/{{web.tipping_img}}"></div> -->
+            </option> 
+            
+          </select>
+          </td>
+
+        <td>
+        
+        <label>Men Front Image :</label>
+        <div class="col-sm-10">
+          <div [innerHtml]='msg' *ngIf="msg" style="color: red;"></div>
+          <p class="color">
+            <input type="file" (change)="onDropdownOrFileChange($event, i, 'MenFrontImgFile')" id="inputMenFront_Photo" formControlName="MenFrontImgFile">
 
             <!-- <input type="file"  id="inputMenFront_Photo" formControlName="MenFrontImgFile"  (change)="onselectFile1($event)"> -->
           </p>
@@ -193,7 +235,7 @@
       
       <!-- Frmarray Women Section -->
 
-      <table class="table table-bordered" formArrayName="WomenImages">
+      <!-- <table class="table table-bordered" formArrayName="WomenImages">
         <tr>  
           <th colspan="2">Add Multiple Women Images:</th>  
           <th width="250px">
@@ -209,7 +251,6 @@
            <option value="0" disabled selected>Select Color</option>
             <option *ngFor="let obj of TippingData" [value]="obj.Lookup_Details_Id">
               {{obj.Description}}
-              <!-- <div class="color-box"><img src="assets/img/tipping/{{web.tipping_img}}"></div> -->
             </option> 
             
           </select>
@@ -222,6 +263,49 @@
                     <div [innerHtml]='msg' *ngIf="msg" style="color: red;"></div>
                     <p >
                       <input type="file" (change)="onMultiWomenFile($event)" id="inputWomenProduct_Photo"  formControlName="WomenFrontImgFile">
+                    </p>
+                    <ng-template #elseBlock>
+                      <img src="assets/img/{{Category_Name}}/{{WomenProduct_Photo}}" formControlName="WomenFrontImgFile">
+                  </ng-template>
+                  </div>
+                </td>
+
+        <td>  
+          <button (click)="removeWomenImages(i)" class="btn btn-link"><i class="material-icons text-sm me-2">delete</i>Remove</button>  
+      </td>
+    
+      </tr>
+      </table> -->
+      
+      <table class="table table-bordered" formArrayName="WomenImages">
+        <tr>  
+          <th colspan="2">Add Multiple Women Images:</th>  
+          <th width="250px">
+            <button type="button" (click)="addWomenImages()" class="btn"><i class="material-icons text-sm me-2">add</i>Add</button>
+          </th>  
+        </tr> 
+          <tr *ngFor="let control of WomenImages.controls; let i=index" [formGroupName]="i">
+           <td>
+
+          <label>Select Color :</label>
+           <select  id="inputCategory_Id"  name="Description"  class="form-control" formControlName="TipingWomenId"
+           (change)="onDropdownOrFileChange_women($event, i, 'TipingWomenId')">
+           <option value="" disabled selected>Select Color</option>
+            <option *ngFor="let obj of TippingData" [value]="obj.Lookup_Details_Id">
+              {{obj.Description}}
+              <!-- <div class="color-box"><img src="assets/img/tipping/{{web.tipping_img}}"></div> -->
+            </option> 
+            
+          </select>
+          </td>
+
+            <td>
+
+                  <label>Women Front Image :</label>
+                  <div class="col-sm-10">
+                    <div [innerHtml]='msg' *ngIf="msg" style="color: red;"></div>
+                    <p class="color">
+                      <input type="file" (change)="onDropdownOrFileChange_women($event, i, 'WomenFrontImgFile')" id="inputWomenProduct_Photo"  formControlName="WomenFrontImgFile">
                     </p>
                     <ng-template #elseBlock>
                       <img src="assets/img/{{Category_Name}}/{{WomenProduct_Photo}}" formControlName="WomenFrontImgFile">

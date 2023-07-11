@@ -29,7 +29,7 @@
                         <div class="blog-heading mt-0">
                             <h3 class="font-weight-bold text-dark py-4">{{data.Blog_Title}}</h3>
                         </div>
-                           <img class="big_img mt-sm-2 pb-3 mt-0" src="assets/img/blog/{{data.Image_Name}}">
+                           <img class="big_img mt-sm-2 pb-3 mt-0" src="{{Imagepath}}assets/img/blog/{{data.Image_Name}}">
                            <div text-justify [innerHTML]="data.Blog_Content" class="blogContent mt-1" ></div>
                     </div>
                 </div>
@@ -38,7 +38,7 @@
                     <div py-5 ><h4 class="font-weight-bold text-dark py-4">Recent Blog</h4></div>
                     
                     <div class="blog-card d-flex" *ngFor="let blog of blogList" >
-                        <img class="img-small" src="assets/img/blog/{{blog.Image_Name}}" alt="">
+                        <img class="img-small" src="https://test.vastraindia.com/Vastra/assets/img/blog/{{blog.Image_Name}}" alt="">
                        <small>
                          <p class="font-weight-bold color pointer" (click) ="onClick(blog)">{{blog.Blog_Title}}<p>
                          <!-- <p class="color">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p> -->

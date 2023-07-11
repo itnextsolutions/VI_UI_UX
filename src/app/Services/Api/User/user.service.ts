@@ -9,7 +9,7 @@ import { Observable } from "rxjs";
 export class UserService {
   readonly APIUrl = "https://test.vastraindia.com/api/";
 
-
+readonly ImgUrl="https://test.vastraindia.com/Vastra";
   // readonly APIUrl = "https://localhost:44365/api/";
 
   constructor(private http: HttpClient) {}
