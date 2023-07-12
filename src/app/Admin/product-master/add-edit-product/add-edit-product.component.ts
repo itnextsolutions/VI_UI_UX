@@ -272,8 +272,8 @@ export class AddEditProductComponent implements OnInit {
       formData.append('SubCategory_Id', this.SubCategory_Id);
       formData.append('Product_Title', this.Product_Title);
       formData.append('Product_Description', this.Product_Description);
-      formData.append('ColorId', this.selectedcolor);
-      formData.append('SizeId', this.selectedsize);
+      formData.append('ColorId', this.allcolor);
+      formData.append('SizeId', this.allSize);
       formData.append('MenFrontImgFile', this.MenFrontImgFile);
       formData.append('FrontImgFile', this.FrontImgFile);
       formData.append('MRP', this.MRP);
