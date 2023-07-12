@@ -3,32 +3,32 @@
       <div class="row">
         <div class="col-md-12 roundedTextBox mb-3">
             <label>Notification Title* :</label>
-            <input type="text"  [(ngModel)]="NotificationTitle" class="form-control mb-2" id="inputNotificationTitle" formControlName="NotificationTitle" placeholder="Enter Notification Title">
+            <input type="text"  [(ngModel)]="NotificationTitle" class="form-control mb-2"  formControlName="NotificationTitle" placeholder="Enter Notification Title">
             <div *ngIf="submitted && formControl.NotificationTitle.errors" class="text-danger">
               <div *ngIf="formControl.NotificationTitle.errors.required">Notification Title is required.</div>
             </div>
         </div>
         <div class="col-md-12 roundedTextBox mb-3">
           <label>From Date* :</label>
-          <input type="datetime-local"  [(ngModel)]="FromDate" class="form-control mb-2" id="inputFromDate" formControlName="FromDate" placeholder="Enter From Date">
+          <input type="datetime-local"  [(ngModel)]="FromDate" class="form-control mb-2"  formControlName="FromDate" placeholder="Enter From Date">
           <div *ngIf="submitted && formControl.FromDate.errors" class="text-danger">
             <div *ngIf="formControl.FromDate.errors.required">From Date is required.</div>
           </div>
         </div>
         <div class="col-md-12 roundedTextBox mb-3">
             <label>To Date* :</label>
-            <input type="datetime-local"  [(ngModel)]="ToDate" class="form-control mb-2" id="inputToDate" formControlName="ToDate" placeholder="Enter To Date">        
+            <input type="datetime-local"  [(ngModel)]="ToDate" class="form-control mb-2"  formControlName="ToDate" placeholder="Enter To Date">        
                <div *ngIf="submitted && formControl.ToDate.errors" class="text-danger">
               <div *ngIf="formControl.ToDate.errors.required">To Date is required.</div>
             </div>
         </div>
         <div class="col-md-12 roundedTextBox mb-3">
             <label>Button Text :</label>
-            <input type="text"  [(ngModel)]="ButtonText" class="form-control mb-2" id="inputButtonText" formControlName="ButtonText" placeholder="Enter Button Text">        
+            <input type="text"  [(ngModel)]="ButtonText" class="form-control mb-2"  formControlName="ButtonText" placeholder="Enter Button Text">        
               </div>
         <div class="col-md-12 roundedTextBox mb-3">
             <label>Button Url :</label>
-            <input type="text"  [(ngModel)]="ButtonUrl" class="form-control mb-2" id="inputButtonUrl" formControlName="ButtonUrl" placeholder="Enter Button Url">        
+            <input type="text"  [(ngModel)]="ButtonUrl" class="form-control mb-2"  formControlName="ButtonUrl" placeholder="Enter Button Url">        
               </div>
       
     </div>

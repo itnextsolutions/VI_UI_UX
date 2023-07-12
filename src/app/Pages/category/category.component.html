@@ -1,7 +1,7 @@
 <div class="d-flex justify-content-center">
     
     <div class="spinner-border" role="status">
-        <span class="sr-only" id="loading"></span>
+        <span class="sr-only"></span>
     </div>
 </div>
 <!-- Page Header start-->
@@ -19,11 +19,11 @@
             </div>
         </div>
         <div class="tab-content">
-            <div id="tab-1" class="tab-pane fade show p-0 active">
+            <div  class="tab-pane fade show p-0 active">
                 <div class="row g-4">
                    <div class="col-xl-3 col-lg-4 col-md-6  col-6 wow fadeInUp categoryBox" data-wow-delay="0.1s"
                         *ngFor="let data of allcategoryList">
-                        <div class="product-item" id="tab-1" (click) ="onCategoryClick(data)">
+                        <div class="product-item"  (click) ="onCategoryClick(data)">
                             <div class="pt-2 pl-0 pb-2">
                                 <a class="d-block h5 mb-0" routerLink ="../products/{{data.Category_Id}}" >{{data.Category_Name}}</a>
                                 </div>

@@ -190,7 +190,8 @@
                                 </div>
 
                                 <div class="row">
-                                    <div class="col-sm-2 col-3">
+                                    <div class="col-sm-2 col-3" *ngIf="data.Client_Photo">
+                                        
                                         <img class="rounded-circle profile-pic"
                                             src="assets/img/client_reviews/{{data.Client_Photo}}"
                                             alt="{{data.Client_Name}}">

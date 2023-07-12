@@ -3,7 +3,7 @@
       <div class="row">
         <div class="col-md-12 roundedTextBox mb-3">
             <label>Lookup Name :</label>
-            <input type="text"  [(ngModel)]="Lookup_Name" class="form-control mb-2" id="inputLookup_Name" formControlName="Lookup_Name" placeholder="Enter Lookup Name">
+            <input type="text"  [(ngModel)]="Lookup_Name" class="form-control mb-2"  formControlName="Lookup_Name" placeholder="Enter Lookup Name">
             <div *ngIf="submitted && formControl.Lookup_Name.errors" class="text-danger">
               <div *ngIf="formControl.Lookup_Name.errors.required">Name is required.</div>
             </div>

@@ -4,7 +4,7 @@
       <div class="row">
         <div class="col-md-12 roundedTextBox mb-2">
           <label>Category Name :</label>
-            <select [(ngModel)]="Category_Id" id="inputCategory_Id" class="form-control" formControlName="Category_Id" >
+            <select [(ngModel)]="Category_Id"  class="form-control" formControlName="Category_Id" >
               <option value="" disabled selected>Select Category</option>   
               <option *ngFor="let web of CategoryName" value="{{web.Category_Id}}"> 
                   {{web.Category_Name}}
@@ -13,7 +13,7 @@
        </div>
         <div class="col-md-12 roundedTextBox mb-3">
           <label>Sub Category Name :</label>
-          <input type="text"  [(ngModel)]="SubCategory" class="form-control" id="inputSub_Cat_Name" formControlName="Sub_Cat_Name" placeholder="Enter Sub Category Name">
+          <input type="text"  [(ngModel)]="SubCategory" class="form-control"  formControlName="Sub_Cat_Name" placeholder="Enter Sub Category Name">
           <div *ngIf="submitted && formControl.Sub_Cat_Name.errors" class="text-danger">
             <div *ngIf="formControl.Sub_Cat_Name.errors.required">Sub Category Name is required.</div>
           </div>

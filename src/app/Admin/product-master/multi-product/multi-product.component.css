@@ -13,3 +13,26 @@
     margin-bottom: 0px;
     line-height: initial;
   }
+  .sizewidth_length_mobile{
+    display: none;
+  }
+
+  .prdhead{
+    font-size: 16px !important;
+  }
+.btn_color{
+  color: #0d206c !important;
+}
+  .sizewidth_length{
+    width: 600px;
+  }
+
+  @media (min-width: 320px) and (max-width: 850px){
+    .sizewidth_length{
+      display: none;
+    }
+    .sizewidth_length_mobile{
+      display: inline;
+      width:600px;
+    }
+  }

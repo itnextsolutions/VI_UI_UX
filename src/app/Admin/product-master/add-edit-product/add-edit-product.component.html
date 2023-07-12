@@ -9,7 +9,7 @@
       <div class="col-md-12 roundedTextBox mb-0 ">
         <label>Select Category :</label>
        
-        <select id="inputCategory_Id " name="Category_Name" [(ngModel)]="Category_Id" class="form-control "
+        <select  name="Category_Name" [(ngModel)]="Category_Id" class="form-control "
           formControlName="Category_Id" #mySelect (change)='onOptionsSelected(mySelect.value)'>
           <option  value="" disabled selected>Select Category</option>
           <option  *ngFor="let web of CategoryName" [value]="web.Category_Id">{{web.Category_Name}}</option>
@@ -37,7 +37,7 @@
     </div>
       <div class="col-md-12 roundedTextBox mb-0">
         <label>Product Name :</label>
-        <input type="text" [(ngModel)]="Product_Title" class="form-control mb-2" id="inputProduct_Title"
+        <input type="text" [(ngModel)]="Product_Title" class="form-control mb-2" 
           formControlName="Product_Title" placeholder="Enter Product Name">
         <div *ngIf="submitted && this.ProductForm.controls['Product_Title'].errors" class="text-danger">
           <div *ngIf="this.ProductForm.controls['Product_Title'].errors.required">Product Name is required.</div>
@@ -45,7 +45,7 @@
       </div>
       <div class="col-md-3 roundedTextBox mb-0">
         <label>MRP :</label>
-        <input type="text" [(ngModel)]="MRP" class="form-control mb-2" id="inputProduct_Title" formControlName="MRP"
+        <input type="text" [(ngModel)]="MRP" class="form-control mb-2"  formControlName="MRP"
           placeholder="Enter the Price">
       </div>
     </div>
@@ -57,7 +57,7 @@
         </div>
 
         <p>
-          <input type="file" (change)="onselectFile2($event,2)" id="inputMenSide_Photo">
+          <input type="file" (change)="onselectFile2($event,2)">
         </p>
         <ng-template #elseBlock>
           <div *ngIf="Product_FrontPhoto">
@@ -74,9 +74,9 @@
     <div class="col-md-12 roundedTextBox mb-3">
       <label><b>Men Product Specification</b> :<a input type="button" class="btn list-tag" target="_blank"
           href="https://www.textfixer.com/html/html-list-generator.php">HTML</a></label>
-      <!-- <input type="text"  [(ngModel)]="Description" class="form-control mb-2" id="inputDescription" formControlName="Description" placeholder="Enter Product Description"> -->
+      <!-- <input type="text"  [(ngModel)]="Description" class="form-control mb-2"  formControlName="Description" placeholder="Enter Product Description"> -->
       <textarea rows="4" cols="43" type="text" [(ngModel)]="Product_Description" class="form-control mb-2"
-        id="inputProduct_Description" formControlName="Product_Description"
+        formControlName="Product_Description"
         placeholder="Enter Product Specification"></textarea>
     </div>
 
@@ -89,7 +89,7 @@
 
             <div><img [src]="menfronturl" *ngIf="menfronturl else elseBlock_men" style="width: 100px;height: 150px;"></div>
             <p>
-              <input type="file" (change)="onselectFile1($event,1)" id="inputMenFront_Photo">
+              <input type="file" (change)="onselectFile1($event,1)">
             </p>
             <ng-template #elseBlock_men>
               <div *ngIf="MenFront_Photo">
@@ -106,7 +106,7 @@
             <div><img [src]="mensizecharturl" *ngIf="mensizecharturl; else elseBlock_menSize"
                 style="width: 100px;height: 150px;"></div>
             <p>
-              <input type="file" (change)="onselectFile4($event,4)" id="inputSizeChartForMen">
+              <input type="file" (change)="onselectFile4($event,4)">
             </p>
             <ng-template #elseBlock_menSize>
               <div *ngIf="SizeChartForMen">
@@ -122,7 +122,7 @@
 
     <div class="col-md-12 roundedTextBox mb-3">
       <label>Men SVG Path:</label>
-      <!-- <input type="text"  [(ngModel)]="Description" class="form-control mb-2" id="inputDescription" formControlName="Description" placeholder="Enter Product Description"> -->
+      <!-- <input type="text"  [(ngModel)]="Description" class="form-control mb-2"  formControlName="Description" placeholder="Enter Product Description"> -->
       <textarea rows="4" cols="43" type="text" [(ngModel)]="men_f_svgpath" class="form-control mb-2"
         formControlName="men_f_svgpath" placeholder="Enter SVG Path"></textarea>
 
@@ -136,7 +136,7 @@
       <label><b>Women Product Specification :</b><a input type="button" class="btn list-tag"
           href="https://www.textfixer.com/html/html-list-generator.php">HTML</a></label>
       <textarea rows="4" cols="43" type="text" [(ngModel)]="WomenProduct_Description" class="form-control mb-2"
-        id="inputWomenProduct_Description" formControlName="WomenProduct_Description"
+         formControlName="WomenProduct_Description"
         placeholder="Enter Product Specification"></textarea>
     </div>
 
@@ -149,7 +149,7 @@
             <div><img [src]="womenfronturl" *ngIf="womenfronturl; else elseBlock_women" style="width: 100px;height: 150px;">
             </div>
             <p>
-              <input type="file" (change)="onselectFile5($event,5)" id="inputWomenProduct_Photo">
+              <input type="file" (change)="onselectFile5($event,5)">
             </p>
             <ng-template #elseBlock_women>
               <div *ngIf="WomenProduct_Photo">
@@ -167,7 +167,7 @@
             <div><img [src]="womensizecharturl" *ngIf="womensizecharturl; else elseBlock_womenSize"
                 style="width: 100px;height: 150px;"></div>
             <p>
-              <input type="file" (change)="onselectFile8($event,8)" id="inputSizeChartForWomen">
+              <input type="file" (change)="onselectFile8($event,8)">
             </p>
             <ng-template #elseBlock_womenSize>
               <div *ngIf="SizeChartForWomen">
@@ -182,7 +182,7 @@
 
     <div class="col-md-12 roundedTextBox mb-0">
       <label>Women SVG Path:</label>
-      <!-- <input type="text"  [(ngModel)]="Description" class="form-control mb-2" id="inputDescription" formControlName="Description" placeholder="Enter Product Description"> -->
+      <!-- <input type="text"  [(ngModel)]="Description" class="form-control mb-2" formControlName="Description" placeholder="Enter Product Description"> -->
       <textarea rows="4" cols="43" type="text" [(ngModel)]="women_f_svgpath" class="form-control mb-2"
         formControlName="women_f_svgpath" placeholder="Enter SVG Path"></textarea>
     </div>

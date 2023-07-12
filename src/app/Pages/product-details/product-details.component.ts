@@ -289,7 +289,7 @@ export class ProductDetailsComponent implements OnInit {
   }
 
   getProduct() {
-    this.userService.getProductById(this.productId).subscribe(data => {
+    this.userService.getProductById(this.productId).subscribe(data => {debugger
       if (data!=null && data!=undefined){ 
       this.product = data;
       }

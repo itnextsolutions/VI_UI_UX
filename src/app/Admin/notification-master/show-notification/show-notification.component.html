@@ -15,22 +15,22 @@
   </div>
 </div>
 
-  <aside class="sidenav navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-3 bg-gradient-dark device" id="sidenav-main">
+  <aside class="sidenav navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-3 bg-gradient-dark device">
     <app-sidebar></app-sidebar>
   </aside>
-  <aside *ngIf="isShowDivIf"  class="sidenav navbar navbar-vertical navbar-expand-xs border-0  fixed-start  bg-gradient-dark mobile " id="sidenav-main">
+  <aside *ngIf="isShowDivIf"  class="sidenav navbar navbar-vertical navbar-expand-xs border-0  fixed-start  bg-gradient-dark mobile ">
     <app-sidebar></app-sidebar>
   </aside>
   <main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg ">
     <!-- Navbar -->
     <div class="sidenav-header m_header mobile">
-      <i class="fas fa-times p-3 cursor-pointer text-white opacity-5 position-absolute end-0 top-0 d-none d-xl-none" aria-hidden="true" id="iconSidenav"></i>
+      <i class="fas fa-times p-3 cursor-pointer text-white opacity-5 position-absolute end-0 top-0 d-none d-xl-none" aria-hidden="true"></i>
       <img src="assets/img/vastralogo_1.png" class="navbar-brand-img m-logo" alt="main_logo">
-      <button (click)="toggleDisplayDiv()" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-expanded="true" class="nav-toggle" id="nav-toggle">
+      <button (click)="toggleDisplayDiv()" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-expanded="true" class="nav-toggle">
         <img class="menu-dark" src="assets/img/menu-light.png" alt="Menu-icon">
       </button>
     </div>
-    <nav class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl" id="navbarBlur" data-scroll="true">
+    <nav class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl" data-scroll="true">
       <div class="container-fluid py-1 px-3">
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
@@ -39,7 +39,7 @@
           </ol>
           <h6 class="font-weight-bolder mb-0">Notification</h6>
         </nav>
-        <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
+        <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4">
           <div class="ms-md-auto pe-md-3 d-flex align-items-center">
           </div>
           <ul class="navbar-nav  justify-content-end">

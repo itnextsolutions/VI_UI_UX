@@ -3,18 +3,18 @@
       <div class="row">
         <div class="col-md-12 roundedTextBox mb-3">
             <label>Client Name* :</label>
-            <input type="text"  [(ngModel)]="Client_Name" class="form-control mb-2" id="inputClient_Name" formControlName="Client_Name" placeholder="Enter Name">
+            <input type="text"  [(ngModel)]="Client_Name" class="form-control mb-2"  formControlName="Client_Name" placeholder="Enter Name">
             <div *ngIf="submitted && formControl.Client_Name.errors" class="text-danger">
               <div *ngIf="formControl.Client_Name.errors.required">Client Name is required.</div>
             </div>
         </div>
         <div class="col-md-12 roundedTextBox mb-3">
           <label>Profession :</label>
-          <input type="text"  [(ngModel)]="Profession" class="form-control mb-2" id="inputProfession" formControlName="Profession" placeholder="Enter Profession">
+          <input type="text"  [(ngModel)]="Profession" class="form-control mb-2"  formControlName="Profession" placeholder="Enter Profession">
          </div>
         <div class="col-md-12 roundedTextBox mb-3">
             <label>Review* :</label>
-            <textarea rows="6" cols="43" type="text"  [(ngModel)]="Review" class="form-control mb-2" id="inputReview" formControlName="Review" placeholder="EnterReview"></textarea>
+            <textarea rows="6" cols="43" type="text"  [(ngModel)]="Review" class="form-control mb-2" formControlName="Review" placeholder="EnterReview"></textarea>
             <div *ngIf="submitted && formControl.Review.errors" class="text-danger">
               <div *ngIf="formControl.Review.errors.required">Review is required.</div>
             </div>
@@ -25,7 +25,7 @@
                 <div [innerHtml]='msg' *ngIf="msg" style="color: red;"></div>
                 <div><img [src]="url" *ngIf="url; else elseBlock"  style="width: 100px; height: 150px;"></div>
                 <p class="color">
-                    <input type="file" (change)="onselectFile_customer($event)" id="inputClient_Photo">
+                    <input type="file" (change)="onselectFile_customer($event)">
                 </p>
                 <ng-template #elseBlock>
                   <div *ngIf="Client_Photo">
@@ -39,7 +39,7 @@
         </div>
         <div class="col-md-12 roundedTextBox mb-3">
             <label>Rating* :</label>
-            <input type="text"  [(ngModel)]="Rating" class="form-control mb-2" id="inputRating" formControlName="Rating" placeholder="Enter Rating">
+            <input type="text"  [(ngModel)]="Rating" class="form-control mb-2" formControlName="Rating" placeholder="Enter Rating">
             <div *ngIf="submitted && formControl.Rating.errors" class="text-danger">
               <div *ngIf="formControl.Rating.errors.required">Rating is required.</div>
             </div>

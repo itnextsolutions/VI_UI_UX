@@ -1,7 +1,7 @@
 <div class="d-flex justify-content-center">
 
     <div class="spinner-border" role="status">
-        <span class="sr-only" id="loading"></span>
+        <span class="sr-only"></span>
     </div>
 </div>
 <!-- Page Header start-->
@@ -27,11 +27,15 @@
             </div> -->
             <div [hidden]="isMenDivHidden && isTippingDivHidden" class="modal-body text-center"
                 *ngFor="let data of product">
-                <img src="assets/img/size_chart/{{data.SizeChartForMen}}" alt="{{data.SizeChartForMen}}" class="" style="width: 100%;">
+                <div *ngIf="data.SizeChartForMen">
+                    <img src="assets/img/size_chart/{{data.SizeChartForMen}}" alt="{{data.SizeChartForMen}}" class="" style="width: 100%;">
+                </div>
             </div>
             <div [hidden]="isWoMenDivHidden && isTippingWomenDivHidden" class="modal-body text-center"
                 *ngFor="let data of product">
-                <img src="assets/img/size_chart/{{data.SizeChartForWomen}}" alt="{{data.SizeChartForWomen}}" class="" style="width:100%;">
+                <div *ngIf="data.SizeChartForWomen.length>0">
+                    <img src="assets/img/size_chart/{{data.SizeChartForWomen}}" alt="{{data.SizeChartForWomen}}" class="" style="width:100%;">
+                </div>
             </div>
         </div>
     </div>
@@ -164,14 +168,14 @@
                             </div>
                         </div>
 
-                        <div [hidden]="isTippingDivHidden">
+                        <div [hidden]="isTippingDivHidden" *ngIf="this.image">
 
                             <img class="big_img" alt="{{this.image}}" src="assets/img/{{this.productcategoryfolder}}/{{this.image}}"
                                 height="571" width="467">
 
                         </div>
 
-                        <div [hidden]="isTippingWomenDivHidden">
+                        <div [hidden]="isTippingWomenDivHidden" *ngIf="this.image1">
 
                             <img class="big_img" alt="{{this.image1}}" src="assets/img/{{this.productcategoryfolder}}/{{this.image1}}"
                                 height="571" width="467">
@@ -196,8 +200,10 @@
                                         <path id="product-shape" [attr.d]="women_svgpath" [ngStyle]="{ fill: bgColor }" />
                                     </svg>
                                 </div>
-                                <img class="big_img" alt="{{data.WomenProduct_Photo}}"
+                                <div *ngIf="data.WomenProduct_Photo.length>0">
+                                    <img class="big_img" alt="{{data.WomenProduct_Photo}}"
                                     src="assets/img/{{this.productcategoryfolder}}/{{data.WomenProduct_Photo}}">
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -417,7 +423,7 @@
                                         <div class="row g-4">
                                             <div class="col-lg-12 col-12  pad-0">
                                                 <div class="col-lg-12 col-12  pad-0">
-                                                    <div class="genderButtonBlock" id="genderVariations">
+                                                    <div class="genderButtonBlock">
                                                         <div *ngIf="(data.Product_Photo?.length)>0"
                                                             (click)="onClickmenPhoto()" class="genderButton"
                                                             data-id="id_0" tabindex="0" data-title="Men"
@@ -459,7 +465,7 @@
                     <ng-template carouselSlide [width]="270">
                         <div class="row g-4">
                             <div class="col-xl-3 w-90 col-lg-4 col-md-6  col-6 wow fadeInUp" data-wow-delay="0.1s">
-                                <div class=" label-name-similar  pointer" id="tab-1" (click)="onClick(simillarproduct)">
+                                <div class=" label-name-similar  pointer"  (click)="onClick(simillarproduct)">
                                     <div class="pt-2 ">
                                         <!-- <a class="d-block h5 mb-2">{{simillarproduct.Product_Title}}</a> -->
                                         <a class="d-block h5">{{simillarproduct.Product_Title}}</a>
@@ -500,7 +506,7 @@
           
             <div class="row justify-content-md-center">
                 <div class="col-lg-3 col-md-6" *ngFor="let simillarproduct of simillarProducts">
-                    <div class="label-name-similar w-100" id="tab-1"
+                    <div class="label-name-similar w-100" 
                                     (click)="onClick(simillarproduct)">
                                     <div class="pt-2 pl-0 pb-2 text-center">
                                     
